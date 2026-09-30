@@ -10,6 +10,10 @@ func _ready() -> void:
     else:
         $Panel/Status/Pink.visible = false
 
+func _process(delta: float) -> void:
+    if Input.is_action_just_pressed("DebugMenu"):
+        visible = !visible
+
 func _on_seta_pressed() -> void:
     if DebugMenu:
         DebugMenu = false
@@ -65,10 +69,6 @@ func _on_set_round_pressed() -> void:
 func _on_beta_bunnies_toggled(toggled_on: bool) -> void:
     $"../HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun".visible = toggled_on
     $"../HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support".visible = toggled_on
-        
-        
-func _on_vivian_toggled(toggled_on: bool) -> void:
-    $"../HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Vivian_BG_dps".visible = toggled_on
 
 
 func _on_pink_toggled(toggled_on: bool) -> void:

@@ -22,7 +22,7 @@ func DMGED(quantidade):
     var valor_atual = int(moedas.text)
     
     vida -= quantidade
-
+    $AnimationPlayer.play("Animations/ghostling_TakeDMG")
 
     if vida <= 0:
         $Death.play()

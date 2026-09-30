@@ -10,20 +10,17 @@ var skins = [
     {"nome": "Buny", "preco": 1010, "textura": load("res://Assets/Bunnies/Skins/buny.png")},
     {"nome": "ZeRon", "preco": 2550, "textura": load("res://Assets/Bunnies/Skins/ZeRon.png")},
     {"nome": "Catharsis", "preco": 2870, "textura": load("res://Assets/Bunnies/Skins/Catharsis.png")},
-    {"nome": "Delirium", "preco": 3000, "textura": load("res://Assets/Bunnies/Skins/Delirium.png")},
-    {"nome": "Gir", "preco": 2700, "textura": load("res://Assets/Bunnies/Skins/Gir.png")},
-    {"nome": "BunnyPool", "preco": 69, "textura": load("res://Assets/Bunnies/Skins/BunnyPool.png")},
 ]
 
 
 var bunnies = [
     {"nome": "Scrappy", "preco": 4900, "textura": load("res://Assets/Bunnies/Scrappy.png")},
-    {"nome": "Ghoulish", "preco": 5750, "textura": load("res://Assets/Bunnies/Ghoulish.png")},
     {"nome": "Mystical", "preco": 8790, "textura": load("res://Assets/Bunnies/Mystical.png")},
-    {"nome": "Alien", "preco": 6780, "textura": load("res://Assets/Bunnies/Alien.png")},
+    #{"nome": "Ghoulish", "preco": 5750, "textura": load("res://Assets/Bunnies/Ghoulish.png")},
+    #{"nome": "Alien", "preco": 6780, "textura": load("res://Assets/Bunnies/Alien.png")},
+    #{"nome": "Toasty", "preco": 6500, "textura": load("res://Assets/Bunnies/Toasty.png")},
+    #{"nome": "Voodo", "preco": 8300, "textura": load("res://Assets/Bunnies/Voodo.png")},
     {"nome": "Molten", "preco": 9500, "textura": load("res://Assets/Bunnies/Molten.png")},
-    {"nome": "Toasty", "preco": 6500, "textura": load("res://Assets/Bunnies/Toasty.png")},
-    {"nome": "Voodo", "preco": 8300, "textura": load("res://Assets/Bunnies/Voodo.png")},
     {"nome": "Doll", "preco": 6000, "textura": load("res://Assets/Bunnies/Doll.png")}
 ]
 
@@ -90,9 +87,6 @@ func _on_item_shop_pressed() -> void:
                 "Buny": SaveManager.bunyUnlocked = true
                 "ZeRon": SaveManager.ZeRonUnlocked = true
                 "Catharsis": SaveManager.CatharsisUnlocked = true
-                "Delirium": SaveManager.DeliriumUnlocked = true
-                "Gir": SaveManager.GirUnlocked = true
-                "BunnyPool": SaveManager.BunnyPoolUnlocked = true
         else:
             var item = bunnies[ItemShopCount]
             match item.nome:
@@ -221,9 +215,6 @@ func stock() -> void:
             "Buny": unlocked = SaveManager.bunyUnlocked
             "ZeRon": unlocked = SaveManager.ZeRonUnlocked
             "Catharsis": unlocked = SaveManager.CatharsisUnlocked
-            "Delirium": unlocked = SaveManager.DeliriumUnlocked
-            "Gir": unlocked = SaveManager.GirUnlocked
-            "BunnyPool": unlocked = SaveManager.BunnyPoolUnlocked
             
     else:
         match item_atual.nome:
@@ -241,7 +232,7 @@ func stock() -> void:
     if unlocked:     
         $PanelItemShop/ItemShop.material.set_shader_parameter("ativo", true)
         $PanelItemShop/ItemShop.disabled = true
-        $PanelItemShop/PriceTag/Price.text = "SOLD OUT"
+        $PanelItemShop/PriceTag/Price.text = "---"
         
         if item_atual.nome == "Corrupted": $PanelItemShop/Corrupted.material.set_shader_parameter("ativo", true)
     else:
@@ -252,7 +243,7 @@ func stock() -> void:
         
 func _on_corrupted_core_pressed() -> void:
     $Items/CorruptedCore/CorruptedCore.disabled = true
-    var corruption = randi_range(1, 1)
+    var corruption = randi_range(1, 10)
     
     if corruption == 1:
         DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)

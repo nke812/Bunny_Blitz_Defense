@@ -39,9 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://djbm03fab8mc7" path="res://Assets/Others/UI_Assets/NewsScreen.png" id="25_fipmv"]
 [ext_resource type="Texture2D" uid="uid://cedo6utiaw60" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="27_3u44c"]
 [ext_resource type="Texture2D" uid="uid://bhla3u2n10pag" path="res://Assets/Others/HUD_Assets/BunnyCoin.png" id="27_r4k1l"]
-[ext_resource type="Texture2D" uid="uid://dtuir6bgm4ixu" path="res://Mods/PINK/PINK.png" id="28_pbfag"]
 [ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="28_qwpoy"]
+[ext_resource type="Script" uid="uid://x47tqg13am5v" path="res://Scripts/DailyReward.gd" id="30_r4k1l"]
 [ext_resource type="Texture2D" uid="uid://cf2cntmbqd0oe" path="res://Assets/Others/Menu_Assets/Maps/MapSandyStreets_Sel.png" id="31_f3d0c"]
+[ext_resource type="AudioStream" uid="uid://dtnr3epvew0ak" path="res://Assets/SFXs/DailyEarn.wav" id="33_qwpoy"]
 
 [sub_resource type="Animation" id="Animation_jvcv6"]
 resource_name = "AnimCursorHoverSun"
@@ -375,11 +376,6 @@ _data = {
 &"RESET": SubResource("Animation_7xub0")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
-bg_color = Color(0.6431373, 0.5019608, 0, 0.84705883)
-corner_radius_top_left = 23
-corner_radius_bottom_left = 25
-
 [sub_resource type="Animation" id="Animation_rrcx7"]
 resource_name = "MenuGoLeft"
 length = 1.4333333
@@ -405,7 +401,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(1.01, 1.3333334, 1.4333333),
 "transitions": PackedFloat32Array(0.5, 0.5, 1.5),
 "update": 0,
-"values": [Vector2(-468, -126), Vector2(-468, 38.695), Vector2(-468, 22.08)]
+"values": [Vector2(-468, -126), Vector2(-468, 38.695), Vector2(-468, 17)]
 }
 
 [sub_resource type="Animation" id="Animation_fh7cp"]
@@ -432,7 +428,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-468, 26)]
+"values": [Vector2(-468, 17)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8e205"]
@@ -549,6 +545,135 @@ _data = {
 &"Anim": SubResource("Animation_8m3ho"),
 &"RESET": SubResource("Animation_5rj5y")
 }
+
+[sub_resource type="Animation" id="Animation_h64ul"]
+resource_name = "EarnCoinsAnim"
+length = 1.4666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.13333334, 0.8666667),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(-304.10535, -334.51038), Vector2(-304.105, -371.225)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.23, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../DailyReward/DailyEarnSFX")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("33_qwpoy")
+}],
+"times": PackedFloat32Array(0.1)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="Animation_y41we"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.1, 1.1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-304.10535, -334.51038)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_drl2p"]
+_data = {
+&"EarnCoinsAnim": SubResource("Animation_h64ul"),
+&"RESET": SubResource("Animation_y41we")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
+bg_color = Color(0.6431373, 0.5019608, 0, 0.84705883)
+corner_radius_top_left = 23
+corner_radius_bottom_left = 25
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh7cp"]
 content_margin_left = 324.0
@@ -1186,42 +1311,6 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_7467j")
 libraries/ = SubResource("AnimationLibrary_7xub0")
 autoplay = &"Anim"
 
-[node name="BunnyCoins" type="Node2D" parent="." unique_id=1786968820]
-position = Vector2(-468, 26)
-
-[node name="PretendColorRec___ToT" type="Button" parent="BunnyCoins" unique_id=1065733870]
-offset_left = -8.0
-offset_right = 274.0
-offset_bottom = 91.92
-theme_override_styles/disabled = SubResource("StyleBoxFlat_g4v7s")
-disabled = true
-
-[node name="BunnyCoin" type="Sprite2D" parent="BunnyCoins" unique_id=2035501121]
-position = Vector2(271, 42)
-scale = Vector2(0.48888886, 0.4888889)
-texture = ExtResource("27_r4k1l")
-
-[node name="Price" type="Label" parent="BunnyCoins" unique_id=522859515]
-anchors_preset = -1
-anchor_left = 0.777
-anchor_right = 0.96500003
-anchor_bottom = 0.11800001
-offset_left = 1.0
-offset_top = 24.0
-offset_right = 192.0
-offset_bottom = 73.0
-pivot_offset = Vector2(98, 46)
-theme_override_colors/font_color = Color(0.9019608, 0.6901961, 0.14117648, 1)
-theme_override_colors/font_shadow_color = Color(0.49803922, 0.28235295, 0.11764706, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_fonts/font = ExtResource("28_qwpoy")
-theme_override_font_sizes/font_size = 48
-text = "0
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1713408079]
 position = Vector2(980, 513)
 offset = Vector2(0, 27)
@@ -1255,12 +1344,6 @@ position = Vector2(-1050, -550)
 scale = Vector2(0.9634822, 0.9327064)
 texture = ExtResource("25_fipmv")
 
-[node name="Sprite2D" type="Sprite2D" parent="NewsScreen" unique_id=213926039]
-position = Vector2(-670.48474, 120.08064)
-rotation = -0.21118484
-scale = Vector2(0.11794942, 0.1152995)
-texture = ExtResource("28_pbfag")
-
 [node name="NewsAnim" type="AnimationPlayer" parent="NewsScreen" unique_id=1231855138]
 libraries/ = SubResource("AnimationLibrary_jvcv6")
 
@@ -1275,24 +1358,73 @@ theme_override_colors/font_shadow_color = Color(0.47092474, 0.37769395, 0.183728
 theme_override_fonts/font = ExtResource("17")
 theme_override_font_sizes/font_size = 33
 text = "
+V.0.10.23 NEWS:
 
-! REWORK do Main Menu
+Beta Bunnies:
++ Doll Bunny
++ Molten Bunny
 
-Remake dos Mapas:
-! Grass Lands + Rookienho;
-! Glimmer Road.
++ Daily rewards 12h/12h
 
-+ Mapa Sandy Streets
+! Shop funcional
 
++ Player Save File
+
++ Bunny Coins! (Beta)
 
 - Bug Fixes
-+ Debug Menu
 
-
-+ a cat...? and now with
-a Ultimate?
 
 Have fun ;)"
+
+[node name="DailyReward" type="Control" parent="NewsScreen" unique_id=1171159941]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -249.09656
+offset_top = -358.09775
+offset_right = -209.09656
+offset_bottom = -318.09775
+script = ExtResource("30_r4k1l")
+
+[node name="DailyEarnSFX" type="AudioStreamPlayer" parent="NewsScreen/DailyReward" unique_id=1220542775]
+bus = &"SFX"
+
+[node name="BtnDaily" type="Button" parent="NewsScreen/DailyReward" unique_id=1537601265]
+layout_mode = 0
+offset_left = -275.04407
+offset_top = -18.226456
+offset_right = -145.40405
+offset_bottom = 122.82254
+rotation = 0.09250245
+pivot_offset = Vector2(64.50488, 71.99014)
+theme_override_fonts/font = ExtResource("28_qwpoy")
+theme_override_font_sizes/font_size = 20
+text = "DAILY 
+REWARD"
+
+[node name="TimerDaily" type="Label" parent="NewsScreen/DailyReward" unique_id=835565107]
+layout_mode = 0
+offset_left = -263.6209
+offset_top = -57.896484
+offset_right = -136.64252
+offset_bottom = -20.896484
+rotation = 0.08901179
+theme_override_font_sizes/font_size = 27
+text = "12:00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelInfoDaily" type="Label" parent="NewsScreen/DailyReward" unique_id=2065899257]
+layout_mode = 0
+offset_left = -493.00342
+offset_top = -87.91612
+offset_right = -83.032104
+offset_bottom = -52.535217
+theme_override_fonts/font = ExtResource("28_qwpoy")
+theme_override_font_sizes/font_size = 23
+vertical_alignment = 1
+
+[node name="HTTPRequest" type="HTTPRequest" parent="NewsScreen/DailyReward" unique_id=493865994]
 
 [node name="Exit" type="TextureButton" parent="NewsScreen" unique_id=2147255417]
 offset_left = 647.65063
@@ -1304,6 +1436,71 @@ texture_pressed = ExtResource("20_3u44c")
 texture_hover = ExtResource("20_3u44c")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="BunnyCoinsNode" type="Node2D" parent="NewsScreen" unique_id=1028398347]
+visible = false
+position = Vector2(-304.10535, -334.51038)
+scale = Vector2(1.1, 1.1)
+
+[node name="BunnyCoins" type="Sprite2D" parent="NewsScreen/BunnyCoinsNode" unique_id=1195300066]
+position = Vector2(108.50794, 1.9493208)
+scale = Vector2(0.23564808, 0.23564813)
+texture = ExtResource("27_r4k1l")
+
+[node name="AmountLabel" type="Label" parent="NewsScreen/BunnyCoinsNode" unique_id=1001285122]
+offset_left = -60.000015
+offset_top = -15.000004
+offset_right = 4.0000153
+offset_bottom = 20.000011
+theme_override_colors/font_color = Color(0.9019608, 0.6901961, 0.14117648, 1)
+theme_override_colors/font_shadow_color = Color(0.49803922, 0.28235295, 0.11764706, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("28_qwpoy")
+theme_override_font_sizes/font_size = 41
+text = "+ 500"
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EarnCoinsAnim" type="AnimationPlayer" parent="NewsScreen/BunnyCoinsNode" unique_id=2135031868]
+libraries/ = SubResource("AnimationLibrary_drl2p")
+
+[node name="BunnyCoins" type="Node2D" parent="." unique_id=1786968820]
+position = Vector2(-468, 17)
+
+[node name="PretendColorRec___ToT" type="Button" parent="BunnyCoins" unique_id=1065733870]
+offset_left = -8.0
+offset_right = 274.0
+offset_bottom = 91.92
+theme_override_styles/disabled = SubResource("StyleBoxFlat_g4v7s")
+disabled = true
+
+[node name="BunnyCoin" type="Sprite2D" parent="BunnyCoins" unique_id=2035501121]
+position = Vector2(271, 42)
+scale = Vector2(0.48888886, 0.4888889)
+texture = ExtResource("27_r4k1l")
+
+[node name="Price" type="Label" parent="BunnyCoins" unique_id=522859515]
+anchors_preset = -1
+anchor_left = 0.777
+anchor_right = 0.96500003
+anchor_bottom = 0.11800001
+offset_left = 1.0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 73.0
+pivot_offset = Vector2(98, 46)
+theme_override_colors/font_color = Color(0.9019608, 0.6901961, 0.14117648, 1)
+theme_override_colors/font_shadow_color = Color(0.49803922, 0.28235295, 0.11764706, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("28_qwpoy")
+theme_override_font_sizes/font_size = 48
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Select Map" type="Panel" parent="." unique_id=840288202]
 self_modulate = Color(1, 1, 1, 0)
@@ -1672,8 +1869,44 @@ libraries/ = SubResource("AnimationLibrary_h64ul")
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1158672844]
 layout_mode = 0
 offset_left = -2055.0
-offset_right = -1623.0
-offset_bottom = 257.0
+offset_right = -1627.0
+offset_bottom = 267.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1123993217]
+visible = false
+layout_mode = 0
+offset_left = -1591.0
+offset_top = 148.0
+offset_right = -391.0
+offset_bottom = 813.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1264489808]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 59.0
+offset_right = 869.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 52
+text = "Dar Reset ao Save???"
+
+[node name="Button" type="Button" parent="Panel" unique_id=316889936]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 365.0
+offset_right = 446.0
+offset_bottom = 590.0
+theme_override_font_sizes/font_size = 59
+text = "SIM"
+
+[node name="Button2" type="Button" parent="Panel" unique_id=899392934]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 363.0
+offset_right = 1102.0
+offset_bottom = 588.0
+theme_override_font_sizes/font_size = 55
+text = "NÃO"
+icon_alignment = 1
 
 [connection signal="mouse_entered" from="SunSetEuGostoMuito/StartBTN" to="." method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="SunSetEuGostoMuito/StartBTN" to="." method="_on_start_mouse_exited"]
@@ -1693,6 +1926,7 @@ offset_bottom = 257.0
 [connection signal="mouse_entered" from="Extras/ExtrasBTN" to="." method="_on_extras_mouse_entered"]
 [connection signal="mouse_exited" from="Extras/ExtrasBTN" to="." method="_on_extras_mouse_exited"]
 [connection signal="pressed" from="TitleScreenStart" to="." method="_on_title_screen_start_pressed"]
+[connection signal="pressed" from="NewsScreen/DailyReward/BtnDaily" to="NewsScreen/DailyReward" method="_on_pressed"]
 [connection signal="pressed" from="NewsScreen/Exit" to="." method="_on_exit_pressed"]
 [connection signal="button_down" from="Select Map/Sandy Streets" to="." method="_on_sandy_streets_button_down"]
 [connection signal="mouse_entered" from="Select Map/Sandy Streets" to="." method="_on_sandy_streets_mouse_entered"]
@@ -1712,3 +1946,5 @@ offset_bottom = 257.0
 [connection signal="pressed" from="Options/SFXControl/SFXIcon" to="." method="_on_sfx_icon_pressed"]
 [connection signal="toggled" from="Options/Fullscreen_CB" to="Options/Fullscreen_CB" method="_on_toggled"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]

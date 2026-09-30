@@ -3,26 +3,28 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfm75fp77ya6h"
-path="res://.godot/imported/Nano-Tech.png-0b9694f0d9583f10f40fc8423c278c4a.ctex"
+path.s3tc="res://.godot/imported/Nano-Tech.png-0b9694f0d9583f10f40fc8423c278c4a.s3tc.ctex"
+path.etc2="res://.godot/imported/Nano-Tech.png-0b9694f0d9583f10f40fc8423c278c4a.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Resources/NeoCity/Nano-Tech.png"
-dest_files=["res://.godot/imported/Nano-Tech.png-0b9694f0d9583f10f40fc8423c278c4a.ctex"]
+dest_files=["res://.godot/imported/Nano-Tech.png-0b9694f0d9583f10f40fc8423c278c4a.s3tc.ctex", "res://.godot/imported/Nano-Tech.png-0b9694f0d9583f10f40fc8423c278c4a.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

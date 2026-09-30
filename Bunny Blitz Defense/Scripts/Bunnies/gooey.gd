@@ -177,6 +177,12 @@ func _on_button_button_down() -> void:
         hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
         hud.get_node("HUD_Shop/BuffStatus/Buff4").text = str(BuffStatus2)
         
+        if !SaveManager.VoidUnlocked:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        
+        #hud.get_node("HUD_Shop/HudShopFrame").self_modulate = Color(0.0, 1.115, 0.619)
+        #hud.get_node("HUD_Shop/HudBgDown").self_modulate = Color(0.566, 0.474, 1.075)
         
         hud.get_node("HUD_Shop/HudBgDown/BunnySel").texture = load("res://Assets/Bunnies/Gooey.png")
         atualizar_valorTorre()

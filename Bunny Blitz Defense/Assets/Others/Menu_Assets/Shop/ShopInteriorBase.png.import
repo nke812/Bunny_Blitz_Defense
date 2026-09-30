@@ -3,26 +3,28 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce1bxclvlcses"
-path="res://.godot/imported/ShopInteriorBase.png-2d80c37847cfa8ab91609b3b272f2f4f.ctex"
+path.s3tc="res://.godot/imported/ShopInteriorBase.png-2d80c37847cfa8ab91609b3b272f2f4f.s3tc.ctex"
+path.etc2="res://.godot/imported/ShopInteriorBase.png-2d80c37847cfa8ab91609b3b272f2f4f.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Others/Menu_Assets/Shop/ShopInteriorBase.png"
-dest_files=["res://.godot/imported/ShopInteriorBase.png-2d80c37847cfa8ab91609b3b272f2f4f.ctex"]
+dest_files=["res://.godot/imported/ShopInteriorBase.png-2d80c37847cfa8ab91609b3b272f2f4f.s3tc.ctex", "res://.godot/imported/ShopInteriorBase.png-2d80c37847cfa8ab91609b3b272f2f4f.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

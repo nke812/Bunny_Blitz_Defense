@@ -184,9 +184,10 @@ func _on_news_mouse_entered() -> void:
 func _on_news_mouse_exited() -> void:
     $News.texture = load("res://Assets/Others/Menu_Assets/Buttons/News.png")
 
-
+@onready var daily_reward: Control = $NewsScreen/DailyReward
 func _on_news_btn_pressed() -> void:
     $NewsScreen/NewsAnim.play("Anim")
+    daily_reward._ready()
 
 func _on_exit_pressed() -> void:
     $NewsScreen/NewsAnim.play_backwards("Anim")
@@ -209,4 +210,11 @@ func _on_shop_btn_pressed() -> void:
 
 
 func _on_texture_button_pressed() -> void:
+    $Panel.visible = true
+    
+func _on_button_2_pressed() -> void:
+    $Panel.visible = false
+
+func _on_button_pressed() -> void:
+    $Panel.visible = false
     SaveManager.reset_save()

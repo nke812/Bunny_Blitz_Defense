@@ -4,6 +4,9 @@ const SAVE_PATH = "user://player.cfg"
 
 var BunnyCoins: int = 500
 
+var LastDaily: int = 0
+var LastAcessDaily: int = 0
+
 var autoplay: bool = false
 var CorruptedVisible: bool = false
 
@@ -22,11 +25,6 @@ var CanelaUnlocked: bool = false
 var CatharsisUnlocked: bool = false
 var VoidUnlocked: bool = false
 var ZeRonUnlocked: bool = false
-var DeliriumUnlocked: bool = false
-var BunnyPoolUnlocked: bool = false
-var GirUnlocked: bool = false
-
-var RookieSkinSelected = ""
 
 func _ready() -> void:
     carregar_dados()
@@ -59,11 +57,9 @@ func carregar_dados() -> void:
     CatharsisUnlocked = config.get_value("Skins", "Catharsis", false)
     VoidUnlocked = config.get_value("Skins", "Void", false)
     ZeRonUnlocked = config.get_value("Skins", "Zé Ron", false)
-    GirUnlocked = config.get_value("Skins", "Gir", false)
-    BunnyPoolUnlocked = config.get_value("Skins", "Bunny Pool", false)
-    DeliriumUnlocked = config.get_value("Skins", "Delirium", false)
     
-    RookieSkinSelected = config.get_value("SkinSelected", "RookieSkin", "")
+    LastDaily = config.get_value("Daily", "LastDaily", 0)
+    LastAcessDaily = config.get_value("Daily", "LastAcessDaily", 0)
     
 func guardar_dados() -> void:
     var config = ConfigFile.new()
@@ -88,11 +84,9 @@ func guardar_dados() -> void:
     config.set_value("Skins", "Catharsis", CatharsisUnlocked)
     config.set_value("Skins", "Void", VoidUnlocked)
     config.set_value("Skins", "Zé Ron", ZeRonUnlocked)
-    config.set_value("Skins", "Gir", GirUnlocked)
-    config.set_value("Skins", "Delirium", DeliriumUnlocked)
-    config.set_value("Skins", "Bunny Pool", BunnyPoolUnlocked)
     
-    config.set_value("SkinSelected", "RookieSkin", RookieSkinSelected)
+    config.set_value("Daily", "LastDaily", LastDaily)
+    config.set_value("Daily", "LastAcessDaily", LastAcessDaily)
     
     config.save(SAVE_PATH)
 
@@ -132,12 +126,9 @@ func reset_save() -> void:
     CatharsisUnlocked = false
     VoidUnlocked = false
     ZeRonUnlocked = false
-    DeliriumUnlocked = false
-    BunnyPoolUnlocked = false
-    GirUnlocked = false
     
-    
-    RookieSkinSelected = ""
-        
+    LastDaily = 0
+    LastAcessDaily = 0
+      
     guardar_dados()
     get_tree().reload_current_scene()

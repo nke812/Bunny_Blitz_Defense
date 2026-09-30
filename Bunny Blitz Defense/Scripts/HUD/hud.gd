@@ -116,6 +116,7 @@ func _on_exit_settings_button_down() -> void:
     $HUD_Shop/Shop_Appear.play_backwards("Shop_Appear")
     
     await $HUD_Shop/Shop_Appear.animation_finished
+    #$HUD_Shop/HudShopFrame.self_modulate = Color(1.176, 0.823, 0.0)
     $HUD_Shop/HudBgDown/BunnySel.texture = null
     
     
@@ -496,8 +497,8 @@ func victory():
         
     Engine.time_scale = 1.0
     $Pause.visible = false
-    
-func trigger() -> void:
-        var spawner_no = get_tree().get_first_node_in_group("spawner")
-        spawner_no.inimigo_morreu()
-        print(BunnyCoinsMatch)
+        
+func EarnBunnyCoins(AmountCoins: int):
+    $BunnyCoinsNode/AmountLabel.text = "+ " + str(AmountCoins)
+    $BunnyCoinsNode/EarnCoinsAnim.play("EarnCoinsAnim")
+    $BunnyCoinsNode/Coiny.play()

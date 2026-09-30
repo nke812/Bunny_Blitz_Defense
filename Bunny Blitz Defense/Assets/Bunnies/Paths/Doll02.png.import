@@ -3,26 +3,28 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djqmtrybukjxd"
-path="res://.godot/imported/Doll02.png-bba8c85772f5201c0e07d7068b2096f1.ctex"
+path.s3tc="res://.godot/imported/Doll02.png-bba8c85772f5201c0e07d7068b2096f1.s3tc.ctex"
+path.etc2="res://.godot/imported/Doll02.png-bba8c85772f5201c0e07d7068b2096f1.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Bunnies/Paths/Doll02.png"
-dest_files=["res://.godot/imported/Doll02.png-bba8c85772f5201c0e07d7068b2096f1.ctex"]
+dest_files=["res://.godot/imported/Doll02.png-bba8c85772f5201c0e07d7068b2096f1.s3tc.ctex", "res://.godot/imported/Doll02.png-bba8c85772f5201c0e07d7068b2096f1.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

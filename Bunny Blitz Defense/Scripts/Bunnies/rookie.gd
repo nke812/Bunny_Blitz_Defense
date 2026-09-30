@@ -17,16 +17,6 @@ var dmg_Rookie = 1
 
 var dmg_total = dmg_Rookie + dmg_Mystical
 
-@onready var hands = [
-    $Pega/Node2D/RookieHands_Attack,
-    $Pega/Node2D/Delirium_AttackR,
-    $Pega/Node2D/Delirium_AttackL
-]
-
-func tocar_ataque() -> void:
-    for no in hands:
-        no.play()
-
 var focus = false
 
 var path1 = 0
@@ -68,7 +58,7 @@ func verificar_e_atacar():
 func atacar(alvo):
     if alvo.has_method("DMGED"):
         $Pega/Node2D/Rookie/AnimationPlayer.play("RookieAttack")
-        tocar_ataque()
+        $Pega/Node2D/RookieHands_Attack.play()
         
         var sons_hit = [$Hit, $Hit2, $Hit3]
         var som_sorteado = sons_hit[randi() % sons_hit.size()]
@@ -194,7 +184,15 @@ func _on_button_button_down() -> void:
         hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
         hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
         
+        if !SaveManager.bunyUnlocked:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        
         hud.get_node("HUD_Shop/HudBgDown/BunnySel").texture = load("res://Assets/Bunnies/Rookie.png")
+        
+        #hud.get_node("HUD_Shop/HudShopFrame").self_modulate = Color(1.0, 1.0, 1.0)
+        #hud.get_node("HUD_Shop/HudBgDown").self_modulate = Color(0.573, 0.834, 1.081)
+        
         atualizar_valorTorre()
         hud.get_node("HUD_Shop/HudBgDown/ExitShop").disabled = false
         

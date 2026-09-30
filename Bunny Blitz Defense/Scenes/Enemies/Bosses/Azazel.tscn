@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgnhu40vgoq11" path="res://Scripts/Enemies/Bosses/azazel.gd" id="1_r1kj2"]
 [ext_resource type="AudioStream" uid="uid://dp508xdpg20uj" path="res://Assets/SFXs/GhostlingDies.wav" id="2_oi18t"]
-[ext_resource type="Texture2D" uid="uid://bnegu7l6fa2v4" path="res://Assets/Enemies/Bosses/Azazel.png" id="3_d7oo4"]
+[ext_resource type="Texture2D" uid="uid://dlaumiyhy47mr" path="res://Other Folders/Mods/COMMUNITY SKINS/Azazel.png" id="3_r1kj2"]
 [ext_resource type="Texture2D" uid="uid://cfd4e64q7fkpx" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="4_fv1n4"]
 [ext_resource type="Texture2D" uid="uid://8upo31eleqj" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_rp87g"]
 [ext_resource type="Texture2D" uid="uid://pbo82nncgqos" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_5hpw5"]
@@ -423,7 +423,7 @@ bus = &"SFX"
 [node name="Azazel" type="Sprite2D" parent="Azazel" unique_id=886288773]
 position = Vector2(-27.291672, -481.77197)
 scale = Vector2(1.4016192, 1.4016188)
-texture = ExtResource("3_d7oo4")
+texture = ExtResource("3_r1kj2")
 
 [node name="Goo_Splash" type="AnimatedSprite2D" parent="Azazel/Azazel" unique_id=608810858]
 position = Vector2(46.449287, 167.21819)

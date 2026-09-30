@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d3o0qgqxkupje"]
 
 [ext_resource type="AudioStream" uid="uid://uh3ws1hfei76" path="res://Assets/SFXs/RoundStart.wav" id="1_edkja"]
+[ext_resource type="Script" uid="uid://bof3npu0ftjj5" path="res://Scripts/Maps/map_2.gd" id="1_q1370"]
 [ext_resource type="Texture2D" uid="uid://bqg1gwujcntft" path="res://Assets/Others/Map_Assets/GlimmerRoadV2/Base.png" id="2_mrkoi"]
 [ext_resource type="Script" uid="uid://cj5vuu45ii5tk" path="res://Scripts/ghostling_spawner.gd" id="2_tmeid"]
 [ext_resource type="Texture2D" uid="uid://d4a3tfbxtqy7h" path="res://Assets/Others/Map_Assets/GlimmerRoadV2/Path.png" id="3_sc7s4"]
@@ -266,6 +267,7 @@ _data = {
 y_sort_enabled = true
 position = Vector2(-36.000004, -42.000004)
 scale = Vector2(0.835, 0.835)
+script = ExtResource("1_q1370")
 
 [node name="GhostlingSpawner" type="Node2D" parent="." unique_id=2109337534 groups=["spawner"]]
 y_sort_enabled = true

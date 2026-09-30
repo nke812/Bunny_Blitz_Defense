@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpj5s8cop6tk3"
+path="res://.godot/imported/VivianPath2.wav-5ce9f39afdd87d2b38af28fc98232ad2.sample"
+
+[deps]
+
+source_file="res://Other Folders/Mods/VIVIAN/VivianPath2.wav"
+dest_files=["res://.godot/imported/VivianPath2.wav-5ce9f39afdd87d2b38af28fc98232ad2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

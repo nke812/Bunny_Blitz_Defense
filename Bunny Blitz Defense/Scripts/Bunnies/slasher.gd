@@ -214,6 +214,10 @@ func _on_insp_button_down() -> void:
         hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
         hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
         
+        if !SaveManager.CanelaUnlocked:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        
         hud.get_node("HUD_Shop/HudBgDown/BunnySel").texture = load("res://Assets/Bunnies/Slasher.png")
         atualizar_valorTorre()
         

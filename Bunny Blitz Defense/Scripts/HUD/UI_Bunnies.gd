@@ -1,19 +1,5 @@
 extends Node2D
 
-# - TORRES (Apenas caminhos em String, sem carregar nada para a VRAM) - #
-var torres_paths = {
-    "rookie": "res://Scenes/Towers/rookie.tscn",
-    "lucky": "res://Scenes/Towers/lucky.tscn",
-    "slasher": "res://Scenes/Towers/slasher.tscn",
-    "gooey": "res://Scenes/Towers/gooey.tscn",
-    "anarchist": "res://Scenes/Towers/anarchist.tscn",
-    "scrappy": "res://Scenes/Towers/scrappy.tscn",
-    "mystical": "res://Scenes/Towers/mystical.tscn",
-    "ghoulish": "res://Scenes/Towers/ghoulish.tscn",
-    "corrupted": "res://Scenes/Towers/corrupted.tscn",
-    "vivian": "res://Mods/VIVIAN/vivian.tscn"
-}
-
 # Pre-carregar apenas as texturas leves da interface
 var tex_price_enabled = preload("res://Assets/Others/HUD_Assets/PriceTag.png")
 var tex_price_disabled = preload("res://Assets/Others/HUD_Assets/PriceTagDisabled.png")
@@ -30,9 +16,30 @@ var ultima_posicao_rato: Vector2 = Vector2.ZERO
 var mola_rotacao: float = 0.0
 var mola_velocidade: float = 0.0
 
+var torres_paths = {
+    "rookie": "res://Scenes/Towers/rookie.tscn",
+    "lucky": "res://Scenes/Towers/lucky.tscn",
+    "slasher": "res://Scenes/Towers/slasher.tscn",
+    "gooey": "res://Scenes/Towers/gooey.tscn",
+    "anarchist": "res://Scenes/Towers/anarchist.tscn",
+    "scrappy": "res://Scenes/Towers/scrappy.tscn",
+    "mystical": "res://Scenes/Towers/mystical.tscn",
+    "ghoulish": "res://Scenes/Towers/ghoulish.tscn",
+    "corrupted": "res://Scenes/Towers/corrupted.tscn",
+    "molten": "res://Scenes/Towers/molten.tscn",
+    "doll": "res://Scenes/Towers/doll.tscn"
+}
+
+# Dicionário para guardar as cenas pré-carregadas em memória
+var torres_carregadas = {}
+
 func _ready() -> void:
     SaveManager.carregar_dados()
     
+    # Inicia o carregamento assíncrono em background sem congelar o jogo
+    for chave in torres_paths:
+        ResourceLoader.load_threaded_request(torres_paths[chave])
+
     $ScrollContainer/GridContainer/Corrupted_BG_stun.visible = SaveManager.CorruptedUnlocked
     $ScrollContainer/GridContainer/Scrappy_BG_stun.visible = SaveManager.ScrappyUnlocked
     $ScrollContainer/GridContainer/Ghoulish_BG_stun.visible = SaveManager.GhoulishUnlocked
@@ -41,9 +48,30 @@ func _ready() -> void:
     $ScrollContainer/GridContainer/Toasty_BG_dps.visible = SaveManager.ToastyUnlocked
     $ScrollContainer/GridContainer/Voodo_BG_stun.visible = SaveManager.VoodoUnlocked
     $ScrollContainer/GridContainer/Molten_BG_dps.visible = SaveManager.MoltenUnlocked
-    $ScrollContainer/GridContainer/Doll_BG_stun.visible = SaveManager.DollUnlocked
+    $ScrollContainer/GridContainer/Doll_BG_dps.visible = SaveManager.DollUnlocked
     
     atualizar_loja_botoes()
+
+func _comprar_torre(chave: String, custo: int):
+    if temp_tower != null or moedas_atuais < custo:
+        return
+        
+    var path = torres_paths[chave]
+    
+    # Se a cena ainda não foi guardada no dicionário local, recupera do ResourceLoader
+    if not torres_carregadas.has(chave):
+        if ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_LOADED:
+            torres_carregadas[chave] = ResourceLoader.load_threaded_get(path)
+        else:
+            # Fallback síncrono de segurança caso o jogador clique instantaneamente ao abrir a cena
+            torres_carregadas[chave] = load(path)
+            
+    var cena = torres_carregadas[chave]
+    if cena:
+        tipo_torre_atual = chave
+        temp_tower = cena.instantiate()
+        custo_da_torre_atual = custo
+        configurar_torre_temp()
 
 func _process(delta: float) -> void:
     var moedas_atuais_nova = int(moedas_label.text)
@@ -110,7 +138,8 @@ func atualizar_loja_botoes() -> void:
     _atualizar_botao_preco($ScrollContainer/GridContainer/Scrappy_BG_stun, $ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy, 330)
     _atualizar_botao_preco($ScrollContainer/GridContainer/Mystical_BG_support, $ScrollContainer/GridContainer/Mystical_BG_support/Mystical, 1400)
     _atualizar_botao_preco($ScrollContainer/GridContainer/Ghoulish_BG_stun, $ScrollContainer/GridContainer/Ghoulish_BG_stun/Ghoulish, 700)
-    _atualizar_botao_preco($ScrollContainer/GridContainer/Vivian_BG_dps, null, 1600)
+    _atualizar_botao_preco($ScrollContainer/GridContainer/Molten_BG_dps, $ScrollContainer/GridContainer/Molten_BG_dps/Molten, 1270)
+    _atualizar_botao_preco($ScrollContainer/GridContainer/Doll_BG_dps, $ScrollContainer/GridContainer/Doll_BG_dps/Doll, 680)
 
 func _atualizar_botao_preco(container, btn_child, custo: int):
     var esta_desativado = (moedas_atuais < custo)
@@ -130,15 +159,6 @@ func _atualizar_botao_preco(container, btn_child, custo: int):
         label_preco.add_theme_color_override("font_shadow_color", Color.from_string("d1a000df", Color.BLACK))
         sprite_tag.texture = tex_price_enabled
 
-# --- BOTOES (Só instanciam e carregam quando são realmente clicados!) ---
-
-func _comprar_torre(chave: String, custo: int):
-    if temp_tower == null and moedas_atuais >= custo:
-        tipo_torre_atual = chave
-        var cena = load(torres_paths[chave]) # <--- O LOAD SÓ ACONTECE AQUI!
-        temp_tower = cena.instantiate()
-        custo_da_torre_atual = custo
-        configurar_torre_temp()
 
 func _on_rookie_button_down() -> void:
     _comprar_torre("rookie", 115)
@@ -166,14 +186,17 @@ func _on_ghoulish_button_down() -> void:
     
 func _on_corrupted_button_down() -> void:
     _comprar_torre("corrupted", 970)
-
-func _on_vivian_bg_dps_button_down() -> void:
-    _comprar_torre("vivian", 1600)
+    
+func _on_molten_button_down() -> void:
+    _comprar_torre("molten", 1270)
+    
+func _on_doll_button_down() -> void:
+    _comprar_torre("doll", 680)
 
 func configurar_torre_temp():
     temp_tower.modulate.a = 0.5
     temp_tower.process_mode = Node.PROCESS_MODE_ALWAYS
-
+    
     var range_node = temp_tower.get_node("Range")
     range_node.monitoring = false
     range_node.monitorable = true

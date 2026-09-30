@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b2nrgxtb5qvvw"
+path="res://.godot/imported/ViviaPlace.wav-b501bce4c075c62c2fdb7a5d44f5244a.sample"
+
+[deps]
+
+source_file="res://Other Folders/Mods/VIVIAN/ViviaPlace.wav"
+dest_files=["res://.godot/imported/ViviaPlace.wav-b501bce4c075c62c2fdb7a5d44f5244a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

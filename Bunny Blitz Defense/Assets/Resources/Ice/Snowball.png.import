@@ -3,26 +3,28 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://daykmlmr3t6tv"
-path="res://.godot/imported/Snowball.png-43a9ae7013e3fdc64233fdb2091c1573.ctex"
+path.s3tc="res://.godot/imported/Snowball.png-43a9ae7013e3fdc64233fdb2091c1573.s3tc.ctex"
+path.etc2="res://.godot/imported/Snowball.png-43a9ae7013e3fdc64233fdb2091c1573.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Resources/Ice/Snowball.png"
-dest_files=["res://.godot/imported/Snowball.png-43a9ae7013e3fdc64233fdb2091c1573.ctex"]
+dest_files=["res://.godot/imported/Snowball.png-43a9ae7013e3fdc64233fdb2091c1573.s3tc.ctex", "res://.godot/imported/Snowball.png-43a9ae7013e3fdc64233fdb2091c1573.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

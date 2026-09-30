@@ -3,26 +3,28 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p6osgmcld57p"
-path="res://.godot/imported/CircuitBoard.png-1228a8ee81f09e5a8e209b56ac1d2fd1.ctex"
+path.s3tc="res://.godot/imported/CircuitBoard.png-1228a8ee81f09e5a8e209b56ac1d2fd1.s3tc.ctex"
+path.etc2="res://.godot/imported/CircuitBoard.png-1228a8ee81f09e5a8e209b56ac1d2fd1.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Resources/NeoCity/CircuitBoard.png"
-dest_files=["res://.godot/imported/CircuitBoard.png-1228a8ee81f09e5a8e209b56ac1d2fd1.ctex"]
+dest_files=["res://.godot/imported/CircuitBoard.png-1228a8ee81f09e5a8e209b56ac1d2fd1.s3tc.ctex", "res://.godot/imported/CircuitBoard.png-1228a8ee81f09e5a8e209b56ac1d2fd1.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

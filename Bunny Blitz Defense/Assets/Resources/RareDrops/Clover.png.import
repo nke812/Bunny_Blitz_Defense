@@ -3,26 +3,28 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://duf6my25s2q6e"
-path="res://.godot/imported/Clover.png-e45fb69e2b811da19d107385d70cd10d.ctex"
+path.s3tc="res://.godot/imported/Clover.png-e45fb69e2b811da19d107385d70cd10d.s3tc.ctex"
+path.etc2="res://.godot/imported/Clover.png-e45fb69e2b811da19d107385d70cd10d.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Resources/RareDrops/Clover.png"
-dest_files=["res://.godot/imported/Clover.png-e45fb69e2b811da19d107385d70cd10d.ctex"]
+dest_files=["res://.godot/imported/Clover.png-e45fb69e2b811da19d107385d70cd10d.s3tc.ctex", "res://.godot/imported/Clover.png-e45fb69e2b811da19d107385d70cd10d.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

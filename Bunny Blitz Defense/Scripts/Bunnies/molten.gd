@@ -1,0 +1,290 @@
+extends Node2D
+
+@onready var Molten = $Pega/Node2D/Molten
+
+var valor_torre = 1270
+
+var MysticalBuff = false
+var posicionado = false
+
+var mostrar_range = false
+var pronto_para_atacar = false
+
+var dmg_Molten = 1
+
+var focus = false
+
+var path1 = 0
+var path2 = 0
+var preços_p1 = [1400, 2600, 7450, 10450]
+var preços_p2 = [550, 1500, 6500, 12450]
+
+var P1status = "Damage: " + str(dmg_Molten)
+var P2status = "ATK Speed: 0.2s"
+var BuffStatus1 = "DMG: +0"
+var BuffStatus2 = "Range: 1.0"
+
+var a_atacar = false # Controlo do estado visual de ataque
+
+func _ready() -> void:
+    # Certifica-te que o Timer tem um tempo reduzido (ex.: 0.1s para ticks contínuos)
+    if $Timer.wait_time > 0.2:
+        $Timer.wait_time = 0.1
+
+func _process(delta: float) -> void: 
+
+    if focus:
+        $ArrowDps.visible = true
+    else:
+        $ArrowDps.visible = false
+
+    if $Timer.is_stopped():
+        pronto_para_atacar = true
+
+    if pronto_para_atacar:
+        verificar_e_atacar()
+
+func verificar_e_atacar():
+    var corpos = $Range.get_overlapping_bodies()
+    var inimigos_na_area: Array = []
+    
+    for corpo in corpos:
+        if corpo.is_in_group("Ghostlings"):
+            inimigos_na_area.append(corpo)
+        break
+
+    if inimigos_na_area.size() > 0:
+        # Transição de estado: se não estava a atacar, inicia a animação de ataque
+        if not a_atacar:
+            a_atacar = true
+            if $Pega/Node2D/Molten/MoltenAttack.has_animation("MoltenAttack"):
+                $Pega/Node2D/Molten/MoltenAttack.play("MoltenAttack")
+        
+        # Aplica dano contínuo a todos os inimigos dentro do alcance (ou foca no primeiro)
+        for inimigo in inimigos_na_area:
+            if inimigo.has_method("DMGED"):
+                inimigo.DMGED(dmg_Molten)
+                
+        # Reinicia o timer para o próximo "tick" de dano
+        pronto_para_atacar = false
+        $Timer.start()
+        
+        # Animação em loop/idle durante o ataque
+        if not $Pega/Node2D/Molten/MoltenAttackIdle.is_playing():
+            $Pega/Node2D/Molten/MoltenAttackIdle.play("MoltenAttackIdle")
+            
+    else:
+        if a_atacar:
+            a_atacar = false
+            $Pega/Node2D/Molten/MoltenAttackIdle.stop()
+            $Pega/Node2D/Molten/MoltenAttack.play_backwards("MoltenAttack")
+
+#func receber_buff_mystical(nivel_mystical):
+    #if posicionado and MysticalBuff == true:
+        #var dmg_buff = 0
+        #var scale_buff = Vector2(1.0, 1.0) 
+    #
+        #match nivel_mystical:
+            #0: 
+                #dmg_buff = 1
+                #scale_buff = Vector2(1.1, 1.1)
+            #1: 
+                #dmg_buff = 2
+                #scale_buff = Vector2(1.2, 1.2)
+            #2: 
+                #dmg_buff = 3
+                #scale_buff = Vector2(1.3, 1.3)
+            #3: 
+                #dmg_buff = 4
+                #scale_buff = Vector2(1.4, 1.4)
+            #4: 
+                #dmg_buff = 5
+                #scale_buff = Vector2(1.5, 1.5)
+#
+#
+        #if dmg_buff > dmg_Mystical:
+                #dmg_Mystical = dmg_buff
+                #$Range/CollisionRange.scale = scale_buff
+        #else:
+            #dmg_Mystical = 0
+            #$Range/CollisionRange.scale = Vector2(1.0, 1.0)
+    #
+        #dmg_total = dmg_Rookie + dmg_Mystical
+        #P1status = "Damage: " + str(dmg_total)
+        #
+    #
+        #var hud = get_tree().get_first_node_in_group("HUD")
+        #if hud and focus:
+            #BuffStatus1 = "Dmg: +" + str(dmg_Mystical) 
+            #hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
+            #
+            #BuffStatus2 = "Range: " + str(snapped($Range/CollisionRange.scale.x, 0.1))
+            #hud.get_node("HUD_Shop/BuffStatus/Buff4").text = str(BuffStatus2)
+            #hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
+#
+#func remover_buff_mystical():
+    #dmg_Mystical = 0
+    #MysticalBuff = false
+    #$Range/CollisionRange.scale = Vector2(1.0, 1.0)
+    #P1status = "Damage: " + str(dmg_total)
+    #
+    #var hud = get_tree().get_first_node_in_group("HUD")
+    #if hud and focus:
+        #hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
+        #hud.get_node("HUD_Shop/BuffStatus").visible = false
+        
+func _draw() -> void:
+    if mostrar_range:
+        # Garante que aponta para o nó correto na Molten
+        var col_node = $Pega/Range/CollisionRange if has_node("Pega/Range/CollisionRange") else $Range/CollisionRange
+        var shape = col_node.shape
+        
+        if shape is CapsuleShape2D:
+            # Aplica a transformação exata do CollisionRange em relação à raiz
+            draw_set_transform_matrix(global_transform.affine_inverse() * col_node.global_transform)
+            
+            var raio = shape.radius
+            var altura = shape.height
+            var cor = Color(0.46, 0.46, 0.46, 0.443)
+            
+            var dist_centros = max(0.0, (altura / 2.0) - raio)
+            
+            # Círculo superior, inferior e retângulo central
+            draw_circle(Vector2(0, -dist_centros), raio, cor)
+            draw_circle(Vector2(0, dist_centros), raio, cor)
+            if dist_centros > 0:
+                draw_rect(Rect2(Vector2(-raio, -dist_centros), Vector2(raio * 2.0, dist_centros * 2.0)), cor)
+
+func _on_button_mouse_entered() -> void :
+    mostrar_range = true
+    queue_redraw()
+
+func _on_button_mouse_exited() -> void :
+    mostrar_range = false
+    queue_redraw()
+
+func reset_focus():
+    focus = false
+
+func _on_button_button_down() -> void:
+    get_tree().call_group("Bunnies", "reset_focus")
+    
+    focus = true
+    
+    var hud = get_tree().get_first_node_in_group("HUD")
+    hud.get_node("HUD_Shop/BuffStatus").visible = false
+    if hud:
+        hud.abrir_menu_upgrade(self)
+        
+        P1status = "Damage: " + str(dmg_Molten)
+        hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
+        hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
+        
+        hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
+        hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        
+        hud.get_node("HUD_Shop/HudBgDown/BunnySel").texture = load("res://Assets/Bunnies/Molten.png")
+        atualizar_valorTorre()
+        hud.get_node("HUD_Shop/HudBgDown/ExitShop").disabled = false
+        
+        #if MysticalBuff == true:
+            #BuffStatus1 = "Dmg: +" + str(dmg_Mystical)
+            #BuffStatus2 = "Range: " + str(snapped($Range/CollisionRange.scale.x, 0.1))
+            #hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
+            #hud.get_node("HUD_Shop/BuffStatus/Buff4").text = str(BuffStatus2)
+            #hud.get_node("HUD_Shop/BuffStatus").visible = true
+        
+        hud.get_node("HUD_Shop/Shop_Appear").play("Shop_Appear")
+    
+
+func aplicar_upgrade(caminho):
+    var hud = get_tree().get_first_node_in_group("HUD")
+    var label_moedas = hud.get_node("Moedas")
+
+    var dinheiro_atual = int(label_moedas.text)
+
+    var lista_precos = preços_p1 if caminho == 1 else preços_p2
+    var nivel_atual = path1 if caminho == 1 else path2
+
+    if nivel_atual >= lista_precos.size(): return false
+
+    var custo = lista_precos[nivel_atual]
+
+    if dinheiro_atual >= custo:
+        dinheiro_atual -= custo
+        
+        label_moedas.text = str(dinheiro_atual)
+        
+        if caminho == 1:
+            path1 += 1
+            match path1:
+                1: 
+                    dmg_Molten = 2
+                    valor_torre += 1400
+                2: 
+                    dmg_Molten = 2.7
+                    valor_torre += 2600
+                3: 
+                    dmg_Molten = 3.4
+                    valor_torre += 7450
+                4: 
+                    dmg_Molten = 4.3
+                    valor_torre += 10450
+                    auraMAISego()
+                    
+                    Molten.texture = load("res://Assets/Bunnies/Paths/Molten01.png")
+            
+            atualizar_valorTorre()
+            P1status = "Damage: " + str(dmg_Molten)
+            hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
+                
+        else:
+            path2 += 1
+            match path2:
+                1: 
+                    $Timer.wait_time = 0.1
+                    valor_torre += 550
+                2: 
+                    $Timer.wait_time = 0.08
+                    valor_torre += 1500       
+                3:
+                    $Timer.wait_time = 0.05
+                    valor_torre += 6500
+                4: 
+                    $Timer.wait_time = 0.01
+                    valor_torre += 12450
+                    auraMAISego()
+                    
+                    Molten.texture = load("res://Assets/Bunnies/Paths/Molten02.png")
+                        
+            atualizar_valorTorre()            
+            P2status = "ATK Speed: " + str($Timer.wait_time) + "s"
+            hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
+            
+        return true 
+    return false 
+    
+func auraMAISego():
+    Molten.modulate = Color(1, 1, 1)
+    $AURA.play("default")
+    
+    var tween = create_tween()
+
+    tween.tween_property(Molten, "modulate", Color(2, 2, 2, 1), 0.3)
+ 
+    tween.tween_property(Molten, "modulate", Color(1, 1, 1, 1), 0.4)
+
+func atualizar_valorTorre():
+    var hud = get_tree().get_first_node_in_group("HUD")
+    var valor_torre_60 : int = int(valor_torre * 0.6)
+    
+    hud.get_node("HUD_Shop/HudBgDown/Control/PanelSell/precoSell").text = str(valor_torre_60)
+
+func vender_torre():
+    var moedas = get_tree().current_scene.find_child("Moedas")
+    var valor_atual = int(moedas.text)
+    var valor_torre_60 : int = int(valor_torre * 0.6)
+    
+    moedas.text = str(valor_atual + valor_torre_60)
+    
+    queue_free()

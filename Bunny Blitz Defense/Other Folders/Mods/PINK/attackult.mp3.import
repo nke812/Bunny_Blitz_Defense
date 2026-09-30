@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://rv654ojua5kj"
+path="res://.godot/imported/attackult.mp3-b8e640f0dcea8492e33e5f7870a096c8.mp3str"
+
+[deps]
+
+source_file="res://Other Folders/Mods/PINK/attackult.mp3"
+dest_files=["res://.godot/imported/attackult.mp3-b8e640f0dcea8492e33e5f7870a096c8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

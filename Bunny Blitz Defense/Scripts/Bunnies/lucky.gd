@@ -158,6 +158,11 @@ func _on_button_button_down() -> void:
         
         hud.get_node("HUD_Shop/HudBgDown/BunnySel").texture = load("res://Assets/Bunnies/Lucky.png")
         atualizar_valorTorre()
+        
+        if !SaveManager.ZeRonUnlocked:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        
         hud.get_node("HUD_Shop/HudBgDown/ExitShop").disabled = false
         hud.get_node("HUD_Shop/Shop_Appear").play("Shop_Appear")
         

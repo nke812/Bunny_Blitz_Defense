@@ -1,5 +1,8 @@
 [gd_resource type="AudioBusLayout" format=3 uid="uid://nmgfdd07x3mb"]
 
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_esc51"]
+resource_name = "Reverb"
+
 [resource]
 bus/0/volume_db = -0.09049988
 bus/1/name = &"Music"
@@ -14,3 +17,5 @@ bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = 0.002822876
 bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectReverb_esc51")
+bus/2/effect/0/enabled = false
