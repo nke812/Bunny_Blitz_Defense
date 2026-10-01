@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcxeej5p3dcq4"
+path="res://.godot/imported/Cutie Mew Mew Magic lyrics.mp3-ac019a20e90c4d77ace034effac2ecca.mp3str"
+
+[deps]
+
+source_file="res://mods/PINK/Cutie Mew Mew Magic lyrics.mp3"
+dest_files=["res://.godot/imported/Cutie Mew Mew Magic lyrics.mp3-ac019a20e90c4d77ace034effac2ecca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

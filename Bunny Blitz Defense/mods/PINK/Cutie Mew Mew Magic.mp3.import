@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://exhx4w8jn0br"
+path="res://.godot/imported/Cutie Mew Mew Magic.mp3-b7203442cdd50bbbe55fb432dfcaa55b.mp3str"
+
+[deps]
+
+source_file="res://mods/PINK/Cutie Mew Mew Magic.mp3"
+dest_files=["res://.godot/imported/Cutie Mew Mew Magic.mp3-b7203442cdd50bbbe55fb432dfcaa55b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
