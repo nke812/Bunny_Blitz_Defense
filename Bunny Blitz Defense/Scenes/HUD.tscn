@@ -1,109 +1,108 @@
 [gd_scene format=3 uid="uid://cvtf3eidvbt76"]
 
 [ext_resource type="Script" uid="uid://bpsbggr0grq8c" path="res://Scripts/HUD/hud.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cb4pfppxxwtyc" path="res://Assets/Others/UI_Assets/Settings.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://dlow6mv1dvgqf" path="res://Assets/Others/UI_Assets/SettingsScreen.png" id="3_yrvoj"]
+[ext_resource type="Texture2D" uid="uid://bld7jqx8663js" path="res://Assets/Others/UI_Assets/Settings.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://16ynn2y52cj5" path="res://Assets/Others/UI_Assets/SettingsScreen.png" id="3_yrvoj"]
 [ext_resource type="FontFile" uid="uid://v56c1vt506yg" path="res://FontText/Coiny-Regular.ttf" id="4"]
-[ext_resource type="Texture2D" uid="uid://cxmunh01dip1y" path="res://Assets/Others/UI_Assets/ExitBTN.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://trv47mvlrm3l" path="res://Assets/Others/UI_Assets/XBTN.png" id="6"]
-[ext_resource type="Texture2D" uid="uid://bk12sm2paanou" path="res://Assets/Others/UI_Assets/ExitBTNPressed.png" id="6_e0yge"]
+[ext_resource type="Texture2D" uid="uid://1gd5ejyx7v57" path="res://Assets/Others/UI_Assets/ExitBTN.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bns6tfq1midk4" path="res://Assets/Others/UI_Assets/XBTN.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://clbptdqjpsuls" path="res://Assets/Others/UI_Assets/ExitBTNPressed.png" id="6_e0yge"]
 [ext_resource type="Script" uid="uid://dd7n0bwv0j1ap" path="res://Scripts/music_control.gd" id="7"]
 [ext_resource type="Script" uid="uid://cdcnh7mikbgwk" path="res://Scripts/fullscreen_cb.gd" id="8"]
-[ext_resource type="Texture2D" uid="uid://bpxjfumwy5l05" path="res://Assets/Others/UI_Assets/XBTNPressed.png" id="8_iivpx"]
+[ext_resource type="Texture2D" uid="uid://cuxgv4rfpmye2" path="res://Assets/Others/UI_Assets/XBTNPressed.png" id="8_iivpx"]
 [ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="9"]
 [ext_resource type="Script" uid="uid://bgpptnikuhqpt" path="res://Scripts/HUD/vidas.gd" id="10"]
-[ext_resource type="Texture2D" uid="uid://bhla3u2n10pag" path="res://Assets/Others/HUD_Assets/BunnyCoin.png" id="10_awmb6"]
-[ext_resource type="Texture2D" uid="uid://xni113mjidgh" path="res://Assets/Others/UI_Assets/Music.png" id="10_w3j15"]
-[ext_resource type="Texture2D" uid="uid://d0vy86gmf7dvv" path="res://Assets/Others/UI_Assets/Heart01.png" id="11"]
-[ext_resource type="Texture2D" uid="uid://dm2c8fmqvmfmb" path="res://Assets/Others/UI_Assets/Audio.png" id="11_1fefx"]
-[ext_resource type="AudioStream" uid="uid://dmpubcec8uog3" path="res://Assets/SFXs/LuckyMoney.wav" id="11_awmb6"]
-[ext_resource type="Texture2D" uid="uid://dxjcr53dpiljr" path="res://Assets/Enemies/Bosses/Leviathan.png" id="11_rkb15"]
-[ext_resource type="Texture2D" uid="uid://d4lai0hf06gny" path="res://Assets/Others/UI_Assets/Heart02.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://px1lxdelyre3" path="res://Assets/Others/HUD_Assets/BunnyCoin.png" id="10_awmb6"]
+[ext_resource type="Texture2D" uid="uid://c4avdvr56bpjr" path="res://Assets/Others/UI_Assets/Music.png" id="10_w3j15"]
+[ext_resource type="Texture2D" uid="uid://uwre5jgatsmn" path="res://Assets/Others/UI_Assets/Heart01.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://df0nwaubm15un" path="res://Assets/Others/UI_Assets/Audio.png" id="11_1fefx"]
+[ext_resource type="AudioStream" uid="uid://cpav3s13f0ftu" path="res://Assets/Audio/SFXs/LuckyMoney.wav" id="11_awmb6"]
+[ext_resource type="Texture2D" uid="uid://ndonadedtmjb" path="res://Assets/Enemies/Bosses/Leviathan.png" id="11_rkb15"]
+[ext_resource type="Texture2D" uid="uid://dbx5ncjb4ippc" path="res://Assets/Others/UI_Assets/Heart02.png" id="12"]
 [ext_resource type="Script" uid="uid://bhib51smh7pvo" path="res://Scripts/HUD/hud_buff_status.gd" id="12_h7oxq"]
-[ext_resource type="Texture2D" uid="uid://bygxg3ivks25i" path="res://Assets/Others/UI_Assets/Carrot.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bb5bi2x4cxkjv" path="res://Assets/Others/UI_Assets/Carrot.png" id="13"]
 [ext_resource type="Script" uid="uid://cht6cv0atxuhh" path="res://Scripts/HUD/moedas.gd" id="14"]
-[ext_resource type="AudioStream" uid="uid://cjdb7qigpeqqn" path="res://Assets/SFXs/Upgrade.wav" id="14_rywlk"]
-[ext_resource type="Texture2D" uid="uid://v5cqqbouu0o4" path="res://Assets/Others/HUD_Assets/EventSign.png" id="15"]
+[ext_resource type="AudioStream" uid="uid://24smv4663iee" path="res://Assets/Audio/SFXs/Upgrade.wav" id="14_rywlk"]
+[ext_resource type="Texture2D" uid="uid://bhwvcp83bl65a" path="res://Assets/Others/HUD_Assets/EventSign.png" id="15"]
 [ext_resource type="Script" uid="uid://b51nkp55iw5n2" path="res://Scripts/HUD/hud_shop.gd" id="16"]
-[ext_resource type="Texture2D" uid="uid://dae14h81gcb60" path="res://Assets/Others/HUD_Assets/HUD_BG_Down.png" id="17"]
-[ext_resource type="Texture2D" uid="uid://bqicbvmhk6k53" path="res://Assets/Others/UI_Assets/AmmunitionIcon.png" id="17_1fefx"]
-[ext_resource type="Texture2D" uid="uid://vxkjonrw4twr" path="res://Assets/Others/HUD_Assets/HUD_ShopFrame.png" id="18"]
-[ext_resource type="Texture2D" uid="uid://462ieyr1y7lp" path="res://Assets/Others/HUD_Assets/HUD_BG_Right.png" id="19"]
-[ext_resource type="Texture2D" uid="uid://cuyu8s674k2iq" path="res://Assets/Others/UI_Assets/SellButton.png" id="19_1fefx"]
-[ext_resource type="AudioStream" uid="uid://di45cl2j45a5e" path="res://Assets/SFXs/Sell.wav" id="19_dr5ga"]
-[ext_resource type="Texture2D" uid="uid://dhgypn83cpoo0" path="res://Assets/Others/HUD_Assets/HUD_SelectionFrame.png" id="20"]
-[ext_resource type="Texture2D" uid="uid://spg0ledfpuqm" path="res://Assets/Others/HUD_Assets/Skin.png" id="20_4hkqd"]
+[ext_resource type="Texture2D" uid="uid://drcrxcrlbvmda" path="res://Assets/Others/HUD_Assets/HUD_BG_Down.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://ccn4vsek1yhyq" path="res://Assets/Others/UI_Assets/AmmunitionIcon.png" id="17_1fefx"]
+[ext_resource type="Texture2D" uid="uid://bt4rird5x2ab1" path="res://Assets/Others/HUD_Assets/HUD_ShopFrame.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cnkv5ew84ohau" path="res://Assets/Others/HUD_Assets/HUD_BG_Right.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://cnj8olju5x04o" path="res://Assets/Others/UI_Assets/SellButton.png" id="19_1fefx"]
+[ext_resource type="AudioStream" uid="uid://btls6dvphyfqg" path="res://Assets/Audio/SFXs/Sell.wav" id="19_dr5ga"]
+[ext_resource type="Texture2D" uid="uid://d1xkk7eegyec7" path="res://Assets/Others/HUD_Assets/HUD_SelectionFrame.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://djgbr153fg5uj" path="res://Assets/Others/HUD_Assets/Skin.png" id="20_4hkqd"]
 [ext_resource type="Script" uid="uid://dynewn01di37k" path="res://Scripts/HUD/UI_Bunnies.gd" id="21"]
-[ext_resource type="Texture2D" uid="uid://dmlbdbiu8orcq" path="res://Assets/Others/HUD_Assets/LockedUpgrade.png" id="21_iivpx"]
-[ext_resource type="Texture2D" uid="uid://c1g3b3bj28cru" path="res://Assets/Others/HUD_Assets/BunnyBoxDPS.png" id="22"]
-[ext_resource type="Texture2D" uid="uid://ctyitenhvwroj" path="res://Assets/Others/HUD_Assets/BunnyBox.png" id="23"]
-[ext_resource type="AudioStream" uid="uid://bgxsml3ij4qvy" path="res://Assets/SFXs/TowerPlace.wav" id="23_ynwmi"]
-[ext_resource type="Texture2D" uid="uid://diuywq2dtwx2a" path="res://Assets/Bunnies/Rookie.png" id="24"]
-[ext_resource type="Texture2D" uid="uid://dljxeldcr3hpb" path="res://Assets/Bunnies/RookieDisable.png" id="25"]
-[ext_resource type="Texture2D" uid="uid://dky88yfaa0uyc" path="res://Assets/Others/HUD_Assets/PriceTag.png" id="26"]
-[ext_resource type="Texture2D" uid="uid://dhknf3htayuth" path="res://Assets/Bunnies/Slasher.png" id="27"]
-[ext_resource type="Texture2D" uid="uid://cjftcxqlclxp5" path="res://Assets/Bunnies/SlasherDisable.png" id="28"]
-[ext_resource type="Texture2D" uid="uid://dwfxjbfe3j4tf" path="res://Assets/Bunnies/Toasty.png" id="29"]
-[ext_resource type="Texture2D" uid="uid://nbm3nx6pc4li" path="res://Assets/Bunnies/ToastyDisable.png" id="30"]
-[ext_resource type="Texture2D" uid="uid://dsu8j18b12l3m" path="res://Assets/Others/HUD_Assets/Lock.png" id="31"]
-[ext_resource type="Texture2D" uid="uid://7dnpuvisq35a" path="res://Assets/Bunnies/Anarchist.png" id="32"]
-[ext_resource type="Texture2D" uid="uid://efuwa2251qfa" path="res://Assets/Bunnies/AnarchistDisable.png" id="33"]
-[ext_resource type="Texture2D" uid="uid://cuvmag11lm35y" path="res://Assets/Others/HUD_Assets/CorruptedBox.png" id="33_fprih"]
-[ext_resource type="Texture2D" uid="uid://c65cppgvhkoah" path="res://Assets/Others/HUD_Assets/BunnyBoxStun.png" id="34"]
-[ext_resource type="Texture2D" uid="uid://cpfc2t5ivh0bh" path="res://Assets/Others/HUD_Assets/CorruptedBoxDisable.png" id="34_30aiu"]
-[ext_resource type="Texture2D" uid="uid://ca483pwed2uya" path="res://Assets/Bunnies/Gooey.png" id="35"]
-[ext_resource type="Texture2D" uid="uid://k547ht6f7m5r" path="res://Assets/Bunnies/Corrupted.png" id="35_hm7q8"]
-[ext_resource type="Texture2D" uid="uid://ch7sdj5is3vxp" path="res://Assets/Bunnies/GooeyDisable.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://dgsi34sd3l3j4" path="res://Assets/Others/HUD_Assets/LockedUpgrade.png" id="21_iivpx"]
+[ext_resource type="Texture2D" uid="uid://cbwcitmw4hd63" path="res://Assets/Others/HUD_Assets/BunnyBoxDPS.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://dh6m6vko3ia0w" path="res://Assets/Others/HUD_Assets/BunnyBox.png" id="23"]
+[ext_resource type="AudioStream" uid="uid://cygqh4uq4bnbs" path="res://Assets/Audio/SFXs/TowerPlace.wav" id="23_ynwmi"]
+[ext_resource type="Texture2D" uid="uid://dg1fp37nsnavg" path="res://Assets/Bunnies/Rookie.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://dd00lukrvxdwu" path="res://Assets/Bunnies/RookieDisable.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://dtajb4p3mhe3n" path="res://Assets/Others/HUD_Assets/PriceTag.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://l1nik252jb2k" path="res://Assets/Bunnies/Slasher.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://66eqbhn55ufj" path="res://Assets/Bunnies/SlasherDisable.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://dv5ex6kmcnmxc" path="res://Assets/Bunnies/Toasty.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cp426oijniu05" path="res://Assets/Bunnies/ToastyDisable.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://buyjci5s0ybgx" path="res://Assets/Others/HUD_Assets/Lock.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://ds2ayi74lydoh" path="res://Assets/Bunnies/Anarchist.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://b71ynm4c74rs1" path="res://Assets/Bunnies/AnarchistDisable.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://bdwecfyw3rrtd" path="res://Assets/Others/HUD_Assets/CorruptedBox.png" id="33_fprih"]
+[ext_resource type="Texture2D" uid="uid://c81rhmpi48b55" path="res://Assets/Others/HUD_Assets/BunnyBoxStun.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://drvwtgerv31o1" path="res://Assets/Others/HUD_Assets/CorruptedBoxDisable.png" id="34_30aiu"]
+[ext_resource type="Texture2D" uid="uid://bo0dqdm3oosrg" path="res://Assets/Bunnies/Gooey.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://c57wm3gxf5xug" path="res://Assets/Bunnies/Corrupted.png" id="35_hm7q8"]
+[ext_resource type="Texture2D" uid="uid://cdkty47vjkvkk" path="res://Assets/Bunnies/GooeyDisable.png" id="36"]
 [ext_resource type="Texture2D" uid="uid://bcnene0j40p5" path="res://Assets/Bunnies/CorruptedDisable.png" id="36_kxyc5"]
-[ext_resource type="Texture2D" uid="uid://dmfwaotuoifff" path="res://Assets/Bunnies/Scrappy.png" id="37"]
-[ext_resource type="Texture2D" uid="uid://dkpsu2ymf1rbd" path="res://Assets/Bunnies/ScrappyDisable.png" id="38"]
-[ext_resource type="Texture2D" uid="uid://bwr6u0niwo2hx" path="res://Assets/Bunnies/Ghoulish.png" id="39"]
-[ext_resource type="Texture2D" uid="uid://1wfh33gi3nya" path="res://Assets/Bunnies/GhoulishDisable.png" id="40"]
-[ext_resource type="Texture2D" uid="uid://kk1g13qt3yot" path="res://Assets/Others/HUD_Assets/BunnyBoxSupport.png" id="41"]
-[ext_resource type="Texture2D" uid="uid://bw3gf8wg7hwn0" path="res://Assets/Bunnies/Lucky.png" id="42"]
-[ext_resource type="Texture2D" uid="uid://bj3l82oui25og" path="res://Assets/Bunnies/LuckyDisable.png" id="43"]
-[ext_resource type="Texture2D" uid="uid://cj3vqm1dpt74k" path="res://Assets/Bunnies/Molten.png" id="43_awmb6"]
-[ext_resource type="Texture2D" uid="uid://c3abgvg8alws7" path="res://Assets/Bunnies/Alien.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://dmy8bgn0hx70q" path="res://Assets/Bunnies/Scrappy.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://cnaupki6kbvy0" path="res://Assets/Bunnies/ScrappyDisable.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://cmrc4lcujogv5" path="res://Assets/Bunnies/Ghoulish.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://bc3sukwba28nk" path="res://Assets/Bunnies/GhoulishDisable.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://cax1ddrv84jce" path="res://Assets/Others/HUD_Assets/BunnyBoxSupport.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://d2eeu8cikq1ks" path="res://Assets/Bunnies/Lucky.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://itolqryqd8hq" path="res://Assets/Bunnies/LuckyDisable.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://djdhfyntjvyp" path="res://Assets/Bunnies/Molten.png" id="43_awmb6"]
+[ext_resource type="Texture2D" uid="uid://d0xmgkie4ovsp" path="res://Assets/Bunnies/Alien.png" id="44"]
 [ext_resource type="Texture2D" uid="uid://brw0w31asglee" path="res://Assets/Bunnies/MoltenDisable.png" id="44_3upol"]
-[ext_resource type="Texture2D" uid="uid://bb3lucdtipoh3" path="res://Assets/Bunnies/AlienDisable.png" id="45"]
-[ext_resource type="Texture2D" uid="uid://b4f81ngh84xns" path="res://Assets/Bunnies/Mystical.png" id="46"]
-[ext_resource type="Texture2D" uid="uid://bi1v8dc7c16vq" path="res://Assets/Bunnies/MysticalDisable.png" id="47"]
-[ext_resource type="Texture2D" uid="uid://ddkefcr0b17gg" path="res://Assets/Others/HUD_Assets/StartBTN.png" id="50_q3bjx"]
-[ext_resource type="Texture2D" uid="uid://cnweqxal6ed8" path="res://Assets/Bunnies/Voodo.png" id="51_hm7q8"]
-[ext_resource type="Texture2D" uid="uid://cbwlvkux1et17" path="res://Assets/Others/HUD_Assets/RepeatBTN.png" id="52_iqxei"]
-[ext_resource type="Texture2D" uid="uid://bta1gp5raooex" path="res://Assets/Bunnies/VoodoDisable.png" id="52_kxyc5"]
-[ext_resource type="Texture2D" uid="uid://blgrbhb1doycn" path="res://Assets/Others/HUD_Assets/StartBTNPressed.png" id="53_dsgg8"]
-[ext_resource type="Texture2D" uid="uid://bv0am4xdoofrn" path="res://Assets/Bunnies/Doll.png" id="54_2h8cp"]
+[ext_resource type="Texture2D" uid="uid://b4a3lk0vnnn2d" path="res://Assets/Bunnies/AlienDisable.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://b6h7n0ofp3m3k" path="res://Assets/Bunnies/Mystical.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://d20h8qqw8tico" path="res://Assets/Bunnies/MysticalDisable.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://p4rc00jj7mw8" path="res://Assets/Others/HUD_Assets/StartBTN.png" id="50_q3bjx"]
+[ext_resource type="Texture2D" uid="uid://dtiwxagbuucic" path="res://Assets/Bunnies/Voodo.png" id="51_hm7q8"]
+[ext_resource type="Texture2D" uid="uid://8cbhpslf64q4" path="res://Assets/Others/HUD_Assets/RepeatBTN.png" id="52_iqxei"]
+[ext_resource type="Texture2D" uid="uid://q7o8h88ennf5" path="res://Assets/Bunnies/VoodoDisable.png" id="52_kxyc5"]
+[ext_resource type="Texture2D" uid="uid://2b174rv44sof" path="res://Assets/Others/HUD_Assets/StartBTNPressed.png" id="53_dsgg8"]
+[ext_resource type="Texture2D" uid="uid://mw77jmtsk8ph" path="res://Assets/Bunnies/Doll.png" id="54_2h8cp"]
 [ext_resource type="Texture2D" uid="uid://6ldh0xbhbptm" path="res://Assets/Bunnies/DollDisable.png" id="55_1wvx7"]
-[ext_resource type="Texture2D" uid="uid://bcpm0c0r2ugqw" path="res://Assets/Others/HUD_Assets/RepeatBTNPressed.png" id="55_jjmk5"]
-[ext_resource type="Texture2D" uid="uid://f7t2u23fe6vo" path="res://Assets/Others/HUD_Assets/ExtraSpeedBTN.png" id="56_h0ww3"]
-[ext_resource type="Texture2D" uid="uid://cijlhaqtv3cbb" path="res://Assets/Others/HUD_Assets/ExtraSpeedBTNPressed.png" id="57_hl3i6"]
-[ext_resource type="Texture2D" uid="uid://bt122i8epengs" path="res://Assets/Others/HUD_Assets/NormalSpeedBTN.png" id="58_087co"]
-[ext_resource type="Texture2D" uid="uid://jik7hcrr2chw" path="res://Assets/Others/HUD_Assets/NormalSpeedBTNPressed.png" id="59_ag3a8"]
-[ext_resource type="Texture2D" uid="uid://c1btd5nru5ld8" path="res://Assets/Others/HUD_Assets/AutoplayOFF.png" id="63_5r81r"]
-[ext_resource type="Texture2D" uid="uid://dajarfqem07qp" path="res://Assets/Others/UI_Assets/GameOverScreen.png" id="67_jh456"]
-[ext_resource type="AudioStream" uid="uid://brjj841aeq5se" path="res://Assets/SFXs/Victory.wav" id="70_h7oxq"]
-[ext_resource type="AudioStream" uid="uid://b4vqgn5pnsxoo" path="res://Assets/SFXs/GameOver.wav" id="70_rkb15"]
-[ext_resource type="Texture2D" uid="uid://cedo6utiaw60" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="70_umgxi"]
-[ext_resource type="StyleBox" uid="uid://c780cu0wjs70y" path="res://Others/new_style_box_flat.tres" id="72_k3q0p"]
+[ext_resource type="Texture2D" uid="uid://ccq736ynkbcyg" path="res://Assets/Others/HUD_Assets/RepeatBTNPressed.png" id="55_jjmk5"]
+[ext_resource type="Texture2D" uid="uid://cokmst0tqhkab" path="res://Assets/Others/HUD_Assets/ExtraSpeedBTN.png" id="56_h0ww3"]
+[ext_resource type="Texture2D" uid="uid://b32u6dyy08p8k" path="res://Assets/Others/HUD_Assets/ExtraSpeedBTNPressed.png" id="57_hl3i6"]
+[ext_resource type="Texture2D" uid="uid://bqktbw68775ov" path="res://Assets/Others/HUD_Assets/NormalSpeedBTN.png" id="58_087co"]
+[ext_resource type="Texture2D" uid="uid://ced7rf73gr58t" path="res://Assets/Others/HUD_Assets/NormalSpeedBTNPressed.png" id="59_ag3a8"]
+[ext_resource type="Texture2D" uid="uid://x77noharqllh" path="res://Assets/Others/HUD_Assets/AutoplayOFF.png" id="63_5r81r"]
+[ext_resource type="Texture2D" uid="uid://tcokjgxtjv1c" path="res://Assets/Others/UI_Assets/GameOverScreen.png" id="67_jh456"]
+[ext_resource type="AudioStream" uid="uid://d13t0spdulyhi" path="res://Assets/Audio/SFXs/Victory.wav" id="70_h7oxq"]
+[ext_resource type="Texture2D" uid="uid://ct1qsup7frlmj" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="70_umgxi"]
 [ext_resource type="StyleBox" uid="uid://dwu10cfsa422d" path="res://Others/new_style_box_flat2.tres" id="73_cgiap"]
 [ext_resource type="StyleBox" uid="uid://36cm41bhp6jn" path="res://Others/new_style_box_flat3.tres" id="74_ki85q"]
 [ext_resource type="Script" uid="uid://sgwgl2mldwee" path="res://Scripts/HUD/debug_menu.gd" id="80_k3q0p"]
-[ext_resource type="Texture2D" uid="uid://05ncle1fs2x3" path="res://Assets/Enemies/Bosses/Belzebu.png" id="81_hh4xi"]
-[ext_resource type="Texture2D" uid="uid://dn5t4vb6fik52" path="res://Assets/Others/Debug_Assets/DebugWarning.png" id="81_rignr"]
-[ext_resource type="Texture2D" uid="uid://dwdirgdi4666p" path="res://Assets/Enemies/Bosses/Fenrir.png" id="82_rignr"]
-[ext_resource type="Texture2D" uid="uid://cga0q0h1p7kdr" path="res://Assets/Enemies/Bosses/Lucifer.png" id="83_rvsbv"]
-[ext_resource type="Texture2D" uid="uid://c05ej7ee6147" path="res://Assets/Enemies/Ghostlings/Enhanced Ghoul.png" id="84_kq44m"]
-[ext_resource type="Texture2D" uid="uid://b150v8hgm7xxj" path="res://Assets/Enemies/Ghostlings/Brute.png" id="85_fprih"]
-[ext_resource type="Texture2D" uid="uid://b6gyw8ikn2rrb" path="res://Assets/Enemies/Ghostlings/Undead Ghostling.png" id="86_30aiu"]
-[ext_resource type="Texture2D" uid="uid://peicj2f1iw8b" path="res://Assets/Enemies/Ghostlings/Unholy Phantasm.png" id="87_hm7q8"]
-[ext_resource type="Texture2D" uid="uid://bg6qjkuandfwb" path="res://Assets/Enemies/Ghostlings/Ghostling.png" id="88_kxyc5"]
-[ext_resource type="Texture2D" uid="uid://caacynj4xfd51" path="res://Assets/Enemies/Ghostlings/Ghoul.png" id="89_v8eir"]
-[ext_resource type="Texture2D" uid="uid://drgcfy5rniced" path="res://Assets/Enemies/Ghostlings/Ghazt.png" id="90_awmb6"]
-[ext_resource type="Texture2D" uid="uid://dnpfk6l1itbih" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="91_3upol"]
-[ext_resource type="Texture2D" uid="uid://dbonrkgytqsl8" path="res://Assets/Enemies/Ghostlings/Enhanced Ghaztling.png" id="92_2h8cp"]
-[ext_resource type="Texture2D" uid="uid://ds385jmli2lqx" path="res://Assets/Enemies/Ghostlings/Ghazely.png" id="93_1wvx7"]
-[ext_resource type="Texture2D" uid="uid://dlaumiyhy47mr" path="res://Other Folders/Mods/COMMUNITY SKINS/Azazel.png" id="100_v8eir"]
+[ext_resource type="Texture2D" uid="uid://b2v01o7pdu13m" path="res://Assets/Enemies/Bosses/Belzebu.png" id="81_hh4xi"]
+[ext_resource type="Texture2D" uid="uid://dwgike3a52hyo" path="res://Assets/Others/Debug_Assets/DebugWarning.png" id="81_rignr"]
+[ext_resource type="Texture2D" uid="uid://djhfu0152qbcj" path="res://Assets/Enemies/Bosses/Fenrir.png" id="82_rignr"]
+[ext_resource type="Texture2D" uid="uid://dl3hcycxocq6f" path="res://Assets/Enemies/Bosses/Lucifer.png" id="83_rvsbv"]
+[ext_resource type="Texture2D" uid="uid://bgotolbjrxk34" path="res://Assets/Enemies/Ghostlings/Enhanced Ghoul.png" id="84_kq44m"]
+[ext_resource type="Texture2D" uid="uid://cf6icbyn8ojij" path="res://Assets/Enemies/Ghostlings/Brute.png" id="85_fprih"]
+[ext_resource type="Texture2D" uid="uid://cd7v0bevmebf1" path="res://Assets/Enemies/Ghostlings/Undead Ghostling.png" id="86_30aiu"]
+[ext_resource type="Texture2D" uid="uid://bvkxqysspb7hl" path="res://Assets/Enemies/Ghostlings/Unholy Phantasm.png" id="87_hm7q8"]
+[ext_resource type="AudioStream" uid="uid://32jinqhjkvj8" path="res://Assets/Audio/SFXs/GameOver.wav" id="87_v8eir"]
+[ext_resource type="Texture2D" uid="uid://c8f14wnhvw8si" path="res://Assets/Enemies/Ghostlings/Ghostling.png" id="88_kxyc5"]
+[ext_resource type="Texture2D" uid="uid://dpwe4nfq7ajbj" path="res://Assets/Enemies/Ghostlings/Ghoul.png" id="89_v8eir"]
+[ext_resource type="Texture2D" uid="uid://4txpkc1i7xpn" path="res://Assets/Enemies/Ghostlings/Ghazt.png" id="90_awmb6"]
+[ext_resource type="Texture2D" uid="uid://dxjiv7apt3p2e" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="91_3upol"]
+[ext_resource type="Texture2D" uid="uid://ce1jv1mox3odf" path="res://Assets/Enemies/Ghostlings/Enhanced Ghaztling.png" id="92_2h8cp"]
+[ext_resource type="Texture2D" uid="uid://bb481s6fcj8na" path="res://Assets/Enemies/Ghostlings/Ghazely.png" id="93_1wvx7"]
+[ext_resource type="Texture2D" uid="uid://b7wws2wvnfqn6" path="res://Assets/Enemies/Bosses/Azazel.png" id="100_v8eir"]
 
 [sub_resource type="Theme" id="Theme_c4wnb"]
 default_font = ExtResource("4")
@@ -798,7 +797,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.39, 0.39)]
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pimpp"]
@@ -862,7 +861,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.17902349),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(0.95, 0.95)]
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dr5ga"]
@@ -2392,14 +2391,58 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="VictoryAppear" type="AnimationPlayer" parent="HUD/UI_Selection/Victory" unique_id=81642443]
-libraries/ = SubResource("AnimationLibrary_pimpp")
-
 [node name="MenuSettings" type="Sprite2D" parent="HUD/UI_Selection/Victory" unique_id=493482756]
 modulate = Color(0.8862745, 0.8862745, 0.8862745, 1)
-position = Vector2(966.0001, 527.00006)
+position = Vector2(980.00006, 514.00006)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("3_yrvoj")
+
+[node name="VICTORY" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=1901669782]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -483.4759
+offset_top = -110.71188
+offset_right = -591.4759
+offset_bottom = 8.709198
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("9")
+theme_override_font_sizes/font_size = 107
+text = "VICTORY!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BunnyCoinsEarn" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=1469173054]
+offset_left = -223.99998
+offset_right = 14.000076
+offset_bottom = 106.0
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 48
+text = "You earn:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=736645048]
+offset_left = 23.83223
+offset_top = 30.471191
+offset_right = 221.83223
+offset_bottom = 83.47119
+theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.13725491, 1)
+theme_override_colors/font_shadow_color = Color(0.49411765, 0.28627452, 0.11764706, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 48
+text = "999"
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Victory/MenuSettings/Coins" unique_id=293787553]
+position = Vector2(147, 27)
+scale = Vector2(0.34074074, 0.34074074)
+texture = ExtResource("10_awmb6")
 
 [node name="Exit" type="Button" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=31817429]
 anchors_preset = 8
@@ -2407,63 +2450,23 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -571.1688
-offset_top = -281.55844
-offset_right = -164.67526
-offset_bottom = -181.35846
+offset_left = -875.1829
+offset_top = -279.48175
+offset_right = -199.18292
+offset_bottom = -144.7478
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 0.59832734, 0.36597556, 0.7490196)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.97512275, 0.4593264, 3.85046e-06, 0.7490196)
 theme_override_colors/font_hover_color = Color(1, 0.82651573, 0.73310596, 0.7490196)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9")
-theme_override_font_sizes/font_size = 48
-theme_override_styles/normal = ExtResource("72_k3q0p")
-theme_override_styles/pressed = ExtResource("73_cgiap")
-theme_override_styles/hover = ExtResource("74_ki85q")
+theme_override_font_sizes/font_size = 70
 text = "Back to Menu"
+flat = true
 
-[node name="Label" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=1901669782]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -431.16882
-offset_top = -144.15584
-offset_right = -645.1688
-offset_bottom = -24.734756
-grow_horizontal = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.4392157)
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 107
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ornx7")
-text = "VICTORY!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="BunnyCoinsEarn" type="Label" parent="HUD/UI_Selection/Victory" unique_id=1469173054]
-layout_mode = 0
-offset_left = 694.00006
-offset_top = 511.00006
-offset_right = 932.0001
-offset_bottom = 617.00006
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 48
-text = "You earn:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Coins" type="Label" parent="HUD/UI_Selection/Victory" unique_id=736645048]
-layout_mode = 0
-offset_left = 935.0001
-offset_top = 541.00006
-offset_right = 1133.0001
-offset_bottom = 594.00006
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 48
-text = "56"
-vertical_alignment = 1
+[node name="VictoryAppear" type="AnimationPlayer" parent="HUD/UI_Selection/Victory" unique_id=81642443]
+libraries/ = SubResource("AnimationLibrary_pimpp")
 
 [node name="VictorySFX" type="AudioStreamPlayer" parent="HUD/UI_Selection" unique_id=1913920607]
 stream = ExtResource("70_h7oxq")
@@ -2488,9 +2491,30 @@ size_flags_vertical = 4
 
 [node name="MenuSettings" type="Sprite2D" parent="HUD/UI_Selection/GameOver" unique_id=1923013459]
 modulate = Color(0.8862745, 0.8862745, 0.8862745, 1)
-position = Vector2(1000.0001, 494.00006)
+position = Vector2(983.0001, 545.00006)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("67_jh456")
+
+[node name="GAME OVER" type="Label" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1319169810]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -565.5199
+offset_top = -120.45369
+offset_right = -527.5199
+offset_bottom = 6.5463104
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.4392157)
+theme_override_constants/line_spacing = 26
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("9")
+theme_override_font_sizes/font_size = 106
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ornx7")
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Restart" type="Button" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1066697129]
 anchors_preset = 8
@@ -2498,20 +2522,50 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -853.5114
-offset_top = -651.37726
-offset_right = 17.108215
-offset_bottom = -377.15146
+offset_left = -800.3024
+offset_top = -401.17203
+offset_right = -77.35663
+offset_bottom = -217.9885
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9")
-theme_override_font_sizes/font_size = 153
+theme_override_font_sizes/font_size = 92
 theme_override_styles/pressed = ExtResource("73_cgiap")
 theme_override_styles/hover = ExtResource("74_ki85q")
 text = "RESTART"
 flat = true
+
+[node name="BunnyCoinsEarn" type="Label" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=537000512]
+offset_left = -393.00568
+offset_top = -18.374283
+offset_right = -155.00562
+offset_bottom = 87.62572
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 48
+text = "You earn:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1374115258]
+offset_left = -145.17346
+offset_top = 12.096909
+offset_right = 52.826538
+offset_bottom = 65.09691
+theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.13725491, 1)
+theme_override_colors/font_shadow_color = Color(0.49411765, 0.28627452, 0.11764706, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 48
+text = "999"
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/GameOver/MenuSettings/Coins" unique_id=640287520]
+position = Vector2(147, 27)
+scale = Vector2(0.34074074, 0.34074074)
+texture = ExtResource("10_awmb6")
 
 [node name="BackMenu" type="Button" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1345564730]
 anchors_preset = 8
@@ -2519,51 +2573,31 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -853.7725
-offset_top = -410.65875
-offset_right = 17.268799
-offset_bottom = -136.29968
+offset_left = -842.155
+offset_top = -266.42722
+offset_right = 13.633789
+offset_bottom = -100.023895
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.73, 0.73)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9")
-theme_override_font_sizes/font_size = 153
+theme_override_font_sizes/font_size = 102
 theme_override_styles/pressed = ExtResource("73_cgiap")
 theme_override_styles/hover = ExtResource("74_ki85q")
-text = "EXIT"
+text = "Back to Menu"
 flat = true
-
-[node name="Label" type="Label" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1319169810]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 22.754517
-offset_top = -471.85632
-offset_right = -527.2455
-offset_bottom = -344.85632
-grow_horizontal = 2
-rotation = 0.2572143
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.4392157)
-theme_override_constants/line_spacing = 26
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxEmpty_ornx7")
-text = "GAME
-OVER"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="GameOver_Appear" type="AnimationPlayer" parent="HUD/UI_Selection/GameOver" unique_id=318900475]
 libraries/ = SubResource("AnimationLibrary_dr5ga")
 
 [node name="GameOverSFX" type="AudioStreamPlayer" parent="HUD/UI_Selection" unique_id=1352006093]
-stream = ExtResource("70_rkb15")
+stream = ExtResource("87_v8eir")
 volume_db = -5.0
 bus = &"SFX"
 
 [node name="Debug Menu" type="Node2D" parent="." unique_id=557738769]
+visible = false
 script = ExtResource("80_k3q0p")
 
 [node name="Panel" type="Panel" parent="Debug Menu" unique_id=1416554692]
@@ -2688,39 +2722,6 @@ offset_top = 84.82999
 offset_right = 440.0
 offset_bottom = 130.82999
 text = "Set Round"
-
-[node name="LabelOthers" type="Label" parent="Debug Menu/Panel/Status" unique_id=1402495863]
-layout_mode = 0
-offset_left = 334.0
-offset_top = 168.45999
-offset_right = 420.0
-offset_bottom = 202.45999
-theme_override_font_sizes/font_size = 24
-text = "Others:"
-
-[node name="Beta Bunnies" type="CheckBox" parent="Debug Menu/Panel/Status" unique_id=955756610]
-layout_mode = 0
-offset_left = 371.0
-offset_top = 204.45999
-offset_right = 502.0
-offset_bottom = 238.45999
-text = "Beta Bunnies"
-
-[node name="Vivian" type="CheckBox" parent="Debug Menu/Panel/Status" unique_id=1494909901]
-layout_mode = 0
-offset_left = 371.0
-offset_top = 236.45999
-offset_right = 502.0
-offset_bottom = 270.46
-text = "Vivian"
-
-[node name="Pink" type="CheckBox" parent="Debug Menu/Panel/Status" unique_id=150585420]
-layout_mode = 0
-offset_left = 371.0
-offset_top = 268.46
-offset_right = 502.0
-offset_bottom = 302.46
-text = "Pink"
 
 [node name="Ghostlings" type="Button" parent="Debug Menu/Panel/Status" unique_id=933609636]
 layout_mode = 0
@@ -2973,9 +2974,6 @@ libraries/ = SubResource("AnimationLibrary_45eqa")
 [connection signal="pressed" from="Debug Menu/Panel/Status/Money +" to="Debug Menu" method="_on_plus_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Status/SetLifes" to="Debug Menu" method="_on_set_lifes_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Status/SetRound" to="Debug Menu" method="_on_set_round_pressed"]
-[connection signal="toggled" from="Debug Menu/Panel/Status/Beta Bunnies" to="Debug Menu" method="_on_beta_bunnies_toggled"]
-[connection signal="toggled" from="Debug Menu/Panel/Status/Vivian" to="Debug Menu" method="_on_vivian_toggled"]
-[connection signal="toggled" from="Debug Menu/Panel/Status/Pink" to="Debug Menu" method="_on_pink_toggled"]
 [connection signal="pressed" from="Debug Menu/Panel/Status/Ghostlings" to="Debug Menu" method="_on_ghostlings_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Ghostling" to="Debug Menu" method="_on_ghostling_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Ghazt" to="Debug Menu" method="_on_ghazt_pressed"]

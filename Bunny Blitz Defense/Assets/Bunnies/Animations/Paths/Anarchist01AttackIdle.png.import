@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1h667synba5c"
+uid="uid://dd837w4an2emm"
 path.s3tc="res://.godot/imported/Anarchist01AttackIdle.png-af4180da6d35806991844bc387e98cd8.s3tc.ctex"
 path.etc2="res://.godot/imported/Anarchist01AttackIdle.png-af4180da6d35806991844bc387e98cd8.etc2.ctex"
 metadata={
@@ -38,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=1024
+process/size_limit=0
 detect_3d/compress_to=1

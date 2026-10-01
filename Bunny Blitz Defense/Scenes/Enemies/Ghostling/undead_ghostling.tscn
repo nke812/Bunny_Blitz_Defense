@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://d3h268ltudw0i"]
 
 [ext_resource type="Script" uid="uid://bbywayjaqfn8y" path="res://Scripts/Enemies/Ghostling/undead_ghostling.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://b6gyw8ikn2rrb" path="res://Assets/Enemies/Ghostlings/Undead Ghostling.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://detqv5jo3t4by" path="res://Assets/SFXs/GhostlingDies.wav" id="2_co8ua"]
-[ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Animations.res" id="3"]
-[ext_resource type="Texture2D" uid="uid://cl0a3fmxoac1i" path="res://Assets/Enemies/Animations/UndeadGhostSplashVFXSpriteSheet.png" id="5_f2meb"]
-[ext_resource type="Texture2D" uid="uid://pbo82nncgqos" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_8spsk"]
-[ext_resource type="Texture2D" uid="uid://d1y6xppvpk2ov" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_s860w"]
-[ext_resource type="Texture2D" uid="uid://dy6xyvu8o3ear" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_inpvm"]
+[ext_resource type="Texture2D" uid="uid://d2fs37bvljqlq" path="res://Assets/Enemies/Ghostlings/Undead Ghostling.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_co8ua"]
+[ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="3"]
+[ext_resource type="Texture2D" uid="uid://cwdjls4weuyeg" path="res://Assets/Enemies/Animations/UndeadGhostSplashVFXSpriteSheet.png" id="5_f2meb"]
+[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_8spsk"]
+[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_s860w"]
+[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_inpvm"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e0vp"]
 radius = 6521.0347

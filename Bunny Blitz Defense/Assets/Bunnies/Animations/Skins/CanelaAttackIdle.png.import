@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caoevvognc75c"
+uid="uid://ndkj2fg6mxii"
 path.s3tc="res://.godot/imported/CanelaAttackIdle.png-1582d764fb666b61444538f5b87a288b.s3tc.ctex"
 path.etc2="res://.godot/imported/CanelaAttackIdle.png-1582d764fb666b61444538f5b87a288b.etc2.ctex"
 metadata={
@@ -38,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=1024
+process/size_limit=0
 detect_3d/compress_to=1

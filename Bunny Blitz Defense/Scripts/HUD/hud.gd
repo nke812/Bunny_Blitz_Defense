@@ -25,9 +25,6 @@ func _ready():
         
 func _process(_delta: float) -> void:
     
-    if Input.is_action_just_pressed("DebugMenu"):
-        $"../Debug Menu".visible = !$"../Debug Menu".visible
-    
     var moedas_atuais_nova = int(moedas_label.text)
     if moedas_atuais_nova != moedas_atuais:
         moedas_atuais = moedas_atuais_nova
@@ -89,7 +86,10 @@ func _on_back_menu_pressed():
     Engine.time_scale = 1.0
     SaveManager.BunnyCoins = SaveManager.BunnyCoins + BunnyCoinsMatch
     SaveManager.guardar_dados()
-    get_tree().change_scene_to_file("res://Scenes/loading_Menu.tscn")
+    Global.LoadingScene = "menu"
+    get_tree().change_scene_to_file("res://Scenes/loading.tscn")
+    
+    print("ganhaste isto pah conta " + str(BunnyCoinsMatch))
 
 
 
@@ -492,13 +492,21 @@ func _on_bt_nsell_mouse_exited() -> void:
     await $HUD_Shop/HudBgDown/Control/BTNsell/Anim_Sell.animation_finished
 
 func victory():
+    BunnyCoinsMatch += 200
+    AtualizarLabelCoins()
     $UI_Selection/VictorySFX.play()
     $UI_Selection/Victory/VictoryAppear.play("Victory")
-        
     Engine.time_scale = 1.0
     $Pause.visible = false
-        
+    
 func EarnBunnyCoins(AmountCoins: int):
     $BunnyCoinsNode/AmountLabel.text = "+ " + str(AmountCoins)
     $BunnyCoinsNode/EarnCoinsAnim.play("EarnCoinsAnim")
     $BunnyCoinsNode/Coiny.play()
+    
+    BunnyCoinsMatch += AmountCoins
+    AtualizarLabelCoins()
+    
+func AtualizarLabelCoins():
+    $UI_Selection/Victory/MenuSettings/Coins.text = str(BunnyCoinsMatch)
+    $UI_Selection/GameOver/MenuSettings/Coins.text = str(BunnyCoinsMatch)

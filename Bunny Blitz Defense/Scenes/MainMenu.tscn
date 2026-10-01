@@ -1,48 +1,50 @@
 [gd_scene format=3 uid="uid://co48p2eyjxms8"]
 
 [ext_resource type="Script" uid="uid://dfto0bmxbs4h6" path="res://Scripts/main_menu.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://drffk7oiwte6i" path="res://Assets/Others/Menu_Assets/Sky.png" id="2_311ux"]
-[ext_resource type="Texture2D" uid="uid://462026d2e1gw" path="res://Assets/Others/Menu_Assets/Clouds.png" id="3_pnils"]
-[ext_resource type="Texture2D" uid="uid://udwpjvh24184" path="res://Assets/Others/Menu_Assets/Buttons/Start_Sun.png" id="4_7xub0"]
-[ext_resource type="Texture2D" uid="uid://dmekdhvr2o7yj" path="res://Assets/Others/Menu_Assets/Background_Base.png" id="4_ow4wq"]
-[ext_resource type="Texture2D" uid="uid://bivb1k7l7r2h8" path="res://Assets/Others/Others/BunnyBlitzDefenseLogo.png" id="5_3u44c"]
-[ext_resource type="Texture2D" uid="uid://dtco4ov4ep1d0" path="res://Assets/Others/Menu_Assets/Slenderbunny.png" id="5_o66vf"]
-[ext_resource type="Texture2D" uid="uid://cn0ttxd0wokxu" path="res://Assets/Others/Menu_Assets/Foreground_Nature.png" id="6_fipmv"]
-[ext_resource type="Texture2D" uid="uid://l7epf46uh7vf" path="res://Assets/Others/Menu_Assets/Buttons/Start_Text.png" id="6_jvcv6"]
-[ext_resource type="AudioStream" uid="uid://c1qhl82y0q8ly" path="res://Assets/SFXs/GameStart.wav" id="6_pjscj"]
+[ext_resource type="Texture2D" uid="uid://bvwfn7fsneyls" path="res://Assets/Others/Menu_Assets/Sky.png" id="2_311ux"]
+[ext_resource type="Texture2D" uid="uid://uyuogvd2bqdn" path="res://Assets/Others/Menu_Assets/Clouds.png" id="3_pnils"]
+[ext_resource type="Texture2D" uid="uid://df3idjljydvfv" path="res://Assets/Others/Menu_Assets/Buttons/Start_Sun.png" id="4_7xub0"]
+[ext_resource type="Texture2D" uid="uid://d0epat8mv7ibd" path="res://Assets/Others/Menu_Assets/Background_Base.png" id="4_ow4wq"]
+[ext_resource type="Texture2D" uid="uid://bnior1skraj8e" path="res://Assets/Others/Others/BunnyBlitzDefenseLogo.png" id="5_3u44c"]
+[ext_resource type="Texture2D" uid="uid://dwa4a02hon4at" path="res://Assets/Others/Menu_Assets/Slenderbunny.png" id="5_o66vf"]
+[ext_resource type="Texture2D" uid="uid://br6ci3cw1yn3c" path="res://Assets/Others/Menu_Assets/Foreground_Nature.png" id="6_fipmv"]
+[ext_resource type="Texture2D" uid="uid://cihnm0iygxl2c" path="res://Assets/Others/Menu_Assets/Buttons/Start_Text.png" id="6_jvcv6"]
+[ext_resource type="AudioStream" uid="uid://dki6178h3w0a2" path="res://Assets/Audio/SFXs/GameStart.wav" id="6_pjscj"]
 [ext_resource type="StyleBox" uid="uid://1p8p51j014uf" path="res://Others/InvisibleButton.tres" id="6_ux20s"]
-[ext_resource type="AudioStream" uid="uid://c6k3kvqe5iiw8" path="res://Assets/Music/MainTheme.ogg" id="7_6byu3"]
-[ext_resource type="Texture2D" uid="uid://lo42orxm5ged" path="res://Assets/Others/Menu_Assets/Buttons/Start_Bunnies.png" id="7_rplfc"]
-[ext_resource type="Texture2D" uid="uid://biua7o4wct4ik" path="res://Assets/Others/Menu_Assets/Bunnies.png" id="7_ydmd8"]
-[ext_resource type="Texture2D" uid="uid://beni5mny4x204" path="res://Assets/Others/Menu_Assets/Buttons/ExtrasGhostlingsEyes.png" id="8_iqn0u"]
-[ext_resource type="Texture2D" uid="uid://rgr4sanagtlm" path="res://Assets/Others/Menu_Assets/Buttons/News.png" id="8_o66vf"]
-[ext_resource type="Texture2D" uid="uid://cidvv1xuacder" path="res://Assets/Others/Menu_Assets/Ghosts.png" id="8_rplfc"]
-[ext_resource type="Texture2D" uid="uid://d2jk4j63jt61w" path="res://Assets/Others/Menu_Assets/Buttons/Extras.png" id="9_3u44c"]
-[ext_resource type="Texture2D" uid="uid://j58fbbwxxm00" path="res://Assets/Others/Menu_Assets/Buttons/Shop.png" id="9_bxv1r"]
-[ext_resource type="Texture2D" uid="uid://bq45ixnyp5xhn" path="res://Assets/Others/Menu_Assets/Buttons/Start_SunGlow.png" id="9_f3d0c"]
-[ext_resource type="Texture2D" uid="uid://dnfnt001txdul" path="res://Assets/Others/Menu_Assets/Buttons/ShopEye.png" id="11_ke15f"]
-[ext_resource type="Texture2D" uid="uid://byv0c4fr7csyn" path="res://Assets/Others/Menu_Assets/Buttons/Settings.png" id="12_ke15f"]
-[ext_resource type="Texture2D" uid="uid://dir0fpgg56u6v" path="res://Assets/Others/Menu_Assets/Buttons/Achievements.png" id="13_pnils"]
-[ext_resource type="Texture2D" uid="uid://dw1a45ksh2kd1" path="res://Assets/Others/Menu_Assets/Buttons/Rookienho.png" id="14_ow4wq"]
-[ext_resource type="AudioStream" uid="uid://b0lj4a44jnkeg" path="res://Assets/SFXs/Squeaky.wav" id="15_ow4wq"]
+[ext_resource type="AudioStream" uid="uid://cxfkx1fcac5i5" path="res://Assets/Audio/Music/MainTheme.ogg" id="7_6byu3"]
+[ext_resource type="Texture2D" uid="uid://bo2bv5uxfm8f3" path="res://Assets/Others/Menu_Assets/Buttons/Start_Bunnies.png" id="7_rplfc"]
+[ext_resource type="Texture2D" uid="uid://dfavesmxmpxou" path="res://Assets/Others/Menu_Assets/Bunnies.png" id="7_ydmd8"]
+[ext_resource type="Texture2D" uid="uid://ci68vlm458jdq" path="res://Assets/Others/Menu_Assets/Buttons/ExtrasGhostlingsEyes.png" id="8_iqn0u"]
+[ext_resource type="Texture2D" uid="uid://5oxtuo1rxcmf" path="res://Assets/Others/Menu_Assets/Buttons/News.png" id="8_o66vf"]
+[ext_resource type="Texture2D" uid="uid://dbhypkny3yie6" path="res://Assets/Others/Menu_Assets/Ghosts.png" id="8_rplfc"]
+[ext_resource type="Texture2D" uid="uid://c66krdmhyq11b" path="res://Assets/Others/Menu_Assets/Buttons/Extras.png" id="9_3u44c"]
+[ext_resource type="Texture2D" uid="uid://buwdvp5y8rlka" path="res://Assets/Others/Menu_Assets/Buttons/Shop.png" id="9_bxv1r"]
+[ext_resource type="Texture2D" uid="uid://cltu4djfrvi7v" path="res://Assets/Others/Menu_Assets/Buttons/Start_SunGlow.png" id="9_f3d0c"]
+[ext_resource type="Texture2D" uid="uid://87rcn1vtfll5" path="res://Assets/Others/Menu_Assets/Buttons/ShopEye.png" id="11_ke15f"]
+[ext_resource type="Texture2D" uid="uid://ch2xgebpgu0j3" path="res://Assets/Others/Menu_Assets/Buttons/Settings.png" id="12_ke15f"]
+[ext_resource type="Texture2D" uid="uid://cxhlk1853n5sw" path="res://Assets/Others/Menu_Assets/Buttons/Achievements.png" id="13_pnils"]
+[ext_resource type="Texture2D" uid="uid://bxmody0ifxg43" path="res://Assets/Others/Menu_Assets/Buttons/Rookienho.png" id="14_ow4wq"]
+[ext_resource type="AudioStream" uid="uid://p4p6rse7krrv" path="res://Assets/Audio/SFXs/Squeaky.wav" id="15_ow4wq"]
 [ext_resource type="FontFile" uid="uid://v56c1vt506yg" path="res://FontText/Coiny-Regular.ttf" id="17"]
 [ext_resource type="Script" uid="uid://dd7n0bwv0j1ap" path="res://Scripts/music_control.gd" id="19"]
-[ext_resource type="Texture2D" uid="uid://trv47mvlrm3l" path="res://Assets/Others/UI_Assets/XBTN.png" id="19_iqn0u"]
+[ext_resource type="Texture2D" uid="uid://bns6tfq1midk4" path="res://Assets/Others/UI_Assets/XBTN.png" id="19_iqn0u"]
 [ext_resource type="Script" uid="uid://cdcnh7mikbgwk" path="res://Scripts/fullscreen_cb.gd" id="20"]
-[ext_resource type="Texture2D" uid="uid://bpxjfumwy5l05" path="res://Assets/Others/UI_Assets/XBTNPressed.png" id="20_3u44c"]
-[ext_resource type="Texture2D" uid="uid://cuxkq0rqx4p3" path="res://Assets/Others/Menu_Assets/Maps/___.png" id="21_6byu3"]
-[ext_resource type="Texture2D" uid="uid://dlow6mv1dvgqf" path="res://Assets/Others/UI_Assets/SettingsScreen.png" id="21_leunp"]
-[ext_resource type="Texture2D" uid="uid://xni113mjidgh" path="res://Assets/Others/UI_Assets/Music.png" id="22_bxv1r"]
-[ext_resource type="Texture2D" uid="uid://c0lxy1p0qudww" path="res://Assets/Others/Menu_Assets/Maps/MapGlimmerRoad_Sel.png" id="22_leunp"]
-[ext_resource type="Texture2D" uid="uid://b1b87xfsgbc5s" path="res://Assets/Others/Menu_Assets/Maps/MapGrasslands_Sel.png" id="23_h1v62"]
-[ext_resource type="Texture2D" uid="uid://dm2c8fmqvmfmb" path="res://Assets/Others/UI_Assets/Audio.png" id="23_ux20s"]
-[ext_resource type="Texture2D" uid="uid://djbm03fab8mc7" path="res://Assets/Others/UI_Assets/NewsScreen.png" id="25_fipmv"]
-[ext_resource type="Texture2D" uid="uid://cedo6utiaw60" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="27_3u44c"]
-[ext_resource type="Texture2D" uid="uid://bhla3u2n10pag" path="res://Assets/Others/HUD_Assets/BunnyCoin.png" id="27_r4k1l"]
+[ext_resource type="Texture2D" uid="uid://cuxgv4rfpmye2" path="res://Assets/Others/UI_Assets/XBTNPressed.png" id="20_3u44c"]
+[ext_resource type="Texture2D" uid="uid://rns4u2hb68kl" path="res://Assets/Others/Menu_Assets/Maps/___.png" id="21_6byu3"]
+[ext_resource type="Texture2D" uid="uid://16ynn2y52cj5" path="res://Assets/Others/UI_Assets/SettingsScreen.png" id="21_leunp"]
+[ext_resource type="Texture2D" uid="uid://c4avdvr56bpjr" path="res://Assets/Others/UI_Assets/Music.png" id="22_bxv1r"]
+[ext_resource type="Texture2D" uid="uid://cdp1ghsjfxq06" path="res://Assets/Others/Menu_Assets/Maps/MapGlimmerRoad_Sel.png" id="22_leunp"]
+[ext_resource type="Texture2D" uid="uid://uvyib1nyeaqk" path="res://Assets/Others/Menu_Assets/Maps/MapGrasslands_Sel.png" id="23_h1v62"]
+[ext_resource type="Texture2D" uid="uid://df0nwaubm15un" path="res://Assets/Others/UI_Assets/Audio.png" id="23_ux20s"]
+[ext_resource type="Texture2D" uid="uid://dm6y3o0nqg21c" path="res://Assets/Others/UI_Assets/NewsScreen.png" id="25_fipmv"]
+[ext_resource type="Texture2D" uid="uid://ct1qsup7frlmj" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="27_3u44c"]
+[ext_resource type="Texture2D" uid="uid://px1lxdelyre3" path="res://Assets/Others/HUD_Assets/BunnyCoin.png" id="27_r4k1l"]
 [ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="28_qwpoy"]
 [ext_resource type="Script" uid="uid://x47tqg13am5v" path="res://Scripts/DailyReward.gd" id="30_r4k1l"]
-[ext_resource type="Texture2D" uid="uid://cf2cntmbqd0oe" path="res://Assets/Others/Menu_Assets/Maps/MapSandyStreets_Sel.png" id="31_f3d0c"]
-[ext_resource type="AudioStream" uid="uid://dtnr3epvew0ak" path="res://Assets/SFXs/DailyEarn.wav" id="33_qwpoy"]
+[ext_resource type="Texture2D" uid="uid://ba502jsel36e4" path="res://Assets/Others/Menu_Assets/Maps/MapSandyStreets_Sel.png" id="31_f3d0c"]
+[ext_resource type="AudioStream" uid="uid://dxu7btcmga0es" path="res://Assets/Audio/SFXs/DailyEarn.wav" id="33_qwpoy"]
+[ext_resource type="Texture2D" uid="uid://dfa1mckdjrwi4" path="res://Assets/Others/UI_Assets/Hit.png" id="44_8m3ho"]
+[ext_resource type="Texture2D" uid="uid://cui6bi6v4r22h" path="res://Assets/Others/Debug_Assets/DebugButton.png" id="45_5rj5y"]
 
 [sub_resource type="Animation" id="Animation_jvcv6"]
 resource_name = "AnimCursorHoverSun"
@@ -374,6 +376,44 @@ tracks/0/keys = {
 _data = {
 &"Anim": SubResource("Animation_pbfag"),
 &"RESET": SubResource("Animation_7xub0")
+}
+
+[sub_resource type="Animation" id="Animation_drl2p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Logo/LabelStart:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ydj5n"]
+resource_name = "TitleScreenStartAnimBlink"
+length = 0.13333334
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Logo/LabelStart:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 1), Color(0.42365062, 0.42365065, 0.42365062, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fw7q4"]
+_data = {
+&"RESET": SubResource("Animation_drl2p"),
+&"TitleScreenStartAnimBlink": SubResource("Animation_ydj5n")
 }
 
 [sub_resource type="Animation" id="Animation_rrcx7"]
@@ -939,10 +979,10 @@ tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0001),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0001, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true]
+"values": [false, true, true]
 }
 
 [sub_resource type="Animation" id="Animation_oor3o"]
@@ -958,18 +998,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h64ul"]
@@ -989,6 +1017,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+metadata/_edit_horizontal_guides_ = [3245.0]
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=1119101230]
 position = Vector2(-31.999989, 539.3125)
@@ -1266,10 +1295,11 @@ scale = Vector2(0.70539147, 0.6650668)
 texture = ExtResource("5_3u44c")
 
 [node name="LabelStart" type="Label" parent="Logo" unique_id=1255114671]
-offset_left = -182.87718
-offset_top = 293.20358
+offset_left = -182.8772
+offset_top = 300.72174
 offset_right = 260.07068
-offset_bottom = 427.0247
+offset_bottom = 434.54285
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 15
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("17")
@@ -1293,10 +1323,10 @@ bus = &"SFX"
 
 [node name="TitleScreenStart" type="Button" parent="." unique_id=223021918]
 layout_mode = 0
-offset_left = 16.0
-offset_top = -2.0
-offset_right = 1938.0
-offset_bottom = 1082.0
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 1921.0
+offset_bottom = 1081.0
 theme = SubResource("Theme_7467j")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -1310,6 +1340,9 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_7467j")
 [node name="TitleScreenStartAnim" type="AnimationPlayer" parent="TitleScreenStart" unique_id=993989154]
 libraries/ = SubResource("AnimationLibrary_7xub0")
 autoplay = &"Anim"
+
+[node name="TitleScreenStartAnimBlink" type="AnimationPlayer" parent="TitleScreenStart" unique_id=1040036628]
+libraries/ = SubResource("AnimationLibrary_fw7q4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1713408079]
 position = Vector2(980, 513)
@@ -1762,10 +1795,10 @@ anchor_left = 0.79600006
 anchor_top = 0.21100001
 anchor_right = 0.86700004
 anchor_bottom = 0.317
-offset_left = -369.09143
-offset_top = 174.69798
-offset_right = -424.76257
-offset_bottom = 142.00635
+offset_left = -351.4215
+offset_top = 174.4482
+offset_right = -407.09265
+offset_bottom = 141.75656
 texture_normal = ExtResource("19_iqn0u")
 texture_pressed = ExtResource("20_3u44c")
 texture_hover = ExtResource("20_3u44c")
@@ -1807,9 +1840,9 @@ libraries/ = SubResource("AnimationLibrary_ow4wq")
 [node name="SFXControl" type="HSlider" parent="Options" unique_id=72357996 groups=["Audio"]]
 layout_mode = 0
 offset_left = 605.0
-offset_top = 530.0
+offset_top = 506.0
 offset_right = 1090.5266
-offset_bottom = 705.0
+offset_bottom = 681.0
 max_value = 1.0
 step = 0.05
 value = 0.25
@@ -1838,10 +1871,10 @@ libraries/ = SubResource("AnimationLibrary_o66vf")
 
 [node name="Fullscreen_CB" type="CheckBox" parent="Options" unique_id=841854616]
 layout_mode = 0
-offset_left = 436.0
-offset_top = 698.0
-offset_right = 827.0
-offset_bottom = 833.0
+offset_left = 437.66992
+offset_top = 659.75
+offset_right = 828.6699
+offset_bottom = 794.75
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("17")
 theme_override_font_sizes/font_size = 39
@@ -1852,61 +1885,72 @@ icon = ExtResource("27_3u44c")
 expand_icon = true
 script = ExtResource("20")
 
+[node name="ResetSaveBTN" type="TextureButton" parent="Options" unique_id=1158672844]
+layout_mode = 0
+offset_left = 1105.6699
+offset_top = 774.75
+offset_right = 1263.6699
+offset_bottom = 932.75
+toggle_mode = true
+texture_normal = ExtResource("44_8m3ho")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="ResetSave" type="Control" parent="Options" unique_id=340853633]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Warning" type="Label" parent="Options/ResetSave" unique_id=986840883]
+layout_mode = 0
+offset_left = 502.66992
+offset_top = 436.75
+offset_right = 1176.6699
+offset_bottom = 634.75
+theme_override_fonts/font = ExtResource("28_qwpoy")
+theme_override_font_sizes/font_size = 46
+text = "Are you sure you want to reset YOUR save?"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="ConfirmReset" type="TextureButton" parent="Options/ResetSave" unique_id=64828924]
+layout_mode = 0
+offset_left = 640.6699
+offset_top = 673.75
+offset_right = 1083.1709
+offset_bottom = 861.75
+texture_normal = ExtResource("45_5rj5y")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Confirm" type="Label" parent="Options/ResetSave/ConfirmReset" unique_id=403131922]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 15.0
+offset_right = 440.0
+offset_bottom = 201.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("28_qwpoy")
+theme_override_font_sizes/font_size = 102
+text = "YES!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SettingsAnim" type="AnimationPlayer" parent="Options" unique_id=789157789]
 libraries/ = SubResource("AnimationLibrary_fipmv")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1372942293]
-visible = false
 layout_mode = 0
 offset_left = -2056.0
 offset_top = -2.0
+offset_right = 2005.0
 offset_bottom = 1081.0
 color = Color(0, 0, 0, 1)
 
 [node name="FadeIn" type="AnimationPlayer" parent="ColorRect" unique_id=669144130]
 libraries/ = SubResource("AnimationLibrary_h64ul")
-
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1158672844]
-layout_mode = 0
-offset_left = -2055.0
-offset_right = -1627.0
-offset_bottom = 267.0
-
-[node name="Panel" type="Panel" parent="." unique_id=1123993217]
-visible = false
-layout_mode = 0
-offset_left = -1591.0
-offset_top = 148.0
-offset_right = -391.0
-offset_bottom = 813.0
-
-[node name="Label" type="Label" parent="Panel" unique_id=1264489808]
-layout_mode = 0
-offset_left = 349.0
-offset_top = 59.0
-offset_right = 869.0
-offset_bottom = 131.0
-theme_override_font_sizes/font_size = 52
-text = "Dar Reset ao Save???"
-
-[node name="Button" type="Button" parent="Panel" unique_id=316889936]
-layout_mode = 0
-offset_left = 106.0
-offset_top = 365.0
-offset_right = 446.0
-offset_bottom = 590.0
-theme_override_font_sizes/font_size = 59
-text = "SIM"
-
-[node name="Button2" type="Button" parent="Panel" unique_id=899392934]
-layout_mode = 0
-offset_left = 762.0
-offset_top = 363.0
-offset_right = 1102.0
-offset_bottom = 588.0
-theme_override_font_sizes/font_size = 55
-text = "NÃO"
-icon_alignment = 1
 
 [connection signal="mouse_entered" from="SunSetEuGostoMuito/StartBTN" to="." method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="SunSetEuGostoMuito/StartBTN" to="." method="_on_start_mouse_exited"]
@@ -1925,6 +1969,7 @@ icon_alignment = 1
 [connection signal="pressed" from="Rookienho/A_COISA_MAIS_FODA" to="." method="_on_easter_egg_pressed"]
 [connection signal="mouse_entered" from="Extras/ExtrasBTN" to="." method="_on_extras_mouse_entered"]
 [connection signal="mouse_exited" from="Extras/ExtrasBTN" to="." method="_on_extras_mouse_exited"]
+[connection signal="button_down" from="TitleScreenStart" to="." method="_on_title_screen_start_button_down"]
 [connection signal="pressed" from="TitleScreenStart" to="." method="_on_title_screen_start_pressed"]
 [connection signal="pressed" from="NewsScreen/DailyReward/BtnDaily" to="NewsScreen/DailyReward" method="_on_pressed"]
 [connection signal="pressed" from="NewsScreen/Exit" to="." method="_on_exit_pressed"]
@@ -1945,6 +1990,6 @@ icon_alignment = 1
 [connection signal="pressed" from="Options/MusicControl/MusicIcon" to="." method="_on_music_icon_pressed"]
 [connection signal="pressed" from="Options/SFXControl/SFXIcon" to="." method="_on_sfx_icon_pressed"]
 [connection signal="toggled" from="Options/Fullscreen_CB" to="Options/Fullscreen_CB" method="_on_toggled"]
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Panel/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Options/ResetSaveBTN" to="." method="_on_reset_save_pressed"]
+[connection signal="toggled" from="Options/ResetSaveBTN" to="." method="_on_reset_save_toggled"]
+[connection signal="pressed" from="Options/ResetSave/ConfirmReset" to="." method="_on_confirm_reset_pressed"]

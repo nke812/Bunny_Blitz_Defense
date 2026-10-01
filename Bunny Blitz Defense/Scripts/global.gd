@@ -10,7 +10,7 @@ func _ready() -> void :
 var cursor_point = load("res://Assets/Others/Others/CursorPoint.png")
 var cursor_pressed = load("res://Assets/Others/Others/CursorPressed.png")
 
-
+var LoadingScene = "menu"
 
 func _input(event):
     if event.is_action_pressed("fullscreen_key"):

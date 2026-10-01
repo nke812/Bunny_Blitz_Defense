@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://bnly6r15tum4p"]
+
+[ext_resource type="Texture2D" uid="uid://bpxncjvigonj" path="res://Assets/Others/Others/nke812_&_T0MS.png" id="1_duh1u"]
+[ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="2_alxvg"]
+[ext_resource type="Script" uid="uid://d118l68wgxuha" path="res://Scripts/intro.gd" id="2_geirw"]
+
+[sub_resource type="Animation" id="Animation_geirw"]
+resource_name = "IntroFade"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.93, 0.93), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/nke812_&_T0MS:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.5333333, 3.55, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Names:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4, 2.5333333, 3.55, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hwjxs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/nke812_&_T0MS:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Names:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsiac"]
+_data = {
+&"IntroFade": SubResource("Animation_geirw"),
+&"RESET": SubResource("Animation_hwjxs")
+}
+
+[node name="Background" type="ColorRect" unique_id=168994703]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
+
+[node name="Panel" type="Panel" parent="." unique_id=704980577]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 1079.0
+pivot_offset = Vector2(976, 539)
+
+[node name="nke812_&_T0MS" type="Sprite2D" parent="Panel" unique_id=616459926]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(976, 420)
+scale = Vector2(0.30734384, 0.3073438)
+texture = ExtResource("1_duh1u")
+
+[node name="Fade" type="AnimationPlayer" parent="Panel/nke812_&_T0MS" unique_id=1302996133]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_rsiac")
+autoplay = &"IntroFade"
+script = ExtResource("2_geirw")
+
+[node name="Names" type="Label" parent="." unique_id=849326620]
+layout_mode = 0
+offset_left = 743.5
+offset_top = 740.81006
+offset_right = 1231.5
+offset_bottom = 823.81006
+pivot_offset = Vector2(-1303.5, -50.81006)
+theme_override_fonts/font = ExtResource("2_alxvg")
+theme_override_font_sizes/font_size = 43
+text = "nke812 & T0MS"
+horizontal_alignment = 1
+vertical_alignment = 1

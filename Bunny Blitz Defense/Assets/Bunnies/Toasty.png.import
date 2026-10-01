@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwfxjbfe3j4tf"
+uid="uid://dv5ex6kmcnmxc"
 path.s3tc="res://.godot/imported/Toasty.png-ec497815038bee0d9b5ac41db9745382.s3tc.ctex"
 path.etc2="res://.godot/imported/Toasty.png-ec497815038bee0d9b5ac41db9745382.etc2.ctex"
 metadata={
@@ -38,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=1024
+process/size_limit=0
 detect_3d/compress_to=1

@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4f81ngh84xns"
+uid="uid://b6h7n0ofp3m3k"
 path.s3tc="res://.godot/imported/Mystical.png-6ad3f58fae6597848cf4467234147304.s3tc.ctex"
 path.etc2="res://.godot/imported/Mystical.png-6ad3f58fae6597848cf4467234147304.etc2.ctex"
 metadata={
@@ -38,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=1024
+process/size_limit=0
 detect_3d/compress_to=1

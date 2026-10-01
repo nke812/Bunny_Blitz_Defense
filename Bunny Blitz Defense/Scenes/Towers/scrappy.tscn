@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://d1x606ovol63k"]
 
 [ext_resource type="Script" uid="uid://778d284e7xmr" path="res://Scripts/Bunnies/scrappy.gd" id="1_210gt"]
-[ext_resource type="AudioStream" uid="uid://y4u8gomvvkhy" path="res://Assets/SFXs/ScrappyShock.wav" id="2_j88ne"]
-[ext_resource type="Texture2D" uid="uid://dkr53o6gmqvxf" path="res://Assets/Bunnies/Others/Shadow.png" id="2_kkioa"]
-[ext_resource type="Texture2D" uid="uid://dmfwaotuoifff" path="res://Assets/Bunnies/Scrappy.png" id="3_j88ne"]
-[ext_resource type="Texture2D" uid="uid://c0cfxvyhvvig4" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="4_2pdq4"]
-[ext_resource type="Texture2D" uid="uid://bje4pbemesb41" path="res://Assets/Others/UI_Assets/ArrowStun.png" id="5_ubuhk"]
+[ext_resource type="AudioStream" uid="uid://c10aex04vh23n" path="res://Assets/Audio/SFXs/ScrappyShock.wav" id="2_j88ne"]
+[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="2_kkioa"]
+[ext_resource type="Texture2D" uid="uid://dmy8bgn0hx70q" path="res://Assets/Bunnies/Scrappy.png" id="3_j88ne"]
+[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="4_2pdq4"]
+[ext_resource type="Texture2D" uid="uid://ccl7d1ewpscsd" path="res://Assets/Others/UI_Assets/ArrowStun.png" id="5_ubuhk"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sjx8k"]
 radius = 285.09824

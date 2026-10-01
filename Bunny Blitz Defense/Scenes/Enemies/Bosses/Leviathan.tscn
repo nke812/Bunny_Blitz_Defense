@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://ua14w8gx6tlv"]
 
 [ext_resource type="Script" uid="uid://bqb4bqlgrfcwn" path="res://Scripts/Enemies/Bosses/leviathan.gd" id="1_agwtu"]
-[ext_resource type="AudioStream" uid="uid://dp508xdpg20uj" path="res://Assets/SFXs/GhostlingDies.wav" id="2_8i4eo"]
-[ext_resource type="Texture2D" uid="uid://dxjcr53dpiljr" path="res://Assets/Enemies/Bosses/Leviathan.png" id="3_qelmg"]
-[ext_resource type="Texture2D" uid="uid://8upo31eleqj" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_h0ok4"]
-[ext_resource type="Texture2D" uid="uid://pbo82nncgqos" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_h3dbo"]
-[ext_resource type="Texture2D" uid="uid://d1y6xppvpk2ov" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_q88rn"]
-[ext_resource type="Texture2D" uid="uid://dy6xyvu8o3ear" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_gxvwg"]
-[ext_resource type="Texture2D" uid="uid://cfd4e64q7fkpx" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="9_kc1fl"]
+[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_8i4eo"]
+[ext_resource type="Texture2D" uid="uid://b4j7403rus2m0" path="res://Assets/Enemies/Bosses/Leviathan.png" id="3_qelmg"]
+[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_h0ok4"]
+[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_h3dbo"]
+[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_q88rn"]
+[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_gxvwg"]
+[ext_resource type="Texture2D" uid="uid://d1gi4o5wy1vxn" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="9_kc1fl"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8hi3"]
 atlas = ExtResource("5_h0ok4")

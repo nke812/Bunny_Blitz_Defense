@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwr6u0niwo2hx"
+uid="uid://cmrc4lcujogv5"
 path.s3tc="res://.godot/imported/Ghoulish.png-e61327e738ea62c13c0ac23bf141b983.s3tc.ctex"
 path.etc2="res://.godot/imported/Ghoulish.png-e61327e738ea62c13c0ac23bf141b983.etc2.ctex"
 metadata={
@@ -38,5 +38,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=1024
+process/size_limit=0
 detect_3d/compress_to=1

@@ -131,4 +131,4 @@ func reset_save() -> void:
     LastAcessDaily = 0
       
     guardar_dados()
-    get_tree().reload_current_scene()
+    #get_tree().reload_current_scene()

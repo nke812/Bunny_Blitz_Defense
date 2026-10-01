@@ -325,22 +325,22 @@ func aplicar_upgrade(caminho):
 func verificar_posicao_skin():
     
     if skin:
-        SlasherHand.position = Vector2(-83.0, -27.0)
-        Ult.position = Vector2(133, -288)
-        UltAppear.position = Vector2(238, -288)
+        SlasherHand.position = Vector2(-84.0, -92.0)
+        Ult.position = Vector2(141, -283)
+        UltAppear.position = Vector2(141, -283)
         
-        UltAppear.scale = Vector2(0.35, 0.35)
-        Ult.scale = Vector2(0.35, 0.35)
+        UltAppear.scale = Vector2(1.791, 1.791)
+        Ult.scale = Vector2(1.791, 1.791)
         
         $Shadow.position = Vector2(-22, -25)
         
     elif skin == false:
-        SlasherHand.position = Vector2(-6.0, -39.0)
-        UltAppear.position = Vector2(137, -325)
-        Ult.position = Vector2(-68, -320)
+        SlasherHand.position = Vector2(-16.0, -101.0)
+        UltAppear.position = Vector2(-37, -292)
+        Ult.position = Vector2(-37, -292)
         
-        UltAppear.scale = Vector2(0.68, 0.68)
-        Ult.scale = Vector2(0.68, 0.68)
+        UltAppear.scale = Vector2(2.647, 2.647)
+        Ult.scale = Vector2(2.647, 2.647)
         
         $Shadow.position = Vector2(2, -29)
         

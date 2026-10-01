@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cflli26dslt1p"]
 
 [ext_resource type="Script" uid="uid://b4i63c7s3pbvr" path="res://Scripts/Bunnies/gooey.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dkr53o6gmqvxf" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://ca483pwed2uya" path="res://Assets/Bunnies/Gooey.png" id="3"]
-[ext_resource type="AudioStream" uid="uid://cbe3mgh1crfk1" path="res://Assets/SFXs/GooeySlime1.wav" id="3_648aa"]
-[ext_resource type="AudioStream" uid="uid://c161s3bh35h7b" path="res://Assets/SFXs/GooeySlime.wav" id="3_geq81"]
+[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bo0dqdm3oosrg" path="res://Assets/Bunnies/Gooey.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://dpdx5cliimdt" path="res://Assets/Audio/SFXs/GooeySlime1.wav" id="3_648aa"]
+[ext_resource type="AudioStream" uid="uid://dnehmi3uu2l82" path="res://Assets/Audio/SFXs/GooeySlime.wav" id="3_geq81"]
 [ext_resource type="Texture2D" uid="uid://ccl7d1ewpscsd" path="res://Assets/Others/UI_Assets/ArrowStun.png" id="4_8ko8t"]
-[ext_resource type="Texture2D" uid="uid://c0cfxvyhvvig4" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_648aa"]
+[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_648aa"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjj1g"]
 radius = 238.0084

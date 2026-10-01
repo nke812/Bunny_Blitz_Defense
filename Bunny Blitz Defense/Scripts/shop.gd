@@ -160,7 +160,11 @@ func _mudar_texto_label(valor: int) -> void:
     $BunnyCoins/Price.text = str(valor)
     
 func Voltar_Menu() -> void:
-    get_tree().change_scene_to_file("res://Scenes/loading_Menu.tscn")
+    Global.LoadingScene = "menu"
+    
+    $ColorRect/FadeOut.play_backwards("FadeOut")
+    await $ColorRect/FadeOut.animation_finished
+    get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 
 
 

@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://ldeogvioymax"]
 
 [ext_resource type="Script" uid="uid://bcosxxn3weerc" path="res://Scripts/Bunnies/lucky.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dkr53o6gmqvxf" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://dmpubcec8uog3" path="res://Assets/SFXs/LuckyMoney.wav" id="2_t8cit"]
-[ext_resource type="Texture2D" uid="uid://bw3gf8wg7hwn0" path="res://Assets/Bunnies/Lucky.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://b43vqrghk26ay" path="res://Assets/Others/UI_Assets/ArrowSupport.png" id="4_btyo5"]
-[ext_resource type="Texture2D" uid="uid://c0cfxvyhvvig4" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_n0lfg"]
+[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://btv0m2wiw67rv" path="res://Assets/Audio/SFXs/LuckyMoney.wav" id="2_t8cit"]
+[ext_resource type="Texture2D" uid="uid://d2eeu8cikq1ks" path="res://Assets/Bunnies/Lucky.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://kmih4ws8le5g" path="res://Assets/Others/UI_Assets/ArrowSupport.png" id="4_btyo5"]
+[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_n0lfg"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dl7t5"]
 radius = 0.0

@@ -10,34 +10,45 @@ var MapSel = null
 var map1 = "res://Scenes/Mapas/Map_1.tscn"
 var map2 = "res://Scenes/Mapas/Map_2.tscn"
 
+var ResetOptionMenu = false
 
 func _ready() -> void:
     SaveManager.carregar_dados()
     $BunnyCoins/Price.text = str(SaveManager.BunnyCoins)
+    $ColorRect.color = Color(0.0, 0.0, 0.0, 1.0)
     
     if Global.title_screen == true:
+        $TitleScreenStart.disabled = true
         $"Bunny???".position = Vector2(-505, -40)
         $Camera2D.offset = Vector2(-2057, 27)
+        $ColorRect/FadeIn.play_backwards("FadeIn")
+    else:
+        $ColorRect/FadeIn.play_backwards("FadeIn")
         
 
 func _on_title_screen_start_pressed() -> void:
     Global.title_screen = true
+    $TitleScreenStart.disabled = true
     $TitleScreenSound.play()
+    $Logo/LabelStart.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
+    $TitleScreenStart/TitleScreenStartAnim.stop()
+    $TitleScreenStart/TitleScreenStartAnimBlink.play("TitleScreenStartAnimBlink")
     $Camera2D/MenuGoLeft.play("MenuGoLeft")
     
     await $Camera2D/MenuGoLeft.animation_finished
     $"Bunny???/SlenderBunnyQuit".play("anim")
+    
+func _on_title_screen_start_button_down() -> void:
+    $TitleScreenStart/TitleScreenStartAnim.stop()
+    $Logo/LabelStart.add_theme_color_override("font_color", Color(0.553, 0.553, 0.553, 1.0))
 
 
 func _on_start_pressed() -> void :
     $"Select Map/SelMapsMenu".play("SelMapsAnim")
     
-var SettingsUP = false
 
 func _on_settings_pressed() -> void :
-    if SettingsUP == false:
-        $Options/SettingsAnim.play("settings")
-        SettingsUP = true
+    $Options/SettingsAnim.play("settings")
 
 
 func _on_voltar_pressed() -> void :
@@ -63,11 +74,14 @@ func _on_easter_egg_pressed() -> void :
 
 #MENU DE MAPAS
 func _on_grass_lands_pressed() -> void:
-    get_tree().change_scene_to_file("res://Scenes/Mapas/Loading/loading1.tscn")
+    Global.LoadingScene = "grass_lands"
+    get_tree().change_scene_to_file("res://Scenes/loading.tscn")
 func _on_glimmer_road_pressed() -> void:
-    get_tree().change_scene_to_file("res://Scenes/Mapas/Loading/loading2.tscn")
+    Global.LoadingScene = "glimmer_road"
+    get_tree().change_scene_to_file("res://Scenes/loading.tscn")
 func _on_sandy_streets_pressed() -> void:
-    get_tree().change_scene_to_file("res://Scenes/Mapas/Loading/loading3.tscn")
+    Global.LoadingScene = "sandy_streets"
+    get_tree().change_scene_to_file("res://Scenes/loading.tscn")
 
 func _on_grass_lands_mouse_entered() -> void:
     $"Select Map/GrassLands".modulate = Color(1.211, 1.211, 1.211)
@@ -194,8 +208,16 @@ func _on_exit_pressed() -> void:
 
 
 func _on_exit_settings_pressed() -> void:
-    $Options/SettingsAnim.play_backwards("settings")
-    await $Options/SettingsAnim.animation_finished
+    if ResetOptionMenu:
+        $Options/MusicControl.visible = true
+        $Options/SFXControl.visible = true
+        $Options/Fullscreen_CB.visible = true
+        $Options/ResetSaveBTN.visible = true
+        ResetOptionMenu = false
+        
+    else:
+        $Options/SettingsAnim.play_backwards("settings")
+        await $Options/SettingsAnim.animation_finished
 
 func _on_exit_menu_pressed() -> void:
     $"Select Map/SelMapsMenu".play_backwards("SelMapsAnim")
@@ -210,11 +232,31 @@ func _on_shop_btn_pressed() -> void:
 
 
 func _on_texture_button_pressed() -> void:
-    $Panel.visible = true
+    $Options/Panel.visible = true
     
 func _on_button_2_pressed() -> void:
-    $Panel.visible = false
+    $Options/Panel.visible = false
 
-func _on_button_pressed() -> void:
-    $Panel.visible = false
+
+
+func _on_reset_save_toggled(toggled_on: bool) -> void:
+    $Options/MusicControl.visible = toggled_on
+    $Options/SFXControl.visible = toggled_on
+    $Options/Fullscreen_CB.visible = toggled_on
+    $Options/ResetSaveBTN.visible = toggled_on
+    
+    $Options/ResetSave.visible = !toggled_on
+    
+    ResetOptionMenu = true
+    
+    
+
+
+func _on_confirm_reset_pressed() -> void:
+    $Options.visible = false
+    Global.title_screen = false
+    Global.LoadingScene = "menu"
+    
     SaveManager.reset_save()
+    
+    get_tree().change_scene_to_file("res://Scenes/intro.tscn")

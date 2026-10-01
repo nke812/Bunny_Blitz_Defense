@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dqclnvpdade1k"]
 
 [ext_resource type="Script" uid="uid://bnhdxhtvlwpvu" path="res://Scripts/Enemies/Ghostling/ghastling.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dnpfk6l1itbih" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="2"]
-[ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Animations.res" id="3"]
-[ext_resource type="AudioStream" uid="uid://detqv5jo3t4by" path="res://Assets/SFXs/GhostlingDies.wav" id="3_ds01t"]
-[ext_resource type="Texture2D" uid="uid://dy1up7pkfgkw" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_4ek2c"]
-[ext_resource type="Texture2D" uid="uid://8upo31eleqj" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_ieriw"]
-[ext_resource type="Texture2D" uid="uid://pbo82nncgqos" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_hel7d"]
-[ext_resource type="Texture2D" uid="uid://d1y6xppvpk2ov" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_mwxmb"]
-[ext_resource type="Texture2D" uid="uid://dy6xyvu8o3ear" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_3si1x"]
+[ext_resource type="Texture2D" uid="uid://dxfwg1tflcnk2" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="2"]
+[ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="3"]
+[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="3_ds01t"]
+[ext_resource type="Texture2D" uid="uid://clnnsolr53ekt" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_4ek2c"]
+[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_ieriw"]
+[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_hel7d"]
+[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_mwxmb"]
+[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_3si1x"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0wji"]
 radius = 348.7536

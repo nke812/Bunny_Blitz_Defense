@@ -275,7 +275,6 @@ func inimigo_morreu():
     
     if gacha == 1:
         hud.EarnBunnyCoins(AmountCoins)
-        hud.BunnyCoinsMatch = int(hud.BunnyCoinsMatch) + AmountCoins
         
     
     inimigos_vivos -= 1

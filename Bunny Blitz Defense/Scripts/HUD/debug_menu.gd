@@ -2,16 +2,8 @@ extends Node2D
 
 var DebugMenu: bool = false
 
-func _ready() -> void:
-    var cena_atual = get_tree().current_scene
-    
-    if cena_atual.scene_file_path.ends_with("Map_3.tscn"):
-        $Panel/Status/Pink.visible = true
-    else:
-        $Panel/Status/Pink.visible = false
-
-func _process(delta: float) -> void:
-    if Input.is_action_just_pressed("DebugMenu"):
+func _unhandled_input(event: InputEvent) -> void:
+    if event.is_action_pressed("god"):
         visible = !visible
 
 func _on_seta_pressed() -> void:
@@ -65,15 +57,7 @@ func _on_set_round_pressed() -> void:
 
 
 
-# -----   OTHERS   ----- #
-func _on_beta_bunnies_toggled(toggled_on: bool) -> void:
-    $"../HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun".visible = toggled_on
-    $"../HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support".visible = toggled_on
 
-
-func _on_pink_toggled(toggled_on: bool) -> void:
-    $"../../Pink/Button".visible = toggled_on
-    $"../../EXPLOSION2".visible = toggled_on
         
         
 # -----   SPAWN DOS GHOSTLINGS   ----- #
