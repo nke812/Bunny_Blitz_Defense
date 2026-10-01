@@ -180,6 +180,9 @@ func _on_button_button_down() -> void:
         if !SaveManager.VoidUnlocked:
             hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
             hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        else:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = false
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = false
         
         #hud.get_node("HUD_Shop/HudShopFrame").self_modulate = Color(0.0, 1.115, 0.619)
         #hud.get_node("HUD_Shop/HudBgDown").self_modulate = Color(0.566, 0.474, 1.075)

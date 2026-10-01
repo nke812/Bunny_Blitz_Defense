@@ -213,6 +213,7 @@ func _on_exit_settings_pressed() -> void:
         $Options/SFXControl.visible = true
         $Options/Fullscreen_CB.visible = true
         $Options/ResetSaveBTN.visible = true
+        $Options/ResetSave.visible = false
         ResetOptionMenu = false
         
     else:

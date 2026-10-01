@@ -6,7 +6,7 @@ extends Control
 const COOLDOWN_12H: int = 12 * 3600 # 43200 segundos
 
 # Duas APIs alternativas para garantir que pelo menos uma responde
-const API_PRIMARY: String = "http://worldtimeapi.org/api/timezone/Europe/Lisbon"
+const API_PRIMARY: String = "https://worldtimeapi.org/api/timezone/Europe/Lisbon"
 const API_FALLBACK: String = "https://timeapi.io/api/time/current/zone?timeZone=Europe/Lisbon"
 
 var tempo_online_unix: int = 0

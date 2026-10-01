@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://br46ovayf4pf2"]
 
 [ext_resource type="Script" uid="uid://dhaa5trxua1gp" path="res://Scripts/Enemies/Bosses/lucifer.gd" id="1_tqtgj"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_xip7b"]
-[ext_resource type="Texture2D" uid="uid://c3fcjgt45gue1" path="res://Assets/Enemies/Bosses/Lucifer.png" id="3_l8sg2"]
-[ext_resource type="Texture2D" uid="uid://d1gi4o5wy1vxn" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="4_su1hc"]
-[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_fflw5"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_i4qo7"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_g3t36"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_s20y2"]
-
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_xip7b"]
+[ext_resource type="Texture2D" uid="uid://dl3hcycxocq6f" path="res://Assets/Enemies/Bosses/Lucifer.png" id="3_l8sg2"]
+[ext_resource type="Texture2D" uid="uid://ca8snmdkxnsul" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="4_su1hc"]
+[ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_fflw5"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_i4qo7"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_g3t36"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_s20y2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dvle"]
 atlas = ExtResource("4_su1hc")
@@ -82,8 +81,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amx8r"]
-radius = 508.68332
-height = 2145.68
+radius = 411.70383
+height = 2068.255
 
 [sub_resource type="Animation" id="Animation_waq2b"]
 resource_name = "Idle"

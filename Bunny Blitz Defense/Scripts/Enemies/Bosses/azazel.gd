@@ -28,7 +28,7 @@ func DMGED(quantidade):
 
     
     if vida <= 50:
-        $Azazel.texture = load("res://Other Folders/Mods/COMMUNITY SKINS/AzazelDamaged.png")
+        $Azazel.texture = load("res://Assets/Enemies/Bosses/AzazelDamaged.png")
 
     if vida <= 0:
         $Death.play()

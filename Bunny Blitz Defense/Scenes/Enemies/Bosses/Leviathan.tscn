@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://ua14w8gx6tlv"]
 
 [ext_resource type="Script" uid="uid://bqb4bqlgrfcwn" path="res://Scripts/Enemies/Bosses/leviathan.gd" id="1_agwtu"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_8i4eo"]
-[ext_resource type="Texture2D" uid="uid://b4j7403rus2m0" path="res://Assets/Enemies/Bosses/Leviathan.png" id="3_qelmg"]
-[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_h0ok4"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_h3dbo"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_q88rn"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_gxvwg"]
-[ext_resource type="Texture2D" uid="uid://d1gi4o5wy1vxn" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="9_kc1fl"]
-
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_8i4eo"]
+[ext_resource type="Texture2D" uid="uid://ndonadedtmjb" path="res://Assets/Enemies/Bosses/Leviathan.png" id="3_qelmg"]
+[ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_h0ok4"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_h3dbo"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_q88rn"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_gxvwg"]
+[ext_resource type="Texture2D" uid="uid://ca8snmdkxnsul" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="9_kc1fl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8hi3"]
 atlas = ExtResource("5_h0ok4")
@@ -445,7 +444,7 @@ sprite_frames = SubResource("SpriteFrames_arexb")
 animation = &"Green_Goo"
 
 [node name="HitBoxBoss" type="CollisionShape2D" parent="Leviathan" unique_id=1543695989]
-position = Vector2(-261.66675, -143.22937)
+position = Vector2(-287.70834, -221.35414)
 rotation = 1.1903145
 scale = Vector2(1.2499999, 1.2499999)
 shape = SubResource("CapsuleShape2D_jogy7")

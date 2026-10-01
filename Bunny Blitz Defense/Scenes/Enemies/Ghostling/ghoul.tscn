@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://ck54h7hm2nb4k"]
 
 [ext_resource type="Script" uid="uid://cuh6bt4t0j161" path="res://Scripts/Enemies/Ghostling/ghoul.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dfq5h0edanhkn" path="res://Assets/Enemies/Ghostlings/Ghoul.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_hitl8"]
+[ext_resource type="Texture2D" uid="uid://dpwe4nfq7ajbj" path="res://Assets/Enemies/Ghostlings/Ghoul.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_hitl8"]
 [ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="3"]
-[ext_resource type="Texture2D" uid="uid://clnnsolr53ekt" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_38qrq"]
-[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_rky76"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_oplvy"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_4xd5f"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_1v6bx"]
-
+[ext_resource type="Texture2D" uid="uid://cmo4p2m5nnb46" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_38qrq"]
+[ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_rky76"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_oplvy"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_4xd5f"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_1v6bx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrukc"]
-radius = 35.0
-height = 110.0
+radius = 32.0
+height = 106.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
 atlas = ExtResource("5_38qrq")
@@ -84,7 +83,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0e3yp")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -209,7 +208,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1x415")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Blue_Goo",
 "speed": 16.0
 }, {
@@ -235,7 +234,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ap7sq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Green_Goo",
 "speed": 24.0
 }, {
@@ -261,7 +260,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1wqas")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Purple_Goo",
 "speed": 16.0
 }, {
@@ -287,7 +286,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u7g7k")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Void_Goo",
 "speed": 16.0
 }]

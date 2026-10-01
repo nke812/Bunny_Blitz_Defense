@@ -1,14 +1,13 @@
 [gd_scene format=3 uid="uid://bmbdwy16nbfw1"]
 
 [ext_resource type="Script" uid="uid://dc4nyp2mdkcjx" path="res://Scripts/Enemies/Bosses/fenrir.gd" id="1_ollwf"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_wval1"]
-[ext_resource type="Texture2D" uid="uid://uhfcxsaal5y5" path="res://Assets/Enemies/Bosses/Fenrir.png" id="3_xv1ir"]
-[ext_resource type="Texture2D" uid="uid://d1gi4o5wy1vxn" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="4_oj82p"]
-[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_rolhr"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_xxqe0"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_6kbd1"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_xv4as"]
-
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_wval1"]
+[ext_resource type="Texture2D" uid="uid://djhfu0152qbcj" path="res://Assets/Enemies/Bosses/Fenrir.png" id="3_xv1ir"]
+[ext_resource type="Texture2D" uid="uid://ca8snmdkxnsul" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="4_oj82p"]
+[ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_rolhr"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_xxqe0"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_6kbd1"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_xv4as"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dvle"]
 atlas = ExtResource("4_oj82p")
@@ -82,8 +81,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_amx8r"]
-radius = 474.17093
-height = 2288.876
+radius = 418.771
+height = 2207.2498
 
 [sub_resource type="Animation" id="Animation_h1bao"]
 resource_name = "Idle"
@@ -434,7 +433,7 @@ frame = 8
 frame_progress = 1.0
 
 [node name="HitBoxBoss" type="CollisionShape2D" parent="Fenrir" unique_id=1874798469]
-position = Vector2(-131.4583, -156.25)
+position = Vector2(-144.47914, -182.29164)
 rotation = 1.2653637
 scale = Vector2(1.25, 1.25)
 shape = SubResource("CapsuleShape2D_amx8r")

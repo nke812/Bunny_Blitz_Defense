@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://ch1xfjryhi5sr"]
 
 [ext_resource type="Script" uid="uid://blac8j3yq43eb" path="res://Scripts/Enemies/Ghostling/enhanced_ghaztling.gd" id="1_fcfll"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_6dv66"]
-[ext_resource type="Texture2D" uid="uid://e3jq8l3xue27" path="res://Assets/Enemies/Ghostlings/Enhanced Ghaztling.png" id="3_viti8"]
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_6dv66"]
+[ext_resource type="Texture2D" uid="uid://ce1jv1mox3odf" path="res://Assets/Enemies/Ghostlings/Enhanced Ghaztling.png" id="3_viti8"]
 [ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="4_iwiwq"]
-[ext_resource type="Texture2D" uid="uid://clnnsolr53ekt" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_k6v8d"]
-[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_nk3ng"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_qqrdd"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_nqhpr"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_ourwi"]
-
+[ext_resource type="Texture2D" uid="uid://cmo4p2m5nnb46" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_k6v8d"]
+[ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_nk3ng"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_qqrdd"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_nqhpr"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_ourwi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_psijl"]
-radius = 380.6615
+radius = 295.96555
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
 atlas = ExtResource("5_k6v8d")
@@ -83,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0e3yp")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -208,7 +207,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1x415")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Blue_Goo",
 "speed": 16.0
 }, {
@@ -234,7 +233,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ap7sq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Green_Goo",
 "speed": 24.0
 }, {
@@ -260,7 +259,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1wqas")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Purple_Goo",
 "speed": 16.0
 }, {
@@ -286,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u7g7k")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Void_Goo",
 "speed": 16.0
 }]

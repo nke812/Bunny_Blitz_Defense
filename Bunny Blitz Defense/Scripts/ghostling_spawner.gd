@@ -270,7 +270,7 @@ func _on_timer_timeout():
 func inimigo_morreu():
     var hud = get_tree().get_first_node_in_group("HUD")
     
-    var gacha = randi_range(1, 10)
+    var gacha = randi_range(1, 15)
     var AmountCoins = randi_range(25, 70)
     
     if gacha == 1:

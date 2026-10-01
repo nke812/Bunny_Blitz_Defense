@@ -162,6 +162,9 @@ func _on_button_button_down() -> void:
         if !SaveManager.ZeRonUnlocked:
             hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
             hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        else:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = false
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = false
         
         hud.get_node("HUD_Shop/HudBgDown/ExitShop").disabled = false
         hud.get_node("HUD_Shop/Shop_Appear").play("Shop_Appear")

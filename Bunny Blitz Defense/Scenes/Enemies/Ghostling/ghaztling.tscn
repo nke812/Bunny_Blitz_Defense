@@ -1,18 +1,17 @@
 [gd_scene format=3 uid="uid://dqclnvpdade1k"]
 
 [ext_resource type="Script" uid="uid://bnhdxhtvlwpvu" path="res://Scripts/Enemies/Ghostling/ghastling.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dxfwg1tflcnk2" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dxjiv7apt3p2e" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="2"]
 [ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="3"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="3_ds01t"]
-[ext_resource type="Texture2D" uid="uid://clnnsolr53ekt" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_4ek2c"]
-[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_ieriw"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_hel7d"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_mwxmb"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_3si1x"]
-
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="3_ds01t"]
+[ext_resource type="Texture2D" uid="uid://cmo4p2m5nnb46" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_4ek2c"]
+[ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_ieriw"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_hel7d"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_mwxmb"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_3si1x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p0wji"]
-radius = 348.7536
+radius = 276.36053
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
 atlas = ExtResource("5_4ek2c")
@@ -83,7 +82,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0e3yp")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -208,7 +207,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1x415")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Blue_Goo",
 "speed": 16.0
 }, {
@@ -234,7 +233,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ap7sq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Green_Goo",
 "speed": 24.0
 }, {
@@ -260,7 +259,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1wqas")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Purple_Goo",
 "speed": 16.0
 }, {
@@ -286,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u7g7k")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Void_Goo",
 "speed": 16.0
 }]
@@ -312,7 +311,7 @@ volume_db = -12.355
 bus = &"SFX"
 
 [node name="HitBoxGhostling" type="CollisionShape2D" parent="Ghaztling" unique_id=2141100714]
-position = Vector2(-19.833344, 56.49994)
+position = Vector2(-42.666668, 104.166664)
 scale = Vector2(0.98, 0.98)
 shape = SubResource("CircleShape2D_p0wji")
 

@@ -56,11 +56,23 @@ func gooey_stun(TimeSlimed: float, cor_ataque: String):
     
     speed = speed_base / 3
 
+    var tween_B = create_tween()
+    
+    if cor_ataque == "Green_Goo":
+        tween_B.tween_property($"Enhanced Ghoul", "modulate", Color("22f367ff"), 0.3)
+    if cor_ataque == "Blue_Goo":
+        tween_B.tween_property($"Enhanced Ghoul", "modulate", Color("47ace0ff"), 0.3)
+    if cor_ataque == "Purple_Goo":
+        tween_B.tween_property($"Enhanced Ghoul", "modulate", Color("7e50f8ff"), 0.3)
+    if cor_ataque == "Void_Goo":
+        tween_B.tween_property($"Enhanced Ghoul", "modulate", Color("1a2938ff"), 0.3)
+
     await get_tree().create_timer(TimeSlimed).timeout
     
     if is_instance_valid(self):
         $"../Goo_Splash".play_backwards(cor_ataque)
         speed = speed_base
+        $EnhancedGhoul.modulate = Color(1, 1, 1, 1)
         goo_stun = false
         
 func aplicar_knockback(distancia: float) -> void:

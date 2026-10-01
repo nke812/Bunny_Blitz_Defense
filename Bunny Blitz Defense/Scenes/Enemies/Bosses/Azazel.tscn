@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://d0lho3cedns0r"]
 
 [ext_resource type="Script" uid="uid://cgnhu40vgoq11" path="res://Scripts/Enemies/Bosses/azazel.gd" id="1_r1kj2"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_oi18t"]
-[ext_resource type="Texture2D" uid="uid://47u4i582m0do" path="res://Assets/Enemies/Bosses/Azazel.png" id="3_r1kj2"]
-[ext_resource type="Texture2D" uid="uid://d1gi4o5wy1vxn" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="4_fv1n4"]
-[ext_resource type="Texture2D" uid="uid://dce13c0q4ehb5" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_rp87g"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_5hpw5"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_c2ydj"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_wxi20"]
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_oi18t"]
+[ext_resource type="Texture2D" uid="uid://b7wws2wvnfqn6" path="res://Assets/Enemies/Bosses/Azazel.png" id="3_r1kj2"]
+[ext_resource type="Texture2D" uid="uid://ca8snmdkxnsul" path="res://Assets/Enemies/Animations/BossSplashVFXSpriteSheet.png" id="4_fv1n4"]
+[ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_rp87g"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_5hpw5"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_c2ydj"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_wxi20"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8hi3"]
 atlas = ExtResource("5_rp87g")
@@ -213,8 +213,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_38gty"]
-radius = 475.76706
-height = 2367.3726
+radius = 448.7631
+height = 2278.6863
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7dvle"]
 atlas = ExtResource("4_fv1n4")
@@ -432,7 +432,7 @@ sprite_frames = SubResource("SpriteFrames_arexb")
 animation = &"Blue_Goo"
 
 [node name="HitBoxBoss" type="CollisionShape2D" parent="Azazel" unique_id=479302795]
-position = Vector2(-170.52083, -169.27083)
+position = Vector2(-170.52081, -247.39581)
 rotation = 1.1885692
 scale = Vector2(1.25, 1.25)
 shape = SubResource("CapsuleShape2D_38gty")

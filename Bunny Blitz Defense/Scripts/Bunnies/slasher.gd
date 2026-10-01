@@ -217,6 +217,9 @@ func _on_insp_button_down() -> void:
         if !SaveManager.CanelaUnlocked:
             hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
             hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        else:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = false
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = false
         
         hud.get_node("HUD_Shop/HudBgDown/BunnySel").texture = load("res://Assets/Bunnies/Slasher.png")
         atualizar_valorTorre()
@@ -319,7 +322,7 @@ func aplicar_upgrade(caminho):
             
             hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
             atualizar_valorTorre()
-            return true
+        return true
     return false
     
 func verificar_posicao_skin():

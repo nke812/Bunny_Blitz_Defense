@@ -1,17 +1,16 @@
 [gd_scene format=3 uid="uid://d3h268ltudw0i"]
 
 [ext_resource type="Script" uid="uid://bbywayjaqfn8y" path="res://Scripts/Enemies/Ghostling/undead_ghostling.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://d2fs37bvljqlq" path="res://Assets/Enemies/Ghostlings/Undead Ghostling.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://y71wfdu8e6ko" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_co8ua"]
+[ext_resource type="Texture2D" uid="uid://cd7v0bevmebf1" path="res://Assets/Enemies/Ghostlings/Undead Ghostling.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_co8ua"]
 [ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="3"]
-[ext_resource type="Texture2D" uid="uid://cwdjls4weuyeg" path="res://Assets/Enemies/Animations/UndeadGhostSplashVFXSpriteSheet.png" id="5_f2meb"]
-[ext_resource type="Texture2D" uid="uid://dhiuqiaeqv1u3" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_8spsk"]
-[ext_resource type="Texture2D" uid="uid://et1bf73t4tkk" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_s860w"]
-[ext_resource type="Texture2D" uid="uid://c1endi8kwyeat" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_inpvm"]
-
+[ext_resource type="Texture2D" uid="uid://b4x4o0ge5quof" path="res://Assets/Enemies/Animations/UndeadGhostSplashVFXSpriteSheet.png" id="5_f2meb"]
+[ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_8spsk"]
+[ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_s860w"]
+[ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_inpvm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7e0vp"]
-radius = 6521.0347
+radius = 5917.841
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dhjfn"]
 atlas = ExtResource("5_f2meb")
@@ -82,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 24.0
 }]
@@ -207,7 +206,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1x415")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Blue_Goo",
 "speed": 16.0
 }, {
@@ -233,7 +232,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ap7sq")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Green_Goo",
 "speed": 24.0
 }, {
@@ -259,7 +258,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1wqas")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Purple_Goo",
 "speed": 16.0
 }, {
@@ -285,7 +284,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u7g7k")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Void_Goo",
 "speed": 16.0
 }]

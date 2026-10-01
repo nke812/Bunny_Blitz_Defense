@@ -187,6 +187,9 @@ func _on_button_button_down() -> void:
         if !SaveManager.bunyUnlocked:
             hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = true
             hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = true
+        else:
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = false
+            hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = false
         
         hud.get_node("HUD_Shop/HudBgDown/BunnySel").texture = load("res://Assets/Bunnies/Rookie.png")
         

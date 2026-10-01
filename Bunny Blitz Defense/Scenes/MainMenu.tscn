@@ -1990,6 +1990,5 @@ libraries/ = SubResource("AnimationLibrary_h64ul")
 [connection signal="pressed" from="Options/MusicControl/MusicIcon" to="." method="_on_music_icon_pressed"]
 [connection signal="pressed" from="Options/SFXControl/SFXIcon" to="." method="_on_sfx_icon_pressed"]
 [connection signal="toggled" from="Options/Fullscreen_CB" to="Options/Fullscreen_CB" method="_on_toggled"]
-[connection signal="pressed" from="Options/ResetSaveBTN" to="." method="_on_reset_save_pressed"]
 [connection signal="toggled" from="Options/ResetSaveBTN" to="." method="_on_reset_save_toggled"]
 [connection signal="pressed" from="Options/ResetSave/ConfirmReset" to="." method="_on_confirm_reset_pressed"]
