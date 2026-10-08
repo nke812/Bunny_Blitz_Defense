@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://br6ci3cw1yn3c" path="res://Assets/Others/Menu_Assets/Foreground_Nature.png" id="6_fipmv"]
 [ext_resource type="Texture2D" uid="uid://cihnm0iygxl2c" path="res://Assets/Others/Menu_Assets/Buttons/Start_Text.png" id="6_jvcv6"]
 [ext_resource type="AudioStream" uid="uid://dki6178h3w0a2" path="res://Assets/Audio/SFXs/GameStart.wav" id="6_pjscj"]
-[ext_resource type="StyleBox" uid="uid://1p8p51j014uf" path="res://Others/InvisibleButton.tres" id="6_ux20s"]
+[ext_resource type="StyleBox" path="res://Others/InvisibleButton.tres" id="6_ux20s"]
 [ext_resource type="AudioStream" uid="uid://cxfkx1fcac5i5" path="res://Assets/Audio/Music/MainTheme.ogg" id="7_6byu3"]
 [ext_resource type="Texture2D" uid="uid://bo2bv5uxfm8f3" path="res://Assets/Others/Menu_Assets/Buttons/Start_Bunnies.png" id="7_rplfc"]
 [ext_resource type="Texture2D" uid="uid://dfavesmxmpxou" path="res://Assets/Others/Menu_Assets/Bunnies.png" id="7_ydmd8"]
@@ -40,6 +40,9 @@
 [ext_resource type="Texture2D" uid="uid://ct1qsup7frlmj" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="27_3u44c"]
 [ext_resource type="Texture2D" uid="uid://px1lxdelyre3" path="res://Assets/Others/HUD_Assets/BunnyCoin.png" id="27_r4k1l"]
 [ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="28_qwpoy"]
+[ext_resource type="Texture2D" uid="uid://clhsfthw22a0x" path="res://Assets/Others/UI_Assets/DailyReward.png" id="29_lcy8p"]
+[ext_resource type="Texture2D" uid="uid://bm2ppvakep68k" path="res://Assets/Others/UI_Assets/DailyRewardDisable.png" id="30_jhlh1"]
+[ext_resource type="Texture2D" uid="uid://cc3qgxwv1xs23" path="res://Assets/Others/UI_Assets/DailyRewardHover.png" id="30_oor3o"]
 [ext_resource type="Script" uid="uid://x47tqg13am5v" path="res://Scripts/DailyReward.gd" id="30_r4k1l"]
 [ext_resource type="Texture2D" uid="uid://ba502jsel36e4" path="res://Assets/Others/Menu_Assets/Maps/MapSandyStreets_Sel.png" id="31_f3d0c"]
 [ext_resource type="AudioStream" uid="uid://dxu7btcmga0es" path="res://Assets/Audio/SFXs/DailyEarn.wav" id="33_qwpoy"]
@@ -1052,6 +1055,7 @@ theme_override_styles/normal = ExtResource("6_ux20s")
 theme_override_styles/pressed = ExtResource("6_ux20s")
 theme_override_styles/hover = ExtResource("6_ux20s")
 theme_override_styles/focus = ExtResource("6_ux20s")
+flat = true
 
 [node name="AnimCursorHoverSun" type="AnimationPlayer" parent="SunSetEuGostoMuito" unique_id=1958846711]
 libraries/ = SubResource("AnimationLibrary_jhlh1")
@@ -1100,6 +1104,7 @@ theme_override_styles/pressed = ExtResource("6_ux20s")
 theme_override_styles/hover = ExtResource("6_ux20s")
 theme_override_styles/disabled = ExtResource("6_ux20s")
 theme_override_styles/focus = ExtResource("6_ux20s")
+flat = true
 
 [node name="Bunny???" type="Sprite2D" parent="." unique_id=225438069]
 position = Vector2(-185.7, 559)
@@ -1146,6 +1151,7 @@ theme_override_styles/normal = ExtResource("6_ux20s")
 theme_override_styles/pressed = ExtResource("6_ux20s")
 theme_override_styles/hover = ExtResource("6_ux20s")
 theme_override_styles/focus = ExtResource("6_ux20s")
+flat = true
 
 [node name="Settings" type="Sprite2D" parent="." unique_id=978130090]
 position = Vector2(-738.99994, 858.99994)
@@ -1175,6 +1181,7 @@ theme_override_styles/pressed = ExtResource("6_ux20s")
 theme_override_styles/hover = ExtResource("6_ux20s")
 theme_override_styles/disabled = ExtResource("6_ux20s")
 theme_override_styles/focus = ExtResource("6_ux20s")
+flat = true
 
 [node name="Achievements" type="Sprite2D" parent="." unique_id=730391101]
 position = Vector2(-691.44104, 387.93677)
@@ -1204,6 +1211,7 @@ theme_override_styles/pressed = ExtResource("6_ux20s")
 theme_override_styles/hover = ExtResource("6_ux20s")
 theme_override_styles/disabled = ExtResource("6_ux20s")
 theme_override_styles/focus = ExtResource("6_ux20s")
+flat = true
 
 [node name="Rookienho" type="Sprite2D" parent="." unique_id=1421522985]
 position = Vector2(-617.24164, 547.8899)
@@ -1234,6 +1242,7 @@ theme_override_styles/pressed = ExtResource("6_ux20s")
 theme_override_styles/hover = ExtResource("6_ux20s")
 theme_override_styles/disabled = ExtResource("6_ux20s")
 theme_override_styles/focus = ExtResource("6_ux20s")
+flat = true
 
 [node name="Squeaky" type="AudioStreamPlayer" parent="Rookienho" unique_id=1372498639]
 stream = ExtResource("15_ow4wq")
@@ -1270,6 +1279,7 @@ theme_override_styles/pressed = ExtResource("6_ux20s")
 theme_override_styles/hover = ExtResource("6_ux20s")
 theme_override_styles/disabled = ExtResource("6_ux20s")
 theme_override_styles/focus = ExtResource("6_ux20s")
+flat = true
 
 [node name="ForegroundNature" type="Sprite2D" parent="." unique_id=847093487]
 position = Vector2(-34.57168, 539.3125)
@@ -1422,26 +1432,31 @@ script = ExtResource("30_r4k1l")
 [node name="DailyEarnSFX" type="AudioStreamPlayer" parent="NewsScreen/DailyReward" unique_id=1220542775]
 bus = &"SFX"
 
-[node name="BtnDaily" type="Button" parent="NewsScreen/DailyReward" unique_id=1537601265]
+[node name="BtnDaily" type="TextureButton" parent="NewsScreen/DailyReward" unique_id=1563511537]
 layout_mode = 0
-offset_left = -275.04407
-offset_top = -18.226456
-offset_right = -145.40405
-offset_bottom = 122.82254
-rotation = 0.09250245
+offset_left = -323.82544
+offset_top = -64.32885
+offset_right = -102.46155
+offset_bottom = 158.04584
 pivot_offset = Vector2(64.50488, 71.99014)
-theme_override_fonts/font = ExtResource("28_qwpoy")
-theme_override_font_sizes/font_size = 20
-text = "DAILY 
-REWARD"
+texture_normal = ExtResource("29_lcy8p")
+texture_hover = ExtResource("30_oor3o")
+texture_disabled = ExtResource("30_jhlh1")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="TimerDaily" type="Label" parent="NewsScreen/DailyReward" unique_id=835565107]
 layout_mode = 0
-offset_left = -263.6209
-offset_top = -57.896484
-offset_right = -136.64252
-offset_bottom = -20.896484
+offset_left = -254.28601
+offset_top = -78.266785
+offset_right = -127.30762
+offset_bottom = -41.266785
 rotation = 0.08901179
+theme_override_colors/font_color = Color(0.98039216, 0.8666667, 0.3764706, 1)
+theme_override_colors/font_shadow_color = Color(0.64705884, 0.57254905, 0.25882354, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 27
 text = "12:00:00"
 horizontal_alignment = 1
@@ -1964,10 +1979,8 @@ libraries/ = SubResource("AnimationLibrary_h64ul")
 [connection signal="mouse_entered" from="Settings/SettingsBTN" to="." method="_on_settings_mouse_entered"]
 [connection signal="mouse_exited" from="Settings/SettingsBTN" to="." method="_on_settings_mouse_exited"]
 [connection signal="pressed" from="Settings/SettingsBTN" to="." method="_on_settings_pressed"]
-[connection signal="mouse_entered" from="Achievements/AchievementsBTN" to="." method="_on_achievements_mouse_entered"]
 [connection signal="mouse_exited" from="Achievements/AchievementsBTN" to="." method="_on_achievements_mouse_exited"]
 [connection signal="pressed" from="Rookienho/A_COISA_MAIS_FODA" to="." method="_on_easter_egg_pressed"]
-[connection signal="mouse_entered" from="Extras/ExtrasBTN" to="." method="_on_extras_mouse_entered"]
 [connection signal="mouse_exited" from="Extras/ExtrasBTN" to="." method="_on_extras_mouse_exited"]
 [connection signal="button_down" from="TitleScreenStart" to="." method="_on_title_screen_start_button_down"]
 [connection signal="pressed" from="TitleScreenStart" to="." method="_on_title_screen_start_pressed"]

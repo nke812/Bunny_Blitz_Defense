@@ -12,11 +12,11 @@ func _physics_process(delta):
     pf.progress += speed * delta
 
 
-    if $"..".progress_ratio >= 0.99:
+    if $"..".progress_ratio >= 1:
         get_tree().call_group("HP", "take_dmg", 3)
 
         var spawner_no = get_tree().get_first_node_in_group("spawner")
-        spawner_no.inimigo_morreu()
+        spawner_no.inimigo_morreu(true)
         get_parent().queue_free()
 
 func DMGED(quantidade):
@@ -24,18 +24,18 @@ func DMGED(quantidade):
     var valor_atual = int(moedas.text)
 
     vida -= quantidade
-    $AnimationPlayer.play("Animations/ghostling_TakeDMG")
+    $AnimationPlayer.play("new_animation")
 
     if vida <= 0:
         $Death.play()
-        $"../Goo_Splash".visible = false
+        $Ghoul/Goo_Splash.visible = false
         $HitBoxGhostling.set_deferred("disabled", true)
         
         var novo_total = int(moedas.text)
         moedas.text = str(novo_total + 6)
 
         speed = 0
-        $AnimationPlayer.play("Animations/ghostling_TakeDMG")
+        $AnimationPlayer.play("new_animation")
         $"../POP".play("default")
         
         await $AnimationPlayer.animation_finished
@@ -53,8 +53,8 @@ func gooey_stun(TimeSlimed: float, cor_ataque: String):
     if goo_stun: return 
     
     goo_stun = true
-    $"../Goo_Splash".visible = true
-    $"../Goo_Splash".play(cor_ataque)
+    $Ghoul/Goo_Splash.visible = true
+    $Ghoul/Goo_Splash.play(cor_ataque)
     
     var tween_B = create_tween()
     
@@ -72,7 +72,7 @@ func gooey_stun(TimeSlimed: float, cor_ataque: String):
     await get_tree().create_timer(TimeSlimed).timeout
     
     if is_instance_valid(self):
-        $"../Goo_Splash".play_backwards(cor_ataque)
+        $Ghoul/Goo_Splash.play_backwards(cor_ataque)
         speed = speed_base
         $Ghoul.modulate = Color(1, 1, 1, 1)
         goo_stun = false

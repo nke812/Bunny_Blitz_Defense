@@ -23,6 +23,8 @@ func _ready():
     else:
         $UI_Selection/AutoPlay.texture_normal = load("res://Assets/Others/HUD_Assets/AutoplayOFF.png")
         
+    $BunnyCoinsLabel.text = str(BunnyCoinsMatch)
+        
 func _process(_delta: float) -> void:
     var moedas_atuais_nova = int(moedas_label.text)
     if moedas_atuais_nova != moedas_atuais:
@@ -48,7 +50,10 @@ func take_dmg(dmg):
         $PGB_V.value = 0 
         
         $UI_Selection/GameOver/GameOver_Appear.play("go_appear")
-        
+        SaveManager.BunnyCoins += BunnyCoinsMatch
+        SaveManager.guardar_dados()
+        AtualizarLabelCoins()
+
         Engine.time_scale = 1.0
         $Pause.visible = false
         
@@ -78,12 +83,8 @@ func _on_options_pressed():
 func _on_back_menu_pressed():
     get_tree().paused = false
     Engine.time_scale = 1.0
-    SaveManager.BunnyCoins = SaveManager.BunnyCoins + BunnyCoinsMatch
-    SaveManager.guardar_dados()
     Global.LoadingScene = "menu"
     get_tree().change_scene_to_file("res://Scenes/loading.tscn")
-    
-    print("ganhaste isto pah conta " + str(BunnyCoinsMatch))
 
 func _on_exit_settings_pressed() -> void:
     $UI_Selection/Options.visible = false
@@ -456,7 +457,11 @@ func _on_bt_nsell_mouse_exited() -> void:
 
 func victory():
     BunnyCoinsMatch += 200
+    SaveManager.BunnyCoins += BunnyCoinsMatch
+    SaveManager.guardar_dados()
     AtualizarLabelCoins()
+
+    print("ganhaste isto pah conta " + str(BunnyCoinsMatch))
     $UI_Selection/VictorySFX.play()
     $UI_Selection/Victory/VictoryAppear.play("Victory")
     Engine.time_scale = 1.0
@@ -471,5 +476,6 @@ func EarnBunnyCoins(AmountCoins: int):
     AtualizarLabelCoins()
 
 func AtualizarLabelCoins():
-    $UI_Selection/Victory/MenuSettings/Coins.text = str(BunnyCoinsMatch)
-    $UI_Selection/GameOver/MenuSettings/Coins.text = str(BunnyCoinsMatch)
+    $BunnyCoinsLabel.text = str(BunnyCoinsMatch)
+    $UI_Selection/GameOver/MenuSettings/Panel/Coins.text = str(BunnyCoinsMatch)
+    $UI_Selection/Victory/MenuSettings/Panel/Coins.text = str(BunnyCoinsMatch)

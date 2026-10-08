@@ -1,29 +1,28 @@
 [gd_scene format=3 uid="uid://cf5i2ng5uq7i"]
 
 [ext_resource type="Script" uid="uid://deemh3xh6l078" path="res://Scripts/Maps/map_1.gd" id="1"]
-[ext_resource type="AudioStream" uid="uid://duuvcaw8ke20n" path="res://Assets/Audio/SFXs/RoundStart.wav" id="2_4vd4o"]
-[ext_resource type="AudioStream" uid="uid://dx6p85h5vngs" path="res://Assets/Audio/Music/GraveyardGroove.ogg" id="2_etryv"]
+[ext_resource type="AudioStream" uid="uid://e86tlhe63lxe" path="res://Assets/Audio/SFXs/RoundStart.wav" id="2_4vd4o"]
+[ext_resource type="AudioStream" uid="uid://b63nenusobfia" path="res://Assets/Audio/Music/GraveyardGroove.ogg" id="2_etryv"]
 [ext_resource type="Script" uid="uid://cj5vuu45ii5tk" path="res://Scripts/ghostling_spawner.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://d2myl3jmtwjo8" path="res://Assets/Others/Map_Assets/Grasslands/Sign.png" id="5_0f4fa"]
-[ext_resource type="Texture2D" uid="uid://c4prcyqrl42ei" path="res://Assets/Others/Map_Assets/Grasslands/Base.png" id="5_cur0w"]
-[ext_resource type="Texture2D" uid="uid://dlgqgauf5dfmq" path="res://Assets/Others/Map_Assets/Grasslands/Path.png" id="6_8nplo"]
-[ext_resource type="Texture2D" uid="uid://dq6c12fdri6re" path="res://Assets/Others/Map_Assets/Grasslands/Grass.png" id="6_656xa"]
-[ext_resource type="Texture2D" uid="uid://cwsehsugxcrlu" path="res://Assets/Others/Map_Assets/Portal.png" id="7_0f4fa"]
-[ext_resource type="Texture2D" uid="uid://ocjd320qx1tt" path="res://Assets/Others/Map_Assets/Grasslands/Tunnel.png" id="7_43eqa"]
-[ext_resource type="StyleBox" uid="uid://1p8p51j014uf" path="res://Others/InvisibleButton.tres" id="7_416cr"]
+[ext_resource type="Texture2D" uid="uid://cv3yixdyghgeg" path="res://Assets/Others/Map_Assets/Grasslands/Sign.png" id="5_0f4fa"]
+[ext_resource type="Texture2D" uid="uid://dsdynvhnph0sp" path="res://Assets/Others/Map_Assets/Grasslands/Base.png" id="5_cur0w"]
+[ext_resource type="Texture2D" uid="uid://spno1wvudqr0" path="res://Assets/Others/Map_Assets/Grasslands/Path.png" id="6_8nplo"]
+[ext_resource type="Texture2D" uid="uid://bjdqnhkdm27h5" path="res://Assets/Others/Map_Assets/Grasslands/Grass.png" id="6_656xa"]
+[ext_resource type="Texture2D" uid="uid://dl7ad3dap35hn" path="res://Assets/Others/Map_Assets/Portal.png" id="7_0f4fa"]
+[ext_resource type="Texture2D" uid="uid://3pnxgtv2s8bg" path="res://Assets/Others/Map_Assets/Grasslands/Tunnel.png" id="7_43eqa"]
+[ext_resource type="StyleBox" path="res://Others/InvisibleButton.tres" id="7_416cr"]
 [ext_resource type="PackedScene" uid="uid://cvtf3eidvbt76" path="res://Scenes/HUD.tscn" id="9"]
-[ext_resource type="Texture2D" uid="uid://cylkxt7pb7mbp" path="res://Assets/Others/Map_Assets/Grasslands/Bush1.png" id="9_656xa"]
-[ext_resource type="Texture2D" uid="uid://14oeraps3bu3" path="res://Assets/Others/Map_Assets/Grasslands/Trees.png" id="9_jo21a"]
-[ext_resource type="Texture2D" uid="uid://cc4jms01ek4kg" path="res://Assets/Others/Map_Assets/Grasslands/Bush2.png" id="10_43eqa"]
-[ext_resource type="Texture2D" uid="uid://ch2ubkqg2nwci" path="res://Assets/Others/Map_Assets/Grasslands/Rookienho.png" id="10_416cr"]
-[ext_resource type="Texture2D" uid="uid://ddwa7fuxwl1c4" path="res://Assets/Others/Map_Assets/Grasslands/Bush3.png" id="11_416cr"]
-[ext_resource type="AudioStream" uid="uid://bg3p5f5v5vtgp" path="res://Assets/Audio/SFXs/Squeaky.wav" id="11_r2guh"]
-[ext_resource type="Texture2D" uid="uid://dteckvem0fiji" path="res://Assets/Others/Map_Assets/Grasslands/Bush4.png" id="12_r2guh"]
-[ext_resource type="Texture2D" uid="uid://bwvy5m2jpokhd" path="res://Assets/Others/Map_Assets/Grasslands/Bush5.png" id="13_6uf4h"]
-[ext_resource type="Texture2D" uid="uid://bvgubb03i7bvx" path="res://Assets/Others/Map_Assets/Grasslands/Bush6.png" id="14_se3bs"]
-[ext_resource type="Texture2D" uid="uid://bhxv7x7lm0do0" path="res://Assets/Others/Map_Assets/Grasslands/Bush7.png" id="15_ipn2v"]
-[ext_resource type="Texture2D" uid="uid://cn87vbfc1twwp" path="res://Assets/Others/Map_Assets/Grasslands/Bush8.png" id="16_8xnfd"]
-
+[ext_resource type="Texture2D" uid="uid://cdcycwcoxc1f2" path="res://Assets/Others/Map_Assets/Grasslands/Bush1.png" id="9_656xa"]
+[ext_resource type="Texture2D" uid="uid://rjue1jwc2ocq" path="res://Assets/Others/Map_Assets/Grasslands/Trees.png" id="9_jo21a"]
+[ext_resource type="Texture2D" uid="uid://cabujgy7qvn1w" path="res://Assets/Others/Map_Assets/Grasslands/Bush2.png" id="10_43eqa"]
+[ext_resource type="Texture2D" uid="uid://cmd1jayfyd5lv" path="res://Assets/Others/Map_Assets/Grasslands/Rookienho.png" id="10_416cr"]
+[ext_resource type="Texture2D" uid="uid://bqeosrrx711nw" path="res://Assets/Others/Map_Assets/Grasslands/Bush3.png" id="11_416cr"]
+[ext_resource type="AudioStream" uid="uid://p4p6rse7krrv" path="res://Assets/Audio/SFXs/Squeaky.wav" id="11_r2guh"]
+[ext_resource type="Texture2D" uid="uid://d2b7csucwtpah" path="res://Assets/Others/Map_Assets/Grasslands/Bush4.png" id="12_r2guh"]
+[ext_resource type="Texture2D" uid="uid://cw55npgiar6gn" path="res://Assets/Others/Map_Assets/Grasslands/Bush5.png" id="13_6uf4h"]
+[ext_resource type="Texture2D" uid="uid://cpokejbr50ick" path="res://Assets/Others/Map_Assets/Grasslands/Bush6.png" id="14_se3bs"]
+[ext_resource type="Texture2D" uid="uid://dhoydolnbyly0" path="res://Assets/Others/Map_Assets/Grasslands/Bush7.png" id="15_ipn2v"]
+[ext_resource type="Texture2D" uid="uid://chs14thfxrasq" path="res://Assets/Others/Map_Assets/Grasslands/Bush8.png" id="16_8xnfd"]
 
 [sub_resource type="Animation" id="Animation_656xa"]
 resource_name = "PortalAnim"
@@ -189,10 +188,15 @@ texture = ExtResource("5_0f4fa")
 offset = Vector2(-45.939697, -59.843384)
 
 [node name="Button" type="Button" parent="Sign" unique_id=1588757767]
-offset_left = -213.55911
-offset_top = -288.44333
-offset_right = 167.67175
-offset_bottom = -173.95786
+anchors_preset = -1
+anchor_left = 0.17500001
+anchor_top = 0.051000003
+anchor_right = 0.892
+anchor_bottom = 0.314
+offset_left = -303.15912
+offset_top = -314.55533
+offset_right = -289.03226
+offset_bottom = -334.72583
 rotation = -0.12566371
 pivot_offset = Vector2(363.32764, 102.61926)
 theme_override_styles/normal = ExtResource("7_416cr")
@@ -200,6 +204,7 @@ theme_override_styles/pressed = ExtResource("7_416cr")
 theme_override_styles/hover = ExtResource("7_416cr")
 theme_override_styles/disabled = ExtResource("7_416cr")
 theme_override_styles/focus = ExtResource("7_416cr")
+flat = true
 
 [node name="Tunnel" type="Sprite2D" parent="." unique_id=1313899328]
 y_sort_enabled = true
@@ -244,8 +249,7 @@ curve = SubResource("Curve2D_lycfg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1755593801]
 y_sort_enabled = true
-position = Vector2(-119.60551, 269.8874)
-progress = 5496.54
+position = Vector2(-541.3174, 158.0839)
 rotates = false
 loop = false
 

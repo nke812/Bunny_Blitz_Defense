@@ -11,11 +11,11 @@ func _physics_process(delta):
     var pf = get_parent() as PathFollow2D
     pf.progress += speed * delta
 
-    if $"..".progress_ratio >= 0.99:
+    if $"..".progress_ratio >= 1:
         get_tree().call_group("HP", "take_dmg", 45)
 
         var spawner_no = get_tree().get_first_node_in_group("spawner")
-        spawner_no.inimigo_morreu()
+        spawner_no.inimigo_morreu(true)
         get_parent().queue_free()
 
 func DMGED(quantidade):
@@ -23,22 +23,21 @@ func DMGED(quantidade):
     var valor_atual = int(moedas.text)
 
     vida -= quantidade
-    $AnimationPlayer.play("Animations/ghostling_TakeDMG")
+    $AnimationPlayer.play("GhostlingTakeDMG")
 
     #moedas.text = str(valor_atual + quantidade)
 
     if vida <= 0:
         $Death.play()
-        $"../Goo_Splash".visible = false
+        $Brute/Goo_Splash.visible = false
         $HitBoxGhostling.set_deferred("disabled", true)
         
         
         var novo_total = int(moedas.text)
         moedas.text = str(novo_total + 60)
         speed = 0
-        $AnimationPlayer.play("Animations/ghostling_TakeDMG")
         $"../POP".play("default")
-        
+        $AnimationPlayer.play("GhostlingTakeDMG")
         await $AnimationPlayer.animation_finished
         $Brute.modulate = Color(0.957, 0.478, 0.965, 0.0)
         
@@ -54,8 +53,8 @@ func gooey_stun(TimeSlimed: float, cor_ataque: String):
     if goo_stun: return 
     
     goo_stun = true
-    $"../Goo_Splash".visible = true
-    $"../Goo_Splash".play(cor_ataque)
+    $Brute/Goo_Splash.visible = true
+    $Brute/Goo_Splash.play(cor_ataque)
     
     var tween_B = create_tween()
     
@@ -73,7 +72,7 @@ func gooey_stun(TimeSlimed: float, cor_ataque: String):
     await get_tree().create_timer(TimeSlimed).timeout
     
     if is_instance_valid(self):
-        $"../Goo_Splash".play_backwards(cor_ataque)
+        $Brute/Goo_Splash.play_backwards(cor_ataque)
         speed = speed_base
         $Brute.modulate = Color(1, 1, 1, 1)
         goo_stun = false

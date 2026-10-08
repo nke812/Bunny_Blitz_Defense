@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bcum6d7l6c6c2"]
 
 [ext_resource type="Script" uid="uid://bs8n7d6vtfugw" path="res://Scripts/Bunnies/mystical.gd" id="1_ppyd6"]
-[ext_resource type="Texture2D" uid="uid://dkr53o6gmqvxf" path="res://Assets/Bunnies/Others/Shadow.png" id="2_t6ws3"]
-[ext_resource type="Texture2D" uid="uid://b4f81ngh84xns" path="res://Assets/Bunnies/Mystical.png" id="3_a1omc"]
-[ext_resource type="Texture2D" uid="uid://c0cfxvyhvvig4" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="5_03oyv"]
-[ext_resource type="Texture2D" uid="uid://b43vqrghk26ay" path="res://Assets/Others/UI_Assets/ArrowSupport.png" id="5_ppyd6"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="2_t6ws3"]
+[ext_resource type="Texture2D" uid="uid://b6h7n0ofp3m3k" path="res://Assets/Bunnies/Mystical.png" id="3_a1omc"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="5_03oyv"]
+[ext_resource type="Texture2D" uid="uid://cyyqvlv25xsyh" path="res://Assets/Others/UI_Assets/ArrowSupport.png" id="5_ppyd6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v3xng"]
 radius = 189.09521

@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://07xbi3rhivcu"]
 
 [ext_resource type="Script" uid="uid://c1xo6dxou5ev7" path="res://Scripts/Bunnies/doll.gd" id="1_qww3h"]
-[ext_resource type="AudioStream" uid="uid://ctj2aulmaw5eq" path="res://Assets/Audio/SFXs/DollAttack.mp3" id="2_8lqga"]
-[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="2_x0nec"]
+[ext_resource type="AudioStream" uid="uid://c8mll2qa8n1w0" path="res://Assets/Audio/SFXs/DollAttack.mp3" id="2_8lqga"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="2_x0nec"]
 [ext_resource type="Texture2D" uid="uid://mw77jmtsk8ph" path="res://Assets/Bunnies/Doll.png" id="3_8lqga"]
-[ext_resource type="Texture2D" uid="uid://4k5vra8yk73w" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="4_q43ii"]
-[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="5_ahu7b"]
+[ext_resource type="Texture2D" uid="uid://bglohhn54felc" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="4_q43ii"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="5_ahu7b"]
 [ext_resource type="Animation" uid="uid://b1g85crk2yvfh" path="res://Others/ChangeSkin.res" id="6_m453k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4dix"]
@@ -340,7 +340,7 @@ shape = SubResource("CircleShape2D_a4dix")
 debug_color = Color(0, 0, 0, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=864581597]
-wait_time = 3.0
+wait_time = 4.0
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342500545]

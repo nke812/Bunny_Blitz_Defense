@@ -3,89 +3,11 @@
 [ext_resource type="Script" uid="uid://d1obqfb6h1piv" path="res://Scripts/Enemies/Ghostling/ghostling.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://c8f14wnhvw8si" path="res://Assets/Enemies/Ghostlings/Ghostling.png" id="2"]
 [ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_ait25"]
-[ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="3"]
 [ext_resource type="Texture2D" uid="uid://cmo4p2m5nnb46" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="4_754id"]
 [ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="5_oikgl"]
 [ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="6_ait25"]
 [ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="7_npx3w"]
 [ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="8_0j1xe"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_hyln6"]
-radius = 6.39947
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
-atlas = ExtResource("4_754id")
-region = Rect2(420, 494, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ejxq"]
-atlas = ExtResource("4_754id")
-region = Rect2(0, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgkc5"]
-atlas = ExtResource("4_754id")
-region = Rect2(210, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oikgl"]
-atlas = ExtResource("4_754id")
-region = Rect2(420, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ait25"]
-atlas = ExtResource("4_754id")
-region = Rect2(0, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_npx3w"]
-atlas = ExtResource("4_754id")
-region = Rect2(210, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0j1xe"]
-atlas = ExtResource("4_754id")
-region = Rect2(420, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0gqd"]
-atlas = ExtResource("4_754id")
-region = Rect2(0, 494, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qp18i"]
-atlas = ExtResource("4_754id")
-region = Rect2(210, 494, 210, 247)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m8hi3"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0e3yp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ejxq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qgkc5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oikgl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ait25")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_npx3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0j1xe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n0gqd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qp18i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0e3yp")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 24.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8hi3"]
 atlas = ExtResource("5_oikgl")
@@ -209,7 +131,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Blue_Goo",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,7 +157,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Green_Goo",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,7 +183,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Purple_Goo",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -287,7 +209,117 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Void_Goo",
-"speed": 16.0
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyln6"]
+radius = 5.774544
+
+[sub_resource type="Animation" id="Animation_npx3w"]
+resource_name = "new_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.26, 0.26), Vector2(0.26, 0.17), Vector2(0.26, 0.26)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0j1xe"]
+_data = {
+&"new_animation": SubResource("Animation_npx3w")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
+atlas = ExtResource("4_754id")
+region = Rect2(420, 494, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ejxq"]
+atlas = ExtResource("4_754id")
+region = Rect2(0, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgkc5"]
+atlas = ExtResource("4_754id")
+region = Rect2(210, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oikgl"]
+atlas = ExtResource("4_754id")
+region = Rect2(420, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ait25"]
+atlas = ExtResource("4_754id")
+region = Rect2(0, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npx3w"]
+atlas = ExtResource("4_754id")
+region = Rect2(210, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j1xe"]
+atlas = ExtResource("4_754id")
+region = Rect2(420, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0gqd"]
+atlas = ExtResource("4_754id")
+region = Rect2(0, 494, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp18i"]
+atlas = ExtResource("4_754id")
+region = Rect2(210, 494, 210, 247)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8hi3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e3yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ejxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgkc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oikgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ait25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npx3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j1xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0gqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp18i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e3yp")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 24.0
 }]
 
 [node name="PathFollow2D" type="PathFollow2D" unique_id=1689450392]
@@ -306,8 +338,14 @@ bus = &"SFX"
 
 [node name="Ghostling" type="Sprite2D" parent="Ghostling" unique_id=886288773]
 position = Vector2(2.5000002, 1.250001)
-scale = Vector2(0.096, 0.096)
+scale = Vector2(0.26, 0.26)
 texture = ExtResource("2")
+
+[node name="Goo_Splash" type="AnimatedSprite2D" parent="Ghostling/Ghostling" unique_id=493019322]
+position = Vector2(14.42308, 19.23079)
+scale = Vector2(2.8754582, 2.8754582)
+sprite_frames = SubResource("SpriteFrames_x0pc8")
+animation = &"Green_Goo"
 
 [node name="HitBoxGhostling" type="CollisionShape2D" parent="Ghostling" unique_id=708407390]
 position = Vector2(-4.7683716e-07, 2.5)
@@ -316,7 +354,7 @@ shape = SubResource("CircleShape2D_hyln6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ghostling" unique_id=944319890]
 root_node = NodePath("../Ghostling")
-libraries/Animations = ExtResource("3")
+libraries/ = SubResource("AnimationLibrary_0j1xe")
 
 [node name="POP" type="AnimatedSprite2D" parent="." unique_id=1086440092]
 position = Vector2(7, -6.999998)
@@ -324,9 +362,3 @@ scale = Vector2(0.92255104, 0.9225511)
 sprite_frames = SubResource("SpriteFrames_m8hi3")
 frame = 9
 frame_progress = 1.0
-
-[node name="Goo_Splash" type="AnimatedSprite2D" parent="." unique_id=493019322]
-position = Vector2(5.000001, 2.000001)
-scale = Vector2(0.6666667, 0.6666667)
-sprite_frames = SubResource("SpriteFrames_x0pc8")
-animation = &"Green_Goo"

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var label_timer: Label = $TimerDaily
-@onready var btn_recompensa: Button = $BtnDaily
+@onready var btn_recompensa: TextureButton = $BtnDaily
 
 const COOLDOWN_12H: int = 12 * 3600 # 43200 segundos
 

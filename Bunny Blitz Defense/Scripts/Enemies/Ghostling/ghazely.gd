@@ -12,11 +12,11 @@ func _physics_process(delta):
     pf.progress += speed * delta
 
 
-    if $"..".progress_ratio >= 0.99:
+    if $"..".progress_ratio >= 1:
         get_tree().call_group("HP", "take_dmg", 8)
 
         var spawner_no = get_tree().get_first_node_in_group("spawner")
-        spawner_no.inimigo_morreu()
+        spawner_no.inimigo_morreu(true)
         get_parent().queue_free()
 
 func DMGED(quantidade):
@@ -24,18 +24,17 @@ func DMGED(quantidade):
     var valor_atual = int(moedas.text)
 
     vida -= quantidade
-    $AnimationPlayer.play("Animations/ghostling_TakeDMG")
+    $AnimationPlayer.play("new_animation")
 
     if vida <= 0:
         $Death.play()
-        $"../Goo_Splash".visible = false
         $HitBoxGhostling.set_deferred("disabled", true)
         
         var novo_total = int(moedas.text)
         moedas.text = str(novo_total + 14)
 
         speed = 0
-        $AnimationPlayer.play("Animations/ghostling_TakeDMG")
+        $AnimationPlayer.play("new_animation")
         $"../POP".play("default")
         
         await $AnimationPlayer.animation_finished

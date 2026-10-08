@@ -3,89 +3,11 @@
 [ext_resource type="Script" uid="uid://blac8j3yq43eb" path="res://Scripts/Enemies/Ghostling/enhanced_ghaztling.gd" id="1_fcfll"]
 [ext_resource type="AudioStream" uid="uid://drurokcea15j5" path="res://Assets/Audio/SFXs/GhostlingDies.wav" id="2_6dv66"]
 [ext_resource type="Texture2D" uid="uid://ce1jv1mox3odf" path="res://Assets/Enemies/Ghostlings/Enhanced Ghaztling.png" id="3_viti8"]
-[ext_resource type="AnimationLibrary" uid="uid://2l7nm16gxs37" path="res://Others/Animations.res" id="4_iwiwq"]
 [ext_resource type="Texture2D" uid="uid://cmo4p2m5nnb46" path="res://Assets/Enemies/Animations/GhostSplashVFXSpriteSheet.png" id="5_k6v8d"]
 [ext_resource type="Texture2D" uid="uid://cvragevgwi588" path="res://Assets/Bunnies/Animations/Paths/GooSplash01VFXSpriteSheet.png" id="6_nk3ng"]
 [ext_resource type="Texture2D" uid="uid://ba7acayn8rcjq" path="res://Assets/Bunnies/Animations/GooSplashVFXSpriteSheet.png" id="7_qqrdd"]
 [ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_nqhpr"]
 [ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_ourwi"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_psijl"]
-radius = 295.96555
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(420, 494, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ejxq"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(0, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgkc5"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(210, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oikgl"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(420, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ait25"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(0, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_npx3w"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(210, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0j1xe"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(420, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0gqd"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(0, 494, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qp18i"]
-atlas = ExtResource("5_k6v8d")
-region = Rect2(210, 494, 210, 247)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cs44n"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0e3yp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ejxq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qgkc5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oikgl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ait25")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_npx3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0j1xe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n0gqd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qp18i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0e3yp")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 24.0
-}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8hi3"]
 atlas = ExtResource("6_nk3ng")
@@ -209,7 +131,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Blue_Goo",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -235,7 +157,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Green_Goo",
-"speed": 24.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,7 +183,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Purple_Goo",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -287,11 +209,121 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Void_Goo",
-"speed": 16.0
+"speed": 20.0
+}]
+
+[sub_resource type="Animation" id="Animation_fcfll"]
+resource_name = "new_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Enhanced Ghaztling/Enhanced Ghaztling:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.58, 0.58), Vector2(0.58, 0.43), Vector2(0.58, 0.58)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Enhanced Ghaztling/Enhanced Ghaztling:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dv66"]
+_data = {
+&"new_animation": SubResource("Animation_fcfll")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_psijl"]
+radius = 159.99998
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(420, 494, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ejxq"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(0, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgkc5"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(210, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oikgl"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(420, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ait25"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(0, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npx3w"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(210, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j1xe"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(420, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0gqd"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(0, 494, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp18i"]
+atlas = ExtResource("5_k6v8d")
+region = Rect2(210, 494, 210, 247)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cs44n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e3yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ejxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgkc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oikgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ait25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npx3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j1xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0gqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp18i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e3yp")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 24.0
 }]
 
 [node name="PathFollow2D" type="PathFollow2D" unique_id=1495579962 groups=["HP"]]
-scale = Vector2(0.096, 0.096)
+scale = Vector2(0.2, 0.2)
 rotates = false
 loop = false
 
@@ -306,28 +338,27 @@ bus = &"SFX"
 
 [node name="Enhanced Ghaztling" type="Sprite2D" parent="Enhanced Ghaztling" unique_id=1236887099]
 y_sort_enabled = true
-position = Vector2(3.0000002, -12.440002)
-scale = Vector2(0.435, 0.435)
+position = Vector2(3.0000005, -12.440002)
+scale = Vector2(0.58, 0.58)
 texture = ExtResource("3_viti8")
+
+[node name="Goo_Splash" type="AnimatedSprite2D" parent="Enhanced Ghaztling/Enhanced Ghaztling" unique_id=1691722768]
+position = Vector2(-17.607975, 53.847168)
+scale = Vector2(2.934, 2.934)
+sprite_frames = SubResource("SpriteFrames_7xpid")
+animation = &"Green_Goo"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enhanced Ghaztling" unique_id=114745722]
 root_node = NodePath("../..")
-libraries/Animations = ExtResource("4_iwiwq")
+libraries/ = SubResource("AnimationLibrary_6dv66")
 
 [node name="HitBoxGhostling" type="CollisionShape2D" parent="Enhanced Ghaztling" unique_id=1789529]
-position = Vector2(-19.833344, 56.49994)
-scale = Vector2(0.98, 0.98)
+position = Vector2(-11, 29.999998)
 shape = SubResource("CircleShape2D_psijl")
 
 [node name="POP" type="AnimatedSprite2D" parent="." unique_id=530851213]
-position = Vector2(-20.833344, 20.833328)
-scale = Vector2(5.1936216, 5.193622)
+position = Vector2(20, -4.9999695)
+scale = Vector2(2.882525, 2.8825257)
 sprite_frames = SubResource("SpriteFrames_cs44n")
 frame = 9
 frame_progress = 1.0
-
-[node name="Goo_Splash" type="AnimatedSprite2D" parent="." unique_id=1691722768]
-position = Vector2(-9.536743e-07, 83.333336)
-scale = Vector2(4.0503473, 4.050348)
-sprite_frames = SubResource("SpriteFrames_7xpid")
-animation = &"Purple_Goo"

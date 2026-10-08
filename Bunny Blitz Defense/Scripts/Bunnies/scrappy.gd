@@ -25,12 +25,14 @@ var BuffStatus1 = "DMG: +0"
 var P1status = "Knockback: " + str(distancias_knockback[0])
 var P2status = "Target Amount: " + str(alvos_cadeia[0])
 
-func _process(delta: float) -> void:
-    
-    if focus == true:
-        $ArrowStun.visible = true
+func _ready() -> void:
+    posicionado = true
+
+func _process(_delta: float) -> void:
+    if focus:
+        if has_node("ArrowStun"): $ArrowStun.visible = true
     else:
-        $ArrowStun.visible = false
+        if has_node("ArrowStun"): $ArrowStun.visible = false
     
     if $Timer.is_stopped():
         pronto_para_atacar = true
@@ -43,7 +45,7 @@ func verificar_e_atacar():
     var inimigos_validos = []
 
     for corpo in corpos:
-        if corpo.is_in_group("Ghostlings") and is_instance_valid(corpo):
+        if is_instance_valid(corpo) and corpo.is_in_group("Ghostlings"):
             if corpo.has_method("DMGED"):
                 inimigos_validos.append(corpo)
 
@@ -72,6 +74,38 @@ func atacar_em_cadeia(alvos):
     pronto_para_atacar = false
     $Timer.start()
 
+# --- Comunicação com a Mystical ---
+
+func receber_buff_mystical(nivel_mystical: int):
+    MysticalBuff = true
+    
+    match nivel_mystical:
+        0: dmg_Scrappy = 1
+        1: dmg_Scrappy = 2
+        2: dmg_Scrappy = 3
+        3: dmg_Scrappy = 4
+        4: dmg_Scrappy = 5
+        _: dmg_Scrappy = 1
+
+    BuffStatus1 = "Dmg: +" + str(dmg_Scrappy)
+    
+    var hud = get_tree().get_first_node_in_group("HUD")
+    if hud and focus:
+        hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
+        hud.get_node("HUD_Shop/BuffStatus/Buff4").text = ""
+        hud.get_node("HUD_Shop/BuffStatus").visible = true
+
+func remover_buff_mystical():
+    MysticalBuff = false
+    dmg_Scrappy = 0
+    BuffStatus1 = "DMG: +0"
+    
+    var hud = get_tree().get_first_node_in_group("HUD")
+    if hud and focus:
+        hud.get_node("HUD_Shop/BuffStatus").visible = false
+
+# --- UI e Upgrades ---
+
 func _on_button_button_down() -> void:
     get_tree().call_group("Bunnies", "reset_focus")
     focus = true
@@ -90,35 +124,18 @@ func _on_button_button_down() -> void:
         hud.get_node("HUD_Shop/HudBgDown/ExitShop").disabled = false
         atualizar_valorTorre()
         
-        if MysticalBuff == true:
+        if MysticalBuff:
             hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
             hud.get_node("HUD_Shop/BuffStatus/Buff4").text = ""
             hud.get_node("HUD_Shop/BuffStatus").visible = true
             
         hud.get_node("HUD_Shop/Shop_Appear").play("Shop_Appear")
 
-func receber_buff_mystical(nivel_mystical):
-    if posicionado and MysticalBuff == true:
-        match nivel_mystical:
-            0: dmg_Scrappy = 1
-            1: dmg_Scrappy = 2
-            2: dmg_Scrappy = 3
-            3: dmg_Scrappy = 4
-            4: dmg_Scrappy = 5
-    else:
-        dmg_Scrappy = 0
-    
-    BuffStatus1 = "Dmg: +" + str(dmg_Scrappy)
-    
-    var hud = get_tree().get_first_node_in_group("HUD")
-    if hud and focus == true:
-        hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
-        hud.get_node("HUD_Shop/BuffStatus/Buff4").text = ""
-    
 func aplicar_upgrade(caminho):
     var hud = get_tree().get_first_node_in_group("HUD")
+    if not hud: return false
+    
     var label_moedas = hud.get_node("Moedas")
-
     var dinheiro_atual = int(label_moedas.text)
 
     var lista_precos = preços_p1 if caminho == 1 else preços_p2
@@ -135,48 +152,38 @@ func aplicar_upgrade(caminho):
         if caminho == 1:
             path1 += 1
             match path1:
-                1:
-                    valor_torre += 250
-                2:
-                    valor_torre += 600
-                3:
-                    valor_torre += 2800
-                4:
+                1: valor_torre += 250
+                2: valor_torre += 600
+                3: valor_torre += 2800
+                4: 
                     valor_torre += 7000
                     auraMAISego()
                     Scrappy.texture = load("res://Assets/Bunnies/Paths/Scrappy01.png")
 
-            
-            atualizar_valorTorre()
-            
             P1status = "Knockback: " + str(distancias_knockback[path1])
             hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
-                
+            atualizar_valorTorre()
         else:
             path2 += 1
             match path2:
-                1:
-                    valor_torre += 250
-                2:
-                    valor_torre += 600        
-                3:
-                    valor_torre += 2800
-                4:
+                1: valor_torre += 250
+                2: valor_torre += 600        
+                3: valor_torre += 2800
+                4: 
                     valor_torre += 7000
                     auraMAISego()
                     Scrappy.texture = load("res://Assets/Bunnies/Paths/Scrappy02.png")
                         
-            atualizar_valorTorre()            
             P2status = "Chain Targets: " + str(alvos_cadeia[path2])
             hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
+            atualizar_valorTorre()
             
         return true
     return false
 
 func auraMAISego():
     Scrappy.modulate = Color(1, 1, 1)
-    if has_node("AURA"):
-        $AURA.play("default")
+    if has_node("AURA"): $AURA.play("default")
     
     var tween = create_tween()
     tween.tween_property(Scrappy, "modulate", Color(2, 2, 2, 1), 0.3)
@@ -198,24 +205,26 @@ func _on_button_mouse_exited() -> void:
     queue_redraw()
 
 func reset_focus():
-    var hud = get_tree().get_first_node_in_group("HUD")
-    
-    hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = false
-    hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = false
     focus = false
-
+    if has_node("ArrowStun"): $ArrowStun.visible = false
+    
+    var hud = get_tree().get_first_node_in_group("HUD")
+    if hud:
+        hud.get_node("HUD_Shop/HudBgDown/TextureButton").disabled = false
+        hud.get_node("HUD_Shop/HudBgDown/TextureButton/lock").visible = false
 
 func atualizar_valorTorre():
     var hud = get_tree().get_first_node_in_group("HUD")
-    var valor_torre_60 : int = int(valor_torre * 0.6)
-    
-    hud.get_node("HUD_Shop/HudBgDown/Control/PanelSell/precoSell").text = str(valor_torre_60)
+    if hud:
+        var valor_torre_60 : int = int(valor_torre * 0.6)
+        hud.get_node("HUD_Shop/HudBgDown/Control/PanelSell/precoSell").text = str(valor_torre_60)
 
 func vender_torre():
     var moedas = get_tree().current_scene.find_child("Moedas")
-    var valor_atual = int(moedas.text)
-    var valor_torre_60 : int = int(valor_torre * 0.6)
+    if moedas:
+        var valor_atual = int(moedas.text)
+        var valor_torre_60 : int = int(valor_torre * 0.6)
+        moedas.text = str(valor_atual + valor_torre_60)
     
-    moedas.text = str(valor_atual + valor_torre_60)
-    
+    remover_buff_mystical()
     queue_free()

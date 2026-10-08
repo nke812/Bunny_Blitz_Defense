@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://def03tp0xh6hr" path="res://mods/PINK/static_body_2d.gd" id="1_j37py"]
 [ext_resource type="FontFile" uid="uid://v56c1vt506yg" path="res://FontText/Coiny-Regular.ttf" id="2_ylefu"]
-[ext_resource type="StyleBox" uid="uid://1p8p51j014uf" path="res://Others/InvisibleButton.tres" id="3_05yeg"]
-[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="4_5a03s"]
+[ext_resource type="StyleBox" path="res://Others/InvisibleButton.tres" id="3_05yeg"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="4_5a03s"]
 [ext_resource type="AudioStream" uid="uid://bk6vwn10iu1rk" path="res://mods/PINK/MUSICA-FODA-PRA-CRLH.wav" id="4_05yeg"]
 [ext_resource type="AudioStream" uid="uid://exhx4w8jn0br" path="res://mods/PINK/Cutie Mew Mew Magic.mp3" id="5_palqn"]
 [ext_resource type="Texture2D" uid="uid://dx7prrlr8riye" path="res://mods/PINK/Sprites/Idle.png" id="5_sgt3k"]
@@ -1170,6 +1170,7 @@ theme_override_styles/pressed = ExtResource("3_05yeg")
 theme_override_styles/hover = ExtResource("3_05yeg")
 theme_override_styles/disabled = ExtResource("3_05yeg")
 theme_override_styles/focus = ExtResource("3_05yeg")
+flat = true
 
 [node name="MUSICA-FODA-PRA-CRLH" type="AudioStreamPlayer" parent="." unique_id=891883948]
 process_mode = 3

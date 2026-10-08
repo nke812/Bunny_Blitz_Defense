@@ -10,30 +10,30 @@ func _physics_process(delta):
     var pf = get_parent() as PathFollow2D
     pf.progress += speed * delta
 
-    if $"..".progress_ratio >= 0.99:
+    if $"..".progress_ratio >= 1:
         get_tree().call_group("HP", "take_dmg", 40)
 
         var spawner_no = get_tree().get_first_node_in_group("spawner")
-        spawner_no.inimigo_morreu()
+        spawner_no.inimigo_morreu(true)
         get_parent().queue_free()
 
 func DMGED(quantidade):
     var moedas = get_tree().current_scene.find_child("Moedas")
     var valor_atual = int(moedas.text)
-    $AnimationPlayer.play("Animations/ghostling_TakeDMG")
+    $AnimationPlayer.play("new_animation")
     
     vida -= quantidade
 
     if vida <= 0:
         $Death.play()
-        $"../Goo_Splash".visible = false
+        $"Unholy Phantasm/Goo_Splash".visible = false
         $HitBoxGhostling.set_deferred("disabled", true)
 
         moedas.text = str(valor_atual + 10)
         
         
         speed = 0
-        $AnimationPlayer.play("Animations/ghostling_TakeDMG")
+        $AnimationPlayer.play("new_animation")
         $"../POP".play("default")
         
         await $AnimationPlayer.animation_finished
@@ -51,8 +51,8 @@ func gooey_stun(TimeSlimed: float, cor_ataque: String):
     if goo_stun: return 
     
     goo_stun = true
-    $"../Goo_Splash".visible = true
-    $"../Goo_Splash".play(cor_ataque)
+    $"Unholy Phantasm/Goo_Splash".visible = true
+    $"Unholy Phantasm/Goo_Splash".play(cor_ataque)
     
     var tween_B = create_tween()
     
@@ -70,9 +70,9 @@ func gooey_stun(TimeSlimed: float, cor_ataque: String):
     await get_tree().create_timer(TimeSlimed).timeout
     
     if is_instance_valid(self):
-        $"../Goo_Splash".play_backwards(cor_ataque)
+        $"Unholy Phantasm/Goo_Splash".play_backwards(cor_ataque)
         speed = speed_base
-        $UnholyPhantasm.modulate = Color(1, 1, 1, 1)
+        $"Unholy Phantasm".modulate = Color(1, 1, 1, 1)
         goo_stun = false
         
 func aplicar_knockback(distancia: float) -> void:

@@ -1,33 +1,71 @@
 [gd_scene format=3 uid="uid://d3o0qgqxkupje"]
 
-[ext_resource type="AudioStream" uid="uid://duuvcaw8ke20n" path="res://Assets/Audio/SFXs/RoundStart.wav" id="1_edkja"]
+[ext_resource type="AudioStream" uid="uid://e86tlhe63lxe" path="res://Assets/Audio/SFXs/RoundStart.wav" id="1_edkja"]
 [ext_resource type="Script" uid="uid://bof3npu0ftjj5" path="res://Scripts/Maps/map_2.gd" id="1_q1370"]
-[ext_resource type="Texture2D" uid="uid://daw5jcwdh6b2h" path="res://Assets/Others/Map_Assets/GlimmerRoad/Base.png" id="2_mrkoi"]
+[ext_resource type="Texture2D" uid="uid://ctdklifaun7nj" path="res://Assets/Others/Map_Assets/GlimmerRoad/Base.png" id="2_mrkoi"]
 [ext_resource type="Script" uid="uid://cj5vuu45ii5tk" path="res://Scripts/ghostling_spawner.gd" id="2_tmeid"]
-[ext_resource type="Texture2D" uid="uid://ckcljmdjdddw2" path="res://Assets/Others/Map_Assets/GlimmerRoad/Path.png" id="3_sc7s4"]
+[ext_resource type="Texture2D" uid="uid://beydcukex7oy3" path="res://Assets/Others/Map_Assets/GlimmerRoad/Path.png" id="3_sc7s4"]
 [ext_resource type="PackedScene" uid="uid://cvtf3eidvbt76" path="res://Scenes/HUD.tscn" id="4_25kso"]
-[ext_resource type="Texture2D" uid="uid://ut177ay1k5yj" path="res://Assets/Others/Map_Assets/GlimmerRoad/Mushroom2.png" id="5_kdfe2"]
-[ext_resource type="Texture2D" uid="uid://bp3e1vrwk3h8l" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass1.png" id="5_q1370"]
-[ext_resource type="Texture2D" uid="uid://cae1p6aw7np7q" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerMushroom2.png" id="6_0dmdx"]
-[ext_resource type="Texture2D" uid="uid://dvlotcfxgqsmm" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass2.png" id="6_bdurf"]
-[ext_resource type="Texture2D" uid="uid://cv577kxcs170f" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass3.png" id="7_1syf6"]
-[ext_resource type="Texture2D" uid="uid://bq27k4a6hrv6y" path="res://Assets/Others/Map_Assets/GlimmerRoad/Mushroom1.png" id="7_41i51"]
-[ext_resource type="Texture2D" uid="uid://dtrapspdak63b" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass4.png" id="8_6mcp2"]
-[ext_resource type="Texture2D" uid="uid://dg05ppgju83ts" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerMushroom1.png" id="8_mq6hj"]
-[ext_resource type="Texture2D" uid="uid://br0o3v0v3epll" path="res://Assets/Others/Map_Assets/GlimmerRoad/Crystal3.png" id="9_1jgnj"]
-[ext_resource type="Texture2D" uid="uid://7yy6dfh46yb1" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass6.png" id="9_it258"]
-[ext_resource type="Texture2D" uid="uid://v4wr0lkq8fh4" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass7.png" id="10_5ftgq"]
-[ext_resource type="Texture2D" uid="uid://cfm7o3cte0rpo" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerCrystal3.png" id="10_ski3c"]
-[ext_resource type="Texture2D" uid="uid://c2c8v3yx673k6" path="res://Assets/Others/Map_Assets/GlimmerRoad/Crystal2.png" id="11_43n0m"]
-[ext_resource type="Texture2D" uid="uid://epk11noqy74o" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass8.png" id="11_eo1bo"]
-[ext_resource type="Texture2D" uid="uid://dv032lh07c8rj" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass9.png" id="12_0dkkc"]
-[ext_resource type="Texture2D" uid="uid://b6nnouabe6jmt" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerCrystal2.png" id="12_q1370"]
-[ext_resource type="Texture2D" uid="uid://cxvb411vvwinf" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass10.png" id="13_aie6i"]
-[ext_resource type="Texture2D" uid="uid://bdxcrq4po8cko" path="res://Assets/Others/Map_Assets/GlimmerRoad/Crystal1.png" id="13_bdurf"]
-[ext_resource type="Texture2D" uid="uid://cn3wnjbjio2iq" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerCrystal1.png" id="14_1syf6"]
-[ext_resource type="Texture2D" uid="uid://cnnp6aovxhbbh" path="res://Assets/Others/Map_Assets/GlimmerRoad/CaveTop.png" id="15_6mcp2"]
-[ext_resource type="Texture2D" uid="uid://cwsehsugxcrlu" path="res://Assets/Others/Map_Assets/Portal.png" id="19_sc7s4"]
-[ext_resource type="AudioStream" uid="uid://dxxnoi8hn70su" path="res://Assets/Audio/Music/GlimmeryMelody.ogg" id="25_43n0m"]
+[ext_resource type="Texture2D" uid="uid://brvo60q1p5xem" path="res://Assets/Others/Map_Assets/GlimmerRoad/Mushroom2.png" id="5_kdfe2"]
+[ext_resource type="Texture2D" uid="uid://bmwva2rdvai1r" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass1.png" id="5_q1370"]
+[ext_resource type="Texture2D" uid="uid://cjs1rsfmefnic" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerMushroom2.png" id="6_0dmdx"]
+[ext_resource type="Texture2D" uid="uid://col7u14lo1bqj" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass2.png" id="6_bdurf"]
+[ext_resource type="Texture2D" uid="uid://7fcyw1wgaxry" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass3.png" id="7_1syf6"]
+[ext_resource type="Texture2D" uid="uid://dcntiitpfa4vg" path="res://Assets/Others/Map_Assets/GlimmerRoad/Mushroom1.png" id="7_41i51"]
+[ext_resource type="Texture2D" uid="uid://3grcs36f73ac" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass4.png" id="8_6mcp2"]
+[ext_resource type="Texture2D" uid="uid://ccb7nfmxgw0ad" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerMushroom1.png" id="8_mq6hj"]
+[ext_resource type="Texture2D" uid="uid://bpdwig076j1fw" path="res://Assets/Others/Map_Assets/GlimmerRoad/Crystal3.png" id="9_1jgnj"]
+[ext_resource type="Texture2D" uid="uid://diahux3c4gdr2" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass6.png" id="9_it258"]
+[ext_resource type="Texture2D" uid="uid://cc4ng6a6tb6rp" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass7.png" id="10_5ftgq"]
+[ext_resource type="Texture2D" uid="uid://7ydak7w7xje5" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerCrystal3.png" id="10_ski3c"]
+[ext_resource type="Texture2D" uid="uid://0xysbcyi1aal" path="res://Assets/Others/Map_Assets/GlimmerRoad/Crystal2.png" id="11_43n0m"]
+[ext_resource type="Texture2D" uid="uid://ciibb0c4r308i" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass8.png" id="11_eo1bo"]
+[ext_resource type="Texture2D" uid="uid://cvieh0kxhkc3r" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass9.png" id="12_0dkkc"]
+[ext_resource type="Texture2D" uid="uid://bq2tvqeis01li" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerCrystal2.png" id="12_q1370"]
+[ext_resource type="Texture2D" uid="uid://b0xt04b5ojese" path="res://Assets/Others/Map_Assets/GlimmerRoad/Grass/Grass10.png" id="13_aie6i"]
+[ext_resource type="Texture2D" uid="uid://dgxyr3mh2eyym" path="res://Assets/Others/Map_Assets/GlimmerRoad/Crystal1.png" id="13_bdurf"]
+[ext_resource type="Texture2D" uid="uid://c3o6tl7eg6egq" path="res://Assets/Others/Map_Assets/GlimmerRoad/GlimmerCrystal1.png" id="14_1syf6"]
+[ext_resource type="Texture2D" uid="uid://cbe5uodqekxub" path="res://Assets/Others/Map_Assets/GlimmerRoad/CaveTop.png" id="15_6mcp2"]
+[ext_resource type="Texture2D" uid="uid://dl7ad3dap35hn" path="res://Assets/Others/Map_Assets/Portal.png" id="19_sc7s4"]
+[ext_resource type="AudioStream" uid="uid://c5yjbx2alb6gn" path="res://Assets/Audio/Music/GlimmeryMelody.ogg" id="25_43n0m"]
+
+[sub_resource type="Animation" id="Animation_656xa"]
+resource_name = "PortalAnim"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-6.2831855, 6.2831855]
+}
+
+[sub_resource type="Animation" id="Animation_43eqa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qds0u"]
+_data = {
+&"PortalAnim": SubResource("Animation_656xa"),
+&"RESET": SubResource("Animation_43eqa")
+}
 
 [sub_resource type="Curve2D" id="Curve2D_lycfg"]
 _data = {
@@ -225,44 +263,6 @@ _data = {
 &"Sparkle": SubResource("Animation_it258")
 }
 
-[sub_resource type="Animation" id="Animation_656xa"]
-resource_name = "PortalAnim"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [-6.2831855, 6.2831855]
-}
-
-[sub_resource type="Animation" id="Animation_43eqa"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [-6.2831855]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qds0u"]
-_data = {
-&"PortalAnim": SubResource("Animation_656xa"),
-&"RESET": SubResource("Animation_43eqa")
-}
-
 [node name="Mapa_2" type="Node2D" unique_id=41714579]
 y_sort_enabled = true
 position = Vector2(-36.000004, -42.000004)
@@ -275,7 +275,7 @@ position = Vector2(-17.964067, 2.395214)
 script = ExtResource("2_tmeid")
 
 [node name="Timer" type="Timer" parent="GhostlingSpawner" unique_id=1280611192]
-wait_time = 0.5
+wait_time = 0.8
 autostart = true
 
 [node name="Map" type="Sprite2D" parent="." unique_id=2040754683]
@@ -359,6 +359,17 @@ position = Vector2(-243.85873, 997.4228)
 scale = Vector2(0.96876466, 0.96876484)
 texture = ExtResource("13_aie6i")
 offset = Vector2(8.519775, 33.651672)
+
+[node name="Portal" type="Sprite2D" parent="." unique_id=952366673]
+position = Vector2(1028.0853, 1179.8535)
+rotation = -6.2831855
+scale = Vector2(1.0421233, 1.0421237)
+texture = ExtResource("19_sc7s4")
+offset = Vector2(12.333008, 1.5892944)
+
+[node name="PortalAnim" type="AnimationPlayer" parent="Portal" unique_id=978394186]
+libraries/ = SubResource("AnimationLibrary_qds0u")
+autoplay = &"PortalAnim"
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1947152330]
 y_sort_enabled = true
@@ -507,17 +518,5 @@ bus = &"Music"
 parameters/looping = true
 
 [node name="HUD" parent="." unique_id=1805092987 instance=ExtResource("4_25kso")]
-
-[node name="Portal" type="Sprite2D" parent="." unique_id=952366673]
-y_sort_enabled = true
-position = Vector2(1034.7305, 1188.0239)
-rotation = -6.2831855
-scale = Vector2(1.0421233, 1.0421237)
-texture = ExtResource("19_sc7s4")
-offset = Vector2(5.956543, -6.250824)
-
-[node name="PortalAnim" type="AnimationPlayer" parent="Portal" unique_id=978394186]
-libraries/ = SubResource("AnimationLibrary_qds0u")
-autoplay = &"PortalAnim"
 
 [connection signal="timeout" from="GhostlingSpawner/Timer" to="GhostlingSpawner" method="_on_timer_timeout"]

@@ -10,84 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://byggy7vwmdui1" path="res://Assets/Bunnies/Animations/Paths/GooSplash02VFXSpriteSheet.png" id="8_6q7sx"]
 [ext_resource type="Texture2D" uid="uid://c7ly83iakt5ns" path="res://Assets/Bunnies/Animations/Skins/VoidGooSplashVFXSpriteSheet.png" id="9_whkm4"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5f02t"]
-radius = 4.144465
-height = 15.393727
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(420, 494, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ejxq"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(0, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgkc5"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(210, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oikgl"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(420, 0, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ait25"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(0, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_npx3w"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(210, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0j1xe"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(420, 247, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n0gqd"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(0, 494, 210, 247)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qp18i"]
-atlas = ExtResource("5_hdr0b")
-region = Rect2(210, 494, 210, 247)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_urirk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0e3yp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3ejxq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qgkc5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oikgl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ait25")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_npx3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0j1xe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n0gqd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qp18i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0e3yp")
-}],
-"loop": 0,
-"name": &"default",
-"speed": 24.0
-}]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8hi3"]
 atlas = ExtResource("6_xfc3b")
 region = Rect2(0, 0, 210, 247)
@@ -210,7 +132,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Blue_Goo",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -236,7 +158,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Green_Goo",
-"speed": 24.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -262,7 +184,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Purple_Goo",
-"speed": 16.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -288,7 +210,146 @@ animations = [{
 }],
 "loop": 0,
 "name": &"Void_Goo",
-"speed": 16.0
+"speed": 20.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5f02t"]
+radius = 4.144465
+height = 15.393727
+
+[sub_resource type="Animation" id="Animation_hdr0b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.271, 0.271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6j4ly"]
+resource_name = "new_animation"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.271, 0.271), Vector2(0.271, 0.211), Vector2(0.271, 0.271)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hdr0b"]
+_data = {
+&"RESET": SubResource("Animation_hdr0b"),
+&"new_animation": SubResource("Animation_6j4ly")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0e3yp"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(420, 494, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ejxq"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(0, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgkc5"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(210, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oikgl"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(420, 0, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ait25"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(0, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npx3w"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(210, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j1xe"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(420, 247, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0gqd"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(0, 494, 210, 247)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp18i"]
+atlas = ExtResource("5_hdr0b")
+region = Rect2(210, 494, 210, 247)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urirk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e3yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ejxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgkc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oikgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ait25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npx3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j1xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0gqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp18i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0e3yp")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 24.0
 }]
 
 [node name="PathFollow2D" type="PathFollow2D" unique_id=377828814]
@@ -303,8 +364,14 @@ speed = 211
 
 [node name="Ghazt" type="Sprite2D" parent="Ghazt" unique_id=868435450]
 position = Vector2(2.5000002, 1.250001)
-scale = Vector2(0.096, 0.096)
+scale = Vector2(0.271, 0.271)
 texture = ExtResource("2")
+
+[node name="Goo_Splash" type="AnimatedSprite2D" parent="Ghazt/Ghazt" unique_id=2100584531]
+position = Vector2(4.612545, -18.450188)
+scale = Vector2(3.1683795, 3.1683803)
+sprite_frames = SubResource("SpriteFrames_62x1f")
+animation = &"Green_Goo"
 
 [node name="Death" type="AudioStreamPlayer" parent="Ghazt" unique_id=1274901776]
 stream = ExtResource("3_6j4ly")
@@ -318,17 +385,12 @@ shape = SubResource("CapsuleShape2D_5f02t")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Ghazt" unique_id=2086486209]
 root_node = NodePath("../Ghazt")
+libraries/ = SubResource("AnimationLibrary_hdr0b")
 libraries/Animations = ExtResource("3")
 
 [node name="POP" type="AnimatedSprite2D" parent="." unique_id=990862593]
-position = Vector2(1, 2)
+position = Vector2(3, -7)
 scale = Vector2(0.7648915, 0.7648915)
 sprite_frames = SubResource("SpriteFrames_urirk")
 frame = 9
 frame_progress = 1.0
-
-[node name="Goo_Splash" type="AnimatedSprite2D" parent="." unique_id=2100584531]
-position = Vector2(4, -3)
-scale = Vector2(0.6869047, 0.68690485)
-sprite_frames = SubResource("SpriteFrames_62x1f")
-animation = &"Purple_Goo"

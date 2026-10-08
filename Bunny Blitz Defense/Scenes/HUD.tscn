@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://drcrxcrlbvmda" path="res://Assets/Others/HUD_Assets/HUD_BG_Down.png" id="17"]
 [ext_resource type="Texture2D" uid="uid://ccn4vsek1yhyq" path="res://Assets/Others/UI_Assets/AmmunitionIcon.png" id="17_1fefx"]
 [ext_resource type="Texture2D" uid="uid://bt4rird5x2ab1" path="res://Assets/Others/HUD_Assets/HUD_ShopFrame.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://bi3a80ltq64t4" path="res://Assets/Others/HUD_Assets/Rootification.png" id="18_awmb6"]
 [ext_resource type="Texture2D" uid="uid://cnkv5ew84ohau" path="res://Assets/Others/HUD_Assets/HUD_BG_Right.png" id="19"]
 [ext_resource type="Texture2D" uid="uid://cnj8olju5x04o" path="res://Assets/Others/UI_Assets/SellButton.png" id="19_1fefx"]
 [ext_resource type="AudioStream" uid="uid://btls6dvphyfqg" path="res://Assets/Audio/SFXs/Sell.wav" id="19_dr5ga"]
@@ -84,8 +85,8 @@
 [ext_resource type="Texture2D" uid="uid://tcokjgxtjv1c" path="res://Assets/Others/UI_Assets/GameOverScreen.png" id="67_jh456"]
 [ext_resource type="AudioStream" uid="uid://d13t0spdulyhi" path="res://Assets/Audio/SFXs/Victory.wav" id="70_h7oxq"]
 [ext_resource type="Texture2D" uid="uid://ct1qsup7frlmj" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="70_umgxi"]
-[ext_resource type="StyleBox" uid="uid://dwu10cfsa422d" path="res://Others/new_style_box_flat2.tres" id="73_cgiap"]
-[ext_resource type="StyleBox" uid="uid://36cm41bhp6jn" path="res://Others/new_style_box_flat3.tres" id="74_ki85q"]
+[ext_resource type="StyleBox" path="res://Others/new_style_box_flat2.tres" id="73_cgiap"]
+[ext_resource type="StyleBox" path="res://Others/new_style_box_flat3.tres" id="74_ki85q"]
 [ext_resource type="Script" uid="uid://sgwgl2mldwee" path="res://Scripts/HUD/debug_menu.gd" id="80_k3q0p"]
 [ext_resource type="Texture2D" uid="uid://b2v01o7pdu13m" path="res://Assets/Enemies/Bosses/Belzebu.png" id="81_hh4xi"]
 [ext_resource type="Texture2D" uid="uid://dwgike3a52hyo" path="res://Assets/Others/Debug_Assets/DebugWarning.png" id="81_rignr"]
@@ -134,7 +135,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.16666667, 1),
 "transitions": PackedFloat32Array(0.5, 0.5),
 "update": 0,
-"values": [Vector2(1340.0001, 213.00002), Vector2(1340, 194.055)]
+"values": [Vector2(266.545, 306.165), Vector2(266.545, 237.295)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -143,7 +144,7 @@ tracks/2/path = NodePath(".:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.27, 0.93333334),
+"times": PackedFloat32Array(0.27, 0.76666665),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -989,15 +990,17 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Vida" type="Label" parent="HUD" unique_id=1231903724]
 process_mode = 3
-offset_left = 129.21373
-offset_top = 87.16769
-offset_right = 257.21375
-offset_bottom = 119.16769
+offset_left = 138.21373
+offset_top = 92.16769
+offset_right = 266.21375
+offset_bottom = 128.1677
 theme = SubResource("Theme_c4wnb")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.37254903)
+theme_override_colors/font_color = Color(0.8505997, 0.28370598, 0.42577118, 1)
+theme_override_colors/font_shadow_color = Color(0.5651246, 0.09435613, 0.20078361, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("9")
 theme_override_font_sizes/font_size = 35
 text = "100"
 script = ExtResource("10")
@@ -1020,18 +1023,38 @@ texture = ExtResource("13")
 
 [node name="Moedas" type="Label" parent="HUD" unique_id=432508488]
 process_mode = 3
-offset_left = 129.21373
-offset_top = 151.1677
-offset_right = 254.96223
-offset_bottom = 183.1677
+offset_left = 139.0
+offset_top = 153.00002
+offset_right = 264.74847
+offset_bottom = 189.00002
 theme = SubResource("Theme_7plk7")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.37254903)
+theme_override_colors/font_color = Color(0.85325825, 0.5157682, 0.23099336, 1)
+theme_override_colors/font_shadow_color = Color(0.5169836, 0.24723831, 0.041645996, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4")
+theme_override_fonts/font = ExtResource("9")
 theme_override_font_sizes/font_size = 35
 text = "100"
 script = ExtResource("14")
+
+[node name="BunnyCoinsIcon" type="Sprite2D" parent="HUD" unique_id=75983898]
+position = Vector2(101, 229)
+scale = Vector2(0.22222207, 0.22222209)
+texture = ExtResource("10_awmb6")
+
+[node name="BunnyCoinsLabel" type="Label" parent="HUD" unique_id=129063085]
+offset_left = 140.0
+offset_top = 217.00002
+offset_right = 208.0
+offset_bottom = 253.00002
+theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.13725491, 1)
+theme_override_colors/font_shadow_color = Color(0.49411765, 0.28627452, 0.11764706, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("9")
+theme_override_font_sizes/font_size = 35
+text = "100"
 
 [node name="PGB_M" type="ProgressBar" parent="HUD" unique_id=1840660125]
 offset_left = -171.00003
@@ -1042,7 +1065,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 70
 max_value = 999999999.0
 step = 1.0
-value = 165.0
+value = 165000.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Limits" type="Area2D" parent="HUD" unique_id=1224677807 groups=["no_place"]]
@@ -1157,6 +1180,11 @@ scale = Vector2(0.09171373, 0.1636532)
 texture = ExtResource("18")
 flip_h = true
 flip_v = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HUD/HUD_Shop/BuffStatus" unique_id=2030811215]
+position = Vector2(85.32736, -64.169556)
+scale = Vector2(0.38325393, 0.38325393)
+texture = ExtResource("18_awmb6")
 
 [node name="Status" type="Label" parent="HUD/HUD_Shop/BuffStatus" unique_id=86376607]
 offset_left = -31.90129
@@ -2397,6 +2425,39 @@ position = Vector2(980.00006, 514.00006)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("3_yrvoj")
 
+[node name="Panel" type="HBoxContainer" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=2123218793]
+anchors_preset = -1
+anchor_left = 0.358
+anchor_top = 0.48700002
+anchor_right = 0.72
+anchor_bottom = 0.577
+offset_left = -334.1405
+offset_top = -525.96
+offset_right = -501.10052
+offset_bottom = -511.08197
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 8
+
+[node name="Coins" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings/Panel" unique_id=1546706895]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.13725491, 1)
+theme_override_colors/font_shadow_color = Color(0.49411765, 0.28627452, 0.11764706, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 48
+text = "200"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="BunnyCoinsIcon" type="TextureRect" parent="HUD/UI_Selection/Victory/MenuSettings/Panel" unique_id=993649259]
+layout_mode = 2
+texture = ExtResource("10_awmb6")
+expand_mode = 3
+
 [node name="VICTORY" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=1901669782]
 anchors_preset = 10
 anchor_right = 1.0
@@ -2424,25 +2485,6 @@ theme_override_font_sizes/font_size = 48
 text = "You earn:"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Coins" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=736645048]
-offset_left = 23.83223
-offset_top = 30.471191
-offset_right = 221.83223
-offset_bottom = 83.47119
-theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.13725491, 1)
-theme_override_colors/font_shadow_color = Color(0.49411765, 0.28627452, 0.11764706, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 48
-text = "9999"
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Victory/MenuSettings/Coins" unique_id=293787553]
-position = Vector2(180.16785, 29.528809)
-scale = Vector2(0.34074074, 0.34074074)
-texture = ExtResource("10_awmb6")
 
 [node name="Exit" type="Button" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=31817429]
 anchors_preset = 8
@@ -2494,6 +2536,39 @@ modulate = Color(0.8862745, 0.8862745, 0.8862745, 1)
 position = Vector2(983.0001, 545.00006)
 scale = Vector2(1e-05, 1e-05)
 texture = ExtResource("67_jh456")
+
+[node name="Panel" type="HBoxContainer" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1233143957]
+anchors_preset = -1
+anchor_left = 0.358
+anchor_top = 0.48700002
+anchor_right = 0.878
+anchor_bottom = 0.59000003
+offset_left = -536.64
+offset_top = -542.96
+offset_right = -537.2401
+offset_bottom = -542.2
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_constants/separation = 8
+
+[node name="Coins" type="Label" parent="HUD/UI_Selection/GameOver/MenuSettings/Panel" unique_id=1374115258]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.13725491, 1)
+theme_override_colors/font_shadow_color = Color(0.49411765, 0.28627452, 0.11764706, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 3
+vertical_alignment = 1
+
+[node name="BunnyCoinsIcon" type="TextureRect" parent="HUD/UI_Selection/GameOver/MenuSettings/Panel" unique_id=1137359965]
+layout_mode = 2
+texture = ExtResource("10_awmb6")
+expand_mode = 3
 
 [node name="GAME OVER" type="Label" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1319169810]
 anchors_preset = 10
@@ -2547,25 +2622,6 @@ theme_override_font_sizes/font_size = 48
 text = "You earn:"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Coins" type="Label" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1374115258]
-offset_left = -145.17346
-offset_top = 12.096909
-offset_right = 52.826538
-offset_bottom = 65.09691
-theme_override_colors/font_color = Color(0.90588236, 0.69411767, 0.13725491, 1)
-theme_override_colors/font_shadow_color = Color(0.49411765, 0.28627452, 0.11764706, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_fonts/font = ExtResource("4")
-theme_override_font_sizes/font_size = 48
-text = "9999"
-vertical_alignment = 1
-
-[node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/GameOver/MenuSettings/Coins" unique_id=640287520]
-position = Vector2(177.17346, 27.903076)
-scale = Vector2(0.34074074, 0.34074074)
-texture = ExtResource("10_awmb6")
 
 [node name="BackMenu" type="Button" parent="HUD/UI_Selection/GameOver/MenuSettings" unique_id=1345564730]
 anchors_preset = 8

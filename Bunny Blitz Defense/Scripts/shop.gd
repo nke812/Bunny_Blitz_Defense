@@ -14,7 +14,7 @@ var skins = [
 
 
 var bunnies = [
-    {"nome": "Scrappy", "preco": 4900, "textura": load("res://Assets/Bunnies/Scrappy.png")},
+    {"nome": "Scrappy", "preco": 0, "textura": load("res://Assets/Bunnies/Scrappy.png")},
     {"nome": "Mystical", "preco": 8790, "textura": load("res://Assets/Bunnies/Mystical.png")},
     #{"nome": "Ghoulish", "preco": 5750, "textura": load("res://Assets/Bunnies/Ghoulish.png")},
     #{"nome": "Alien", "preco": 6780, "textura": load("res://Assets/Bunnies/Alien.png")},
@@ -211,6 +211,8 @@ func change_section() -> void:
 func stock() -> void:
     var item_atual = bunnies[ItemShopCount] if ItemSection else skins[ItemShopCount]
     var unlocked: bool = false
+    
+    
 
     if not ItemSection:
         match item_atual.nome:
@@ -243,7 +245,12 @@ func stock() -> void:
         if item_atual.nome == "Corrupted": $PanelItemShop/Corrupted.material.set_shader_parameter("ativo", false)
         $PanelItemShop/ItemShop.material.set_shader_parameter("ativo", false)
         $PanelItemShop/ItemShop.disabled = false
-        $PanelItemShop/PriceTag/Price.text = str(item_atual.preco)
+        
+        if item_atual.nome == "Scrappy": 
+            $PanelItemShop/PriceTag/Price.text = "FREE!"
+        else:
+            $PanelItemShop/PriceTag/Price.text = str(item_atual.preco)
+        
         
 func _on_corrupted_core_pressed() -> void:
     $Items/CorruptedCore/CorruptedCore.disabled = true

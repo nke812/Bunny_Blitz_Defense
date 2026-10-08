@@ -10,11 +10,15 @@ var posicionado = false
 var mostrar_range = false
 var pronto_para_atacar = false
 
-var dmg_Doll = 2
+var dmg_Doll = 2.0
 var targets = 2
 
-var focus = false
+# --- Variáveis do Buff da Mystical ---
+var fontes_mystical: Dictionary = {} # Guarda { nó_mystical: nivel }
+var range_buff_val: float = 0.0
+var dmg_Mystical: float = 0.0
 
+var focus = false
 
 var path1 = 0
 var path2 = 0
@@ -24,27 +28,27 @@ var preços_p2 = [470, 730, 1470, 3450]
 var P1status = "Damage: " + str(dmg_Doll)
 var P2status = "Max Targets: " + str(targets)
 var BuffStatus1 = "DMG: +0"
-var BuffStatus2 = "Range: 1.0"
+var BuffStatus2 = "Range: +0"
+
+var alvos_atuais: Array = []
 
 
+func _ready() -> void:
+    posicionado = true
 
 
-
-func _process(delta: float) -> void: 
-
-    if focus == true:
-        $ArrowDps.visible = true
+func _process(_delta: float) -> void: 
+    if focus:
+        if has_node("ArrowDps"): $ArrowDps.visible = true
     else:
-        $ArrowDps.visible = false
+        if has_node("ArrowDps"): $ArrowDps.visible = false
 
     if $Timer.is_stopped():
         pronto_para_atacar = true
 
-    if pronto_para_atacar == true:
+    if pronto_para_atacar:
         verificar_e_atacar()
 
-
-var alvos_atuais: Array = []
 
 func verificar_e_atacar():
     var corpos = $Range.get_overlapping_bodies()
@@ -64,13 +68,15 @@ func verificar_e_atacar():
     for i in range(min(MaxTargets, Ghostlings.size())):
         alvos_atuais.append(Ghostlings[i])
         
-    $Pega/Node2D/Doll/DollAttack.play("DollAttack")
+    if has_node("Pega/Node2D/Doll/DollAttack"):
+        $Pega/Node2D/Doll/DollAttack.play("DollAttack")
 
 
 func atacar():
+    var dmg_total = dmg_Doll + dmg_Mystical
     for alvo in alvos_atuais:
         if is_instance_valid(alvo) and alvo.has_method("DMGED"):
-            alvo.DMGED(dmg_Doll)
+            alvo.DMGED(dmg_total)
             
     alvos_atuais.clear()
     pronto_para_atacar = false
@@ -78,94 +84,119 @@ func atacar():
 
 
 func playSqueak():
-    $DollSqueak.pitch_scale = 1 + randf_range(-0.1, 0.1)
-    $DollSqueak.play()
-    
+    if has_node("DollSqueak"):
+        $DollSqueak.pitch_scale = 1 + randf_range(-0.1, 0.1)
+        $DollSqueak.play()
 
-#func receber_buff_mystical(nivel_mystical):
-    #if posicionado and MysticalBuff == true:
-        #var dmg_buff = 0
-        #var scale_buff = Vector2(1.0, 1.0) 
-    #
-        #match nivel_mystical:
-            #0: 
-                #dmg_buff = 1
-                #scale_buff = Vector2(1.1, 1.1)
-            #1: 
-                #dmg_buff = 2
-                #scale_buff = Vector2(1.2, 1.2)
-            #2: 
-                #dmg_buff = 3
-                #scale_buff = Vector2(1.3, 1.3)
-            #3: 
-                #dmg_buff = 4
-                #scale_buff = Vector2(1.4, 1.4)
-            #4: 
-                #dmg_buff = 5
-                #scale_buff = Vector2(1.5, 1.5)
-#
-#
-        #if dmg_buff > dmg_Mystical:
-                #dmg_Mystical = dmg_buff
-                #$Range/CollisionRange.scale = scale_buff
-        #else:
-            #dmg_Mystical = 0
-            #$Range/CollisionRange.scale = Vector2(1.0, 1.0)
-    #
-        #dmg_total = dmg_Rookie + dmg_Mystical
-        #P1status = "Damage: " + str(dmg_total)
-        #
-    #
-        #var hud = get_tree().get_first_node_in_group("HUD")
-        #if hud and focus:
-            #BuffStatus1 = "Dmg: +" + str(dmg_Mystical) 
-            #hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
-            #
-            #BuffStatus2 = "Range: " + str(snapped($Range/CollisionRange.scale.x, 0.1))
-            #hud.get_node("HUD_Shop/BuffStatus/Buff4").text = str(BuffStatus2)
-            #hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
-#
-#func remover_buff_mystical():
-    #dmg_Mystical = 0
-    #MysticalBuff = false
-    #$Range/CollisionRange.scale = Vector2(1.0, 1.0)
-    #P1status = "Damage: " + str(dmg_total)
-    #
-    #var hud = get_tree().get_first_node_in_group("HUD")
-    #if hud and focus:
-        #hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
-        #hud.get_node("HUD_Shop/BuffStatus").visible = false
+
+# --- Comunicação com a Mystical (Multi-Buff por Dicionário) ---
+
+func receber_buff_mystical(arg1, arg2: int = -1):
+    var fonte: Node = null
+    var nivel_mystical: int = 0
+    
+    # Se a Mystical passou (self, nivel) -> 2 argumentos
+    if arg1 is Node and arg2 != -1:
+        fonte = arg1
+        nivel_mystical = arg2
+    # Se a Mystical passou apenas (nivel) -> 1 argumento
+    else:
+        fonte = self # Atribui uma referência para não dar erro no dicionário
+        nivel_mystical = int(arg1)
         
-func _draw() -> void :
+    fontes_mystical[fonte] = nivel_mystical
+    _recalcular_buffs_mystical()
+
+
+func remover_buff_mystical(fonte: Node = null):
+    if fonte in fontes_mystical:
+        fontes_mystical.erase(fonte)
+    _recalcular_buffs_mystical()
+
+
+func _recalcular_buffs_mystical():
+    # 1. Limpa Mysticals invalidadas
+    for fonte in fontes_mystical.keys():
+        if not is_instance_valid(fonte):
+            fontes_mystical.erase(fonte)
+            
+    # 2. Se não houver nenhuma Mystical no raio:
+    if fontes_mystical.is_empty():
+        MysticalBuff = false
+        range_buff_val = 0.0
+        dmg_Mystical = 0.0
+        $Range/CollisionRange.scale = Vector2(1.0, 1.0)
+        BuffStatus1 = "DMG: +0"
+        BuffStatus2 = "Range: +0"
+    # 3. Se houver Mystical, escolhe a de nível MAIS ALTO:
+    else:
+        MysticalBuff = true
+        var maior_nivel = -1
+        for nivel in fontes_mystical.values():
+            if nivel > maior_nivel:
+                maior_nivel = nivel
+                
+        match maior_nivel:
+            0: range_buff_val = 0.1; dmg_Mystical = 1.0
+            1: range_buff_val = 0.2; dmg_Mystical = 2.0
+            2: range_buff_val = 0.3; dmg_Mystical = 3.0
+            3: range_buff_val = 0.4; dmg_Mystical = 4.0
+            4: range_buff_val = 0.5; dmg_Mystical = 5.0
+            _: range_buff_val = 0.1; dmg_Mystical = 1.0
+            
+        $Range/CollisionRange.scale = Vector2(1.0 + range_buff_val, 1.0 + range_buff_val)
+        BuffStatus1 = "Dmg: +" + str(dmg_Mystical)
+        BuffStatus2 = "Range: +" + str(snapped(range_buff_val, 0.1))
+
+    # Atualiza a UI
+    P1status = "Damage: " + str(dmg_Doll + dmg_Mystical)
+    P2status = "Max Targets: " + str(targets)
+
+    var hud = get_tree().get_first_node_in_group("HUD")
+    if hud and focus:
+        hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
+        hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
+        if MysticalBuff:
+            hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
+            hud.get_node("HUD_Shop/BuffStatus/Buff4").text = str(BuffStatus2)
+            hud.get_node("HUD_Shop/BuffStatus").visible = true
+        else:
+            hud.get_node("HUD_Shop/BuffStatus").visible = false
+
+
+# --- UI e Desenho ---
+
+func _draw() -> void:
     if mostrar_range:
         var shape = $Range/CollisionRange.shape
         if shape is CircleShape2D:
             var raio_final = shape.radius * $Range/CollisionRange.scale.x
             draw_circle(Vector2.ZERO, raio_final, Color(0.46, 0.46, 0.46, 0.443))
 
-func _on_button_mouse_entered() -> void :
+func _on_button_mouse_entered() -> void:
     mostrar_range = true
     queue_redraw()
 
-func _on_button_mouse_exited() -> void :
+func _on_button_mouse_exited() -> void:
     mostrar_range = false
     queue_redraw()
 
 func reset_focus():
     focus = false
-
+    if has_node("ArrowDps"): $ArrowDps.visible = false
 
 func _on_button_button_down() -> void:
     get_tree().call_group("Bunnies", "reset_focus")
-    
     focus = true
     
     var hud = get_tree().get_first_node_in_group("HUD")
-    hud.get_node("HUD_Shop/BuffStatus").visible = false
     if hud:
+        hud.get_node("HUD_Shop/BuffStatus").visible = false
         hud.abrir_menu_upgrade(self)
         
-        P1status = "Damage: " + str(dmg_Doll)
+        P1status = "Damage: " + str(dmg_Doll + dmg_Mystical)
+        P2status = "Max Targets: " + str(targets)
+        
         hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
         hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
         
@@ -176,20 +207,19 @@ func _on_button_button_down() -> void:
         atualizar_valorTorre()
         hud.get_node("HUD_Shop/HudBgDown/ExitShop").disabled = false
         
-        #if MysticalBuff == true:
-            #BuffStatus1 = "Dmg: +" + str(dmg_Mystical)
-            #BuffStatus2 = "Range: " + str(snapped($Range/CollisionRange.scale.x, 0.1))
-            #hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
-            #hud.get_node("HUD_Shop/BuffStatus/Buff4").text = str(BuffStatus2)
-            #hud.get_node("HUD_Shop/BuffStatus").visible = true
+        if MysticalBuff:
+            hud.get_node("HUD_Shop/BuffStatus/Buff3").text = str(BuffStatus1)
+            hud.get_node("HUD_Shop/BuffStatus/Buff4").text = str(BuffStatus2)
+            hud.get_node("HUD_Shop/BuffStatus").visible = true
         
         hud.get_node("HUD_Shop/Shop_Appear").play("Shop_Appear")
-    
+
 
 func aplicar_upgrade(caminho):
     var hud = get_tree().get_first_node_in_group("HUD")
+    if not hud: return false
+    
     var label_moedas = hud.get_node("Moedas")
-
     var dinheiro_atual = int(label_moedas.text)
 
     var lista_precos = preços_p1 if caminho == 1 else preços_p2
@@ -201,79 +231,58 @@ func aplicar_upgrade(caminho):
 
     if dinheiro_atual >= custo:
         dinheiro_atual -= custo
-        
         label_moedas.text = str(dinheiro_atual)
         
         if caminho == 1:
             path1 += 1
             match path1:
-                1: 
-                    dmg_Doll = 3
-                    valor_torre += 250
-                2: 
-                    dmg_Doll = 3.5
-                    valor_torre += 420
-                3: 
-                    dmg_Doll = 4
-                    valor_torre += 990
+                1: dmg_Doll = 3.0; valor_torre += 250
+                2: dmg_Doll = 3.5; valor_torre += 420
+                3: dmg_Doll = 4.0; valor_torre += 990
                 4: 
-                    dmg_Doll = 5
-                    valor_torre += 2550
+                    dmg_Doll = 5.0; valor_torre += 2550
                     auraMAISego()
-                    
                     Doll.texture = load("res://Assets/Bunnies/Paths/Doll01.png")
 
-            
             atualizar_valorTorre()
-            P1status = "Damage: " + str(dmg_Doll)
-            hud.get_node("HUD_Shop/HudBgDown/Status1").text = str(P1status)
-                
+            _recalcular_buffs_mystical()
         else:
             path2 += 1
             match path2:
-                1: 
-                    targets = 3
-                    valor_torre += 470
-                2: 
-                    targets = 5
-                    valor_torre += 730       
-                3:
-                    targets = 7
-                    valor_torre += 1470
+                1: targets = 3; valor_torre += 470
+                2: targets = 5; valor_torre += 730        
+                3: targets = 7; valor_torre += 1470
                 4: 
-                    targets = 10
-                    valor_torre += 3450
+                    targets = 10; valor_torre += 3450
                     auraMAISego()
-                    
                     Doll.texture = load("res://Assets/Bunnies/Paths/Doll02.png")
                         
             atualizar_valorTorre()            
-            P2status = "Max Targets: " + str(targets)
-            hud.get_node("HUD_Shop/HudBgDown/Status2").text = str(P2status)
+            _recalcular_buffs_mystical()
             
         return true 
     return false 
-    
+
 func auraMAISego():
     Doll.modulate = Color(1, 1, 1)
-    $AURA.play("default")
+    if has_node("AURA"): $AURA.play("default")
     
     var tween = create_tween()
-
     tween.tween_property(Doll, "modulate", Color(2, 2, 2, 1), 0.3)
     tween.tween_property(Doll, "modulate", Color(1, 1, 1, 1), 0.4)
 
 func atualizar_valorTorre():
     var hud = get_tree().get_first_node_in_group("HUD")
-    var valor_torre_60 : int = int(valor_torre * 0.6)
-    
-    hud.get_node("HUD_Shop/HudBgDown/Control/PanelSell/precoSell").text = str(valor_torre_60)
+    if hud:
+        var valor_torre_60 : int = int(valor_torre * 0.6)
+        hud.get_node("HUD_Shop/HudBgDown/Control/PanelSell/precoSell").text = str(valor_torre_60)
 
 func vender_torre():
     var moedas = get_tree().current_scene.find_child("Moedas")
-    var valor_atual = int(moedas.text)
-    var valor_torre_60 : int = int(valor_torre * 0.6)
+    if moedas:
+        var valor_atual = int(moedas.text)
+        var valor_torre_60 : int = int(valor_torre * 0.6)
+        moedas.text = str(valor_atual + valor_torre_60)
     
-    moedas.text = str(valor_atual + valor_torre_60)
-    
+    remover_buff_mystical()
     queue_free()
