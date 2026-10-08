@@ -1065,7 +1065,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 70
 max_value = 999999999.0
 step = 1.0
-value = 165000.0
+value = 165.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Limits" type="Area2D" parent="HUD" unique_id=1224677807 groups=["no_place"]]
