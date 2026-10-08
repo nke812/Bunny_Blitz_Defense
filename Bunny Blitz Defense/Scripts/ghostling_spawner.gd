@@ -10,6 +10,7 @@ extends Node2D
 @onready var Enhanced_Ghoul = load("res://Scenes/Enemies/Ghostling/enhanced_ghoul.tscn")
 @onready var Unholy_Phantasm = load("res://Scenes/Enemies/Ghostling/unholy_phantasm.tscn")
 @onready var Brute = load("res://Scenes/Enemies/Ghostling/brute.tscn")
+@onready var Ghaztro = load("res://Scenes/Enemies/Ghostling/ghaztro.tscn")
 
 @onready var Leviathan = load("res://Scenes/Enemies/Bosses/Leviathan.tscn")
 @onready var Azazel = load("res://Scenes/Enemies/Bosses/Azazel.tscn")

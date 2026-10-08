@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Bunny Blitz Defense"
 config/version="0.1"
-run/main_scene="uid://bnly6r15tum4p"
+run/main_scene="uid://cf5i2ng5uq7i"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://o6nda0h5sqms"
 

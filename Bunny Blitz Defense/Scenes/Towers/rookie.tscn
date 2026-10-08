@@ -552,8 +552,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55yyg"]
-radius = 37.326958
-height = 112.76595
+radius = 32.978725
+height = 89.3617
 
 [sub_resource type="Animation" id="Animation_a4dix"]
 length = 0.001
@@ -858,7 +858,7 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="HitBox" type="CollisionShape2D" parent="HitBox" unique_id=406183586]
-position = Vector2(-3.0985658, 114.827095)
+position = Vector2(2.2205832, 111.635605)
 shape = SubResource("CapsuleShape2D_55yyg")
 
 [node name="ArrowDps" type="Sprite2D" parent="." unique_id=1138255832]

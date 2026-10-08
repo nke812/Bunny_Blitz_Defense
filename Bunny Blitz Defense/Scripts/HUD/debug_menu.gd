@@ -90,6 +90,9 @@ func _on_unholy_phantasm_pressed() -> void:
 func _on_brute_pressed() -> void:
     spawner.get_node("../Path2D").add_child(spawner.Brute.instantiate())
 
+func _on_ghaztro_pressed() -> void:
+    spawner.get_node("../Path2D").add_child(spawner.Ghaztro.instantiate())
+
 func _on_undead_ghostling_pressed() -> void:
     spawner.get_node("../Path2D").add_child(spawner.Undead_Ghostling.instantiate())
 

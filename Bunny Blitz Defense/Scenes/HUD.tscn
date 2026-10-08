@@ -85,8 +85,6 @@
 [ext_resource type="Texture2D" uid="uid://tcokjgxtjv1c" path="res://Assets/Others/UI_Assets/GameOverScreen.png" id="67_jh456"]
 [ext_resource type="AudioStream" uid="uid://d13t0spdulyhi" path="res://Assets/Audio/SFXs/Victory.wav" id="70_h7oxq"]
 [ext_resource type="Texture2D" uid="uid://ct1qsup7frlmj" path="res://Assets/Others/UI_Assets/Fullscreen.png" id="70_umgxi"]
-[ext_resource type="StyleBox" path="res://Others/new_style_box_flat2.tres" id="73_cgiap"]
-[ext_resource type="StyleBox" path="res://Others/new_style_box_flat3.tres" id="74_ki85q"]
 [ext_resource type="Script" uid="uid://sgwgl2mldwee" path="res://Scripts/HUD/debug_menu.gd" id="80_k3q0p"]
 [ext_resource type="Texture2D" uid="uid://b2v01o7pdu13m" path="res://Assets/Enemies/Bosses/Belzebu.png" id="81_hh4xi"]
 [ext_resource type="Texture2D" uid="uid://dwgike3a52hyo" path="res://Assets/Others/Debug_Assets/DebugWarning.png" id="81_rignr"]
@@ -103,7 +101,10 @@
 [ext_resource type="Texture2D" uid="uid://dxjiv7apt3p2e" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="91_3upol"]
 [ext_resource type="Texture2D" uid="uid://ce1jv1mox3odf" path="res://Assets/Enemies/Ghostlings/Enhanced Ghaztling.png" id="92_2h8cp"]
 [ext_resource type="Texture2D" uid="uid://bb481s6fcj8na" path="res://Assets/Enemies/Ghostlings/Ghazely.png" id="93_1wvx7"]
+[ext_resource type="Texture2D" uid="uid://ch8pppg07m6j8" path="res://Assets/Enemies/Ghostlings/Ghaztro.png" id="98_3upol"]
+[ext_resource type="Texture2D" uid="uid://biwhap68i6jj0" path="res://Assets/Enemies/Ghostlings/Undead Ghaztling.png" id="100_2h8cp"]
 [ext_resource type="Texture2D" uid="uid://b7wws2wvnfqn6" path="res://Assets/Enemies/Bosses/Azazel.png" id="100_v8eir"]
+[ext_resource type="Texture2D" uid="uid://dyoukf2apgiti" path="res://Assets/Enemies/Ghostlings/Undead Brute.png" id="101_1wvx7"]
 
 [sub_resource type="Theme" id="Theme_c4wnb"]
 default_font = ExtResource("4")
@@ -1065,7 +1066,7 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 70
 max_value = 999999999.0
 step = 1.0
-value = 165.0
+value = 16500.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Limits" type="Area2D" parent="HUD" unique_id=1224677807 groups=["no_place"]]
@@ -2607,8 +2608,6 @@ scale = Vector2(0.73, 0.73)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9")
 theme_override_font_sizes/font_size = 92
-theme_override_styles/pressed = ExtResource("73_cgiap")
-theme_override_styles/hover = ExtResource("74_ki85q")
 text = "RESTART"
 flat = true
 
@@ -2639,8 +2638,6 @@ scale = Vector2(0.73, 0.73)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9")
 theme_override_font_sizes/font_size = 102
-theme_override_styles/pressed = ExtResource("73_cgiap")
-theme_override_styles/hover = ExtResource("74_ki85q")
 text = "Back to Menu"
 flat = true
 
@@ -2653,7 +2650,6 @@ volume_db = -5.0
 bus = &"SFX"
 
 [node name="Debug Menu" type="Node2D" parent="." unique_id=557738769]
-visible = false
 script = ExtResource("80_k3q0p")
 
 [node name="Panel" type="Panel" parent="Debug Menu" unique_id=1416554692]
@@ -2674,6 +2670,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="Status" type="Control" parent="Debug Menu/Panel" unique_id=1686477046]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 41.45999
@@ -2789,7 +2786,6 @@ text = "GHOSTLINGS"
 expand_icon = true
 
 [node name="Ghostlings" type="Control" parent="Debug Menu/Panel" unique_id=106282168]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2875,56 +2871,83 @@ offset_bottom = 299.37997
 icon = ExtResource("85_fprih")
 expand_icon = true
 
-[node name="Undead Ghostling" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=2016907761]
+[node name="Ghaztro" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=847725758]
 layout_mode = 0
 offset_left = 308.0
 offset_top = 13.459991
-offset_right = 399.42795
+offset_right = 399.42798
 offset_bottom = 103.91998
-icon = ExtResource("86_30aiu")
+icon = ExtResource("98_3upol")
 expand_icon = true
 
-[node name="Leviathan" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=1201155694]
+[node name="Undead Ghostling" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=2016907761]
 layout_mode = 0
 offset_left = 308.0
 offset_top = 111.45999
 offset_right = 399.42795
+offset_bottom = 201.91998
+icon = ExtResource("86_30aiu")
+expand_icon = true
+
+[node name="Undead Ghaztling" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=1795408040]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 209.45999
+offset_right = 399.42795
+offset_bottom = 299.91998
+icon = ExtResource("100_2h8cp")
+expand_icon = true
+
+[node name="Undead Brute" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=1202542476]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 13.459991
+offset_right = 497.42795
+offset_bottom = 103.91998
+icon = ExtResource("101_1wvx7")
+expand_icon = true
+
+[node name="Leviathan" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=1201155694]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 111.45999
+offset_right = 498.42795
 offset_bottom = 201.91998
 icon = ExtResource("11_rkb15")
 expand_icon = true
 
 [node name="Azazel" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=1640288050]
 layout_mode = 0
-offset_left = 308.0
+offset_left = 407.0
 offset_top = 209.45999
-offset_right = 399.42795
+offset_right = 498.42795
 offset_bottom = 299.91998
 icon = ExtResource("100_v8eir")
 expand_icon = true
 
 [node name="Belzebu" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=1250822084]
 layout_mode = 0
-offset_left = 407.0
+offset_left = 506.0
 offset_top = 13.919983
-offset_right = 498.42795
+offset_right = 597.428
 offset_bottom = 104.379974
 icon = ExtResource("81_hh4xi")
 expand_icon = true
 
 [node name="Fenrir" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=2057345543]
 layout_mode = 0
-offset_left = 407.0
+offset_left = 506.0
 offset_top = 111.91998
-offset_right = 498.42795
+offset_right = 597.428
 offset_bottom = 202.37997
 icon = ExtResource("82_rignr")
 expand_icon = true
 
 [node name="Lucifer" type="Button" parent="Debug Menu/Panel/Ghostlings" unique_id=299763062]
 layout_mode = 0
-offset_left = 407.0
+offset_left = 506.0
 offset_top = 209.91998
-offset_right = 498.42795
+offset_right = 597.428
 offset_bottom = 300.37997
 icon = ExtResource("83_rvsbv")
 expand_icon = true
@@ -3040,6 +3063,7 @@ libraries/ = SubResource("AnimationLibrary_45eqa")
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Enhanced Ghoul" to="Debug Menu" method="_on_enhanced_ghoul_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Unholy Phantasm" to="Debug Menu" method="_on_unholy_phantasm_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Brute" to="Debug Menu" method="_on_brute_pressed"]
+[connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Ghaztro" to="Debug Menu" method="_on_ghaztro_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Undead Ghostling" to="Debug Menu" method="_on_undead_ghostling_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Leviathan" to="Debug Menu" method="_on_leviathan_pressed"]
 [connection signal="pressed" from="Debug Menu/Panel/Ghostlings/Azazel" to="Debug Menu" method="_on_azazel_pressed"]
