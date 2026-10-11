@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://br6ci3cw1yn3c" path="res://Assets/Others/Menu_Assets/Foreground_Nature.png" id="6_fipmv"]
 [ext_resource type="Texture2D" uid="uid://cihnm0iygxl2c" path="res://Assets/Others/Menu_Assets/Buttons/Start_Text.png" id="6_jvcv6"]
 [ext_resource type="AudioStream" uid="uid://dki6178h3w0a2" path="res://Assets/Audio/SFXs/GameStart.wav" id="6_pjscj"]
-[ext_resource type="StyleBox" path="res://Others/InvisibleButton.tres" id="6_ux20s"]
 [ext_resource type="AudioStream" uid="uid://cxfkx1fcac5i5" path="res://Assets/Audio/Music/MainTheme.ogg" id="7_6byu3"]
 [ext_resource type="Texture2D" uid="uid://bo2bv5uxfm8f3" path="res://Assets/Others/Menu_Assets/Buttons/Start_Bunnies.png" id="7_rplfc"]
 [ext_resource type="Texture2D" uid="uid://dfavesmxmpxou" path="res://Assets/Others/Menu_Assets/Bunnies.png" id="7_ydmd8"]
@@ -46,6 +45,7 @@
 [ext_resource type="Script" uid="uid://x47tqg13am5v" path="res://Scripts/DailyReward.gd" id="30_r4k1l"]
 [ext_resource type="Texture2D" uid="uid://ba502jsel36e4" path="res://Assets/Others/Menu_Assets/Maps/MapSandyStreets_Sel.png" id="31_f3d0c"]
 [ext_resource type="AudioStream" uid="uid://dxu7btcmga0es" path="res://Assets/Audio/SFXs/DailyEarn.wav" id="33_qwpoy"]
+[ext_resource type="Texture2D" uid="uid://ykudm8uv6ak2" path="res://Assets/Others/Menu_Assets/CoinBg.png" id="36_jhlh1"]
 [ext_resource type="Texture2D" uid="uid://dfa1mckdjrwi4" path="res://Assets/Others/UI_Assets/Hit.png" id="44_8m3ho"]
 [ext_resource type="Texture2D" uid="uid://cui6bi6v4r22h" path="res://Assets/Others/Debug_Assets/DebugButton.png" id="45_5rj5y"]
 
@@ -713,11 +713,6 @@ _data = {
 &"RESET": SubResource("Animation_y41we")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4v7s"]
-bg_color = Color(0.6431373, 0.5019608, 0, 0.84705883)
-corner_radius_top_left = 23
-corner_radius_bottom_left = 25
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fh7cp"]
 content_margin_left = 324.0
 
@@ -1051,10 +1046,6 @@ theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
-theme_override_styles/normal = ExtResource("6_ux20s")
-theme_override_styles/pressed = ExtResource("6_ux20s")
-theme_override_styles/hover = ExtResource("6_ux20s")
-theme_override_styles/focus = ExtResource("6_ux20s")
 flat = true
 
 [node name="AnimCursorHoverSun" type="AnimationPlayer" parent="SunSetEuGostoMuito" unique_id=1958846711]
@@ -1099,11 +1090,6 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
-theme_override_styles/normal = ExtResource("6_ux20s")
-theme_override_styles/pressed = ExtResource("6_ux20s")
-theme_override_styles/hover = ExtResource("6_ux20s")
-theme_override_styles/disabled = ExtResource("6_ux20s")
-theme_override_styles/focus = ExtResource("6_ux20s")
 flat = true
 
 [node name="Bunny???" type="Sprite2D" parent="." unique_id=225438069]
@@ -1147,10 +1133,6 @@ theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_focus_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
-theme_override_styles/normal = ExtResource("6_ux20s")
-theme_override_styles/pressed = ExtResource("6_ux20s")
-theme_override_styles/hover = ExtResource("6_ux20s")
-theme_override_styles/focus = ExtResource("6_ux20s")
 flat = true
 
 [node name="Settings" type="Sprite2D" parent="." unique_id=978130090]
@@ -1176,11 +1158,6 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
-theme_override_styles/normal = ExtResource("6_ux20s")
-theme_override_styles/pressed = ExtResource("6_ux20s")
-theme_override_styles/hover = ExtResource("6_ux20s")
-theme_override_styles/disabled = ExtResource("6_ux20s")
-theme_override_styles/focus = ExtResource("6_ux20s")
 flat = true
 
 [node name="Achievements" type="Sprite2D" parent="." unique_id=730391101]
@@ -1206,11 +1183,6 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
-theme_override_styles/normal = ExtResource("6_ux20s")
-theme_override_styles/pressed = ExtResource("6_ux20s")
-theme_override_styles/hover = ExtResource("6_ux20s")
-theme_override_styles/disabled = ExtResource("6_ux20s")
-theme_override_styles/focus = ExtResource("6_ux20s")
 flat = true
 
 [node name="Rookienho" type="Sprite2D" parent="." unique_id=1421522985]
@@ -1237,11 +1209,6 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
-theme_override_styles/normal = ExtResource("6_ux20s")
-theme_override_styles/pressed = ExtResource("6_ux20s")
-theme_override_styles/hover = ExtResource("6_ux20s")
-theme_override_styles/disabled = ExtResource("6_ux20s")
-theme_override_styles/focus = ExtResource("6_ux20s")
 flat = true
 
 [node name="Squeaky" type="AudioStreamPlayer" parent="Rookienho" unique_id=1372498639]
@@ -1274,11 +1241,6 @@ theme_override_colors/icon_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
-theme_override_styles/normal = ExtResource("6_ux20s")
-theme_override_styles/pressed = ExtResource("6_ux20s")
-theme_override_styles/hover = ExtResource("6_ux20s")
-theme_override_styles/disabled = ExtResource("6_ux20s")
-theme_override_styles/focus = ExtResource("6_ux20s")
 flat = true
 
 [node name="ForegroundNature" type="Sprite2D" parent="." unique_id=847093487]
@@ -1517,15 +1479,13 @@ libraries/ = SubResource("AnimationLibrary_drl2p")
 [node name="BunnyCoins" type="Node2D" parent="." unique_id=1786968820]
 position = Vector2(-468, 17)
 
-[node name="PretendColorRec___ToT" type="Button" parent="BunnyCoins" unique_id=1065733870]
-offset_left = -8.0
-offset_right = 274.0
-offset_bottom = 91.92
-theme_override_styles/disabled = SubResource("StyleBoxFlat_g4v7s")
-disabled = true
+[node name="CoinsBG" type="Sprite2D" parent="BunnyCoins" unique_id=173217756]
+position = Vector2(187, 74)
+scale = Vector2(0.91015625, 0.91015625)
+texture = ExtResource("36_jhlh1")
 
 [node name="BunnyCoin" type="Sprite2D" parent="BunnyCoins" unique_id=2035501121]
-position = Vector2(271, 42)
+position = Vector2(326, 70)
 scale = Vector2(0.48888886, 0.4888889)
 texture = ExtResource("27_r4k1l")
 
@@ -1534,13 +1494,13 @@ anchors_preset = -1
 anchor_left = 0.777
 anchor_right = 0.96500003
 anchor_bottom = 0.11800001
-offset_left = 1.0
-offset_top = 24.0
-offset_right = 192.0
-offset_bottom = 73.0
+offset_left = 38.0
+offset_top = 48.0
+offset_right = 229.0
+offset_bottom = 149.0
 pivot_offset = Vector2(98, 46)
-theme_override_colors/font_color = Color(0.9019608, 0.6901961, 0.14117648, 1)
-theme_override_colors/font_shadow_color = Color(0.49803922, 0.28235295, 0.11764706, 1)
+theme_override_colors/font_color = Color(0.9936754, 0.83999187, 0.5156532, 1)
+theme_override_colors/font_shadow_color = Color(0.65888363, 0.38406408, 0.1761345, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_fonts/font = ExtResource("28_qwpoy")
@@ -1957,6 +1917,7 @@ vertical_alignment = 1
 libraries/ = SubResource("AnimationLibrary_fipmv")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1372942293]
+visible = false
 layout_mode = 0
 offset_left = -2056.0
 offset_top = -2.0

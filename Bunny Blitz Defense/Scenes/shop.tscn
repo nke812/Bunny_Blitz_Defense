@@ -11,18 +11,19 @@
 [ext_resource type="Texture2D" uid="uid://sxf5ccoop822" path="res://Assets/Others/Menu_Assets/Shop/LunieSpritesheet.png" id="4_s8dlv"]
 [ext_resource type="Texture2D" uid="uid://db4gsxa08gfow" path="res://Assets/Others/Menu_Assets/Shop/ShopCurtains.png" id="4_ymrm4"]
 [ext_resource type="Texture2D" uid="uid://dh3t56b3we57n" path="res://Assets/Others/Menu_Assets/Shop/LunieHandSpritesheet.png" id="6_tyrku"]
-[ext_resource type="Texture2D" uid="uid://b1bwpf24hqfv3" path="res://Assets/Resources/BeachyPalms/Kelp.png" id="8_3568l"]
 [ext_resource type="Texture2D" uid="uid://qa7d2icd5rji" path="res://Assets/Resources/BasaltPlains/Obsidian.png" id="8_k6pkm"]
 [ext_resource type="Texture2D" uid="uid://bp7uvrhavyq2f" path="res://Assets/Others/Menu_Assets/Shop/Paw.png" id="8_ow1eo"]
 [ext_resource type="Texture2D" uid="uid://88o7nlgjkos6" path="res://Assets/Others/Menu_Assets/Shop/Arrow.png" id="8_tyrku"]
 [ext_resource type="Texture2D" uid="uid://pu4brlm14pfn" path="res://Assets/Others/Menu_Assets/Shop/ArrowSelected.png" id="9_5xp22"]
 [ext_resource type="Texture2D" uid="uid://cyn1lms6k0n25" path="res://Assets/Resources/GlimmerRoads/GlimmerRock.png" id="9_mjtuy"]
+[ext_resource type="Texture2D" uid="uid://25clmyc7h3it" path="res://Assets/Others/Menu_Assets/Shop/FireFX.png" id="11_0icju"]
 [ext_resource type="Texture2D" uid="uid://cwg1grx61mprd" path="res://Assets/Resources/NeoCity/CorruptedCore.png" id="11_mjtuy"]
 [ext_resource type="AudioStream" uid="uid://dqepigq0grudb" path="res://Assets/Audio/SFXs/CorruptedCoreShop.wav" id="13_m13ki"]
 [ext_resource type="Texture2D" uid="uid://bp50j65ppdpk6" path="res://Assets/Bunnies/Animations/CorruptedBunnyIdle.png" id="17_k7yfq"]
-[ext_resource type="Texture2D" uid="uid://dddim7nxybbx3" path="res://Assets/Others/Others/GameIcon.png" id="18_xv2t3"]
+[ext_resource type="Texture2D" uid="uid://bpc5x1ocnve5w" path="res://Assets/Others/Menu_Assets/Shop/Bunnies.png" id="18_0icju"]
 [ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="19_3mbjb"]
 [ext_resource type="Texture2D" uid="uid://cn4ibqgedl4pw" path="res://Assets/Others/HUD_Assets/CoinPriceTag.png" id="19_6rctg"]
+[ext_resource type="Texture2D" uid="uid://x1uaufrou4qp" path="res://Assets/Others/Menu_Assets/Shop/BunniesSelected.png" id="19_ihrg5"]
 [ext_resource type="Shader" uid="uid://briiakm7u3aca" path="res://Others/shop.gdshader" id="19_xv2t3"]
 [ext_resource type="Texture2D" uid="uid://dmy8bgn0hx70q" path="res://Assets/Bunnies/Scrappy.png" id="20_lkkvn"]
 [ext_resource type="Texture2D" uid="uid://cnifysbywrj2o" path="res://Assets/Bunnies/Animations/CorruptedEyes.png" id="22_dvu38"]
@@ -302,6 +303,35 @@ _data = {
 &"Talk": SubResource("Animation_1cyt5")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_itr2q"]
+atlas = ExtResource("11_0icju")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tllwv"]
+atlas = ExtResource("11_0icju")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk61b"]
+atlas = ExtResource("11_0icju")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h20dt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itr2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tllwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk61b")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
 [sub_resource type="Animation" id="Animation_yl1pv"]
 resource_name = "CorruptedCoreAnim"
 loop_mode = 1
@@ -352,7 +382,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1.000002, 0.5),
 "update": 0,
-"values": [Vector2(-1487.6324, -1040.0098), Vector2(-1487.632, -944.325)]
+"values": [Vector2(33, -917.185), Vector2(33, -1013.13)]
 }
 
 [sub_resource type="Animation" id="Animation_dvu38"]
@@ -990,17 +1020,17 @@ flip_h = true
 position = Vector2(960, 540)
 texture = ExtResource("3_3ps1r")
 
+[node name="Fire(fire)" type="AnimatedSprite2D" parent="ShopBench" unique_id=1679319381]
+position = Vector2(518, -140)
+scale = Vector2(0.84765667, 0.84765667)
+sprite_frames = SubResource("SpriteFrames_h20dt")
+autoplay = "default"
+frame_progress = 0.535959
+
 [node name="Items" type="Node2D" parent="." unique_id=474176942]
 position = Vector2(1715, 476.99997)
 rotation = -0.06256211
 scale = Vector2(0.29101563, 0.29101563)
-
-[node name="Kelp" type="Sprite2D" parent="Items" unique_id=1402458063]
-modulate = Color(0.4506483, 0.4506483, 0.45064825, 1)
-position = Vector2(-5047.2827, -1101.1799)
-rotation = 0.07853982
-scale = Vector2(0.80607164, 0.80607164)
-texture = ExtResource("8_3568l")
 
 [node name="GlimmerRock" type="Sprite2D" parent="Items" unique_id=1097733493]
 modulate = Color(0.6789437, 0.6789437, 0.6789437, 1)
@@ -1064,12 +1094,18 @@ offset_right = 850.0
 offset_bottom = 1047.0
 
 [node name="ChangeSection" type="TextureButton" parent="PanelItemShop" unique_id=408969085]
-layout_mode = 0
-offset_left = -296.0
-offset_top = -14.0
-offset_right = -207.0
-offset_bottom = 75.0
-texture_normal = ExtResource("18_xv2t3")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.78800005
+anchor_top = -0.028
+anchor_right = -0.58400005
+anchor_bottom = 0.17600001
+offset_left = -0.95599365
+offset_top = 3.1640005
+offset_right = -1.0079803
+offset_bottom = 3.1119957
+texture_normal = ExtResource("18_0icju")
+texture_hover = ExtResource("19_ihrg5")
 ignore_texture_size = true
 stretch_mode = 4
 
@@ -1160,7 +1196,8 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="BunnyCoins" type="Node2D" parent="." unique_id=272029192]
-position = Vector2(1572, 30)
+position = Vector2(850, 676)
+scale = Vector2(0.71, 0.71)
 
 [node name="PretendColorRec___ToT" type="Button" parent="BunnyCoins" unique_id=1820147963]
 offset_left = -8.0

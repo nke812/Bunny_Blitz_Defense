@@ -666,6 +666,15 @@ _data = {
 &"new_animation": SubResource("Animation_0a480")
 }
 
+[sub_resource type="Animation" id="Animation_1wvx7"]
+resource_name = "Sel"
+length = 0.43333334
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ik7y"]
+_data = {
+&"Sel": SubResource("Animation_1wvx7")
+}
+
 [sub_resource type="Animation" id="Animation_ke15f"]
 length = 0.001
 tracks/0/type = "value"
@@ -1642,6 +1651,7 @@ offset_top = 132.0
 offset_right = 1920.0
 offset_bottom = 927.0
 draw_focus_border = true
+scroll_vertical = 781
 vertical_scroll_mode = 2
 scroll_hint_mode = 1
 
@@ -1689,6 +1699,9 @@ theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 23
 text = "115"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps" unique_id=898729890]
+libraries/ = SubResource("AnimationLibrary_2ik7y")
+
 [node name="Slasher_BG_dps" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=378263718]
 layout_mode = 2
 texture_normal = ExtResource("22")
@@ -1725,7 +1738,6 @@ theme_override_font_sizes/font_size = 23
 text = "250"
 
 [node name="Toasty_BG_dps" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=458300905]
-visible = false
 layout_mode = 2
 texture_normal = ExtResource("22")
 texture_disabled = ExtResource("23")
@@ -1801,7 +1813,6 @@ theme_override_font_sizes/font_size = 23
 text = "500"
 
 [node name="Alien_BG_dps" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=831714472]
-visible = false
 layout_mode = 2
 texture_normal = ExtResource("22")
 texture_disabled = ExtResource("23")
@@ -2171,6 +2182,16 @@ theme_override_colors/font_shadow_color = Color(0.81960785, 0.627451, 0, 0.87450
 theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 23
 text = "1400"
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=1244592571]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+accessibility_region = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=470300772]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+accessibility_region = true
 
 [node name="StartRound" type="TextureButton" parent="HUD/UI_Selection" unique_id=2131063499 groups=["start_button"]]
 offset_left = 1597.0002

@@ -202,10 +202,12 @@ func change_section() -> void:
 
     if ItemSection: 
         ItemSection = false
-        $PanelItemShop/ChangeSection.texture_normal = load("res://Assets/Others/Others/GameIcon.png")
+        $PanelItemShop/ChangeSection.texture_normal = load("res://Assets/Others/Menu_Assets/Shop/Bunnies.png")
+        $PanelItemShop/ChangeSection.texture_hover = load("res://Assets/Others/Menu_Assets/Shop/BunniesSelected.png")
     else: 
         ItemSection = true    
-        $PanelItemShop/ChangeSection.texture_normal = load("res://Assets/Others/HUD_Assets/Skin.png")
+        $PanelItemShop/ChangeSection.texture_normal = load("res://Assets/Others/Menu_Assets/Shop/Skins.png")
+        $PanelItemShop/ChangeSection.texture_hover = load("res://Assets/Others/Menu_Assets/Shop/SkinsSelected.png")
     verificar_item_shop()
 
 func stock() -> void:
