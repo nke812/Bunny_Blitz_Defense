@@ -286,3 +286,7 @@ func vender_torre():
     
     remover_buff_mystical()
     queue_free()
+
+func dust():
+        $RightDust.emitting = true
+        $LeftDust.emitting = true

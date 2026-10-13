@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bglohhn54felc" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="4_q43ii"]
 [ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="5_ahu7b"]
 [ext_resource type="Animation" uid="uid://b1g85crk2yvfh" path="res://Others/ChangeSkin.res" id="6_m453k"]
+[ext_resource type="Texture2D" uid="uid://dywap1juf5thj" path="res://Assets/Others/UI_Assets/Dust1.png" id="8_q43ii"]
+[ext_resource type="Texture2D" uid="uid://m1rojcd0ndk0" path="res://Assets/Others/UI_Assets/Dust2.png" id="9_ahu7b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4dix"]
 radius = 165.00304
@@ -45,9 +47,12 @@ tracks/2/path = NodePath("../../..")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.38606542, 0.3884808),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.26666668, 0.38606542, 0.3884808),
+"transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
+"args": [],
+"method": &"dust"
+}, {
 "args": [],
 "method": &"atacar"
 }, {
@@ -327,6 +332,9 @@ _data = {
 &"RESET": SubResource("Animation_cfd32")
 }
 
+[sub_resource type="Gradient" id="Gradient_wmbnq"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Doll" type="StaticBody2D" unique_id=264265458 groups=["Bunnies"]]
 position = Vector2(0, -4)
 script = ExtResource("1_qww3h")
@@ -413,6 +421,45 @@ frame_progress = 1.0
 
 [node name="SkinChange" type="AnimationPlayer" parent="." unique_id=1580053252]
 libraries/ = SubResource("AnimationLibrary_cfd32")
+
+[node name="RightDust" type="CPUParticles2D" parent="." unique_id=1787784229]
+position = Vector2(-4, 75)
+emitting = false
+amount = 1
+texture = ExtResource("8_q43ii")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_wmbnq")
+
+[node name="LeftDust" type="CPUParticles2D" parent="." unique_id=1323246122]
+position = Vector2(-4, 75)
+emitting = false
+amount = 1
+texture = ExtResource("9_ahu7b")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_wmbnq")
 
 [connection signal="button_down" from="button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]

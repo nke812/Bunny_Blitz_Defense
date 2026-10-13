@@ -10,7 +10,7 @@ var posicionado = false
 var mostrar_range = false
 var pronto_para_atacar = false
 
-var dmg_Molten = 1
+var dmg_Molten = 5
 
 var focus = false
 
@@ -24,10 +24,9 @@ var P2status = "ATK Speed: 0.2s"
 var BuffStatus1 = "DMG: +0"
 var BuffStatus2 = "Range: 1.0"
 
-var a_atacar = false # Controlo do estado visual de ataque
+var a_atacar = false
 
 func _ready() -> void:
-    # Certifica-te que o Timer tem um tempo reduzido (ex.: 0.1s para ticks contínuos)
     if $Timer.wait_time > 0.2:
         $Timer.wait_time = 0.1
 
@@ -51,25 +50,20 @@ func verificar_e_atacar():
     for corpo in corpos:
         if corpo.is_in_group("Ghostlings"):
             inimigos_na_area.append(corpo)
-        break
 
     if inimigos_na_area.size() > 0:
-        # Transição de estado: se não estava a atacar, inicia a animação de ataque
         if not a_atacar:
             a_atacar = true
             if $Pega/Node2D/Molten/MoltenAttack.has_animation("MoltenAttack"):
                 $Pega/Node2D/Molten/MoltenAttack.play("MoltenAttack")
         
-        # Aplica dano contínuo a todos os inimigos dentro do alcance (ou foca no primeiro)
         for inimigo in inimigos_na_area:
             if inimigo.has_method("DMGED"):
                 inimigo.DMGED(dmg_Molten)
                 
-        # Reinicia o timer para o próximo "tick" de dano
         pronto_para_atacar = false
         $Timer.start()
         
-        # Animação em loop/idle durante o ataque
         if not $Pega/Node2D/Molten/MoltenAttackIdle.is_playing():
             $Pega/Node2D/Molten/MoltenAttackIdle.play("MoltenAttackIdle")
             
@@ -78,6 +72,12 @@ func verificar_e_atacar():
             a_atacar = false
             $Pega/Node2D/Molten/MoltenAttackIdle.stop()
             $Pega/Node2D/Molten/MoltenAttack.play_backwards("MoltenAttack")
+            $Laser.visible = false
+
+
+
+
+
 
 #func receber_buff_mystical(nivel_mystical):
     #if posicionado and MysticalBuff == true:

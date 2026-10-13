@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://3q3vlfxw0fu2"]
 
 [ext_resource type="Script" uid="uid://dy7ueuh7fpu5r" path="res://Scripts/Bunnies/molten.gd" id="1_ckfoi"]
-[ext_resource type="Texture2D" uid="uid://dkr53o6gmqvxf" path="res://Assets/Bunnies/Others/Shadow.png" id="1_wlwbp"]
-[ext_resource type="Texture2D" uid="uid://cj3vqm1dpt74k" path="res://Assets/Bunnies/Molten.png" id="2_ckfoi"]
-[ext_resource type="Texture2D" uid="uid://4k5vra8yk73w" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="3_bgkga"]
-[ext_resource type="Texture2D" uid="uid://c0cfxvyhvvig4" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="4_etx0v"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="1_wlwbp"]
+[ext_resource type="Texture2D" uid="uid://djdhfyntjvyp" path="res://Assets/Bunnies/Molten.png" id="2_ckfoi"]
+[ext_resource type="Texture2D" uid="uid://bglohhn54felc" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="3_bgkga"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="4_etx0v"]
+[ext_resource type="Texture2D" uid="uid://fpijsr0kf0xw" path="res://Assets/Bunnies/Animations/MoltenFlare.png" id="5_etx0v"]
 [ext_resource type="Animation" uid="uid://b1g85crk2yvfh" path="res://Others/ChangeSkin.res" id="6_bgkga"]
+[ext_resource type="Texture2D" uid="uid://7223wjl6ddfk" path="res://Assets/Bunnies/Animations/MoltenLaser.png" id="6_wmbnq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckfoi"]
 radius = 42.0
-height = 269.5
+height = 1316.0
 
 [sub_resource type="Animation" id="Animation_wmbnq"]
 resource_name = "MoltenAttack"
@@ -26,26 +28,34 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0.32291666, 0.32291666), Vector2(0.303, 0.363), Vector2(0.32291666, 0.32291666), Vector2(0.358, 0.298)]
 }
-
-[sub_resource type="Animation" id="Animation_jdv14"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../Light:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.56666666),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0.32291666, 0.32291666)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.654902), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../Laser:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8a0dq"]
 _data = {
-&"MoltenAttack": SubResource("Animation_wmbnq"),
-&"RESET": SubResource("Animation_jdv14")
+&"MoltenAttack": SubResource("Animation_wmbnq")
 }
 
 [sub_resource type="Animation" id="Animation_n2qts"]
@@ -127,6 +137,49 @@ _data = {
 &"RESET": SubResource("Animation_a4dix"),
 &"idle": SubResource("Animation_8lmgt")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdv14"]
+atlas = ExtResource("6_wmbnq")
+region = Rect2(0, 0, 620, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a0dq"]
+atlas = ExtResource("6_wmbnq")
+region = Rect2(620, 0, 620, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2qts"]
+atlas = ExtResource("6_wmbnq")
+region = Rect2(1240, 0, 620, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1vco"]
+atlas = ExtResource("6_wmbnq")
+region = Rect2(0, 1080, 620, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iunn"]
+atlas = ExtResource("6_wmbnq")
+region = Rect2(620, 1080, 620, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q6v5g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdv14")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a0dq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2qts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1vco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iunn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_po2lr"]
 atlas = ExtResource("4_etx0v")
@@ -324,6 +377,28 @@ _data = {
 &"RESET": SubResource("Animation_cfd32")
 }
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ali"]
+texture = ExtResource("6_wmbnq")
+texture_region_size = Vector2i(620, 1080)
+0:0/animation_columns = 3
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h20dt"]
+sources/1 = SubResource("TileSetAtlasSource_c6ali")
+
+[sub_resource type="Animation" id="Animation_jdv14"]
+resource_name = "new_animation"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n2qts"]
+_data = {
+&"new_animation": SubResource("Animation_jdv14")
+}
+
 [node name="Molten" type="StaticBody2D" unique_id=264265458 groups=["Bunnies"]]
 position = Vector2(0, -4)
 script = ExtResource("1_ckfoi")
@@ -334,7 +409,7 @@ script = ExtResource("1_ckfoi")
 position = Vector2(-37, -80)
 
 [node name="CollisionRange" type="CollisionShape2D" parent="Range" unique_id=24073726]
-position = Vector2(40, 226)
+position = Vector2(33, 739)
 shape = SubResource("CapsuleShape2D_ckfoi")
 debug_color = Color(0, 0, 0, 0.41960785)
 
@@ -392,6 +467,19 @@ texture = ExtResource("3_bgkga")
 libraries/ = SubResource("AnimationLibrary_wfvfv")
 autoplay = &"idle"
 
+[node name="Laser" type="AnimatedSprite2D" parent="." unique_id=1752728610]
+position = Vector2(62.999756, -1623.0001)
+scale = Vector2(0.17361109, 1.2100693)
+sprite_frames = SubResource("SpriteFrames_q6v5g")
+autoplay = "default"
+frame_progress = 0.4678764
+offset = Vector2(-374.39746, 1870.6062)
+
+[node name="Light" type="Sprite2D" parent="." unique_id=1822291217]
+position = Vector2(-0.5000049, -9.499996)
+scale = Vector2(0.17361109, 0.12361112)
+texture = ExtResource("5_etx0v")
+
 [node name="AURA" type="AnimatedSprite2D" parent="." unique_id=62694736]
 position = Vector2(0.9999981, -2)
 scale = Vector2(2.0898438, 2.0898438)
@@ -408,6 +496,14 @@ flat = true
 
 [node name="SkinChange" type="AnimationPlayer" parent="." unique_id=1350655246]
 libraries/ = SubResource("AnimationLibrary_etx0v")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=698657122]
+visible = false
+tile_map_data = PackedByteArray(0, 0, 27, 0, 42, 0, 1, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_h20dt")
+
+[node name="Disable_EnableMolten" type="AnimationPlayer" parent="." unique_id=1819959092]
+libraries/ = SubResource("AnimationLibrary_n2qts")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
