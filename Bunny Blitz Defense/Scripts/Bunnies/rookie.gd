@@ -40,7 +40,7 @@ func _process(_delta: float) -> void:
     if $Timer.is_stopped():
         pronto_para_atacar = true
 
-    if pronto_para_atacar:
+    if pronto_para_atacar and posicionado:
         verificar_e_atacar()
 
 func verificar_e_atacar():

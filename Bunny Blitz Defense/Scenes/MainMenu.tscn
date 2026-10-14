@@ -444,7 +444,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(1.01, 1.3333334, 1.4333333),
 "transitions": PackedFloat32Array(0.5, 0.5, 1.5),
 "update": 0,
-"values": [Vector2(-468, -126), Vector2(-468, 38.695), Vector2(-468, 17)]
+"values": [Vector2(-530, -159.215), Vector2(-530, 33.635), Vector2(-530, 6.5)]
 }
 
 [sub_resource type="Animation" id="Animation_fh7cp"]
@@ -471,7 +471,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-468, 17)]
+"values": [Vector2(-530, 6.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8e205"]
@@ -1477,16 +1477,16 @@ metadata/_edit_use_anchors_ = true
 libraries/ = SubResource("AnimationLibrary_drl2p")
 
 [node name="BunnyCoins" type="Node2D" parent="." unique_id=1786968820]
-position = Vector2(-468, 17)
+position = Vector2(-530, 6.5)
 
 [node name="CoinsBG" type="Sprite2D" parent="BunnyCoins" unique_id=173217756]
-position = Vector2(187, 74)
-scale = Vector2(0.91015625, 0.91015625)
+position = Vector2(153.25002, 81.87501)
+scale = Vector2(0.87988275, 0.81347656)
 texture = ExtResource("36_jhlh1")
 
 [node name="BunnyCoin" type="Sprite2D" parent="BunnyCoins" unique_id=2035501121]
-position = Vector2(326, 70)
-scale = Vector2(0.48888886, 0.4888889)
+position = Vector2(311, 76.00001)
+scale = Vector2(0.54444444, 0.54444444)
 texture = ExtResource("27_r4k1l")
 
 [node name="Price" type="Label" parent="BunnyCoins" unique_id=522859515]
@@ -1494,10 +1494,10 @@ anchors_preset = -1
 anchor_left = 0.777
 anchor_right = 0.96500003
 anchor_bottom = 0.11800001
-offset_left = 38.0
-offset_top = 48.0
-offset_right = 229.0
-offset_bottom = 149.0
+offset_left = 35.0
+offset_top = 33.0
+offset_right = 239.0
+offset_bottom = 134.0
 pivot_offset = Vector2(98, 46)
 theme_override_colors/font_color = Color(0.9936754, 0.83999187, 0.5156532, 1)
 theme_override_colors/font_shadow_color = Color(0.65888363, 0.38406408, 0.1761345, 1)
@@ -1505,8 +1505,7 @@ theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 48
-text = "0
-"
+text = "99999"
 horizontal_alignment = 1
 vertical_alignment = 1
 

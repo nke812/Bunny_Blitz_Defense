@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://b6h7n0ofp3m3k" path="res://Assets/Bunnies/Mystical.png" id="3_a1omc"]
 [ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="5_03oyv"]
 [ext_resource type="Texture2D" uid="uid://cyyqvlv25xsyh" path="res://Assets/Others/UI_Assets/ArrowSupport.png" id="5_ppyd6"]
+[ext_resource type="Texture2D" uid="uid://dywap1juf5thj" path="res://Assets/Others/UI_Assets/Dust1.png" id="6_a1omc"]
+[ext_resource type="Texture2D" uid="uid://m1rojcd0ndk0" path="res://Assets/Others/UI_Assets/Dust2.png" id="7_jbeyk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v3xng"]
 radius = 189.09521
@@ -263,6 +265,9 @@ _data = {
 &"RESET": SubResource("Animation_t6ws3")
 }
 
+[sub_resource type="Gradient" id="Gradient_03oyv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Mystical" type="StaticBody2D" unique_id=264265458 groups=["Bunnies", "Mystical"]]
 position = Vector2(0, -4)
 script = ExtResource("1_ppyd6")
@@ -332,6 +337,45 @@ autoplay = &"idle"
 
 [node name="SkinChange" type="AnimationPlayer" parent="." unique_id=489023857]
 libraries/ = SubResource("AnimationLibrary_a1omc")
+
+[node name="RightDust" type="CPUParticles2D" parent="." unique_id=1914573677]
+position = Vector2(-12, 70)
+emitting = false
+amount = 1
+texture = ExtResource("6_a1omc")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_03oyv")
+
+[node name="LeftDust" type="CPUParticles2D" parent="." unique_id=635894028]
+position = Vector2(-12, 70)
+emitting = false
+amount = 1
+texture = ExtResource("7_jbeyk")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_03oyv")
 
 [connection signal="area_entered" from="Range" to="." method="_on_range_area_entered"]
 [connection signal="button_down" from="button" to="." method="_on_button_button_down"]

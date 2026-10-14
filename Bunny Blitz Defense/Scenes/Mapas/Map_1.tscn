@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bjdqnhkdm27h5" path="res://Assets/Others/Map_Assets/Grasslands/Grass.png" id="6_656xa"]
 [ext_resource type="Texture2D" uid="uid://dl7ad3dap35hn" path="res://Assets/Others/Map_Assets/Portal.png" id="7_0f4fa"]
 [ext_resource type="Texture2D" uid="uid://3pnxgtv2s8bg" path="res://Assets/Others/Map_Assets/Grasslands/Tunnel.png" id="7_43eqa"]
-[ext_resource type="StyleBox" path="res://Others/InvisibleButton.tres" id="7_416cr"]
 [ext_resource type="PackedScene" uid="uid://cvtf3eidvbt76" path="res://Scenes/HUD.tscn" id="9"]
 [ext_resource type="Texture2D" uid="uid://cdcycwcoxc1f2" path="res://Assets/Others/Map_Assets/Grasslands/Bush1.png" id="9_656xa"]
 [ext_resource type="Texture2D" uid="uid://rjue1jwc2ocq" path="res://Assets/Others/Map_Assets/Grasslands/Trees.png" id="9_jo21a"]
@@ -23,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpokejbr50ick" path="res://Assets/Others/Map_Assets/Grasslands/Bush6.png" id="14_se3bs"]
 [ext_resource type="Texture2D" uid="uid://dhoydolnbyly0" path="res://Assets/Others/Map_Assets/Grasslands/Bush7.png" id="15_ipn2v"]
 [ext_resource type="Texture2D" uid="uid://chs14thfxrasq" path="res://Assets/Others/Map_Assets/Grasslands/Bush8.png" id="16_8xnfd"]
+[ext_resource type="Script" uid="uid://bspjv30uk7f6j" path="res://Scripts/Maps/TreesMap1.gd" id="20_416cr"]
 
 [sub_resource type="Animation" id="Animation_656xa"]
 resource_name = "PortalAnim"
@@ -199,11 +199,6 @@ offset_right = -289.03226
 offset_bottom = -334.72583
 rotation = -0.12566371
 pivot_offset = Vector2(363.32764, 102.61926)
-theme_override_styles/normal = ExtResource("7_416cr")
-theme_override_styles/pressed = ExtResource("7_416cr")
-theme_override_styles/hover = ExtResource("7_416cr")
-theme_override_styles/disabled = ExtResource("7_416cr")
-theme_override_styles/focus = ExtResource("7_416cr")
 flat = true
 
 [node name="Tunnel" type="Sprite2D" parent="." unique_id=1313899328]
@@ -325,10 +320,11 @@ offset = Vector2(-20.984314, 132.47388)
 
 [node name="Trees" type="Sprite2D" parent="." unique_id=316923212]
 y_sort_enabled = true
-position = Vector2(1232.3353, 1480.2395)
-scale = Vector2(0.5990241, 0.59902424)
+position = Vector2(1229.6248, 1501.1858)
+scale = Vector2(0.61210895, 0.61210907)
 texture = ExtResource("9_jo21a")
 offset = Vector2(-65.35376, -1307.9155)
+script = ExtResource("20_416cr")
 
 [node name="StarRound" type="AudioStreamPlayer" parent="." unique_id=397369011]
 process_mode = 3

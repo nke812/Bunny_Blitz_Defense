@@ -1,19 +1,21 @@
 [gd_scene format=3 uid="uid://c0y70hermmmb2"]
 
 [ext_resource type="Script" uid="uid://03efy6sl2750" path="res://Scripts/Bunnies/anarchist.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://hbyy32afaj14" path="res://Assets/Audio/SFXs/AnarchistShot.wav" id="2_56475"]
-[ext_resource type="AudioStream" uid="uid://l7wuk80stu8q" path="res://Assets/Audio/SFXs/AnarchistReload.wav" id="3_k2aot"]
-[ext_resource type="Texture2D" uid="uid://bx5k5iiqp5yaq" path="res://Assets/Others/UI_Assets/Hit.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://dyw7igu2y21lh" path="res://Assets/Bunnies/Animations/AnarchistAttackIdle.png" id="5_3yj7i"]
-[ext_resource type="Texture2D" uid="uid://djbbhwb01wcdc" path="res://Assets/Bunnies/Animations/AnarchistAttackSpritesheet.png" id="6_2hr0n"]
-[ext_resource type="Texture2D" uid="uid://daoy7aq4xmvxm" path="res://Assets/Bunnies/Animations/Paths/Anarchist01AttackSpritesheet.png" id="7_56475"]
-[ext_resource type="Texture2D" uid="uid://ufnu8f4sq4p6" path="res://Assets/Bunnies/Animations/AnarchistReloadSpritesheet.png" id="7_qthyr"]
-[ext_resource type="Texture2D" uid="uid://df0ybrli7haxf" path="res://Assets/Bunnies/Animations/Paths/Anarchist02AttackSpritesheet.png" id="8_k2aot"]
-[ext_resource type="Texture2D" uid="uid://1phi4tcp64u5" path="res://Assets/Bunnies/Animations/Paths/Anarchist01ReloadSpritesheet.png" id="10_y1exf"]
-[ext_resource type="Texture2D" uid="uid://b06fq0nhj8mwg" path="res://Assets/Bunnies/Animations/Paths/Anarchist02ReloadSpritesheet.png" id="11_eleo8"]
-[ext_resource type="Texture2D" uid="uid://4k5vra8yk73w" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="14_eleo8"]
-[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="14_ln5iw"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://bhr75kb27b25a" path="res://Assets/Audio/SFXs/AnarchistShot.wav" id="2_56475"]
+[ext_resource type="AudioStream" uid="uid://jkp1fjjordnt" path="res://Assets/Audio/SFXs/AnarchistReload.wav" id="3_k2aot"]
+[ext_resource type="Texture2D" uid="uid://dfa1mckdjrwi4" path="res://Assets/Others/UI_Assets/Hit.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bbmbog3etpymd" path="res://Assets/Bunnies/Animations/AnarchistAttackIdle.png" id="5_3yj7i"]
+[ext_resource type="Texture2D" uid="uid://dcd37qyblr3ey" path="res://Assets/Bunnies/Animations/AnarchistAttackSpritesheet.png" id="6_2hr0n"]
+[ext_resource type="Texture2D" uid="uid://cswaulppoomsy" path="res://Assets/Bunnies/Animations/Paths/Anarchist01AttackSpritesheet.png" id="7_56475"]
+[ext_resource type="Texture2D" uid="uid://d4bvhn3ewg21x" path="res://Assets/Bunnies/Animations/AnarchistReloadSpritesheet.png" id="7_qthyr"]
+[ext_resource type="Texture2D" uid="uid://b7ppvuaq6bnqw" path="res://Assets/Bunnies/Animations/Paths/Anarchist02AttackSpritesheet.png" id="8_k2aot"]
+[ext_resource type="Texture2D" uid="uid://dgkrk5fmvuow6" path="res://Assets/Bunnies/Animations/Paths/Anarchist01ReloadSpritesheet.png" id="10_y1exf"]
+[ext_resource type="Texture2D" uid="uid://ci3o22sqcqbtg" path="res://Assets/Bunnies/Animations/Paths/Anarchist02ReloadSpritesheet.png" id="11_eleo8"]
+[ext_resource type="Texture2D" uid="uid://bglohhn54felc" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="14_eleo8"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="14_ln5iw"]
+[ext_resource type="Texture2D" uid="uid://dywap1juf5thj" path="res://Assets/Others/UI_Assets/Dust1.png" id="15_ln5iw"]
+[ext_resource type="Texture2D" uid="uid://m1rojcd0ndk0" path="res://Assets/Others/UI_Assets/Dust2.png" id="16_i1ssw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4dix"]
 radius = 294.0017
@@ -807,6 +809,9 @@ _data = {
 &"RESET": SubResource("Animation_eleo8")
 }
 
+[sub_resource type="Gradient" id="Gradient_c30q6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Anarchist" type="StaticBody2D" unique_id=264265458 groups=["Bunnies"]]
 position = Vector2(0, -4)
 script = ExtResource("1")
@@ -922,6 +927,45 @@ autoplay = &"idle"
 
 [node name="SkinChange" type="AnimationPlayer" parent="." unique_id=1408013668]
 libraries/ = SubResource("AnimationLibrary_ln5iw")
+
+[node name="RightDust" type="CPUParticles2D" parent="." unique_id=959520058]
+position = Vector2(1, 74)
+emitting = false
+amount = 1
+texture = ExtResource("15_ln5iw")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_c30q6")
+
+[node name="LeftDust" type="CPUParticles2D" parent="." unique_id=1931742340]
+position = Vector2(1, 74)
+emitting = false
+amount = 1
+texture = ExtResource("16_i1ssw")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_c30q6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Reload" to="." method="_on_reload_timeout"]

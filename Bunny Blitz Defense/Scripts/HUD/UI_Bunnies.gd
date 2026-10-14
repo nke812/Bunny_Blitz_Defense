@@ -47,7 +47,7 @@ func _ready() -> void:
     $ScrollContainer/GridContainer/Alien_BG_dps.visible = SaveManager.AlienUnlocked
     $ScrollContainer/GridContainer/Toasty_BG_dps.visible = SaveManager.ToastyUnlocked
     $ScrollContainer/GridContainer/Voodo_BG_stun.visible = SaveManager.VoodoUnlocked
-    $ScrollContainer/GridContainer/Molten_BG_dps.visible = SaveManager.MoltenUnlocked
+    $ScrollContainer/GridContainer/Molten_BG_dps.vissible = SaveManager.MoltenUnlocked
     $ScrollContainer/GridContainer/Doll_BG_dps.visible = SaveManager.DollUnlocked
     
     atualizar_loja_botoes()
@@ -216,6 +216,10 @@ func largar_torre():
             temp_tower.get_node("Shadow").visible = true
             if temp_tower.has_node("SkinChange"):
                 temp_tower.get_node("SkinChange").play("ChangeSkin")
+                
+            if temp_tower.has_node("RightDust"):
+                temp_tower.get_node("RightDust").emitting = true
+                temp_tower.get_node("LeftDust").emitting = true
             temp_tower.modulate.a = 1.0
             temp_tower.process_mode = Node.PROCESS_MODE_INHERIT
             
@@ -241,3 +245,71 @@ func largar_torre():
             temp_tower.queue_free()
             temp_tower = null
             custo_da_torre_atual = 0
+
+
+func _on_rookie_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Rookie_BG_dps/Rookie/MouseExit.stop()
+    $ScrollContainer/GridContainer/Rookie_BG_dps/Rookie/MouseEnter.play("PopEnter")
+
+func _on_rookie_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Rookie_BG_dps/Rookie/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Rookie_BG_dps/Rookie/MouseExit.play("exit/PopExit")
+
+
+func _on_slasher_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Slasher_BG_dps/Slasher/MouseExit.stop()
+    $ScrollContainer/GridContainer/Slasher_BG_dps/Slasher/MouseEnter.play("PopEnter")
+func _on_slasher_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Slasher_BG_dps/Slasher/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Slasher_BG_dps/Slasher/MouseExit.play("exit/PopExit")
+
+func _on_anarchist_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist/MouseExit.stop()
+    $ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist/MouseEnter.play("PopEnter")
+func _on_anarchist_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist/MouseExit.play("PopExit")
+
+func _on_molten_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Molten_BG_dps/Molten/MouseExit.stop()
+    $ScrollContainer/GridContainer/Molten_BG_dps/Molten/MouseEnter.play("PopEnter")
+func _on_molten_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Molten_BG_dps/Molten/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Molten_BG_dps/Molten/MouseExit.play("PopExit")
+
+func _on_doll_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Doll_BG_dps/Doll/MouseExit.stop()
+    $ScrollContainer/GridContainer/Doll_BG_dps/Doll/MouseEnter.play("PopEnter")
+func _on_doll_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Doll_BG_dps/Doll/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Doll_BG_dps/Doll/MouseExit.play("PopExit")
+    
+func _on_gooey_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Gooey_BG_stun/Gooey/MouseExit.stop()
+    $ScrollContainer/GridContainer/Gooey_BG_stun/Gooey/MouseEnter.play("PopEnter")
+func _on_gooey_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Gooey_BG_stun/Gooey/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Gooey_BG_stun/Gooey/MouseExit.play("PopExit")
+
+func _on_scrappy_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy/MouseExit.stop()
+    $ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy/MouseEnter.play("PopEnter")
+func _on_scrappy_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy/MouseExit.play("PopExit")
+
+func _on_lucky_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Lucky_BG_support/Lucky/MouseExit.stop()
+    $ScrollContainer/GridContainer/Lucky_BG_support/Lucky/MouseEnter.play("PopEnter")
+func _on_lucky_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Lucky_BG_support/Lucky/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Lucky_BG_support/Lucky/MouseExit.play("PopExit")
+
+func _on_mystical_mouse_entered() -> void:
+    $ScrollContainer/GridContainer/Mystical_BG_support/Mystical/MouseExit.stop()
+    $ScrollContainer/GridContainer/Mystical_BG_support/Mystical/MouseEnter.play("PopEnter")
+func _on_mystical_mouse_exited() -> void:
+    $ScrollContainer/GridContainer/Mystical_BG_support/Mystical/MouseEnter.stop()
+    $ScrollContainer/GridContainer/Mystical_BG_support/Mystical/MouseExit.play("PopExit")
+    
+    

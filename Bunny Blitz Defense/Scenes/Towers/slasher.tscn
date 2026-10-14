@@ -1,22 +1,24 @@
 [gd_scene format=3 uid="uid://wdtboust0hka"]
 
 [ext_resource type="Script" uid="uid://cy6418q070xvu" path="res://Scripts/Bunnies/slasher.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://de0t84mwf7eme" path="res://Assets/Audio/SFXs/SlasherBunnyULT.wav" id="2_0f8kl"]
-[ext_resource type="AudioStream" uid="uid://brjxx0gj70tqk" path="res://Assets/Audio/SFXs/SlasherSlash.wav" id="3_1vlif"]
-[ext_resource type="Texture2D" uid="uid://coibbpf5w2aw3" path="res://Assets/Bunnies/Animations/SlashVFXSpriteSheet.png" id="4_q08p7"]
-[ext_resource type="Texture2D" uid="uid://b8vhapmplo4dh" path="res://Assets/Bunnies/Animations/Paths/EyeGlowSlasher01SpriteSheet.png" id="5_i7xlj"]
-[ext_resource type="Texture2D" uid="uid://v21xxnhysfvf" path="res://Assets/Bunnies/Animations/SlasherAttackIdle.png" id="6_1vlif"]
-[ext_resource type="Texture2D" uid="uid://djrlsxbbrspp6" path="res://Assets/Bunnies/Animations/SlasherAttackSpriteSheet.png" id="6_5ydw3"]
-[ext_resource type="Texture2D" uid="uid://csnvb6d4rgdmp" path="res://Assets/Bunnies/Animations/Paths/EyeGlowSlasher02SpriteSheet.png" id="6_ifq10"]
-[ext_resource type="Texture2D" uid="uid://ctum6nvd855c3" path="res://Assets/Bunnies/Animations/EyeGlowSlasherSpriteSheet.png" id="6_qeanp"]
-[ext_resource type="Texture2D" uid="uid://4k5vra8yk73w" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="9_qeanp"]
-[ext_resource type="Texture2D" uid="uid://c8qdbv51pfedo" path="res://Assets/Bunnies/Animations/Paths/Slasher01AttackSpriteSheet.png" id="9_u6ker"]
-[ext_resource type="Texture2D" uid="uid://tbiu6w7hi7hv" path="res://Assets/Bunnies/Animations/Paths/Slasher02AttackSpriteSheet.png" id="10_hoswa"]
-[ext_resource type="Texture2D" uid="uid://bfbcj86dqcx6e" path="res://Assets/Bunnies/Animations/Skins/CanelaAttackSpritesheet.png" id="11_ifq10"]
-[ext_resource type="Texture2D" uid="uid://nrxcai3h8ock" path="res://Assets/Bunnies/Animations/Skins/Paths/Canela01AttackSpritesheet.png" id="12_0f8kl"]
-[ext_resource type="Texture2D" uid="uid://d372mnkbk7gh8" path="res://Assets/Bunnies/Animations/Skins/Paths/Canela02AttackSpritesheet.png" id="16_4bjbh"]
-[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="17_4bjbh"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://djhfgwuu7tghc" path="res://Assets/Audio/SFXs/SlasherBunnyULT.wav" id="2_0f8kl"]
+[ext_resource type="AudioStream" uid="uid://dxq1nxmw1fmhp" path="res://Assets/Audio/SFXs/SlasherSlash.wav" id="3_1vlif"]
+[ext_resource type="Texture2D" uid="uid://2wq4aa0lyvts" path="res://Assets/Bunnies/Animations/SlashVFXSpriteSheet.png" id="4_q08p7"]
+[ext_resource type="Texture2D" uid="uid://ct7g210s6we77" path="res://Assets/Bunnies/Animations/Paths/EyeGlowSlasher01SpriteSheet.png" id="5_i7xlj"]
+[ext_resource type="Texture2D" uid="uid://2l86ht16x14g" path="res://Assets/Bunnies/Animations/SlasherAttackIdle.png" id="6_1vlif"]
+[ext_resource type="Texture2D" uid="uid://c3m28g1vscf3y" path="res://Assets/Bunnies/Animations/SlasherAttackSpriteSheet.png" id="6_5ydw3"]
+[ext_resource type="Texture2D" uid="uid://bjmu7qjiw78nc" path="res://Assets/Bunnies/Animations/Paths/EyeGlowSlasher02SpriteSheet.png" id="6_ifq10"]
+[ext_resource type="Texture2D" uid="uid://c74jb0w6qn8n7" path="res://Assets/Bunnies/Animations/EyeGlowSlasherSpriteSheet.png" id="6_qeanp"]
+[ext_resource type="Texture2D" uid="uid://bglohhn54felc" path="res://Assets/Others/UI_Assets/ArrowDPS.png" id="9_qeanp"]
+[ext_resource type="Texture2D" uid="uid://bhde5by5fkodw" path="res://Assets/Bunnies/Animations/Paths/Slasher01AttackSpriteSheet.png" id="9_u6ker"]
+[ext_resource type="Texture2D" uid="uid://dmx22asaqlijc" path="res://Assets/Bunnies/Animations/Paths/Slasher02AttackSpriteSheet.png" id="10_hoswa"]
+[ext_resource type="Texture2D" uid="uid://bao40jn4gaftk" path="res://Assets/Bunnies/Animations/Skins/CanelaAttackSpritesheet.png" id="11_ifq10"]
+[ext_resource type="Texture2D" uid="uid://4oddde7kc7x2" path="res://Assets/Bunnies/Animations/Skins/Paths/Canela01AttackSpritesheet.png" id="12_0f8kl"]
+[ext_resource type="Texture2D" uid="uid://7qo6f8gu8778" path="res://Assets/Bunnies/Animations/Skins/Paths/Canela02AttackSpritesheet.png" id="16_4bjbh"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="17_4bjbh"]
+[ext_resource type="Texture2D" uid="uid://dywap1juf5thj" path="res://Assets/Others/UI_Assets/Dust1.png" id="18_t8fyf"]
+[ext_resource type="Texture2D" uid="uid://m1rojcd0ndk0" path="res://Assets/Others/UI_Assets/Dust2.png" id="19_8jeol"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q08p7"]
 radius = 147.03061
@@ -1131,6 +1133,9 @@ _data = {
 &"RESET": SubResource("Animation_8jeol")
 }
 
+[sub_resource type="Gradient" id="Gradient_h6ygt"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Slasher" type="StaticBody2D" unique_id=1200842233 groups=["Bunnies"]]
 script = ExtResource("1")
 
@@ -1271,6 +1276,45 @@ libraries/ = SubResource("AnimationLibrary_kctmb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1823275710]
 libraries/ = SubResource("AnimationLibrary_8jeol")
+
+[node name="RightDust" type="CPUParticles2D" parent="." unique_id=1640733902]
+position = Vector2(-3, 71)
+emitting = false
+amount = 1
+texture = ExtResource("18_t8fyf")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_h6ygt")
+
+[node name="LeftDust" type="CPUParticles2D" parent="." unique_id=1764653004]
+position = Vector2(-3, 71)
+emitting = false
+amount = 1
+texture = ExtResource("19_8jeol")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_h6ygt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="insp" to="." method="_on_insp_button_down"]

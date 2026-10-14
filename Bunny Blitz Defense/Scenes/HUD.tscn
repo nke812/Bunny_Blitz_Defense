@@ -55,11 +55,13 @@
 [ext_resource type="Texture2D" uid="uid://bo0dqdm3oosrg" path="res://Assets/Bunnies/Gooey.png" id="35"]
 [ext_resource type="Texture2D" uid="uid://c57wm3gxf5xug" path="res://Assets/Bunnies/Corrupted.png" id="35_hm7q8"]
 [ext_resource type="Texture2D" uid="uid://cdkty47vjkvkk" path="res://Assets/Bunnies/GooeyDisable.png" id="36"]
+[ext_resource type="Animation" uid="uid://dqm7gnlqoeuxo" path="res://Others/PopExit.res" id="36_2ik7y"]
 [ext_resource type="Texture2D" uid="uid://bcnene0j40p5" path="res://Assets/Bunnies/CorruptedDisable.png" id="36_kxyc5"]
 [ext_resource type="Texture2D" uid="uid://dmy8bgn0hx70q" path="res://Assets/Bunnies/Scrappy.png" id="37"]
 [ext_resource type="Texture2D" uid="uid://cnaupki6kbvy0" path="res://Assets/Bunnies/ScrappyDisable.png" id="38"]
 [ext_resource type="Texture2D" uid="uid://cmrc4lcujogv5" path="res://Assets/Bunnies/Ghoulish.png" id="39"]
 [ext_resource type="Texture2D" uid="uid://bc3sukwba28nk" path="res://Assets/Bunnies/GhoulishDisable.png" id="40"]
+[ext_resource type="Animation" uid="uid://x7uyv808ypgu" path="res://Others/PopEnter.res" id="40_lyx8i"]
 [ext_resource type="Texture2D" uid="uid://cax1ddrv84jce" path="res://Assets/Others/HUD_Assets/BunnyBoxSupport.png" id="41"]
 [ext_resource type="Texture2D" uid="uid://d2eeu8cikq1ks" path="res://Assets/Bunnies/Lucky.png" id="42"]
 [ext_resource type="Texture2D" uid="uid://itolqryqd8hq" path="res://Assets/Bunnies/LuckyDisable.png" id="43"]
@@ -666,13 +668,26 @@ _data = {
 &"new_animation": SubResource("Animation_0a480")
 }
 
-[sub_resource type="Animation" id="Animation_1wvx7"]
-resource_name = "Sel"
-length = 0.43333334
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ik7y"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4gx5"]
 _data = {
-&"Sel": SubResource("Animation_1wvx7")
+&"PopEnter": ExtResource("40_lyx8i")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3af5o"]
+_data = {
+&"PopExit": ExtResource("36_2ik7y")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qq14s"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b20ia"]
+_data = {
+&"PopEnter": ExtResource("40_lyx8i")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u6cmv"]
+_data = {
+&"PopExit": ExtResource("36_2ik7y")
 }
 
 [sub_resource type="Animation" id="Animation_ke15f"]
@@ -1651,7 +1666,6 @@ offset_top = 132.0
 offset_right = 1920.0
 offset_bottom = 927.0
 draw_focus_border = true
-scroll_vertical = 781
 vertical_scroll_mode = 2
 scroll_hint_mode = 1
 
@@ -1670,16 +1684,23 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.9480001
 anchor_bottom = 0.961
-offset_left = -8.0
-offset_top = -5.0
-offset_right = 7.671982
-offset_bottom = -4.224518
-pivot_offset = Vector2(119.298, 166.567)
+offset_left = 6.0
+offset_top = 16.0
+offset_right = 4.671982
+offset_bottom = -5.2460175
+pivot_offset = Vector2(96, 129)
 focus_mode = 0
 texture_normal = ExtResource("24")
 texture_disabled = ExtResource("25")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps/Rookie" unique_id=1033020583]
+libraries/ = SubResource("AnimationLibrary_k4gx5")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps/Rookie" unique_id=1688549245]
+root_node = NodePath("../MouseEnter")
+libraries/exit = SubResource("AnimationLibrary_3af5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps" unique_id=1662657573]
 position = Vector2(124, 245)
@@ -1699,9 +1720,6 @@ theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 23
 text = "115"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps" unique_id=898729890]
-libraries/ = SubResource("AnimationLibrary_2ik7y")
-
 [node name="Slasher_BG_dps" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=378263718]
 layout_mode = 2
 texture_normal = ExtResource("22")
@@ -1709,15 +1727,24 @@ texture_disabled = ExtResource("23")
 
 [node name="Slasher" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Slasher_BG_dps" unique_id=2052073892]
 layout_mode = 0
-offset_left = -9.0
-offset_top = -10.249191
-offset_right = 189.0
-offset_bottom = 246.23656
+offset_left = 6.0
+offset_top = 11.0
+offset_right = 185.0
+offset_bottom = 242.87347
+pivot_offset = Vector2(97, 130.6831)
 focus_mode = 0
 texture_normal = ExtResource("27")
 texture_disabled = ExtResource("28")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Slasher_BG_dps/Slasher" unique_id=521426190]
+libraries/ = SubResource("AnimationLibrary_k4gx5")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Slasher_BG_dps/Slasher" unique_id=157989790]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_qq14s")
+libraries/exit = SubResource("AnimationLibrary_3af5o")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Slasher_BG_dps" unique_id=1763141016]
 position = Vector2(124, 245)
@@ -1738,20 +1765,29 @@ theme_override_font_sizes/font_size = 23
 text = "250"
 
 [node name="Toasty_BG_dps" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=458300905]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("22")
 texture_disabled = ExtResource("23")
 
 [node name="Toasty" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps" unique_id=898894793]
 layout_mode = 0
-offset_left = -2.0
-offset_top = -17.43074
-offset_right = 200.0
-offset_bottom = 244.23656
+offset_left = 12.0
+offset_top = 10.249222
+offset_right = 188.0
+offset_bottom = 238.23656
+pivot_offset = Vector2(93, 142.7508)
 texture_normal = ExtResource("29")
 texture_disabled = ExtResource("30")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps/Toasty" unique_id=1446618628]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps/Toasty" unique_id=1212784099]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps" unique_id=752082675]
 position = Vector2(124, 245)
@@ -1784,15 +1820,23 @@ texture_disabled = ExtResource("23")
 
 [node name="Anarchist" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Anarchist_BG_dps" unique_id=1332871057]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 1.1138611
-offset_right = 194.0
-offset_bottom = 247.23654
+offset_left = 8.0
+offset_top = 14.430756
+offset_right = 180.0
+offset_bottom = 237.23654
+pivot_offset = Vector2(88, 116.569244)
 focus_mode = 0
 texture_normal = ExtResource("32")
 texture_disabled = ExtResource("33")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist" unique_id=1625041438]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist" unique_id=1635688716]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Anarchist_BG_dps" unique_id=357696644]
 position = Vector2(124, 245)
@@ -1813,20 +1857,29 @@ theme_override_font_sizes/font_size = 23
 text = "500"
 
 [node name="Alien_BG_dps" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=831714472]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("22")
 texture_disabled = ExtResource("23")
 
 [node name="Alien" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Alien_BG_dps" unique_id=776207283]
 layout_mode = 0
-offset_left = 4.0
-offset_top = 2.7046204
-offset_right = 192.0
-offset_bottom = 246.23656
+offset_left = 7.0
+offset_top = 19.13536
+offset_right = 180.0
+offset_bottom = 243.23656
+pivot_offset = Vector2(84, 126.864624)
 texture_normal = ExtResource("44")
 texture_disabled = ExtResource("45")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Alien_BG_dps/Alien" unique_id=368536699]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Alien_BG_dps/Alien" unique_id=242119615]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Alien_BG_dps" unique_id=334616156]
 position = Vector2(124, 245)
@@ -1859,14 +1912,22 @@ texture_disabled = ExtResource("23")
 
 [node name="Molten" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Molten_BG_dps" unique_id=721318087]
 layout_mode = 0
-offset_left = -1.0
-offset_top = -0.3630371
-offset_right = 186.0
-offset_bottom = 241.87352
+offset_left = 8.0
+offset_top = 14.658478
+offset_right = 178.0
+offset_bottom = 234.87352
+pivot_offset = Vector2(84, 115.34152)
 texture_normal = ExtResource("43_awmb6")
 texture_disabled = ExtResource("44_3upol")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Molten_BG_dps/Molten" unique_id=1173153827]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Molten_BG_dps/Molten" unique_id=1990921758]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Molten_BG_dps" unique_id=69957185]
 position = Vector2(124, 245)
@@ -1902,16 +1963,23 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.9480001
 anchor_bottom = 0.961
-offset_left = -8.0
-offset_top = -5.0
-offset_right = 7.671982
-offset_bottom = -4.224518
-pivot_offset = Vector2(119.298, 166.567)
+offset_left = 6.0
+offset_top = 20.99997
+offset_right = 2.6719818
+offset_bottom = -2.8368225
+pivot_offset = Vector2(88, 119)
 focus_mode = 0
 texture_normal = ExtResource("54_2h8cp")
 texture_disabled = ExtResource("55_1wvx7")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Doll_BG_dps/Doll" unique_id=565597728]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Doll_BG_dps/Doll" unique_id=1079175521]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Doll_BG_dps" unique_id=1953208857]
 position = Vector2(124, 245)
@@ -1938,15 +2006,23 @@ texture_disabled = ExtResource("23")
 
 [node name="Gooey" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Gooey_BG_stun" unique_id=1614574487]
 layout_mode = 0
-offset_left = -5.0
-offset_top = -5.839981
-offset_right = 195.0
-offset_bottom = 253.23656
+offset_top = 8.0
+offset_right = 183.0
+offset_bottom = 245.05504
+scale = Vector2(1.17, 1.17)
+pivot_offset = Vector2(94, 123)
 focus_mode = 0
 texture_normal = ExtResource("35")
 texture_disabled = ExtResource("36")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Gooey_BG_stun/Gooey" unique_id=724879329]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Gooey_BG_stun/Gooey" unique_id=964778003]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Gooey_BG_stun" unique_id=1645671348]
 position = Vector2(124, 245)
@@ -1973,15 +2049,24 @@ texture_disabled = ExtResource("23")
 
 [node name="Scrappy" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Scrappy_BG_stun" unique_id=1322863999]
 layout_mode = 0
-offset_left = 2.0
-offset_top = 0.113861084
-offset_right = 192.0
-offset_bottom = 246.23656
+offset_left = 6.0
+offset_top = 17.13536
+offset_right = 179.0
+offset_bottom = 241.23656
+scale = Vector2(1.17, 1.17)
+pivot_offset = Vector2(88, 121.864624)
 focus_mode = 0
 texture_normal = ExtResource("37")
 texture_disabled = ExtResource("38")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy" unique_id=405979631]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy" unique_id=1754315273]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Scrappy_BG_stun" unique_id=958780730]
 position = Vector2(124, 245)
@@ -2002,6 +2087,7 @@ theme_override_font_sizes/font_size = 23
 text = "330"
 
 [node name="Ghoulish_BG_stun" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=1447302593]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("34")
 texture_disabled = ExtResource("23")
@@ -2012,10 +2098,18 @@ offset_left = -4.0
 offset_top = -7.658432
 offset_right = 192.0
 offset_bottom = 246.23656
+pivot_offset = Vector2(96, 138.65845)
 texture_normal = ExtResource("39")
 texture_disabled = ExtResource("40")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun/Ghoulish" unique_id=504479046]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun/Ghoulish" unique_id=704712451]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun" unique_id=802096256]
 position = Vector2(124, 245)
@@ -2036,20 +2130,29 @@ theme_override_font_sizes/font_size = 23
 text = "700"
 
 [node name="Voodo_BG_stun" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=371735676]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("34")
 texture_disabled = ExtResource("23")
 
 [node name="Voodo" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Voodo_BG_stun" unique_id=587384410]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 10.0000305
-offset_right = 186.0
-offset_bottom = 241.87352
+offset_left = 8.0
+offset_top = 22.658478
+offset_right = 178.0
+offset_bottom = 242.87352
+pivot_offset = Vector2(89, 116.34155)
 texture_normal = ExtResource("51_hm7q8")
 texture_disabled = ExtResource("52_kxyc5")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Voodo_BG_stun/Voodo" unique_id=1151472498]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Voodo_BG_stun/Voodo" unique_id=2096405421]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Voodo_BG_stun" unique_id=300606334]
 position = Vector2(124, 245)
@@ -2076,6 +2179,7 @@ scale = Vector2(0.24108563, 0.24108563)
 texture = ExtResource("31")
 
 [node name="Corrupted_BG_stun" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer" unique_id=451448604]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("33_fprih")
 texture_disabled = ExtResource("34_30aiu")
@@ -2085,16 +2189,23 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.9480001
 anchor_bottom = 0.961
-offset_left = -5.0
-offset_top = -5.0
-offset_right = 10.671982
-offset_bottom = -4.224518
-pivot_offset = Vector2(119.298, 166.567)
+offset_left = 8.0
+offset_top = 18.907654
+offset_right = 3.6719818
+offset_bottom = -6.224518
+pivot_offset = Vector2(83, 128.09235)
 focus_mode = 0
 texture_normal = ExtResource("35_hm7q8")
 texture_disabled = ExtResource("36_kxyc5")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Corrupted_BG_stun/Corrupted" unique_id=378888844]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Corrupted_BG_stun/Corrupted" unique_id=1955765240]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Corrupted_BG_stun" unique_id=2104020441]
 position = Vector2(124, 245)
@@ -2121,15 +2232,24 @@ texture_disabled = ExtResource("23")
 
 [node name="Lucky" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support" unique_id=1775925073]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 4.0
-offset_right = 183.0
-offset_bottom = 246.23656
+offset_left = 8.0
+offset_top = 22.43074
+offset_right = 180.0
+offset_bottom = 245.23656
+scale = Vector2(1.17, 1.17)
+pivot_offset = Vector2(83, 130.56927)
 focus_mode = 0
 texture_normal = ExtResource("42")
 texture_disabled = ExtResource("43")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support/Lucky" unique_id=28154435]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support/Lucky" unique_id=425185872]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support" unique_id=190610724]
 position = Vector2(124, 245)
@@ -2156,14 +2276,23 @@ texture_disabled = ExtResource("23")
 
 [node name="Mystical" type="TextureButton" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support" unique_id=54255089]
 layout_mode = 0
-offset_left = -4.0
-offset_top = -10.249191
-offset_right = 194.0
-offset_bottom = 246.23656
+offset_left = 8.0
+offset_top = 20.021515
+offset_right = 178.0
+offset_bottom = 240.23656
+scale = Vector2(1.17, 1.17)
+pivot_offset = Vector2(86, 125.978516)
 texture_normal = ExtResource("46")
 texture_disabled = ExtResource("47")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="MouseEnter" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support/Mystical" unique_id=1686029859]
+libraries/ = SubResource("AnimationLibrary_b20ia")
+
+[node name="MouseExit" type="AnimationPlayer" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support/Mystical" unique_id=616443703]
+root_node = NodePath("../MouseEnter")
+libraries/ = SubResource("AnimationLibrary_u6cmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support" unique_id=1064552725]
 position = Vector2(124, 245)
@@ -2453,10 +2582,10 @@ anchor_left = 0.358
 anchor_top = 0.48700002
 anchor_right = 0.72
 anchor_bottom = 0.577
-offset_left = -334.1405
-offset_top = -525.96
-offset_right = -501.10052
-offset_bottom = -511.08197
+offset_left = -333.6399
+offset_top = -524.96
+offset_right = -500.5999
+offset_bottom = -510.08197
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 6
@@ -2499,12 +2628,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BunnyCoinsEarn" type="Label" parent="HUD/UI_Selection/Victory/MenuSettings" unique_id=1469173054]
-offset_left = -223.99998
-offset_right = 14.000076
-offset_bottom = 106.0
+offset_left = -242.99998
+offset_top = 2.0000002
+offset_right = 41.000015
+offset_bottom = 108.0
 theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 48
-text = "You earn:"
+text = "You earned:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2565,9 +2695,9 @@ anchor_left = 0.358
 anchor_top = 0.48700002
 anchor_right = 0.878
 anchor_bottom = 0.59000003
-offset_left = -536.64
+offset_left = -488.64
 offset_top = -542.96
-offset_right = -537.2401
+offset_right = -541.24005
 offset_bottom = -542.2
 grow_horizontal = 0
 grow_vertical = 2
@@ -2639,7 +2769,7 @@ offset_right = -155.00562
 offset_bottom = 87.62572
 theme_override_fonts/font = ExtResource("4")
 theme_override_font_sizes/font_size = 48
-text = "You earn:"
+text = "You earned:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -3026,26 +3156,35 @@ libraries/ = SubResource("AnimationLibrary_45eqa")
 [connection signal="mouse_exited" from="HUD/HUD_Shop/HudBgDown/Control/BTNsell" to="HUD" method="_on_bt_nsell_mouse_exited"]
 [connection signal="pressed" from="HUD/HUD_Shop/HudBgDown/Control/BTNsell" to="HUD" method="_on_sell_pressed"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps/Rookie" to="HUD/UI_Selection/Bunnies" method="_on_rookie_button_down"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps/Rookie" to="HUD/UI_Selection/Bunnies" method="_on_rookie_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Rookie_BG_dps/Rookie" to="HUD/UI_Selection/Bunnies" method="_on_rookie_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Slasher_BG_dps/Slasher" to="HUD/UI_Selection/Bunnies" method="_on_slasher_button_down"]
-[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps/Toasty" to="HUD/HUD_Shop" method="_on_toasty_mouse_entered"]
-[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps/Toasty" to="HUD/HUD_Shop" method="_on_toasty_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Slasher_BG_dps/Slasher" to="HUD/UI_Selection/Bunnies" method="_on_slasher_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Slasher_BG_dps/Slasher" to="HUD/UI_Selection/Bunnies" method="_on_slasher_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps/Toasty" to="HUD/UI_Selection/Bunnies" method="_on_toasty_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Toasty_BG_dps/Toasty" to="HUD/UI_Selection/Bunnies" method="_on_toasty_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist" to="HUD/UI_Selection/Bunnies" method="_on_anarchist_button_down"]
-[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Alien_BG_dps/Alien" to="HUD/HUD_Shop" method="_on_alien_mouse_entered"]
-[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Alien_BG_dps/Alien" to="HUD/HUD_Shop" method="_on_alien_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist" to="HUD/UI_Selection/Bunnies" method="_on_anarchist_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Anarchist_BG_dps/Anarchist" to="HUD/UI_Selection/Bunnies" method="_on_anarchist_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Molten_BG_dps/Molten" to="HUD/UI_Selection/Bunnies" method="_on_molten_button_down"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Molten_BG_dps/Molten" to="HUD/UI_Selection/Bunnies" method="_on_molten_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Molten_BG_dps/Molten" to="HUD/UI_Selection/Bunnies" method="_on_molten_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Doll_BG_dps/Doll" to="HUD/UI_Selection/Bunnies" method="_on_doll_button_down"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Doll_BG_dps/Doll" to="HUD/UI_Selection/Bunnies" method="_on_doll_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Doll_BG_dps/Doll" to="HUD/UI_Selection/Bunnies" method="_on_doll_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Gooey_BG_stun/Gooey" to="HUD/UI_Selection/Bunnies" method="_on_gooey_button_down"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Gooey_BG_stun/Gooey" to="HUD/UI_Selection/Bunnies" method="_on_gooey_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Gooey_BG_stun/Gooey" to="HUD/UI_Selection/Bunnies" method="_on_gooey_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy" to="HUD/UI_Selection/Bunnies" method="_on_scrappy_button_down"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy" to="HUD/UI_Selection/Bunnies" method="_on_scrappy_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Scrappy_BG_stun/Scrappy" to="HUD/UI_Selection/Bunnies" method="_on_scrappy_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun/Ghoulish" to="HUD/UI_Selection/Bunnies" method="_on_ghoulish_button_down"]
-[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun/Ghoulish" to="HUD/HUD_Shop" method="_on_ghoulish_mouse_entered"]
-[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Ghoulish_BG_stun/Ghoulish" to="HUD/HUD_Shop" method="_on_ghoulish_mouse_exited"]
-[connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Corrupted_BG_stun/Corrupted" to="HUD/UI_Selection/Bunnies" method="_on_corrupted_button_down"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support/Lucky" to="HUD/UI_Selection/Bunnies" method="_on_lucky_button_down"]
-[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support/Lucky" to="HUD/HUD_Shop" method="_on_lucky_mouse_entered"]
-[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support/Lucky" to="HUD/HUD_Shop" method="_on_lucky_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support/Lucky" to="HUD/UI_Selection/Bunnies" method="_on_lucky_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Lucky_BG_support/Lucky" to="HUD/UI_Selection/Bunnies" method="_on_lucky_mouse_exited"]
 [connection signal="button_down" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support/Mystical" to="HUD/UI_Selection/Bunnies" method="_on_mystical_button_down"]
-[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support/Mystical" to="HUD/HUD_Shop" method="_on_mystical_mouse_entered"]
-[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support/Mystical" to="HUD/HUD_Shop" method="_on_mystical_mouse_exited"]
+[connection signal="mouse_entered" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support/Mystical" to="HUD/UI_Selection/Bunnies" method="_on_mystical_mouse_entered"]
+[connection signal="mouse_exited" from="HUD/UI_Selection/Bunnies/ScrollContainer/GridContainer/Mystical_BG_support/Mystical" to="HUD/UI_Selection/Bunnies" method="_on_mystical_mouse_exited"]
 [connection signal="mouse_entered" from="HUD/UI_Selection/StartRound" to="HUD" method="_on_start_round_mouse_entered"]
 [connection signal="mouse_exited" from="HUD/UI_Selection/StartRound" to="HUD" method="_on_start_round_mouse_exited"]
 [connection signal="pressed" from="HUD/UI_Selection/StartRound" to="HUD" method="_on_start_round_pressed"]

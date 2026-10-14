@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://fpijsr0kf0xw" path="res://Assets/Bunnies/Animations/MoltenFlare.png" id="5_etx0v"]
 [ext_resource type="Animation" uid="uid://b1g85crk2yvfh" path="res://Others/ChangeSkin.res" id="6_bgkga"]
 [ext_resource type="Texture2D" uid="uid://7223wjl6ddfk" path="res://Assets/Bunnies/Animations/MoltenLaser.png" id="6_wmbnq"]
+[ext_resource type="Texture2D" uid="uid://dywap1juf5thj" path="res://Assets/Others/UI_Assets/Dust1.png" id="9_8a0dq"]
+[ext_resource type="Texture2D" uid="uid://m1rojcd0ndk0" path="res://Assets/Others/UI_Assets/Dust2.png" id="10_n2qts"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ckfoi"]
 radius = 42.0
@@ -377,20 +379,6 @@ _data = {
 &"RESET": SubResource("Animation_cfd32")
 }
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ali"]
-texture = ExtResource("6_wmbnq")
-texture_region_size = Vector2i(620, 1080)
-0:0/animation_columns = 3
-0:0/animation_frame_0/duration = 1.0
-0:0/animation_frame_1/duration = 1.0
-0:0/animation_frame_2/duration = 1.0
-0:0/animation_frame_3/duration = 1.0
-0:0/animation_frame_4/duration = 1.0
-0:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_h20dt"]
-sources/1 = SubResource("TileSetAtlasSource_c6ali")
-
 [sub_resource type="Animation" id="Animation_jdv14"]
 resource_name = "new_animation"
 
@@ -398,6 +386,9 @@ resource_name = "new_animation"
 _data = {
 &"new_animation": SubResource("Animation_jdv14")
 }
+
+[sub_resource type="Gradient" id="Gradient_f1vco"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="Molten" type="StaticBody2D" unique_id=264265458 groups=["Bunnies"]]
 position = Vector2(0, -4)
@@ -497,13 +488,47 @@ flat = true
 [node name="SkinChange" type="AnimationPlayer" parent="." unique_id=1350655246]
 libraries/ = SubResource("AnimationLibrary_etx0v")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=698657122]
-visible = false
-tile_map_data = PackedByteArray(0, 0, 27, 0, 42, 0, 1, 0, 0, 0, 0, 0, 0, 0)
-tile_set = SubResource("TileSet_h20dt")
-
 [node name="Disable_EnableMolten" type="AnimationPlayer" parent="." unique_id=1819959092]
 libraries/ = SubResource("AnimationLibrary_n2qts")
+
+[node name="RightDust" type="CPUParticles2D" parent="." unique_id=2110925796]
+position = Vector2(1, 69)
+emitting = false
+amount = 1
+texture = ExtResource("9_8a0dq")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_f1vco")
+
+[node name="LeftDust" type="CPUParticles2D" parent="." unique_id=1617043503]
+position = Vector2(1, 69)
+emitting = false
+amount = 1
+texture = ExtResource("10_n2qts")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_f1vco")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]

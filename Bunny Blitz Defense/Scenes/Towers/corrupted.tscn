@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bc8a4qnrp1w2w"]
 
-[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="1_bsxfx"]
-[ext_resource type="Texture2D" uid="uid://dt1kpn8oqg0nu" path="res://Assets/Bunnies/Animations/CorruptedBunnyIdle.png" id="2_d2vyy"]
-[ext_resource type="Texture2D" uid="uid://b8ik0kcwdc8ab" path="res://Assets/Bunnies/Animations/Paths/CorruptedBunny01Idle.png" id="3_kgld5"]
-[ext_resource type="Texture2D" uid="uid://8g1gppa6vcn3" path="res://Assets/Bunnies/Animations/Paths/CorruptedBunny02Idle.png" id="4_6q84l"]
-[ext_resource type="Texture2D" uid="uid://cbvo77cyouwhb" path="res://Assets/Others/UI_Assets/ArrowCorrupted.png" id="5_w6r7f"]
-[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_agp6b"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="1_bsxfx"]
+[ext_resource type="Texture2D" uid="uid://bp50j65ppdpk6" path="res://Assets/Bunnies/Animations/CorruptedBunnyIdle.png" id="2_d2vyy"]
+[ext_resource type="Texture2D" uid="uid://y3qbp2ahwljw" path="res://Assets/Bunnies/Animations/Paths/CorruptedBunny01Idle.png" id="3_kgld5"]
+[ext_resource type="Texture2D" uid="uid://cy0q87kxt5smi" path="res://Assets/Bunnies/Animations/Paths/CorruptedBunny02Idle.png" id="4_6q84l"]
+[ext_resource type="Texture2D" uid="uid://bgaidoaj8o0hi" path="res://Assets/Others/UI_Assets/ArrowCorrupted.png" id="5_w6r7f"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_agp6b"]
+[ext_resource type="Texture2D" uid="uid://dywap1juf5thj" path="res://Assets/Others/UI_Assets/Dust1.png" id="7_d2vyy"]
+[ext_resource type="Texture2D" uid="uid://m1rojcd0ndk0" path="res://Assets/Others/UI_Assets/Dust2.png" id="8_kgld5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 250.12796
@@ -287,6 +289,9 @@ animations = [{
 "speed": 17.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_6q84l"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Corrupted" type="StaticBody2D" unique_id=264265458 groups=["Bunnies"]]
 position = Vector2(0, -4)
 
@@ -360,6 +365,45 @@ scale = Vector2(2.0898438, 2.0898438)
 sprite_frames = SubResource("SpriteFrames_8q46d")
 frame = 24
 frame_progress = 1.0
+
+[node name="RightDust" type="CPUParticles2D" parent="." unique_id=75585062]
+position = Vector2(3, 64)
+emitting = false
+amount = 1
+texture = ExtResource("7_d2vyy")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_6q84l")
+
+[node name="LeftDust" type="CPUParticles2D" parent="." unique_id=545197111]
+position = Vector2(3, 64)
+emitting = false
+amount = 1
+texture = ExtResource("8_kgld5")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_6q84l")
 
 [connection signal="button_down" from="button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]

@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://cflli26dslt1p"]
 
 [ext_resource type="Script" uid="uid://b4i63c7s3pbvr" path="res://Scripts/Bunnies/gooey.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://dw84seo2p4r6x" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="2"]
 [ext_resource type="Texture2D" uid="uid://bo0dqdm3oosrg" path="res://Assets/Bunnies/Gooey.png" id="3"]
-[ext_resource type="AudioStream" uid="uid://dpdx5cliimdt" path="res://Assets/Audio/SFXs/GooeySlime1.wav" id="3_648aa"]
-[ext_resource type="AudioStream" uid="uid://dnehmi3uu2l82" path="res://Assets/Audio/SFXs/GooeySlime.wav" id="3_geq81"]
-[ext_resource type="Texture2D" uid="uid://ccl7d1ewpscsd" path="res://Assets/Others/UI_Assets/ArrowStun.png" id="4_8ko8t"]
-[ext_resource type="Texture2D" uid="uid://dpe8uxnp50usu" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_648aa"]
-
+[ext_resource type="AudioStream" uid="uid://btmuxgcig0h2r" path="res://Assets/Audio/SFXs/GooeySlime1.wav" id="3_648aa"]
+[ext_resource type="AudioStream" uid="uid://kvieuxmqiesy" path="res://Assets/Audio/SFXs/GooeySlime.wav" id="3_geq81"]
+[ext_resource type="Texture2D" uid="uid://d2tghor2kc2gw" path="res://Assets/Others/UI_Assets/ArrowStun.png" id="4_8ko8t"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="6_648aa"]
+[ext_resource type="Texture2D" uid="uid://dywap1juf5thj" path="res://Assets/Others/UI_Assets/Dust1.png" id="8_ct6sh"]
+[ext_resource type="Texture2D" uid="uid://m1rojcd0ndk0" path="res://Assets/Others/UI_Assets/Dust2.png" id="9_b4asg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjj1g"]
 radius = 238.0084
@@ -326,6 +327,9 @@ _data = {
 &"RESET": SubResource("Animation_esft3")
 }
 
+[sub_resource type="Gradient" id="Gradient_76nv0"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="Gooey" type="StaticBody2D" unique_id=264265458 groups=["Bunnies"]]
 position = Vector2(0, -4)
 script = ExtResource("1")
@@ -410,6 +414,45 @@ autoplay = &"idle"
 
 [node name="SkinChange" type="AnimationPlayer" parent="." unique_id=1717209521]
 libraries/ = SubResource("AnimationLibrary_ct6sh")
+
+[node name="RightDust" type="CPUParticles2D" parent="." unique_id=1452902358]
+position = Vector2(0, 67)
+emitting = false
+amount = 1
+texture = ExtResource("8_ct6sh")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_76nv0")
+
+[node name="LeftDust" type="CPUParticles2D" parent="." unique_id=1918724269]
+position = Vector2(0, 67)
+emitting = false
+amount = 1
+texture = ExtResource("9_b4asg")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, -10)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+angular_velocity_min = 90.0
+angular_velocity_max = 90.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.2
+color_ramp = SubResource("Gradient_76nv0")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_down" from="button" to="." method="_on_button_button_down"]

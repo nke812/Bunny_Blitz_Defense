@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://kqh7akjr3ery" path="res://Assets/Bunnies/Animations/CorruptedMouth.png" id="23_k7yfq"]
 [ext_resource type="Texture2D" uid="uid://dh0jtd0qgog7s" path="res://Assets/Others/Menu_Assets/Shop/Return.png" id="25_lkkvn"]
 [ext_resource type="Texture2D" uid="uid://1brf168h401y" path="res://Assets/Others/Menu_Assets/Shop/ReturnSelected.png" id="26_xv2t3"]
+[ext_resource type="Texture2D" uid="uid://ykudm8uv6ak2" path="res://Assets/Others/Menu_Assets/CoinBg.png" id="31_ihrg5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xp22"]
 atlas = ExtResource("4_s8dlv")
@@ -771,11 +772,6 @@ _data = {
 &"RESET": SubResource("Animation_cuuv1")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1qjt"]
-bg_color = Color(0.6431373, 0.5019608, 0, 0.84705883)
-corner_radius_top_left = 23
-corner_radius_bottom_left = 25
-
 [sub_resource type="Animation" id="Animation_3mbjb"]
 resource_name = "FadeOut"
 length = 0.5
@@ -1098,12 +1094,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.78800005
 anchor_top = -0.028
-anchor_right = -0.58400005
-anchor_bottom = 0.17600001
-offset_left = -0.95599365
-offset_top = 3.1640005
-offset_right = -1.0079803
-offset_bottom = 3.1119957
+anchor_right = -0.587
+anchor_bottom = 0.185
+offset_left = -6.9559937
+offset_top = -2.8359995
+offset_right = 3.081009
+offset_bottom = 2.8450012
 texture_normal = ExtResource("18_0icju")
 texture_hover = ExtResource("19_ihrg5")
 ignore_texture_size = true
@@ -1195,48 +1191,45 @@ texture_hover = ExtResource("26_xv2t3")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BunnyCoins" type="Node2D" parent="." unique_id=272029192]
-position = Vector2(850, 676)
-scale = Vector2(0.71, 0.71)
+[node name="BunnyCoins" type="Node2D" parent="." unique_id=917877295]
+position = Vector2(822.99994, 670.99994)
+scale = Vector2(0.715, 0.715)
 
-[node name="PretendColorRec___ToT" type="Button" parent="BunnyCoins" unique_id=1820147963]
-offset_left = -8.0
-offset_right = 274.0
-offset_bottom = 91.92
-theme_override_styles/disabled = SubResource("StyleBoxFlat_n1qjt")
-disabled = true
+[node name="CoinsBG" type="Sprite2D" parent="BunnyCoins" unique_id=1458147332]
+position = Vector2(153.25002, 81.87501)
+scale = Vector2(0.87988275, 0.81347656)
+texture = ExtResource("31_ihrg5")
 
-[node name="BunnyCoin" type="Sprite2D" parent="BunnyCoins" unique_id=1999391188]
-position = Vector2(271, 42)
-scale = Vector2(0.48888886, 0.4888889)
+[node name="BunnyCoin" type="Sprite2D" parent="BunnyCoins" unique_id=1283935783]
+position = Vector2(311, 76.00001)
+scale = Vector2(0.54444444, 0.54444444)
 texture = ExtResource("23_1shhe")
 
-[node name="Price" type="Label" parent="BunnyCoins" unique_id=1954981114]
+[node name="Price" type="Label" parent="BunnyCoins" unique_id=1179489975]
 anchors_preset = -1
 anchor_left = 0.777
 anchor_right = 0.96500003
 anchor_bottom = 0.11800001
-offset_left = 1.0
-offset_top = 24.0
-offset_right = 192.0
-offset_bottom = 73.0
+offset_left = 35.0
+offset_top = 33.0
+offset_right = 239.0
+offset_bottom = 134.0
 pivot_offset = Vector2(98, 46)
-theme_override_colors/font_color = Color(0.9019608, 0.6901961, 0.14117648, 1)
-theme_override_colors/font_shadow_color = Color(0.49803922, 0.28235295, 0.11764706, 1)
+theme_override_colors/font_color = Color(0.9936754, 0.83999187, 0.5156532, 1)
+theme_override_colors/font_shadow_color = Color(0.65888363, 0.38406408, 0.1761345, 1)
 theme_override_constants/shadow_offset_x = 5
 theme_override_constants/shadow_offset_y = 5
 theme_override_fonts/font = ExtResource("19_3mbjb")
 theme_override_font_sizes/font_size = 48
-text = "0
-"
+text = "99999"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HAPPYMOD" type="TextureButton" parent="." unique_id=608753494]
-offset_left = 1811.0
-offset_top = 37.0
-offset_right = 1910.0
-offset_bottom = 134.0
+offset_left = 994.0
+offset_top = 689.0
+offset_right = 1090.0
+offset_bottom = 767.0
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=135317638]
 offset_right = 1920.0

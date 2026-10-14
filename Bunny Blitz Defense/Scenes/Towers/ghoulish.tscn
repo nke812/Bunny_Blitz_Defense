@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bcymlmpgikqvv"]
 
-[ext_resource type="Texture2D" uid="uid://dkr53o6gmqvxf" path="res://Assets/Bunnies/Others/Shadow.png" id="1_33e2q"]
+[ext_resource type="Texture2D" uid="uid://cnr5md8dowpg5" path="res://Assets/Bunnies/Others/Shadow.png" id="1_33e2q"]
 [ext_resource type="Script" uid="uid://63thc4ov50tt" path="res://Scripts/Bunnies/ghoulish.gd" id="1_do0g2"]
-[ext_resource type="Texture2D" uid="uid://bwr6u0niwo2hx" path="res://Assets/Bunnies/Ghoulish.png" id="2_do0g2"]
-[ext_resource type="Texture2D" uid="uid://c0cfxvyhvvig4" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="3_rvvcq"]
-[ext_resource type="Texture2D" uid="uid://bje4pbemesb41" path="res://Assets/Others/UI_Assets/ArrowStun.png" id="4_6akmx"]
+[ext_resource type="Texture2D" uid="uid://cmrc4lcujogv5" path="res://Assets/Bunnies/Ghoulish.png" id="2_do0g2"]
+[ext_resource type="Texture2D" uid="uid://b4u25go023ydi" path="res://Assets/Bunnies/Animations/UpgradeAuraSpriteSheet.png" id="3_rvvcq"]
+[ext_resource type="Texture2D" uid="uid://d2tghor2kc2gw" path="res://Assets/Others/UI_Assets/ArrowStun.png" id="4_6akmx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0g228"]
 radius = 270.02963
