@@ -30,7 +30,7 @@ var torres_paths = {
     "doll": "res://Scenes/Towers/doll.tscn"
 }
 
-# Dicionário para guardar as cenas pré-carregadas em memória
+
 var torres_carregadas = {}
 
 func _ready() -> void:
@@ -47,7 +47,7 @@ func _ready() -> void:
     $ScrollContainer/GridContainer/Alien_BG_dps.visible = SaveManager.AlienUnlocked
     $ScrollContainer/GridContainer/Toasty_BG_dps.visible = SaveManager.ToastyUnlocked
     $ScrollContainer/GridContainer/Voodo_BG_stun.visible = SaveManager.VoodoUnlocked
-    $ScrollContainer/GridContainer/Molten_BG_dps.vissible = SaveManager.MoltenUnlocked
+    #$ScrollContainer/GridContainer/Molten_BG_dps.vissible = SaveManager.MoltenUnlocked
     $ScrollContainer/GridContainer/Doll_BG_dps.visible = SaveManager.DollUnlocked
     
     atualizar_loja_botoes()
@@ -220,14 +220,14 @@ func largar_torre():
             if temp_tower.has_node("RightDust"):
                 temp_tower.get_node("RightDust").emitting = true
                 temp_tower.get_node("LeftDust").emitting = true
+                
+            if temp_tower.has_node("Idle"):
+                temp_tower.get_node("Idle").play("idle")
             temp_tower.modulate.a = 1.0
             temp_tower.process_mode = Node.PROCESS_MODE_INHERIT
             
             if temp_tower.has_node("Place"):
                 temp_tower.get_node("Place").play()
-            
-            if temp_tower.has_node("Idle"):
-                temp_tower.get_node("Idle").play("Idle animation")
 
             var range_node = temp_tower.get_node("Range")
             range_node.monitoring = true
@@ -250,6 +250,9 @@ func largar_torre():
 func _on_rookie_mouse_entered() -> void:
     $ScrollContainer/GridContainer/Rookie_BG_dps/Rookie/MouseExit.stop()
     $ScrollContainer/GridContainer/Rookie_BG_dps/Rookie/MouseEnter.play("PopEnter")
+    
+    
+
 
 func _on_rookie_mouse_exited() -> void:
     $ScrollContainer/GridContainer/Rookie_BG_dps/Rookie/MouseEnter.stop()

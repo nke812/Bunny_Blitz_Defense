@@ -274,3 +274,14 @@ func vender_torre():
     
     remover_buff_mystical()
     queue_free()
+
+func dust():
+    $RightDust.emitting = true
+    $LeftDust.emitting = true
+
+
+func _on_wow_timer_timeout() -> void:
+    var salto = randi_range(1, 3)
+    
+    if salto == 1 and !$Pega/Node2D/Rookie/AnimationPlayer.is_playing():
+        $WOW.play("WOW")

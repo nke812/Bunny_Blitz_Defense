@@ -21,6 +21,44 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4dix"]
 radius = 165.00304
 
+[sub_resource type="Animation" id="Animation_7r0as"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.32291666, 0.32291666)]
+}
+
+[sub_resource type="Animation" id="Animation_2ted8"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2563727, 0.5),
+"transitions": PackedFloat32Array(1, 1.4142138, 0.5),
+"update": 0,
+"values": [Vector2(0.32291666, 0.32291666), Vector2(0.3, 0.323), Vector2(0.32291666, 0.32291666)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_huqxn"]
+_data = {
+&"RESET": SubResource("Animation_7r0as"),
+&"idle": SubResource("Animation_2ted8")
+}
+
 [sub_resource type="Animation" id="Animation_c36il"]
 length = 0.001
 tracks/0/type = "value"
@@ -794,11 +832,114 @@ _data = {
 [sub_resource type="Gradient" id="Gradient_huqxn"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="Animation" id="Animation_huqxn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.32291666, 0.32291666)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pega/Node2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.842171e-14, 173.14)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pega:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_my1dd"]
+resource_name = "WOW"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.116734006, 0.2, 0.2425467, 0.33333334, 0.36666667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.32291666, 0.32291666), Vector2(0.323, 0.248), Vector2(0.243, 0.383), Vector2(0.32291666, 0.32291666), Vector2(0.32291666, 0.32291666), Vector2(0.393, 0.198), Vector2(0.32291666, 0.32291666)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pega/Node2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.23333333, 0.26666668, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2.842171e-14, 173.14), Vector2(2.842171e-14, 173.14), Vector2(0, 102.2), Vector2(0, 102.2), Vector2(2.842171e-14, 173.14)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.13333334, 0.33812168),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"dust"
+}, {
+"args": [],
+"method": &"dust"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pega:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.16666667, 0.33773977),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7o73g"]
+_data = {
+&"RESET": SubResource("Animation_huqxn"),
+&"WOW": SubResource("Animation_my1dd")
+}
+
 [node name="Rookie" type="StaticBody2D" unique_id=264265458 groups=["Bunnies"]]
 position = Vector2(0, -4)
 script = ExtResource("1")
 
 [node name="Range" type="Area2D" parent="." unique_id=1183441845]
+visible = false
 position = Vector2(-37, -80)
 
 [node name="CollisionRange" type="CollisionShape2D" parent="Range" unique_id=24073726]
@@ -831,6 +972,10 @@ position = Vector2(2.842171e-14, 69)
 scale = Vector2(0.32291666, 0.32291666)
 texture = ExtResource("2")
 
+[node name="Idle" type="AnimationPlayer" parent="." unique_id=2088736336]
+libraries/ = SubResource("AnimationLibrary_huqxn")
+speed_scale = 0.2
+
 [node name="Pega" type="Node2D" parent="." unique_id=814538080]
 position = Vector2(0, -104.14)
 
@@ -856,6 +1001,7 @@ sprite_frames = SubResource("SpriteFrames_2ted8")
 animation = &"Rookie"
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1941780108 groups=["no_place"]]
+visible = false
 position = Vector2(107.93747, 42.912655)
 rotation = 1.5707964
 scale = Vector2(0.94, 0.94)
@@ -934,6 +1080,15 @@ scale_amount_min = 0.2
 scale_amount_max = 0.2
 color_ramp = SubResource("Gradient_huqxn")
 
+[node name="WOW" type="AnimationPlayer" parent="." unique_id=1761629827]
+libraries/ = SubResource("AnimationLibrary_7o73g")
+speed_scale = 0.3
+
+[node name="wowTimer" type="Timer" parent="WOW" unique_id=1094000658]
+wait_time = 3.5
+autostart = true
+
 [connection signal="button_down" from="button" to="." method="_on_button_button_down"]
 [connection signal="mouse_entered" from="button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="button" to="." method="_on_button_mouse_exited"]
+[connection signal="timeout" from="WOW/wowTimer" to="." method="_on_wow_timer_timeout"]

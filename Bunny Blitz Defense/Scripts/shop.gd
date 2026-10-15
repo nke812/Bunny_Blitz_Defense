@@ -268,7 +268,7 @@ func _on_corrupted_core_pressed() -> void:
         $___.visible = true
         $___/CorruptedFaceAppear.play("CorruptedFaceAppear")
 
-        
+    
         await $Items/CorruptedCore/CorruptedCoreSFX.finished
         SaveManager.unlock_corrupted()
         

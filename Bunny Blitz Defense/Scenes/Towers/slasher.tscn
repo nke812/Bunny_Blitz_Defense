@@ -23,6 +23,44 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_q08p7"]
 radius = 147.03061
 
+[sub_resource type="Animation" id="Animation_kctmb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mleg1"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2538777, 0.5),
+"transitions": PackedFloat32Array(1, 1.5, 0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.915, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_snxna"]
+_data = {
+&"RESET": SubResource("Animation_kctmb"),
+&"idle": SubResource("Animation_mleg1")
+}
+
 [sub_resource type="Animation" id="Animation_4bjbh"]
 length = 0.001
 tracks/0/type = "value"
@@ -1170,6 +1208,10 @@ position = Vector2(2.0000005, -29)
 scale = Vector2(0.32291666, 0.32291666)
 texture = ExtResource("2")
 offset = Vector2(21.677416, 303.48383)
+
+[node name="Idle" type="AnimationPlayer" parent="." unique_id=1117736410]
+libraries/ = SubResource("AnimationLibrary_snxna")
+speed_scale = 0.1
 
 [node name="Pega" type="Node2D" parent="." unique_id=1461468161]
 position = Vector2(0, -98.145)

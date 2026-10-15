@@ -13,6 +13,44 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cjj1g"]
 radius = 238.0084
 
+[sub_resource type="Animation" id="Animation_ct6sh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Gooey:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.222, 0.212)]
+}
+
+[sub_resource type="Animation" id="Animation_b4asg"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Gooey:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.222, 0.212), Vector2(0.207, 0.212), Vector2(0.222, 0.212)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_76nv0"]
+_data = {
+&"RESET": SubResource("Animation_ct6sh"),
+&"idle": SubResource("Animation_b4asg")
+}
+
 [sub_resource type="Animation" id="Animation_72gkk"]
 resource_name = "Gooey_Attack"
 length = 0.2
@@ -365,6 +403,10 @@ position = Vector2(-1.4210855e-14, -28.999998)
 scale = Vector2(0.32291663, 0.32291663)
 texture = ExtResource("2")
 offset = Vector2(-3.0967743, 303.48386)
+
+[node name="Idle" type="AnimationPlayer" parent="." unique_id=1164768799]
+libraries/ = SubResource("AnimationLibrary_76nv0")
+speed_scale = 0.2
 
 [node name="Pega" type="Node2D" parent="." unique_id=1797446512]
 position = Vector2(0, -110)

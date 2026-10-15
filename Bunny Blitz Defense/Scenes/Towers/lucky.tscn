@@ -12,6 +12,44 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_dl7t5"]
 radius = 0.0
 
+[sub_resource type="Animation" id="Animation_sgs10"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Lucky:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.222, 0.212)]
+}
+
+[sub_resource type="Animation" id="Animation_nmxbp"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Lucky:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25257578, 0.5),
+"transitions": PackedFloat32Array(1, 1.5, 0.5),
+"update": 0,
+"values": [Vector2(0.222, 0.212), Vector2(0.2, 0.212), Vector2(0.222, 0.212)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lhwyi"]
+_data = {
+&"RESET": SubResource("Animation_sgs10"),
+&"idle": SubResource("Animation_nmxbp")
+}
+
 [sub_resource type="Animation" id="Animation_0mmsd"]
 resource_name = "LuckyAction"
 length = 0.13333334
@@ -334,6 +372,10 @@ y_sort_enabled = true
 position = Vector2(-10.999998, 71.99998)
 scale = Vector2(0.32291666, 0.32291666)
 texture = ExtResource("2")
+
+[node name="Idle" type="AnimationPlayer" parent="." unique_id=885614079]
+libraries/ = SubResource("AnimationLibrary_lhwyi")
+speed_scale = 0.2
 
 [node name="Pega" type="Node2D" parent="." unique_id=1649421862]
 position = Vector2(0, -124.295)

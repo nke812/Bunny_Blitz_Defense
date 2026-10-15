@@ -20,6 +20,44 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_a4dix"]
 radius = 294.0017
 
+[sub_resource type="Animation" id="Animation_i1ssw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.11124286, 0.10587178)]
+}
+
+[sub_resource type="Animation" id="Animation_c30q6"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pega/Node2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24763082, 0.5),
+"transitions": PackedFloat32Array(1, 1.5, 0.5),
+"update": 0,
+"values": [Vector2(0.11124286, 0.10587178), Vector2(0.106, 0.106), Vector2(0.11124286, 0.10587178)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q2pdx"]
+_data = {
+&"RESET": SubResource("Animation_i1ssw"),
+&"idle": SubResource("Animation_c30q6")
+}
+
 [sub_resource type="Animation" id="Animation_ln5iw"]
 resource_name = "AttackAnarchist"
 length = 0.1
@@ -851,6 +889,10 @@ y_sort_enabled = true
 position = Vector2(-2.000001, 70.00001)
 scale = Vector2(0.32291666, 0.32291666)
 texture = ExtResource("2")
+
+[node name="Idle" type="AnimationPlayer" parent="." unique_id=1172429073]
+libraries/ = SubResource("AnimationLibrary_q2pdx")
+speed_scale = 0.2
 
 [node name="Pega" type="Node2D" parent="." unique_id=2135947961]
 position = Vector2(0, -117.535)
