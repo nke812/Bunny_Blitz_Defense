@@ -322,6 +322,44 @@ _data = {
 &"RESET": SubResource("Animation_qwpoy")
 }
 
+[sub_resource type="Animation" id="Animation_fw7q4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.149, 0.141)]
+}
+
+[sub_resource type="Animation" id="Animation_grj4f"]
+resource_name = "RookieIdle"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 2),
+"transitions": PackedFloat32Array(1, 0.5, 1.5),
+"update": 0,
+"values": [Vector2(0.149, 0.141), Vector2(0.149, 0.131), Vector2(0.149, 0.141)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pj4f5"]
+_data = {
+&"RESET": SubResource("Animation_fw7q4"),
+&"RookieIdle": SubResource("Animation_grj4f")
+}
+
 [sub_resource type="GDScript" id="GDScript_8e205"]
 script/source = "extends Sprite2D
 
@@ -339,6 +377,156 @@ func _process(delta):
     position = position.lerp(alvo, suavizacao * delta)
 "
 
+[sub_resource type="Animation" id="Animation_x734p"]
+resource_name = "BunniesIdle"
+length = 0.33333334
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 0.48296815),
+"update": 0,
+"values": [Vector2(0.9652098, 0.9652095), Vector2(0.965, 0.975)]
+}
+
+[sub_resource type="Animation" id="Animation_mbdwi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9652098, 0.9652095)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3y7mu"]
+_data = {
+&"BunniesIdle": SubResource("Animation_x734p"),
+&"RESET": SubResource("Animation_mbdwi")
+}
+
+[sub_resource type="Animation" id="Animation_pj4f5"]
+resource_name = "LogoAnim"
+length = 6.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [-0.05235987755982989, 0.05235987755982989]
+}
+
+[sub_resource type="Animation" id="Animation_k5x2d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.13962634]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3p2m"]
+_data = {
+&"LogoAnim": SubResource("Animation_pj4f5"),
+&"RESET": SubResource("Animation_k5x2d")
+}
+
+[sub_resource type="Animation" id="Animation_3qfoj"]
+resource_name = "LogoAnim2"
+length = 1.5333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333),
+"transitions": PackedFloat32Array(0.5358867, 0.57434916),
+"update": 0,
+"values": [Vector2(0.70539147, 0.6650668), Vector2(0.741, 0.7)]
+}
+
+[sub_resource type="Animation" id="Animation_jbkk3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.70539147, 0.6650668)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q0bdy"]
+_data = {
+&"LogoAnim2": SubResource("Animation_3qfoj"),
+&"RESET": SubResource("Animation_jbkk3")
+}
+
+[sub_resource type="Animation" id="Animation_w3p2m"]
+resource_name = "LogoAppear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667, 1),
+"transitions": PackedFloat32Array(0.57434916, 0.49999982, 0.46651652),
+"update": 0,
+"values": [Vector2(1016, -235.855), Vector2(1016, 258.65), Vector2(1016.00006, 234.00002)]
+}
+
+[sub_resource type="Animation" id="Animation_q0bdy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1016.00006, 234.00002)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x734p"]
+_data = {
+&"LogoAppear": SubResource("Animation_w3p2m"),
+&"RESET": SubResource("Animation_q0bdy")
+}
+
 [sub_resource type="Theme" id="Theme_7467j"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7467j"]
@@ -350,7 +538,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Logo/LabelStart:modulate")
+tracks/0/path = NodePath("LabelStart:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -365,7 +553,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Logo/LabelStart:modulate")
+tracks/0/path = NodePath("LabelStart:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -386,7 +574,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Logo/LabelStart:theme_override_colors/font_color")
+tracks/0/path = NodePath("LabelStart:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -403,7 +591,7 @@ loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../Logo/LabelStart:theme_override_colors/font_color")
+tracks/0/path = NodePath("LabelStart:theme_override_colors/font_color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1015,15 +1203,19 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
-metadata/_edit_horizontal_guides_ = [3245.0]
 
 [node name="Sky" type="Sprite2D" parent="." unique_id=1119101230]
 position = Vector2(-31.999989, 539.3125)
 scale = Vector2(0.98157126, 0.9657672)
 texture = ExtResource("2_311ux")
 
-[node name="Clouds" type="Sprite2D" parent="." unique_id=963253171]
-position = Vector2(-47.272583, 540.6904)
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1778309005]
+scroll_offset = Vector2(-2435.165, 0)
+repeat_size = Vector2(2531.66, 0)
+autoscroll = Vector2(-5, 0)
+
+[node name="Clouds" type="Sprite2D" parent="Parallax2D" unique_id=963253171]
+position = Vector2(-71.272575, 555.6905)
 scale = Vector2(0.9621936, 0.96219337)
 texture = ExtResource("3_pnils")
 
@@ -1218,6 +1410,11 @@ bus = &"SFX"
 [node name="A_COISA_MAIS_FODA2" type="AnimationPlayer" parent="Rookienho" unique_id=1624529148]
 libraries/ = SubResource("AnimationLibrary_8m3ho")
 
+[node name="RookienhoIdle" type="AnimationPlayer" parent="Rookienho" unique_id=1446026390]
+libraries/ = SubResource("AnimationLibrary_pj4f5")
+autoplay = &"RookieIdle"
+speed_scale = 0.5
+
 [node name="Extras" type="Sprite2D" parent="." unique_id=1228697370]
 position = Vector2(-1738.9999, 665)
 scale = Vector2(0.62168187, 0.61262906)
@@ -1257,29 +1454,33 @@ intensidade = 4.0
 suavizacao = 4.0
 
 [node name="Bunnies" type="Sprite2D" parent="." unique_id=390922226]
-position = Vector2(948, 539.00006)
+position = Vector2(594.00006, 1070)
 scale = Vector2(0.9652098, 0.9652095)
 texture = ExtResource("7_ydmd8")
+offset = Vector2(395.76886, -550.1395)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Bunnies" unique_id=6827359]
+libraries/ = SubResource("AnimationLibrary_3y7mu")
+autoplay = &"BunniesIdle"
+speed_scale = 0.256
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=1630119654]
 position = Vector2(1016.00006, 234.00002)
+rotation = -0.13962634
 scale = Vector2(0.70539147, 0.6650668)
 texture = ExtResource("5_3u44c")
 
-[node name="LabelStart" type="Label" parent="Logo" unique_id=1255114671]
-offset_left = -182.8772
-offset_top = 300.72174
-offset_right = 260.07068
-offset_bottom = 434.54285
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_constants/line_spacing = 15
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("17")
-theme_override_font_sizes/font_size = 53
-text = "PRESS ANY KEY
-TO START!"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="LogoAnim" type="AnimationPlayer" parent="Logo" unique_id=253363670]
+libraries/ = SubResource("AnimationLibrary_w3p2m")
+autoplay = &"LogoAnim"
+
+[node name="LogoAnim2" type="AnimationPlayer" parent="Logo" unique_id=2048950087]
+libraries/ = SubResource("AnimationLibrary_q0bdy")
+autoplay = &"LogoAnim2"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo" unique_id=1963773581]
+libraries/ = SubResource("AnimationLibrary_x734p")
+autoplay = &"LogoAppear"
 
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="." unique_id=2123186058]
 stream = ExtResource("7_6byu3")
@@ -1315,6 +1516,22 @@ autoplay = &"Anim"
 
 [node name="TitleScreenStartAnimBlink" type="AnimationPlayer" parent="TitleScreenStart" unique_id=1040036628]
 libraries/ = SubResource("AnimationLibrary_fw7q4")
+
+[node name="LabelStart" type="Label" parent="TitleScreenStart" unique_id=1255114671]
+layout_mode = 0
+offset_left = 840.00006
+offset_top = 437.00006
+offset_right = 1282.948
+offset_bottom = 570.82117
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 15
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 53
+text = "PRESS ANY KEY
+TO START!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1713408079]
 position = Vector2(980, 513)
@@ -1400,7 +1617,7 @@ offset_left = -323.82544
 offset_top = -64.32885
 offset_right = -102.46155
 offset_bottom = 158.04584
-pivot_offset = Vector2(64.50488, 71.99014)
+pivot_offset = Vector2(124.54822, 32.16446)
 texture_normal = ExtResource("29_lcy8p")
 texture_hover = ExtResource("30_oor3o")
 texture_disabled = ExtResource("30_jhlh1")
@@ -1409,11 +1626,11 @@ stretch_mode = 0
 
 [node name="TimerDaily" type="Label" parent="NewsScreen/DailyReward" unique_id=835565107]
 layout_mode = 0
-offset_left = -254.28601
-offset_top = -78.266785
-offset_right = -127.30762
-offset_bottom = -41.266785
-rotation = 0.08901179
+offset_left = -265.7079
+offset_top = -60.019325
+offset_right = -138.72949
+offset_bottom = -23.019325
+rotation = -0.08901179
 theme_override_colors/font_color = Color(0.98039216, 0.8666667, 0.3764706, 1)
 theme_override_colors/font_shadow_color = Color(0.64705884, 0.57254905, 0.25882354, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -1944,6 +2161,8 @@ libraries/ = SubResource("AnimationLibrary_h64ul")
 [connection signal="mouse_exited" from="Extras/ExtrasBTN" to="." method="_on_extras_mouse_exited"]
 [connection signal="button_down" from="TitleScreenStart" to="." method="_on_title_screen_start_button_down"]
 [connection signal="pressed" from="TitleScreenStart" to="." method="_on_title_screen_start_pressed"]
+[connection signal="button_down" from="NewsScreen/DailyReward/BtnDaily" to="NewsScreen/DailyReward" method="_on_btn_daily_button_down"]
+[connection signal="button_up" from="NewsScreen/DailyReward/BtnDaily" to="NewsScreen/DailyReward" method="_on_btn_daily_button_up"]
 [connection signal="pressed" from="NewsScreen/DailyReward/BtnDaily" to="NewsScreen/DailyReward" method="_on_pressed"]
 [connection signal="pressed" from="NewsScreen/Exit" to="." method="_on_exit_pressed"]
 [connection signal="button_down" from="Select Map/Sandy Streets" to="." method="_on_sandy_streets_button_down"]

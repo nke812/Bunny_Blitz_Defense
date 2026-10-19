@@ -24,13 +24,12 @@ func _ready() -> void:
         $ColorRect/FadeIn.play_backwards("FadeIn")
     else:
         $ColorRect/FadeIn.play_backwards("FadeIn")
-        
 
 func _on_title_screen_start_pressed() -> void:
     Global.title_screen = true
     $TitleScreenStart.disabled = true
     $TitleScreenSound.play()
-    $Logo/LabelStart.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
+    $TitleScreenStart/LabelStart.add_theme_color_override("font_color", Color(1.0, 1.0, 1.0, 1.0))
     $TitleScreenStart/TitleScreenStartAnim.stop()
     $TitleScreenStart/TitleScreenStartAnimBlink.play("TitleScreenStartAnimBlink")
     $Camera2D/MenuGoLeft.play("MenuGoLeft")
@@ -40,7 +39,7 @@ func _on_title_screen_start_pressed() -> void:
     
 func _on_title_screen_start_button_down() -> void:
     $TitleScreenStart/TitleScreenStartAnim.stop()
-    $Logo/LabelStart.add_theme_color_override("font_color", Color(0.553, 0.553, 0.553, 1.0))
+    $TitleScreenStart/LabelStart.add_theme_color_override("font_color", Color(0.553, 0.553, 0.553, 1.0))
 
 
 func _on_start_pressed() -> void :
@@ -61,6 +60,7 @@ func _on_exit_menu_map_pressed() -> void:
 
 func _on_easter_egg_pressed() -> void :
     $Rookienho/A_COISA_MAIS_FODA.disabled = true
+    $Rookienho/RookienhoIdle.stop()
     $Rookienho/Squeaky.play()
     $Rookienho.texture = load("res://Assets/Others/Menu_Assets/Buttons/RookienhoHappy.png")
 
@@ -69,6 +69,7 @@ func _on_easter_egg_pressed() -> void :
 
     $Rookienho/A_COISA_MAIS_FODA.disabled = false
     $Rookienho.texture = load("res://Assets/Others/Menu_Assets/Buttons/Rookienho.png")
+    $Rookienho/RookienhoIdle.play("RookieIdle")
 
 
 

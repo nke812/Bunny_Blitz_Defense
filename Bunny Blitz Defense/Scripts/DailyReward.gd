@@ -153,3 +153,12 @@ func formatar_tempo(segundos_totais: int) -> String:
     var minutos = (segundos_totais % 3600) / 60
     var segundos = segundos_totais % 60
     return "%02d:%02d:%02d" % [horas, minutos, segundos]
+
+func _on_btn_daily_button_down() -> void:
+    var tween = create_tween()
+    tween.tween_property($BtnDaily, "scale", Vector2(0.9, 0.9), 0.05).set_ease(Tween.EASE_OUT)
+
+func _on_btn_daily_button_up() -> void:
+    var tween = create_tween()
+    tween.tween_property($BtnDaily, "scale", Vector2(1.2, 1.2), 0.1).set_ease(Tween.EASE_OUT)
+    tween.tween_property($BtnDaily, "scale", Vector2(1.0, 1.0), 0.1).set_ease(Tween.EASE_OUT)
