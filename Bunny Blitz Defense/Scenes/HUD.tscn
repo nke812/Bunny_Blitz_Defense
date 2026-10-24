@@ -98,8 +98,10 @@
 [ext_resource type="Texture2D" uid="uid://bvkxqysspb7hl" path="res://Assets/Enemies/Ghostlings/Unholy Phantasm.png" id="87_hm7q8"]
 [ext_resource type="AudioStream" uid="uid://32jinqhjkvj8" path="res://Assets/Audio/SFXs/GameOver.wav" id="87_v8eir"]
 [ext_resource type="Texture2D" uid="uid://c8f14wnhvw8si" path="res://Assets/Enemies/Ghostlings/Ghostling.png" id="88_kxyc5"]
+[ext_resource type="Texture2D" uid="uid://d21msqkm7x6l0" path="res://Assets/Others/Menu_Assets/AchievementBar.png" id="89_lyx8i"]
 [ext_resource type="Texture2D" uid="uid://dpwe4nfq7ajbj" path="res://Assets/Enemies/Ghostlings/Ghoul.png" id="89_v8eir"]
 [ext_resource type="Texture2D" uid="uid://4txpkc1i7xpn" path="res://Assets/Enemies/Ghostlings/Ghazt.png" id="90_awmb6"]
+[ext_resource type="Texture2D" uid="uid://b7k5hdh5iv4jg" path="res://Assets/Achievements/Rookienho.png" id="90_b7svj"]
 [ext_resource type="Texture2D" uid="uid://dxjiv7apt3p2e" path="res://Assets/Enemies/Ghostlings/Ghaztling.png" id="91_3upol"]
 [ext_resource type="Texture2D" uid="uid://ce1jv1mox3odf" path="res://Assets/Enemies/Ghostlings/Enhanced Ghaztling.png" id="92_2h8cp"]
 [ext_resource type="Texture2D" uid="uid://bb481s6fcj8na" path="res://Assets/Enemies/Ghostlings/Ghazely.png" id="93_1wvx7"]
@@ -113,6 +115,43 @@ default_font = ExtResource("4")
 
 [sub_resource type="Theme" id="Theme_7plk7"]
 default_font = ExtResource("9")
+
+[sub_resource type="Animation" id="Animation_qq14s"]
+resource_name = "BunnyCoinsBounce"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.22222207, 0.22222209), Vector2(0.267, 0.152), Vector2(0.157, 0.297), Vector2(0.22222207, 0.22222209)]
+}
+
+[sub_resource type="Animation" id="Animation_3af5o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.22222207, 0.22222209)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q333v"]
+_data = {
+&"BunnyCoinsBounce": SubResource("Animation_qq14s"),
+&"RESET": SubResource("Animation_3af5o")
+}
 
 [sub_resource type="Animation" id="Animation_3upol"]
 resource_name = "EarnCoinsAnim"
@@ -896,6 +935,67 @@ _data = {
 &"go_appear": SubResource("Animation_ynwmi")
 }
 
+[sub_resource type="Animation" id="Animation_k4gx5"]
+resource_name = "AchievementAnim"
+length = 4.5333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.8, 4.5156856, 4.5333333),
+"transitions": PackedFloat32Array(1.5691682, 0.5, 0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(809, -76), Vector2(809, 116.43), Vector2(809, 80.355), Vector2(809, 80.355), Vector2(809, -74.185)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w6iou"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(809, -76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iy04d"]
+_data = {
+&"AchievementAnim": SubResource("Animation_k4gx5"),
+&"RESET": SubResource("Animation_w6iou")
+}
+
 [sub_resource type="Animation" id="Animation_pimpp"]
 resource_name = "IntroPanel"
 length = 0.5
@@ -1067,6 +1167,9 @@ position = Vector2(101, 229)
 scale = Vector2(0.22222207, 0.22222209)
 texture = ExtResource("10_awmb6")
 
+[node name="bounce" type="AnimationPlayer" parent="HUD/BunnyCoinsIcon" unique_id=1898259760]
+libraries/ = SubResource("AnimationLibrary_q333v")
+
 [node name="BunnyCoinsLabel" type="Label" parent="HUD" unique_id=129063085]
 offset_left = 140.0
 offset_top = 217.00002
@@ -1097,6 +1200,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(52.999992, 59.000004)
 
 [node name="Up" type="CollisionPolygon2D" parent="HUD/Limits" unique_id=320004685]
+visible = false
 position = Vector2(1093.0211, -318)
 scale = Vector2(0.9999999, 0.9999998)
 skew = 1.56907
@@ -2797,7 +2901,38 @@ stream = ExtResource("87_v8eir")
 volume_db = -5.0
 bus = &"SFX"
 
+[node name="AchievementNotification" type="Node2D" parent="." unique_id=51817152]
+position = Vector2(809, -76)
+
+[node name="AchievementBar" type="Sprite2D" parent="AchievementNotification" unique_id=1864738593]
+position = Vector2(0.22553253, 0.74999046)
+scale = Vector2(0.7480468, 0.7480468)
+texture = ExtResource("89_lyx8i")
+
+[node name="AchievementIcon" type="Sprite2D" parent="AchievementNotification" unique_id=610844617]
+position = Vector2(-228.52148, -1.5)
+scale = Vector2(0.24096984, 0.24096984)
+texture = ExtResource("90_b7svj")
+
+[node name="Label" type="Label" parent="AchievementNotification" unique_id=1906626235]
+offset_left = -151.52148
+offset_top = -27.5
+offset_right = 273.47852
+offset_bottom = 37.5
+theme_override_colors/font_color = Color(0.8910975, 0.4958802, 0.20833504, 1)
+theme_override_colors/font_shadow_color = Color(0.4157955, 0.115778156, 0.058200434, 1)
+theme_override_fonts/font = ExtResource("9")
+theme_override_font_sizes/font_size = 28
+text = "A LITTLE TINY ROOKIE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AchievementAnim" type="AnimationPlayer" parent="AchievementNotification" unique_id=1526059814]
+libraries/ = SubResource("AnimationLibrary_iy04d")
+speed_scale = 1.2
+
 [node name="Debug Menu" type="Node2D" parent="." unique_id=557738769]
+visible = false
 script = ExtResource("80_k3q0p")
 
 [node name="Panel" type="Panel" parent="Debug Menu" unique_id=1416554692]

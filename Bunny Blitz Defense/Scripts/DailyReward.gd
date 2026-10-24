@@ -120,8 +120,9 @@ func _on_pressed() -> void:
         label_timer.text = "Loading..."
         obter_tempo_online()
         return
+    $"../../BunnyCoinsNode/AmountLabel".text = str("+ 500")
     
-    $"../BunnyCoinsNode/EarnCoinsAnim".play("EarnCoinsAnim")
+    $"../../BunnyCoinsNode/EarnCoinsAnim".play("EarnCoinsAnim")
     
     var segundos_decorridos = int((Time.get_ticks_msec() - ticks_inicio_sessao) / 1000.0)
     var tempo_resgate_online = tempo_online_unix + segundos_decorridos
@@ -142,7 +143,7 @@ func _on_pressed() -> void:
     SaveManager.guardar_dados()
     
 func _mudar_texto_label(valor: int) -> void:
-    $"../../BunnyCoins/Price".text = str(valor)
+   $"../../BunnyCoins/Price".text = str(valor)
 
 func formatar_tempo(segundos_totais: int) -> String:
     $LabelInfoDaily.text = ""

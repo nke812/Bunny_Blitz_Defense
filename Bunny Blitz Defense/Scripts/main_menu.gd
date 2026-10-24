@@ -262,3 +262,11 @@ func _on_confirm_reset_pressed() -> void:
     SaveManager.reset_save()
     
     get_tree().change_scene_to_file("res://Scenes/intro.tscn")
+
+
+func _on_achievements_btn_pressed() -> void:
+    $AchievementsMenu/SelMapsMenu.play("SelMapsAnim")
+
+
+func _on_exit_menuAchi_pressed() -> void:
+    $AchievementsMenu/SelMapsMenu.play_backwards("SelMapsAnim")

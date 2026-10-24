@@ -87,6 +87,7 @@ func _on_item_shop_pressed() -> void:
                 "Buny": SaveManager.bunyUnlocked = true
                 "ZeRon": SaveManager.ZeRonUnlocked = true
                 "Catharsis": SaveManager.CatharsisUnlocked = true
+            if PlayerAchievements.FancyBunnies == 0: PlayerAchievements.FancyBunnies = 1
         else:
             var item = bunnies[ItemShopCount]
             match item.nome:
@@ -100,8 +101,9 @@ func _on_item_shop_pressed() -> void:
                 "Toasty": SaveManager.ToastyUnlocked = true
                 "Voodo": SaveManager.VoodoUnlocked = true
         
-
+        
         SaveManager.guardar_dados()
+        PlayerAchievements.guardar_dados()
         verificar_item_shop()
             
     else:

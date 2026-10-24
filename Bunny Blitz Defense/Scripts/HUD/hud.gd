@@ -476,6 +476,10 @@ func EarnBunnyCoins(AmountCoins: int):
     AtualizarLabelCoins()
 
 func AtualizarLabelCoins():
+    $BunnyCoinsIcon/bounce.play("BunnyCoinsBounce")
     $BunnyCoinsLabel.text = str(BunnyCoinsMatch)
     $UI_Selection/GameOver/MenuSettings/Panel/Coins.text = str(BunnyCoinsMatch)
     $UI_Selection/Victory/MenuSettings/Panel/Coins.text = str(BunnyCoinsMatch)
+
+func anim():
+    $"../AchievementNotification/AchievementAnim".play("AchievementAnim")
