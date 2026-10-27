@@ -482,4 +482,4 @@ func AtualizarLabelCoins():
     $UI_Selection/Victory/MenuSettings/Panel/Coins.text = str(BunnyCoinsMatch)
 
 func anim():
-    $"../AchievementNotification/AchievementAnim".play("AchievementAnim")
+    $UI_Selection/AchievementNotification/AchievementAnim.play("AchievementAnim")

@@ -34,11 +34,11 @@ func _process(_delta: float) -> void :
 
 
 func _on_button_pressed() -> void:
-    var hud = get_tree().get_nodes_in_group("HUD")
+    var hud = get_tree().get_first_node_in_group("HUD")
     
     if PlayerAchievements.ALittleTinyBunny == 0:
         PlayerAchievements.ALittleTinyBunny = 1
         PlayerAchievements.guardar_dados()
-    hud.anim()
+        hud.anim()
     $Sign/Button.disabled = true
     $Bushes/Bush01/Rookienho/AnimRookienho.play("AnimRookienho")

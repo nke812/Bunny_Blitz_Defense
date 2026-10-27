@@ -5,7 +5,6 @@ extends Control
 
 const COOLDOWN_12H: int = 12 * 3600 # 43200 segundos
 
-# Duas APIs alternativas para garantir que pelo menos uma responde
 const API_PRIMARY: String = "https://worldtimeapi.org/api/timezone/Europe/Lisbon"
 const API_FALLBACK: String = "https://timeapi.io/api/time/current/zone?timeZone=Europe/Lisbon"
 
@@ -17,7 +16,6 @@ var a_usar_fallback: bool = false
 func _ready() -> void:
     $HTTPRequest.request_completed.connect(_on_request_completed)
     
-    # Permite clicar na Label para recarregar se falhar
     label_timer.gui_input.connect(_on_label_gui_input)
     label_timer.mouse_filter = Control.MOUSE_FILTER_STOP
     
@@ -28,7 +26,7 @@ func _ready() -> void:
     obter_tempo_online()
 
 func obter_tempo_online() -> void:
-    $HTTPRequest.timeout = 5.0 # Cancela se demorar mais de 5 segundos
+    $HTTPRequest.timeout = 5.0
     
     var url = API_FALLBACK if a_usar_fallback else API_PRIMARY
     var headers = ["User-Agent: Mozilla/5.0"]
@@ -36,6 +34,10 @@ func obter_tempo_online() -> void:
     var err = $HTTPRequest.request(url, headers)
     if err != OK:
         tentar_fallback_ou_falhar()
+        
+    var menu = get_tree().get_first_node_in_group("MainMenu")
+    if menu:
+        menu.VerificarExclamations()
 
 func _on_request_completed(result, response_code, headers, body):
     if result != HTTPRequest.RESULT_SUCCESS or response_code != 200:
@@ -45,7 +47,6 @@ func _on_request_completed(result, response_code, headers, body):
     var json = JSON.parse_string(body.get_string_from_utf8())
     
     if json and json is Dictionary:
-        # Suporte para WorldTimeAPI (unixtime) e TimeAPI (dateTime ISO)
         if json.has("unixtime"):
             aplicar_tempo_online(int(json["unixtime"]))
         elif json.has("dateTime"):
@@ -62,7 +63,6 @@ func aplicar_tempo_online(unix_time: int) -> void:
     tempo_online_unix = unix_time
     ticks_inicio_sessao = Time.get_ticks_msec()
     
-    # Reseta valores corrompidos do save se existirem
     if SaveManager.LastDaily > tempo_online_unix + COOLDOWN_12H + 86400:
         SaveManager.LastDaily = 0
         SaveManager.guardar_dados()
@@ -73,17 +73,19 @@ func tentar_fallback_ou_falhar() -> void:
         obter_tempo_online()
     else:
         definir_sem_conexao()
+        
+    var menu = get_tree().get_first_node_in_group("MainMenu")
+    if menu:
+        menu.VerificarExclamations()
 
 func definir_sem_conexao() -> void:
     tem_conexao = false
     a_usar_fallback = false
     btn_recompensa.disabled = true
-    $LabelInfoDaily.text = "No conection (Click here to try again)"
+    $LabelInfoDaily.text = "No connection (Click here to try again)"
     label_timer.text = "XX:XX:XX"
-    
 
 func _on_label_gui_input(event: InputEvent) -> void:
-    # Se clicar na Label quando está sem ligação, tenta reconectar
     if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
         if not tem_conexao:
             $LabelInfoDaily.text = "Loading..."
@@ -102,6 +104,7 @@ func _process(_delta: float) -> void:
         btn_recompensa.disabled = false
         $LabelInfoDaily.text = ""
         label_timer.text = ""
+        VerificarExclamations()
         return
         
     var proxima_recompensa = SaveManager.LastDaily + COOLDOWN_12H
@@ -114,6 +117,8 @@ func _process(_delta: float) -> void:
     else:
         btn_recompensa.disabled = true
         label_timer.text = formatar_tempo(tempo_restante)
+        
+    VerificarExclamations()
 
 func _on_pressed() -> void:
     if not tem_conexao or tempo_online_unix == 0:
@@ -123,7 +128,7 @@ func _on_pressed() -> void:
     $"../../BunnyCoinsNode/AmountLabel".text = str("+ 500")
     
     $"../../BunnyCoinsNode/EarnCoinsAnim".play("EarnCoinsAnim")
-    
+
     var segundos_decorridos = int((Time.get_ticks_msec() - ticks_inicio_sessao) / 1000.0)
     var tempo_resgate_online = tempo_online_unix + segundos_decorridos
     var tween = create_tween()
@@ -142,8 +147,25 @@ func _on_pressed() -> void:
     
     SaveManager.guardar_dados()
     
+    if PlayerAchievements.DailyBudy == 0:
+        PlayerAchievements.DailyBudyPROGRESS += 1
+            
+        if PlayerAchievements.DailyBudyPROGRESS >= 6:
+            PlayerAchievements.DailyBudy = 1
+            
+            PlayerAchievements.guardar_dados()
+        
+            $"../../AchievementNotification/AchievementIcon".texture = preload("res://Assets/Achievements/Calendar.png")
+            $"../../AchievementNotification/Label".text = "DAILY BUDY"
+            $"../../AchievementNotification/AchievementAnim".play("AchievementAnim")
+        
+
+    var menu = get_tree().get_first_node_in_group("MainMenu")
+    if menu:
+        menu.fade_out_exclamation()
+
 func _mudar_texto_label(valor: int) -> void:
-   $"../../BunnyCoins/Price".text = str(valor)
+    $"../../BunnyCoins/Price".text = str(valor)
 
 func formatar_tempo(segundos_totais: int) -> String:
     $LabelInfoDaily.text = ""
@@ -163,3 +185,8 @@ func _on_btn_daily_button_up() -> void:
     var tween = create_tween()
     tween.tween_property($BtnDaily, "scale", Vector2(1.2, 1.2), 0.1).set_ease(Tween.EASE_OUT)
     tween.tween_property($BtnDaily, "scale", Vector2(1.0, 1.0), 0.1).set_ease(Tween.EASE_OUT)
+
+func VerificarExclamations():
+    var menu = get_tree().get_first_node_in_group("MainMenu")
+    if menu:
+        menu.VerificarExclamations()

@@ -12,11 +12,15 @@ var map2 = "res://Scenes/Mapas/Map_2.tscn"
 
 var ResetOptionMenu = false
 
-func _ready() -> void:
+func _ready() -> void: 
+    # Adiciona o menu ao grupo para o script do Reward conseguir encontrá-lo
+    if not is_in_group("MainMenu"):
+        add_to_group("MainMenu")
+        
     SaveManager.carregar_dados()
     $BunnyCoins/Price.text = str(SaveManager.BunnyCoins)
     $ColorRect.color = Color(0.0, 0.0, 0.0, 1.0)
-    
+
     if Global.title_screen == true:
         $TitleScreenStart.disabled = true
         $"Bunny???".position = Vector2(-505, -40)
@@ -24,8 +28,11 @@ func _ready() -> void:
         $ColorRect/FadeIn.play_backwards("FadeIn")
     else:
         $ColorRect/FadeIn.play_backwards("FadeIn")
+        
+    VerificarExclamations()
 
 func _on_title_screen_start_pressed() -> void:
+    VerificarExclamations()
     Global.title_screen = true
     $TitleScreenStart.disabled = true
     $TitleScreenSound.play()
@@ -73,7 +80,7 @@ func _on_easter_egg_pressed() -> void :
 
 
 
-#MENU DE MAPAS
+# MENU DE MAPAS
 func _on_grass_lands_pressed() -> void:
     Global.LoadingScene = "grass_lands"
     get_tree().change_scene_to_file("res://Scenes/loading.tscn")
@@ -104,8 +111,6 @@ func _on_grass_lands_button_down() -> void:
     $"Select Map/GrassLands".modulate = Color(0.632, 0.632, 0.632, 1.0)
 func _on_sandy_streets_button_down() -> void:
     $"Select Map/Sandy Streets".modulate = Color(0.632, 0.632, 0.632, 1.0)
-
-
 
 
 func _on_music_icon_pressed() -> void:
@@ -143,7 +148,6 @@ func _on_sfx_control_value_changed(value: float) -> void:
         $Options/SFXControl/SFXIcon.texture_normal = load("res://Assets/Others/UI_Assets/AudioMute.png")
 
 
-
 # Brilhos nos botões do Menu
 func _on_start_mouse_entered() -> void:
     $SunSetEuGostoMuito.texture = load("res://Assets/Others/Menu_Assets/Buttons/Start_SunSelected.png")
@@ -166,7 +170,6 @@ func _on_extras_mouse_exited() -> void:
     $Extras.texture = load("res://Assets/Others/Menu_Assets/Buttons/Extras.png")
 
 
-
 func _on_shop_mouse_entered() -> void:
     $Shop.texture = load("res://Assets/Others/Menu_Assets/Buttons/Shop_Selected.png")
     $Shop/ShopEye/AnimShopEye.play("ShopEye")
@@ -176,7 +179,6 @@ func _on_shop_mouse_exited() -> void:
     $Shop/ShopEye/AnimShopEye.play_backwards("ShopEye")
 
 
-
 func _on_settings_mouse_entered() -> void:
     $Settings.texture = load("res://Assets/Others/Menu_Assets/Buttons/Settings_Selected.png")
 
@@ -184,13 +186,11 @@ func _on_settings_mouse_exited() -> void:
     $Settings.texture = load("res://Assets/Others/Menu_Assets/Buttons/Settings.png")
 
 
-
 func _on_achievements_mouse_entered() -> void:
     $Achievements.texture = load("res://Assets/Others/Menu_Assets/Buttons/Achievements_Selected.png")
 
 func _on_achievements_mouse_exited() -> void:
     $Achievements.texture = load("res://Assets/Others/Menu_Assets/Buttons/Achievements.png")
-
 
 
 func _on_news_mouse_entered() -> void:
@@ -240,7 +240,6 @@ func _on_button_2_pressed() -> void:
     $Options/Panel.visible = false
 
 
-
 func _on_reset_save_toggled(toggled_on: bool) -> void:
     $Options/MusicControl.visible = toggled_on
     $Options/SFXControl.visible = toggled_on
@@ -250,8 +249,6 @@ func _on_reset_save_toggled(toggled_on: bool) -> void:
     $Options/ResetSave.visible = !toggled_on
     
     ResetOptionMenu = true
-    
-    
 
 
 func _on_confirm_reset_pressed() -> void:
@@ -259,6 +256,7 @@ func _on_confirm_reset_pressed() -> void:
     Global.title_screen = false
     Global.LoadingScene = "menu"
     
+    PlayerAchievements.reset_save()
     SaveManager.reset_save()
     
     get_tree().change_scene_to_file("res://Scenes/intro.tscn")
@@ -270,3 +268,45 @@ func _on_achievements_btn_pressed() -> void:
 
 func _on_exit_menuAchi_pressed() -> void:
     $AchievementsMenu/SelMapsMenu.play_backwards("SelMapsAnim")
+
+
+func VerificarExclamations() -> void:
+    var btn_daily = $NewsScreen/DailyReward/BtnDaily
+    if btn_daily and not btn_daily.disabled:
+        $News/ExclamationMark.visible = true
+        $News/ExclamationMark.modulate.a = 1.0
+    else:
+        $News/ExclamationMark.visible = false
+
+    var conquistas = [
+        PlayerAchievements.DailyBudy,
+        PlayerAchievements.FancyBunnies,
+        PlayerAchievements.IWantThatOne,
+        PlayerAchievements.IAmRichAsBunny,
+        PlayerAchievements.ALittleTinyBunny,
+        PlayerAchievements.KillThemAll,
+        PlayerAchievements.WinGrassLands,
+        PlayerAchievements.WinShimmerRoads,
+        PlayerAchievements.WinSandStreets
+    ]
+    
+    var tem_conquista_ativa = false
+    for valor in conquistas:
+        if valor == 1:
+            tem_conquista_ativa = true
+            break
+
+    if has_node("Achievements/ExclamationMark"):
+        $Achievements/ExclamationMark.visible = tem_conquista_ativa
+    else:
+        $Achievements/ExclamationMark.visible = tem_conquista_ativa
+    
+
+func fade_out_exclamation() -> void:
+    var exclamation = $News/ExclamationMark
+    if exclamation.visible:
+        var tween = create_tween()
+        tween.tween_property(exclamation, "modulate:a", 0.0, 0.3)
+        await tween.finished
+        exclamation.visible = false
+        exclamation.modulate.a = 1.0

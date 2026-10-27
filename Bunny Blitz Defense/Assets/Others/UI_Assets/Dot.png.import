@@ -2,27 +2,29 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj8n6dt7xfc6c"
-path="res://.godot/imported/AttackUltraUlt.png-7567979d03c484c3372ddd0d804ceb3d.ctex"
+uid="uid://c01pcp2bod6dj"
+path.s3tc="res://.godot/imported/Dot.png-446e821e6af07e82058a8984f7d7226c.s3tc.ctex"
+path.etc2="res://.godot/imported/Dot.png-446e821e6af07e82058a8984f7d7226c.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://mods/PINK/Sprites/AttackUltraUlt.png"
-dest_files=["res://.godot/imported/AttackUltraUlt.png-7567979d03c484c3372ddd0d804ceb3d.ctex"]
+source_file="res://Assets/Others/UI_Assets/Dot.png"
+dest_files=["res://.godot/imported/Dot.png-446e821e6af07e82058a8984f7d7226c.s3tc.ctex", "res://.godot/imported/Dot.png-446e821e6af07e82058a8984f7d7226c.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

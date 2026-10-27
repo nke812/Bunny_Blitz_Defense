@@ -24,7 +24,9 @@
 [ext_resource type="Texture2D" uid="uid://cxhlk1853n5sw" path="res://Assets/Others/Menu_Assets/Buttons/Achievements.png" id="13_pnils"]
 [ext_resource type="Texture2D" uid="uid://bxmody0ifxg43" path="res://Assets/Others/Menu_Assets/Buttons/Rookienho.png" id="14_ow4wq"]
 [ext_resource type="AudioStream" uid="uid://p4p6rse7krrv" path="res://Assets/Audio/SFXs/Squeaky.wav" id="15_ow4wq"]
+[ext_resource type="Texture2D" uid="uid://054ymuw3tdry" path="res://Assets/Others/UI_Assets/ExclamationMark.png" id="16_q0bdy"]
 [ext_resource type="FontFile" uid="uid://v56c1vt506yg" path="res://FontText/Coiny-Regular.ttf" id="17"]
+[ext_resource type="Texture2D" uid="uid://c01pcp2bod6dj" path="res://Assets/Others/UI_Assets/Dot.png" id="17_x734p"]
 [ext_resource type="Script" uid="uid://dd7n0bwv0j1ap" path="res://Scripts/music_control.gd" id="19"]
 [ext_resource type="Texture2D" uid="uid://bns6tfq1midk4" path="res://Assets/Others/UI_Assets/XBTN.png" id="19_iqn0u"]
 [ext_resource type="Script" uid="uid://cdcnh7mikbgwk" path="res://Scripts/fullscreen_cb.gd" id="20"]
@@ -55,10 +57,13 @@
 [ext_resource type="Texture2D" uid="uid://cui6bi6v4r22h" path="res://Assets/Others/Debug_Assets/DebugButton.png" id="45_5rj5y"]
 [ext_resource type="Texture2D" uid="uid://cm2hyi5agqq2q" path="res://Assets/Achievements/KillEmAll.png" id="45_fw7q4"]
 [ext_resource type="Texture2D" uid="uid://bi6v4mn3bbbwp" path="res://Assets/Achievements/ShimmerRoadsComplete.png" id="46_w3p2m"]
+[ext_resource type="Texture2D" uid="uid://8dm3o7v5c5sq" path="res://Assets/Others/Menu_Assets/Claim.png" id="46_x734p"]
 [ext_resource type="Texture2D" uid="uid://ceyidofscpu5q" path="res://Assets/Achievements/SandyStreetsComplete.png" id="47_3qfoj"]
+[ext_resource type="Texture2D" uid="uid://cwqjdtff0r2q7" path="res://Assets/Others/Menu_Assets/ClaimDisable.png" id="47_x734p"]
 [ext_resource type="Texture2D" uid="uid://b70otdq5osdqr" path="res://Assets/Achievements/Calendar.png" id="49_jbkk3"]
 [ext_resource type="Texture2D" uid="uid://ojhw83xercm2" path="res://Assets/Achievements/IWantThatOne.png" id="50_q0bdy"]
 [ext_resource type="Texture2D" uid="uid://cy6yvhjfujxiv" path="res://Assets/Achievements/QuestionMark.png" id="51_w3p2m"]
+[ext_resource type="Texture2D" uid="uid://d21msqkm7x6l0" path="res://Assets/Others/Menu_Assets/AchievementBar.png" id="64_3y7mu"]
 
 [sub_resource type="Animation" id="Animation_jvcv6"]
 resource_name = "AnimCursorHoverSun"
@@ -167,6 +172,44 @@ tracks/3/keys = {
 _data = {
 &"AnimCursorHoverSun": SubResource("Animation_jvcv6"),
 &"RESET": SubResource("Animation_lcy8p")
+}
+
+[sub_resource type="Animation" id="Animation_3y7mu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5000002, 0.5000002)]
+}
+
+[sub_resource type="Animation" id="Animation_l7o23"]
+resource_name = "bounce"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29, 0.6, 0.9, 1.1333333),
+"transitions": PackedFloat32Array(0.4999999, 0.5, 0.50000006, 0.4999999, 0.4999999),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.52, 0.75), Vector2(0.75, 1.04), Vector2(1.18, 0.9), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_283r2"]
+_data = {
+&"RESET": SubResource("Animation_3y7mu"),
+&"bounce": SubResource("Animation_l7o23")
 }
 
 [sub_resource type="Animation" id="Animation_fipmv"]
@@ -1154,6 +1197,67 @@ _data = {
 &"settings": SubResource("Animation_o66vf")
 }
 
+[sub_resource type="Animation" id="Animation_k4gx5"]
+resource_name = "AchievementAnim"
+length = 4.5333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.8, 4.5156856, 4.5333333),
+"transitions": PackedFloat32Array(1.5691682, 0.5, 0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(-1054.87, -76), Vector2(-1054.87, 116.43), Vector2(-1054.87, 80.355), Vector2(-1054.87, 80.355), Vector2(-1054.87, -74.185)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.5, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w6iou"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(809, -76)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l7o23"]
+_data = {
+&"AchievementAnim": SubResource("Animation_k4gx5"),
+&"RESET": SubResource("Animation_w6iou")
+}
+
 [sub_resource type="Animation" id="Animation_jhlh1"]
 resource_name = "FadeIn"
 length = 0.5
@@ -1202,14 +1306,6 @@ _data = {
 &"FadeIn": SubResource("Animation_jhlh1"),
 &"RESET": SubResource("Animation_oor3o")
 }
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_amx8r"]
-animations = [{
-"frames": [],
-"loop": 1,
-"name": &"new_animation",
-"speed": 5.0
-}]
 
 [node name="MainMenu" type="Control" unique_id=85335859 groups=["escolha de mapa"]]
 process_mode = 3
@@ -1303,6 +1399,23 @@ theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
 flat = true
 
+[node name="ExclamationMark" type="Sprite2D" parent="News" unique_id=2049194329]
+position = Vector2(339.84048, -224.54288)
+rotation = -0.0663225
+scale = Vector2(0.5000002, 0.5000002)
+texture = ExtResource("16_q0bdy")
+offset = Vector2(-0.2487793, -121.23401)
+
+[node name="Bounce" type="AnimationPlayer" parent="News/ExclamationMark" unique_id=2046384848]
+libraries/ = SubResource("AnimationLibrary_283r2")
+autoplay = &"bounce"
+speed_scale = 1.5
+
+[node name="Dot" type="Sprite2D" parent="News/ExclamationMark" unique_id=1684028761]
+position = Vector2(-3.817627, 3.5096436)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("17_x734p")
+
 [node name="Bunny???" type="Sprite2D" parent="." unique_id=225438069]
 position = Vector2(-185.7, 559)
 scale = Vector2(0.36974332, 0.36974323)
@@ -1395,6 +1508,23 @@ theme_override_colors/icon_hover_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
 theme_override_colors/icon_disabled_color = Color(1, 1, 1, 0)
 flat = true
+
+[node name="ExclamationMark" type="Sprite2D" parent="Achievements" unique_id=1198159850]
+position = Vector2(253.06812, -254.22116)
+rotation = -0.0663225
+scale = Vector2(0.5000002, 0.5000002)
+texture = ExtResource("16_q0bdy")
+offset = Vector2(-0.2487793, -121.23401)
+
+[node name="Bounce" type="AnimationPlayer" parent="Achievements/ExclamationMark" unique_id=1918065327]
+libraries/ = SubResource("AnimationLibrary_283r2")
+autoplay = &"bounce"
+speed_scale = 1.5
+
+[node name="Dot" type="Sprite2D" parent="Achievements/ExclamationMark" unique_id=2099739213]
+position = Vector2(-3.817627, 3.5096436)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("17_x734p")
 
 [node name="Rookienho" type="Sprite2D" parent="." unique_id=1421522985]
 position = Vector2(-617.24164, 547.8899)
@@ -1599,24 +1729,23 @@ theme_override_colors/font_shadow_color = Color(0.47092474, 0.37769395, 0.183728
 theme_override_fonts/font = ExtResource("17")
 theme_override_font_sizes/font_size = 33
 text = "
-V.0.10.23 NEWS:
+V.0.11.34 NEWS:
 
-Beta Bunnies:
-+ Doll Bunny
-+ Molten Bunny
++ ACHIEVEMENTS
 
-+ Daily rewards 12h/12h
++ Little Animations
 
-! Shop funcional
 
-+ Player Save File
+! Shop Redesing
 
-+ Bunny Coins! (Beta)
+
+! Player Save File
++Player Achievements
+
 
 - Bug Fixes
-
-
-Have fun ;)"
+- Visual Improvements
+- Molten Bunny (Bugged)"
 
 [node name="DailyReward" type="Control" parent="NewsScreen" unique_id=1171159941]
 layout_mode = 3
@@ -1815,8 +1944,10 @@ offset_right = -309.56152
 offset_bottom = -24.58564
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_shadow_color = Color(0.41568628, 0.28235295, 0.09803922, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.4392157)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("17")
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fh7cp")
@@ -1848,8 +1979,10 @@ offset_right = -307.0276
 offset_bottom = -25.503326
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_shadow_color = Color(0.41568628, 0.28235295, 0.09803922, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.4392157)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("17")
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fh7cp")
@@ -1881,8 +2014,10 @@ offset_right = -322.1064
 offset_bottom = -13.938671
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_shadow_color = Color(0.41568628, 0.28235295, 0.09803922, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.4392157)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("17")
 theme_override_font_sizes/font_size = 34
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fh7cp")
@@ -1900,8 +2035,10 @@ offset_right = 61.5
 offset_bottom = 150.58823
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7019608)
+theme_override_colors/font_shadow_color = Color(0.41568628, 0.28235295, 0.09803922, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 0.4392157)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("17")
 theme_override_font_sizes/font_size = 46
 theme_override_styles/normal = SubResource("StyleBoxEmpty_fh7cp")
@@ -2008,10 +2145,10 @@ libraries/ = SubResource("AnimationLibrary_5hdia")
 
 [node name="ExitMenu" type="TextureButton" parent="AchievementsMenu" unique_id=885498501]
 layout_mode = 0
-offset_left = 912.94073
-offset_top = -42.234306
-offset_right = 1004.7055
-offset_bottom = 49.530518
+offset_left = 927.0582
+offset_top = -49.2932
+offset_right = 1018.823
+offset_bottom = 42.471622
 texture_normal = ExtResource("19_iqn0u")
 texture_pressed = ExtResource("20_3u44c")
 texture_hover = ExtResource("20_3u44c")
@@ -2022,7 +2159,7 @@ stretch_mode = 0
 layout_mode = 0
 offset_left = 59.99951
 offset_top = 50.706818
-offset_right = 997.6466
+offset_right = 1025.8818
 offset_bottom = 658.94214
 draw_focus_border = true
 vertical_scroll_mode = 2
@@ -2042,379 +2179,687 @@ layout_mode = 2
 texture = ExtResource("49_jbkk3")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar" unique_id=193195406]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar" unique_id=1636383329]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar" unique_id=1905014511]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(560.67, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar/GridContainer" unique_id=1905014511]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
 text = "Claim your daily reward for 1 week"
-vertical_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward1" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar" unique_id=1788157123]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar/GridContainer" unique_id=1923580498]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar/GridContainer" unique_id=1994500559]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward1" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar/GridContainer" unique_id=741424684]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/Calendar/GridContainer/Reward1" unique_id=1088941239]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Margin" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1296521559]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="FirstSkin" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=753013595]
+[node name="FirstSkin" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1771855277]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin" unique_id=597964958]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin" unique_id=414362703]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("42_k5x2d")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin" unique_id=65619461]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin" unique_id=695592165]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin" unique_id=460747895]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin/GridContainer" unique_id=1984985940]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
 text = "Buy a Skin for any Bunny"
-vertical_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward2" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin" unique_id=444291170]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin/GridContainer" unique_id=1519792556]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin/GridContainer" unique_id=1452980714]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward2" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin/GridContainer" unique_id=1232419625]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/FirstSkin/GridContainer/Reward2" unique_id=1977861351]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Margin2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1999132125]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="ItensShop" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=2111233637]
+[node name="ItensShop" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=156014230]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop" unique_id=512859312]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop" unique_id=1584044143]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("50_q0bdy")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop" unique_id=1372363048]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop" unique_id=1242478614]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop" unique_id=781140937]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop/GridContainer" unique_id=1548445326]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
 text = "Make 5 purchases at Shop"
-vertical_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward3" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop" unique_id=142402648]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop/GridContainer" unique_id=1479776919]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop/GridContainer" unique_id=1574734983]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward3" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop/GridContainer" unique_id=631116730]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/ItensShop/GridContainer/Reward3" unique_id=1859062385]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Margin3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1843341065]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="9999Coins" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1241050045]
+[node name="9999Coins" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=516942129]
+visible = false
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins" unique_id=383230534]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins" unique_id=1975341503]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("43_drl2p")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins" unique_id=936992610]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins" unique_id=313650965]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins" unique_id=1726034066]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins/GridContainer" unique_id=1172066345]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
 text = "Have a total of 9999 Bunny Coins"
-vertical_alignment = 1
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward4" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins" unique_id=1808827763]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins/GridContainer" unique_id=2096531028]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
 
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins/GridContainer" unique_id=228067079]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward4" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins/GridContainer" unique_id=287326545]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/9999Coins/GridContainer/Reward4" unique_id=1782054808]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Margin4" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=716668317]
+visible = false
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="Rookienho" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1649043739]
+[node name="Rookienho" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=43501590]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho" unique_id=1417014487]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho" unique_id=1663300339]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("42_oor3o")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho" unique_id=2049249589]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho" unique_id=858612665]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho" unique_id=511782073]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho/GridContainer" unique_id=416863300]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
-text = "Find Rookienho in 
-Grass Lands"
-vertical_alignment = 1
+text = "Find Rookienho in Grass Lands"
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward5" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho" unique_id=1965143587]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho/GridContainer" unique_id=539479281]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho/GridContainer" unique_id=1850744828]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward5" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho/GridContainer" unique_id=1578958677]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/Rookienho/GridContainer/Reward5" unique_id=1643479432]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Margin5" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=466103104]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="500Kills" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=393576234]
+[node name="1000Kills" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=981282245]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/500Kills" unique_id=614560243]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/1000Kills" unique_id=225606748]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("45_fw7q4")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/500Kills" unique_id=1230327573]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/1000Kills" unique_id=1929557205]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/500Kills" unique_id=1271317006]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/1000Kills/GridContainer" unique_id=1632468491]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
-text = "Kill 500 Ghostlings"
-vertical_alignment = 1
+text = "Kill 1000 Ghostlings"
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward6" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/500Kills" unique_id=537958834]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/1000Kills/GridContainer" unique_id=1385513695]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/1000Kills/GridContainer" unique_id=2052279900]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward6" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/1000Kills/GridContainer" unique_id=1526188912]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/1000Kills/GridContainer/Reward6" unique_id=2063855152]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Margin6" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=545071349]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="WinGrassLands" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=437976360]
+[node name="WinGrassLands" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=855400315]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands" unique_id=785562985]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands" unique_id=1592357508]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("44_ydj5n")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands" unique_id=678570216]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands" unique_id=1564911842]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands" unique_id=293946038]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands/GridContainer" unique_id=1353446221]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(539.065, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
-text = "Win a match in
-Grass Lands"
-vertical_alignment = 1
+text = "Win a match in Grass Lands"
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward7" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands" unique_id=311248029]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands/GridContainer" unique_id=2054664274]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands/GridContainer" unique_id=1128311250]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward7" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands/GridContainer" unique_id=136256113]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands/GridContainer/Reward7" unique_id=309055213]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Margin7" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1583079501]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="WinShimmerRoads" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=312582978]
+[node name="WinShimmerRoads" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1266749335]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads" unique_id=1638134046]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads" unique_id=154624899]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("46_w3p2m")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads" unique_id=761436852]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads" unique_id=1316566952]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads" unique_id=345222049]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads/GridContainer" unique_id=1026136225]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
-text = "Win a match in
-Shimmer Roads"
-vertical_alignment = 1
+text = "Win a match in Shimmer Roads"
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward8" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads" unique_id=1114302852]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads/GridContainer" unique_id=509653435]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads/GridContainer" unique_id=859589126]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward8" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads/GridContainer" unique_id=478785314]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads/GridContainer/Reward8" unique_id=1945788191]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Margin8" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=151434331]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="WinSandStreets" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1050627104]
+[node name="WinSandStreets" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1393090673]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets" unique_id=2123567268]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets" unique_id=818640418]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("47_3qfoj")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets" unique_id=1154622167]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets" unique_id=2064445071]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets" unique_id=1123328510]
-custom_minimum_size = Vector2(545.695, 150)
-custom_maximum_size = Vector2(-1, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets/GridContainer" unique_id=1052937677]
+custom_minimum_size = Vector2(497.805, 131.615)
+custom_maximum_size = Vector2(546.71, 150.205)
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
-text = "Win a match in
-Sandy Streets"
-vertical_alignment = 1
+text = "Win a match in Sandy Streets"
+vertical_alignment = 2
 autowrap_mode = 2
 
-[node name="Reward9" type="Button" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets" unique_id=919864168]
-custom_minimum_size = Vector2(150, 150)
-custom_maximum_size = Vector2(-1, 150)
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets/GridContainer" unique_id=188096934]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
 layout_mode = 2
 
-[node name="Margin9" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=814105262]
+[node name="MarginContainer3" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets/GridContainer" unique_id=914782779]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
+
+[node name="Reward9" type="TextureButton" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets/GridContainer" unique_id=1642741577]
+custom_minimum_size = Vector2(256.775, 132.36)
+custom_maximum_size = Vector2(247.45, 78.44)
+layout_mode = 2
+texture_normal = ExtResource("46_x734p")
+texture_disabled = ExtResource("47_x734p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets/GridContainer/Reward9" unique_id=1957552714]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.072000004
+anchor_right = 0.98200005
+anchor_bottom = 0.95600003
+offset_left = 6.882202
+offset_top = 2.3156967
+offset_right = -4.5895386
+offset_bottom = -5.8436584
+pivot_offset = Vector2(120, 35.29413)
+theme_override_colors/font_color = Color(0.8068876, 0.9995437, 0.74878603, 1)
+theme_override_colors/font_shadow_color = Color(0.25882354, 0.39215687, 0.019607844, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("17")
+theme_override_font_sizes/font_size = 47
+text = "Claim!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Margin9" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1246279971]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
 
-[node name="?" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=888461736]
+[node name="More Soon" type="HBoxContainer" parent="AchievementsMenu/ScrollContainer/Achievements" unique_id=1474213703]
 custom_minimum_size = Vector2(873.965, 150)
 layout_mode = 2
 offset_transform_enabled = true
 
-[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/?" unique_id=1148449884]
+[node name="Icon" type="TextureRect" parent="AchievementsMenu/ScrollContainer/Achievements/More Soon" unique_id=128005704]
 custom_minimum_size = Vector2(150, 150)
 custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
 texture = ExtResource("51_w3p2m")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/?" unique_id=1655160237]
-custom_minimum_size = Vector2(43.795, 3.46)
-custom_maximum_size = Vector2(67.005, 150)
+[node name="GridContainer" type="GridContainer" parent="AchievementsMenu/ScrollContainer/Achievements/More Soon" unique_id=68171220]
 layout_mode = 2
-accessibility_region = true
+columns = 2
 
-[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/?" unique_id=409201296]
-custom_minimum_size = Vector2(700, 150)
-custom_maximum_size = Vector2(700, 150.205)
+[node name="Description" type="Label" parent="AchievementsMenu/ScrollContainer/Achievements/More Soon/GridContainer" unique_id=2065695464]
+custom_minimum_size = Vector2(593.735, 161.6)
+custom_maximum_size = Vector2(-1, 150.205)
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.41727322, 0.28420344, 0.09898505, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("28_qwpoy")
 theme_override_font_sizes/font_size = 50
 text = "More Soon..."
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="AchievementsMenu/ScrollContainer/Achievements/More Soon/GridContainer" unique_id=554585549]
+custom_minimum_size = Vector2(107.145, 14.895)
+custom_maximum_size = Vector2(35.29, -1)
+layout_mode = 2
 
 [node name="Options" type="Panel" parent="." unique_id=1410927811]
 self_modulate = Color(1, 1, 1, 0)
@@ -2611,8 +3056,37 @@ vertical_alignment = 1
 [node name="SettingsAnim" type="AnimationPlayer" parent="Options" unique_id=789157789]
 libraries/ = SubResource("AnimationLibrary_fipmv")
 
+[node name="AchievementNotification" type="Node2D" parent="." unique_id=1807478560]
+position = Vector2(809, -76)
+
+[node name="AchievementBar" type="Sprite2D" parent="AchievementNotification" unique_id=793521930]
+position = Vector2(0.22553253, 0.74999046)
+scale = Vector2(0.7480468, 0.7480468)
+texture = ExtResource("64_3y7mu")
+
+[node name="AchievementIcon" type="Sprite2D" parent="AchievementNotification" unique_id=1108657040]
+position = Vector2(-228.52148, -1.5)
+scale = Vector2(0.24096984, 0.24096984)
+texture = ExtResource("49_jbkk3")
+
+[node name="Label" type="Label" parent="AchievementNotification" unique_id=490321950]
+offset_left = -151.52148
+offset_top = -27.5
+offset_right = 273.47852
+offset_bottom = 37.5
+theme_override_colors/font_color = Color(0.8910975, 0.4958802, 0.20833504, 1)
+theme_override_colors/font_shadow_color = Color(0.4157955, 0.115778156, 0.058200434, 1)
+theme_override_fonts/font = ExtResource("28_qwpoy")
+theme_override_font_sizes/font_size = 28
+text = "A LITTLE TINY ROOKIE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AchievementAnim" type="AnimationPlayer" parent="AchievementNotification" unique_id=1634684689]
+libraries/ = SubResource("AnimationLibrary_l7o23")
+speed_scale = 1.2
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1372942293]
-visible = false
 layout_mode = 0
 offset_left = -2056.0
 offset_top = -2.0
@@ -2622,10 +3096,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="FadeIn" type="AnimationPlayer" parent="ColorRect" unique_id=669144130]
 libraries/ = SubResource("AnimationLibrary_h64ul")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1715837816]
-sprite_frames = SubResource("SpriteFrames_amx8r")
-animation = &"new_animation"
 
 [connection signal="mouse_entered" from="SunSetEuGostoMuito/StartBTN" to="." method="_on_start_mouse_entered"]
 [connection signal="mouse_exited" from="SunSetEuGostoMuito/StartBTN" to="." method="_on_start_mouse_exited"]
@@ -2664,8 +3134,15 @@ animation = &"new_animation"
 [connection signal="pressed" from="Select Map/GrassLands" to="." method="_on_grass_lands_pressed"]
 [connection signal="pressed" from="Select Map/ExitMenu" to="." method="_on_exit_menu_pressed"]
 [connection signal="pressed" from="AchievementsMenu/ExitMenu" to="." method="_on_exit_menuAchi_pressed"]
-[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/Calendar/Reward1" to="AchievementsMenu" method="_on_reward_1_pressed"]
-[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/FirstSkin/Reward2" to="AchievementsMenu" method="_on_reward_2_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/Calendar/GridContainer/Reward1" to="AchievementsMenu" method="_on_reward_1_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/FirstSkin/GridContainer/Reward2" to="AchievementsMenu" method="_on_reward_2_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/ItensShop/GridContainer/Reward3" to="AchievementsMenu" method="_on_reward_3_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/9999Coins/GridContainer/Reward4" to="AchievementsMenu" method="_on_reward_4_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/Rookienho/GridContainer/Reward5" to="AchievementsMenu" method="_on_reward_5_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/1000Kills/GridContainer/Reward6" to="AchievementsMenu" method="_on_reward_6_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/WinGrassLands/GridContainer/Reward7" to="AchievementsMenu" method="_on_reward_7_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/WinShimmerRoads/GridContainer/Reward8" to="AchievementsMenu" method="_on_reward_8_pressed"]
+[connection signal="pressed" from="AchievementsMenu/ScrollContainer/Achievements/WinSandStreets/GridContainer/Reward9" to="AchievementsMenu" method="_on_reward_9_pressed"]
 [connection signal="pressed" from="Options/ExitSettings" to="." method="_on_exit_settings_pressed"]
 [connection signal="pressed" from="Options/MusicControl/MusicIcon" to="." method="_on_music_icon_pressed"]
 [connection signal="pressed" from="Options/SFXControl/SFXIcon" to="." method="_on_sfx_icon_pressed"]

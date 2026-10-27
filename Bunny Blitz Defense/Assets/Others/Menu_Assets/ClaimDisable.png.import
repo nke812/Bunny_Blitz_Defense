@@ -2,27 +2,29 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmegxfqrdj5nw"
-path="res://.godot/imported/Attack.png-f3c94680995bf618c67b0c900ca23598.ctex"
+uid="uid://cwqjdtff0r2q7"
+path.s3tc="res://.godot/imported/ClaimDisable.png-4df38d166d5f7d6c4e3cd3620e59236e.s3tc.ctex"
+path.etc2="res://.godot/imported/ClaimDisable.png-4df38d166d5f7d6c4e3cd3620e59236e.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://mods/PINK/Sprites/Attack.png"
-dest_files=["res://.godot/imported/Attack.png-f3c94680995bf618c67b0c900ca23598.ctex"]
+source_file="res://Assets/Others/Menu_Assets/ClaimDisable.png"
+dest_files=["res://.godot/imported/ClaimDisable.png-4df38d166d5f7d6c4e3cd3620e59236e.s3tc.ctex", "res://.godot/imported/ClaimDisable.png-4df38d166d5f7d6c4e3cd3620e59236e.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
-compress/channel_pack=0
+compress/channel_pack=1
 mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0

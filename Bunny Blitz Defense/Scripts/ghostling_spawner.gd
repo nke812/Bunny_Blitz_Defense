@@ -278,6 +278,18 @@ func _on_timer_timeout():
 func inimigo_morreu(PassPortal: bool = false):
     var hud = get_tree().get_first_node_in_group("HUD")
     
+    if PlayerAchievements.KillThemAll == 0:
+        PlayerAchievements.KillThemAllPROGRESS += 1
+    
+        if PlayerAchievements.KillThemAllPROGRESS >= 1000:
+            PlayerAchievements.KillThemAll = 1
+            
+            PlayerAchievements.guardar_dados()
+            
+            hud.get_node("UI_Selection/AchievementNotification/AchievementIcon").texture = load("res://Assets/Achievements/KillEmAll.png")
+            hud.get_node("UI_Selection/AchievementNotification/Label").text = "KILL THEM ALL"
+            hud.get_node("UI_Selection/AchievementNotification/AchievementAnim").play("AchievementAnim")
+    
     var gacha = randi_range(1, 25)
     var AmountCoins = randi_range(25, 70)
     
@@ -294,6 +306,30 @@ func inimigo_morreu(PassPortal: bool = false):
         
         if rodada_atual == 150:
             if hud and hud.has_method("victory"):
+                var map = get_tree().current_scene.scene_file_path
+
+                match map:
+                    "res://Scenes/Mapas/Map_1.tscn":
+                        if PlayerAchievements.WinGrassLands == 0:
+                            PlayerAchievements.WinGrassLands = 1
+                            
+                            hud.get_node("UI_Selection/AchievementNotification/AchievementIcon").texture = load("res://Assets/Achievements/GrasslandsComplete.png")
+                            hud.get_node("UI_Selection/AchievementNotification/Label").text = "GRASS LANDS COMPLETE"
+                            hud.get_node("UI_Selection/AchievementNotification/AchievementAnim").play("AchievementAnim")
+                    "res://Scenes/Mapas/Map_2.tscn":
+                        if PlayerAchievements.WinShimmerRoads == 0:
+                            PlayerAchievements.WinShimmerRoads = 1
+                                                        
+                            hud.get_node("UI_Selection/AchievementNotification/AchievementIcon").texture = load("res://Assets/Achievements/ShimmerRoadsComplete.png")
+                            hud.get_node("UI_Selection/AchievementNotification/Label").text = "SHIMMER ROADS COMPLETE"
+                            hud.get_node("UI_Selection/AchievementNotification/AchievementAnim").play("AchievementAnim")
+                    "res://Scenes/Mapas/Map_3.tscn":
+                        if PlayerAchievements.WinSandStreets == 0:
+                            PlayerAchievements.WinSandStreets = 1
+                                                        
+                            hud.get_node("UI_Selection/AchievementNotification/AchievementIcon").texture = load("res://Assets/Achievements/SandyStreetsComplete.png")
+                            hud.get_node("UI_Selection/AchievementNotification/Label").text = "SANDY STREETS COMPLETE"
+                            hud.get_node("UI_Selection/AchievementNotification/AchievementAnim").play("AchievementAnim")  
                 hud.victory()
             return
         

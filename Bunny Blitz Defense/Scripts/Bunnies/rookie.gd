@@ -281,7 +281,7 @@ func dust():
 
 
 func _on_wow_timer_timeout() -> void:
-    var salto = randi_range(1, 3)
+    var salto = randi_range(1, 1000)
     
     if salto == 1 and !$Pega/Node2D/Rookie/AnimationPlayer.is_playing():
         $WOW.play("WOW")

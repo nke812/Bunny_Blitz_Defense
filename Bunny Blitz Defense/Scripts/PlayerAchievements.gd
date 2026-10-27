@@ -2,6 +2,7 @@ extends Node
 
 const SAVE_PATH = "user://achievements.cfg"
 
+
 var DailyBudy = 0
 var DailyBudyPROGRESS = 0
 
@@ -23,6 +24,7 @@ var WinGrassLands = 0
 var WinShimmerRoads = 0
 
 var WinSandStreets = 0
+
 
 func _ready() -> void:
     carregar_dados()
@@ -79,3 +81,20 @@ func guardar_dados() -> void:
     config.set_value("achievements", "WinSandStreets", WinSandStreets)
     
     config.save(SAVE_PATH)
+
+func reset_save() -> void:
+    DailyBudy = 0
+    DailyBudyPROGRESS = 0
+    FancyBunnies = 0
+    IWantThatOne = 0
+    IWantThatOnePROGRESS = 0
+    IAmRichAsBunny = 0
+    IAmRichAsBunnyPROGRESS = 0
+    ALittleTinyBunny = 0
+    KillThemAll = 0
+    KillThemAllPROGRESS = 0
+    WinGrassLands = 0
+    WinShimmerRoads = 0
+    WinSandStreets = 0
+    
+    guardar_dados()

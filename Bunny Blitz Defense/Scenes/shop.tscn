@@ -31,6 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://kqh7akjr3ery" path="res://Assets/Bunnies/Animations/CorruptedMouth.png" id="23_k7yfq"]
 [ext_resource type="Texture2D" uid="uid://dh0jtd0qgog7s" path="res://Assets/Others/Menu_Assets/Shop/Return.png" id="25_lkkvn"]
 [ext_resource type="Texture2D" uid="uid://1brf168h401y" path="res://Assets/Others/Menu_Assets/Shop/ReturnSelected.png" id="26_xv2t3"]
+[ext_resource type="Texture2D" uid="uid://d21msqkm7x6l0" path="res://Assets/Others/Menu_Assets/AchievementBar.png" id="29_gugvk"]
+[ext_resource type="Texture2D" uid="uid://b7k5hdh5iv4jg" path="res://Assets/Achievements/Rookienho.png" id="30_t7de3"]
 [ext_resource type="Texture2D" uid="uid://ykudm8uv6ak2" path="res://Assets/Others/Menu_Assets/CoinBg.png" id="31_ihrg5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5xp22"]
@@ -772,6 +774,67 @@ _data = {
 &"RESET": SubResource("Animation_cuuv1")
 }
 
+[sub_resource type="Animation" id="Animation_hvvn1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1004, -72)]
+}
+
+[sub_resource type="Animation" id="Animation_1bx8h"]
+resource_name = "new_animation"
+length = 4.5333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.5300002, 4.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.8, 4.5156856, 4.5333333),
+"transitions": PackedFloat32Array(1.5691682, 0.5, 0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(980, -76), Vector2(980, 116.43), Vector2(980, 80.355), Vector2(980, 80.355), Vector2(980, -74.185)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bd3tj"]
+_data = {
+&"RESET": SubResource("Animation_hvvn1"),
+&"new_animation": SubResource("Animation_1bx8h")
+}
+
 [sub_resource type="Animation" id="Animation_3mbjb"]
 resource_name = "FadeOut"
 length = 0.5
@@ -1190,6 +1253,36 @@ texture_normal = ExtResource("25_lkkvn")
 texture_hover = ExtResource("26_xv2t3")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="AchievementNotification" type="Node2D" parent="." unique_id=1921587429]
+position = Vector2(1004, -72)
+
+[node name="AchievementBar" type="Sprite2D" parent="AchievementNotification" unique_id=439831392]
+position = Vector2(0.22553253, 0.74999046)
+scale = Vector2(0.7480468, 0.7480468)
+texture = ExtResource("29_gugvk")
+
+[node name="AchievementIcon" type="Sprite2D" parent="AchievementNotification" unique_id=1466272768]
+position = Vector2(-228.52148, -1.5)
+scale = Vector2(0.24096984, 0.24096984)
+texture = ExtResource("30_t7de3")
+
+[node name="Label" type="Label" parent="AchievementNotification" unique_id=2070012403]
+offset_left = -151.52148
+offset_top = -27.5
+offset_right = 273.47852
+offset_bottom = 37.5
+theme_override_colors/font_color = Color(0.8910975, 0.4958802, 0.20833504, 1)
+theme_override_colors/font_shadow_color = Color(0.4157955, 0.115778156, 0.058200434, 1)
+theme_override_fonts/font = ExtResource("19_3mbjb")
+theme_override_font_sizes/font_size = 28
+text = "A LITTLE TINY ROOKIE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AchievementNotification" unique_id=1595237641]
+libraries/ = SubResource("AnimationLibrary_bd3tj")
 
 [node name="BunnyCoins" type="Node2D" parent="." unique_id=917877295]
 position = Vector2(822.99994, 670.99994)

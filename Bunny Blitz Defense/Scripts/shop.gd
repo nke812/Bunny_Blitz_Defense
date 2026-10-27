@@ -20,7 +20,7 @@ var bunnies = [
     #{"nome": "Alien", "preco": 6780, "textura": load("res://Assets/Bunnies/Alien.png")},
     #{"nome": "Toasty", "preco": 6500, "textura": load("res://Assets/Bunnies/Toasty.png")},
     #{"nome": "Voodo", "preco": 8300, "textura": load("res://Assets/Bunnies/Voodo.png")},
-    {"nome": "Molten", "preco": 9500, "textura": load("res://Assets/Bunnies/Molten.png")},
+    #{"nome": "Molten", "preco": 9500, "textura": load("res://Assets/Bunnies/Molten.png")},
     {"nome": "Doll", "preco": 6000, "textura": load("res://Assets/Bunnies/Doll.png")}
 ]
 
@@ -87,7 +87,13 @@ func _on_item_shop_pressed() -> void:
                 "Buny": SaveManager.bunyUnlocked = true
                 "ZeRon": SaveManager.ZeRonUnlocked = true
                 "Catharsis": SaveManager.CatharsisUnlocked = true
-            if PlayerAchievements.FancyBunnies == 0: PlayerAchievements.FancyBunnies = 1
+            if PlayerAchievements.FancyBunnies == 0: 
+                PlayerAchievements.FancyBunnies = 1
+                PlayerAchievements.guardar_dados()
+                
+                $AchievementNotification/Label.text = "FANCY BUNNIES"
+                $AchievementNotification/AchievementIcon.texture = preload("res://Assets/Achievements/FancyBunny.png")
+                $AchievementNotification/AnimationPlayer.play("new_animation")
         else:
             var item = bunnies[ItemShopCount]
             match item.nome:
@@ -100,10 +106,10 @@ func _on_item_shop_pressed() -> void:
                 "Molten": SaveManager.MoltenUnlocked = true
                 "Toasty": SaveManager.ToastyUnlocked = true
                 "Voodo": SaveManager.VoodoUnlocked = true
-        
+        if PlayerAchievements.IWantThatOne == 0:
+            verificarAchievement()
         
         SaveManager.guardar_dados()
-        PlayerAchievements.guardar_dados()
         verificar_item_shop()
             
     else:
@@ -285,3 +291,21 @@ func _on_texture_button_pressed() -> void:
     SaveManager.BunnyCoins += 1000
     $BunnyCoins/Price.text = str(SaveManager.BunnyCoins)
     SaveManager.guardar_dados()
+
+func verificarAchievement() -> void:
+    if PlayerAchievements.IWantThatOne == 0:
+        PlayerAchievements.IWantThatOnePROGRESS += 1
+            
+        if PlayerAchievements.IWantThatOnePROGRESS >= 5:
+            PlayerAchievements.IWantThatOne = 1
+            
+            $AchievementNotification/Label.text = "I WANT THAT ONE"
+            $AchievementNotification/AchievementIcon.texture = preload("res://Assets/Achievements/IWantThatOne.png")
+            $AchievementNotification/AnimationPlayer.play("new_animation")
+            
+        PlayerAchievements.guardar_dados()
+        
+        
+        
+        
+        
