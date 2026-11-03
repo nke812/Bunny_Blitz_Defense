@@ -1,0 +1,528 @@
+[gd_scene format=3 uid="uid://pj5omkdkyqmx"]
+
+[ext_resource type="AudioStream" uid="uid://ch5075ooun7i1" path="res://Assets/Audio/SFXs/EnterShop.wav" id="1_issyb"]
+[ext_resource type="AudioStream" uid="uid://d4awc5pupxjp2" path="res://Assets/Audio/SFXs/BuyItem.wav" id="2_v5aq7"]
+[ext_resource type="AudioStream" uid="uid://cv6w2nv25axry" path="res://Assets/Audio/SFXs/queres_é_mel.wav" id="3_cufj4"]
+[ext_resource type="AudioStream" uid="uid://baq70yp1adgxc" path="res://Assets/Audio/Music/ShopMusic_TEMPLATE.ogg" id="4_fjfvl"]
+[ext_resource type="Texture2D" uid="uid://8abk5ol3lwb4" path="res://Assets/Others/Menu_Assets/Shop/Shop2/ShopBackground.png" id="5_onfnw"]
+[ext_resource type="Texture2D" uid="uid://c7f2ub7nu6og6" path="res://Assets/Others/Menu_Assets/Shop/Shop2/ShopShelves.png" id="6_3ec71"]
+[ext_resource type="Texture2D" uid="uid://cpmoxo2llrviu" path="res://Assets/Others/Menu_Assets/Shop/Shop2/MayaBody.png" id="7_2pef0"]
+[ext_resource type="Texture2D" uid="uid://pu0okp5b8aga" path="res://Assets/Others/Menu_Assets/Shop/Shop2/MayaHead.png" id="8_bad1w"]
+[ext_resource type="Texture2D" uid="uid://cxhqd3h68bopg" path="res://Assets/Others/Menu_Assets/Shop/Shop2/Shop2Bench.png" id="9_1ef8f"]
+[ext_resource type="Texture2D" uid="uid://y5wm5p5jumrd" path="res://Assets/Others/Menu_Assets/Shop/Shop2/FireFX.png" id="10_ymhbj"]
+[ext_resource type="Texture2D" uid="uid://ba44idy8vgq3q" path="res://Assets/Others/Menu_Assets/Shop/Shop2/ShopCurtains.png" id="11_yaiod"]
+[ext_resource type="Shader" uid="uid://briiakm7u3aca" path="res://Others/shop.gdshader" id="12_klsp1"]
+[ext_resource type="Texture2D" uid="uid://bp50j65ppdpk6" path="res://Assets/Bunnies/Animations/CorruptedBunnyIdle.png" id="13_0y4n1"]
+[ext_resource type="Texture2D" uid="uid://dmy8bgn0hx70q" path="res://Assets/Bunnies/Scrappy.png" id="14_3eaye"]
+[ext_resource type="Texture2D" uid="uid://cn4ibqgedl4pw" path="res://Assets/Others/HUD_Assets/CoinPriceTag.png" id="15_5sy6e"]
+[ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="16_7505t"]
+[ext_resource type="Texture2D" uid="uid://crrmlj5cuab2y" path="res://Assets/Others/Menu_Assets/Shop/Shop2/Arrow.png" id="17_sipc3"]
+[ext_resource type="Texture2D" uid="uid://ckdbgoto6evad" path="res://Assets/Others/Menu_Assets/Shop/Shop2/ArrowSelected.png" id="18_l7dp6"]
+[ext_resource type="Texture2D" uid="uid://g1gxo5n4246v" path="res://Assets/Others/Menu_Assets/Shop/Shop2/Return.png" id="19_5atwg"]
+[ext_resource type="Texture2D" uid="uid://2hr7rshf5u4f" path="res://Assets/Others/Menu_Assets/Shop/Shop2/ReturnSelected.png" id="20_gvwe6"]
+[ext_resource type="Texture2D" uid="uid://d21msqkm7x6l0" path="res://Assets/Others/Menu_Assets/AchievementBar.png" id="21_oq0rr"]
+[ext_resource type="Texture2D" uid="uid://b7k5hdh5iv4jg" path="res://Assets/Achievements/Rookienho.png" id="22_unkqq"]
+[ext_resource type="Texture2D" uid="uid://ykudm8uv6ak2" path="res://Assets/Others/Menu_Assets/CoinBg.png" id="23_icdc0"]
+[ext_resource type="Texture2D" uid="uid://px1lxdelyre3" path="res://Assets/Others/HUD_Assets/BunnyCoin.png" id="24_wp1ww"]
+[ext_resource type="Texture2D" uid="uid://btpudkmqlku1g" path="res://Assets/Others/Menu_Assets/Shop/Shop2/LilStar.png" id="25_v5aq7"]
+
+[sub_resource type="Animation" id="Animation_hgku6"]
+resource_name = "Idle"
+length = 1.4333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.4333333),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.985, 0.925), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_krhbf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c03fl"]
+_data = {
+&"Idle": SubResource("Animation_hgku6"),
+&"RESET": SubResource("Animation_krhbf")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hrdr"]
+atlas = ExtResource("10_ymhbj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i64q2"]
+atlas = ExtResource("10_ymhbj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vel84"]
+atlas = ExtResource("10_ymhbj")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h20dt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hrdr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i64q2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vel84")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tllwv"]
+shader = ExtResource("12_klsp1")
+shader_parameter/ativo = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_us0dh"]
+atlas = ExtResource("13_0y4n1")
+region = Rect2(0, 0, 790, 1022)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdcn2"]
+atlas = ExtResource("13_0y4n1")
+region = Rect2(790, 0, 790, 1022)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lkkvn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_us0dh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdcn2")
+}],
+"loop": 2,
+"name": &"Corrupted",
+"speed": 9.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("12_klsp1")
+shader_parameter/ativo = false
+
+[sub_resource type="Animation" id="Animation_mjtuy"]
+resource_name = "ChangeItemShop"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033447977, 0.10012242, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.135, 0.825), Vector2(0.905, 1.14), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Corrupted:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033669487, 0.100343935, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.3499999, 0.3499999), Vector2(0.385, 0.285), Vector2(0.305, 0.395), Vector2(0.3499999, 0.3499999)]
+}
+
+[sub_resource type="Animation" id="Animation_cuuv1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Corrupted:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.3499999, 0.3499999)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yl1pv"]
+_data = {
+&"ChangeItemShop": SubResource("Animation_mjtuy"),
+&"RESET": SubResource("Animation_cuuv1")
+}
+
+[sub_resource type="Animation" id="Animation_hvvn1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1004, -72)]
+}
+
+[sub_resource type="Animation" id="Animation_1bx8h"]
+resource_name = "new_animation"
+length = 4.5333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(3.5300002, 4.53),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 0.8, 4.5156856, 4.5333333),
+"transitions": PackedFloat32Array(1.5691682, 0.5, 0.5, 0.5, 1),
+"update": 0,
+"values": [Vector2(980, -76), Vector2(980, 116.43), Vector2(980, 80.355), Vector2(980, 80.355), Vector2(980, -74.185)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bd3tj"]
+_data = {
+&"RESET": SubResource("Animation_hvvn1"),
+&"new_animation": SubResource("Animation_1bx8h")
+}
+
+[sub_resource type="Animation" id="Animation_cufj4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_fjfvl"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -6.2831855]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_onfnw"]
+_data = {
+&"RESET": SubResource("Animation_cufj4"),
+&"new_animation": SubResource("Animation_fjfvl")
+}
+
+[node name="Shop2Node" type="Node2D" unique_id=1018724071]
+
+[node name="ShopSFX" type="AudioStreamPlayer" parent="." unique_id=550996105]
+stream = ExtResource("1_issyb")
+volume_db = 3.0
+bus = &"SFX"
+
+[node name="ItemBuy" type="AudioStreamPlayer" parent="." unique_id=1527149263]
+stream = ExtResource("2_v5aq7")
+bus = &"SFX"
+
+[node name="ItemRefuse" type="AudioStreamPlayer" parent="." unique_id=1832544578]
+stream = ExtResource("3_cufj4")
+bus = &"SFX"
+
+[node name="ShopMusic" type="AudioStreamPlayer" parent="." unique_id=150688681]
+stream = ExtResource("4_fjfvl")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Background" type="Sprite2D" parent="." unique_id=563629876]
+position = Vector2(960, 540)
+texture = ExtResource("5_onfnw")
+
+[node name="ShopShelves" type="Sprite2D" parent="." unique_id=1440652467]
+position = Vector2(851, 527)
+texture = ExtResource("6_3ec71")
+flip_h = true
+
+[node name="Maya" type="Node2D" parent="." unique_id=170866930]
+position = Vector2(648, 459)
+
+[node name="MayaBody" type="Sprite2D" parent="Maya" unique_id=1629968650]
+position = Vector2(9.000061, 83.00003)
+rotation = 0.12566371
+scale = Vector2(0.35529384, 0.374153)
+texture = ExtResource("7_2pef0")
+
+[node name="MayaHead" type="Sprite2D" parent="Maya" unique_id=1164618791]
+position = Vector2(-29, -248)
+rotation = -0.010471977
+scale = Vector2(0.55267084, 0.55267084)
+texture = ExtResource("8_bad1w")
+
+[node name="MayaIdle" type="AnimationPlayer" parent="Maya" unique_id=1453524479]
+libraries/ = SubResource("AnimationLibrary_c03fl")
+autoplay = &"Idle"
+speed_scale = 0.575
+
+[node name="ShopBench" type="Sprite2D" parent="." unique_id=870118261]
+position = Vector2(960, 540)
+texture = ExtResource("9_1ef8f")
+
+[node name="Fire" type="AnimatedSprite2D" parent="ShopBench" unique_id=131223521]
+position = Vector2(519, -140)
+sprite_frames = SubResource("SpriteFrames_h20dt")
+autoplay = "default"
+frame_progress = 0.64868253
+
+[node name="ShopCurtains" type="Sprite2D" parent="." unique_id=188525497]
+position = Vector2(960, 540)
+texture = ExtResource("11_yaiod")
+
+[node name="PanelItemShop" type="Panel" parent="." unique_id=1810449480]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 487.0
+offset_top = 684.0
+offset_right = 850.0
+offset_bottom = 1047.0
+
+[node name="Corrupted" type="AnimatedSprite2D" parent="PanelItemShop" unique_id=647311551]
+visible = false
+material = SubResource("ShaderMaterial_tllwv")
+position = Vector2(198.00003, 343.99994)
+scale = Vector2(0.3499999, 0.3499999)
+sprite_frames = SubResource("SpriteFrames_lkkvn")
+animation = &"Corrupted"
+autoplay = "Corrupted"
+offset = Vector2(-6.428589, -451.5244)
+
+[node name="ItemShop" type="TextureButton" parent="PanelItemShop" unique_id=1745265972]
+material = SubResource("ShaderMaterial_g4v7s")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -177.57977
+offset_right = 137.0
+offset_bottom = 177.57977
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(133.5, 330.07977)
+texture_normal = ExtResource("14_3eaye")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ChangeItemShop" type="AnimationPlayer" parent="PanelItemShop/ItemShop" unique_id=1446161912]
+libraries/ = SubResource("AnimationLibrary_yl1pv")
+
+[node name="PriceTag" type="Sprite2D" parent="PanelItemShop" unique_id=58341556]
+position = Vector2(225.99998, 331.99997)
+scale = Vector2(0.3900002, 0.3900002)
+texture = ExtResource("15_5sy6e")
+
+[node name="Price" type="Label" parent="PanelItemShop/PriceTag" unique_id=1143696724]
+offset_left = -243.58963
+offset_top = -46.153847
+offset_right = 118.41037
+offset_bottom = 59.19918
+rotation = -0.06806784
+pivot_offset = Vector2(185.03271, 48.854004)
+theme_override_colors/font_color = Color(0.9098039, 0.70980394, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.5372549, 0.47843137, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("16_7505t")
+theme_override_font_sizes/font_size = 84
+text = "Aramba"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArrowSelectLeft" type="TextureButton" parent="." unique_id=335416599]
+offset_left = 240.0
+offset_top = 792.0
+offset_right = 403.0
+offset_bottom = 955.0
+texture_normal = ExtResource("17_sipc3")
+texture_hover = ExtResource("18_l7dp6")
+ignore_texture_size = true
+stretch_mode = 0
+flip_v = true
+
+[node name="ArrowSelectRight" type="TextureButton" parent="." unique_id=1526541908]
+offset_left = 928.0
+offset_top = 792.0
+offset_right = 1091.0
+offset_bottom = 955.0
+texture_normal = ExtResource("17_sipc3")
+texture_hover = ExtResource("18_l7dp6")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="Exit" type="TextureButton" parent="." unique_id=1608404758]
+offset_left = 1621.0
+offset_top = 793.0
+offset_right = 1901.0
+offset_bottom = 1073.0
+texture_normal = ExtResource("19_5atwg")
+texture_hover = ExtResource("20_gvwe6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AchievementNotification" type="Node2D" parent="." unique_id=1921587429]
+visible = false
+position = Vector2(1004, -72)
+
+[node name="AchievementBar" type="Sprite2D" parent="AchievementNotification" unique_id=439831392]
+position = Vector2(0.22553253, 0.74999046)
+scale = Vector2(0.7480468, 0.7480468)
+texture = ExtResource("21_oq0rr")
+
+[node name="AchievementIcon" type="Sprite2D" parent="AchievementNotification" unique_id=1466272768]
+position = Vector2(-228.52148, -1.5)
+scale = Vector2(0.24096984, 0.24096984)
+texture = ExtResource("22_unkqq")
+
+[node name="Label" type="Label" parent="AchievementNotification" unique_id=2070012403]
+offset_left = -151.52148
+offset_top = -27.5
+offset_right = 273.47852
+offset_bottom = 37.5
+theme_override_colors/font_color = Color(0.8910975, 0.4958802, 0.20833504, 1)
+theme_override_colors/font_shadow_color = Color(0.4157955, 0.115778156, 0.058200434, 1)
+theme_override_fonts/font = ExtResource("16_7505t")
+theme_override_font_sizes/font_size = 28
+text = "A LITTLE TINY ROOKIE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AchievementNotification" unique_id=1595237641]
+libraries/ = SubResource("AnimationLibrary_bd3tj")
+
+[node name="BunnyCoins" type="Node2D" parent="." unique_id=917877295]
+position = Vector2(822.99994, 670.99994)
+scale = Vector2(0.715, 0.715)
+
+[node name="CoinsBG" type="Sprite2D" parent="BunnyCoins" unique_id=1458147332]
+position = Vector2(153.25002, 81.87501)
+scale = Vector2(0.87988275, 0.81347656)
+texture = ExtResource("23_icdc0")
+
+[node name="BunnyCoin" type="Sprite2D" parent="BunnyCoins" unique_id=1283935783]
+position = Vector2(311, 76.00001)
+scale = Vector2(0.54444444, 0.54444444)
+texture = ExtResource("24_wp1ww")
+
+[node name="Price" type="Label" parent="BunnyCoins" unique_id=1179489975]
+anchors_preset = -1
+anchor_left = 0.777
+anchor_right = 0.96500003
+anchor_bottom = 0.11800001
+offset_left = 35.0
+offset_top = 33.0
+offset_right = 239.0
+offset_bottom = 134.0
+pivot_offset = Vector2(98, 46)
+theme_override_colors/font_color = Color(0.9936754, 0.83999187, 0.5156532, 1)
+theme_override_colors/font_shadow_color = Color(0.65888363, 0.38406408, 0.1761345, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("16_7505t")
+theme_override_font_sizes/font_size = 48
+text = "99999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HAPPYMOD" type="TextureButton" parent="." unique_id=608753494]
+offset_left = 994.0
+offset_top = 689.0
+offset_right = 1090.0
+offset_bottom = 767.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1267968406]
+modulate = Color(0.7764706, 0.6627451, 0, 1)
+position = Vector2(1294, 153)
+scale = Vector2(0.9083341, 0.9083341)
+texture = ExtResource("25_v5aq7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1498874718]
+libraries/ = SubResource("AnimationLibrary_onfnw")
+autoplay = &"new_animation"
+
+[connection signal="pressed" from="PanelItemShop/ItemShop" to="." method="_on_item_shop_pressed"]
+[connection signal="pressed" from="ArrowSelectLeft" to="." method="Item_shop_anterior"]
+[connection signal="pressed" from="ArrowSelectRight" to="." method="Item_shop_seguinte"]
+[connection signal="pressed" from="Exit" to="." method="Voltar_Menu"]
+[connection signal="pressed" from="HAPPYMOD" to="." method="_on_texture_button_pressed"]
