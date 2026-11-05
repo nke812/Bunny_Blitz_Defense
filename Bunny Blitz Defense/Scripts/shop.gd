@@ -304,8 +304,3 @@ func verificarAchievement() -> void:
             $AchievementNotification/AnimationPlayer.play("new_animation")
             
         PlayerAchievements.guardar_dados()
-        
-        
-        
-        
-        

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://pj5omkdkyqmx"]
 
 [ext_resource type="AudioStream" uid="uid://ch5075ooun7i1" path="res://Assets/Audio/SFXs/EnterShop.wav" id="1_issyb"]
+[ext_resource type="Script" uid="uid://c1dwb8ttwr6sn" path="res://Scripts/shop2.gd" id="1_v5aq7"]
 [ext_resource type="AudioStream" uid="uid://d4awc5pupxjp2" path="res://Assets/Audio/SFXs/BuyItem.wav" id="2_v5aq7"]
 [ext_resource type="AudioStream" uid="uid://cv6w2nv25axry" path="res://Assets/Audio/SFXs/queres_é_mel.wav" id="3_cufj4"]
 [ext_resource type="AudioStream" uid="uid://baq70yp1adgxc" path="res://Assets/Audio/Music/ShopMusic_TEMPLATE.ogg" id="4_fjfvl"]
@@ -12,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://y5wm5p5jumrd" path="res://Assets/Others/Menu_Assets/Shop/Shop2/FireFX.png" id="10_ymhbj"]
 [ext_resource type="Texture2D" uid="uid://ba44idy8vgq3q" path="res://Assets/Others/Menu_Assets/Shop/Shop2/ShopCurtains.png" id="11_yaiod"]
 [ext_resource type="Shader" uid="uid://briiakm7u3aca" path="res://Others/shop.gdshader" id="12_klsp1"]
-[ext_resource type="Texture2D" uid="uid://bp50j65ppdpk6" path="res://Assets/Bunnies/Animations/CorruptedBunnyIdle.png" id="13_0y4n1"]
 [ext_resource type="Texture2D" uid="uid://dmy8bgn0hx70q" path="res://Assets/Bunnies/Scrappy.png" id="14_3eaye"]
 [ext_resource type="Texture2D" uid="uid://cn4ibqgedl4pw" path="res://Assets/Others/HUD_Assets/CoinPriceTag.png" id="15_5sy6e"]
 [ext_resource type="FontFile" uid="uid://c4oqjtn2jr35r" path="res://FontText/Candy Planet.ttf" id="16_7505t"]
@@ -28,7 +28,7 @@
 
 [sub_resource type="Animation" id="Animation_hgku6"]
 resource_name = "Idle"
-length = 1.4333333
+length = 1.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -37,7 +37,7 @@ tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.6, 1.4333333),
+"times": PackedFloat32Array(0, 0.6, 1.4),
 "transitions": PackedFloat32Array(0.5, 0.5, 0.5),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.985, 0.925), Vector2(1, 1)]
@@ -62,6 +62,81 @@ tracks/0/keys = {
 _data = {
 &"Idle": SubResource("Animation_hgku6"),
 &"RESET": SubResource("Animation_krhbf")
+}
+
+[sub_resource type="Animation" id="Animation_v5aq7"]
+resource_name = "MayaHappy"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"VerificarMayaHead"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Maya/MayaHead:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.09760809, 0.19216593, 0.26842225),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0.55267084, 0.55267084), Vector2(0.593, 0.453), Vector2(0.488, 0.628), Vector2(0.55267084, 0.55267084)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Maya/MayaBody:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.09760809, 0.19216593, 0.26842225),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0.35529384, 0.374153), Vector2(0.395, 0.319), Vector2(0.315, 0.429), Vector2(0.35529384, 0.374153)]
+}
+
+[sub_resource type="Animation" id="Animation_onfnw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Maya/MayaHead:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.55267084, 0.55267084)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Maya/MayaBody:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.35529384, 0.374153)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ec71"]
+_data = {
+&"MayaHappy": SubResource("Animation_v5aq7"),
+&"RESET": SubResource("Animation_onfnw")
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0hrdr"]
@@ -93,32 +168,6 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tllwv"]
-shader = ExtResource("12_klsp1")
-shader_parameter/ativo = false
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_us0dh"]
-atlas = ExtResource("13_0y4n1")
-region = Rect2(0, 0, 790, 1022)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tdcn2"]
-atlas = ExtResource("13_0y4n1")
-region = Rect2(790, 0, 790, 1022)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_lkkvn"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_us0dh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tdcn2")
-}],
-"loop": 2,
-"name": &"Corrupted",
-"speed": 9.0
-}]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("12_klsp1")
 shader_parameter/ativo = false
@@ -138,18 +187,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(1.135, 0.825), Vector2(0.905, 1.14), Vector2(1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Corrupted:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.033669487, 0.100343935, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(0.3499999, 0.3499999), Vector2(0.385, 0.285), Vector2(0.305, 0.395), Vector2(0.3499999, 0.3499999)]
-}
 
 [sub_resource type="Animation" id="Animation_cuuv1"]
 length = 0.001
@@ -164,18 +201,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Corrupted:scale")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.3499999, 0.3499999)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yl1pv"]
@@ -259,10 +284,46 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(786, 206)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.9083341, 0.9083341)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_fjfvl"]
 resource_name = "new_animation"
-loop_mode = 1
+length = 0.6666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -270,10 +331,46 @@ tracks/0/path = NodePath(".:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, -6.2831855]
+"values": [0.0, 1.1763519158441778]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.56666666),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Vector2(781.99994, 209), Vector2(871, 141)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6333333),
+"transitions": PackedFloat32Array(1, 0.5),
+"update": 0,
+"values": [Vector2(0.9083341, 0.9083341), Vector2(0.682, 0.682)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.49),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_onfnw"]
@@ -283,6 +380,7 @@ _data = {
 }
 
 [node name="Shop2Node" type="Node2D" unique_id=1018724071]
+script = ExtResource("1_v5aq7")
 
 [node name="ShopSFX" type="AudioStreamPlayer" parent="." unique_id=550996105]
 stream = ExtResource("1_issyb")
@@ -323,15 +421,20 @@ scale = Vector2(0.35529384, 0.374153)
 texture = ExtResource("7_2pef0")
 
 [node name="MayaHead" type="Sprite2D" parent="Maya" unique_id=1164618791]
-position = Vector2(-29, -248)
+position = Vector2(8.506687, 34.93509)
 rotation = -0.010471977
 scale = Vector2(0.55267084, 0.55267084)
 texture = ExtResource("8_bad1w")
+offset = Vector2(-62.499756, -512.624)
 
 [node name="MayaIdle" type="AnimationPlayer" parent="Maya" unique_id=1453524479]
 libraries/ = SubResource("AnimationLibrary_c03fl")
 autoplay = &"Idle"
-speed_scale = 0.575
+speed_scale = 0.283
+
+[node name="MayaHappy" type="AnimationPlayer" parent="Maya" unique_id=441443309]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_3ec71")
 
 [node name="ShopBench" type="Sprite2D" parent="." unique_id=870118261]
 position = Vector2(960, 540)
@@ -353,16 +456,6 @@ offset_left = 487.0
 offset_top = 684.0
 offset_right = 850.0
 offset_bottom = 1047.0
-
-[node name="Corrupted" type="AnimatedSprite2D" parent="PanelItemShop" unique_id=647311551]
-visible = false
-material = SubResource("ShaderMaterial_tllwv")
-position = Vector2(198.00003, 343.99994)
-scale = Vector2(0.3499999, 0.3499999)
-sprite_frames = SubResource("SpriteFrames_lkkvn")
-animation = &"Corrupted"
-autoplay = "Corrupted"
-offset = Vector2(-6.428589, -451.5244)
 
 [node name="ItemShop" type="TextureButton" parent="PanelItemShop" unique_id=1745265972]
 material = SubResource("ShaderMaterial_g4v7s")
@@ -511,15 +604,15 @@ offset_top = 689.0
 offset_right = 1090.0
 offset_bottom = 767.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1267968406]
+[node name="Sparkle" type="Sprite2D" parent="." unique_id=1267968406]
 modulate = Color(0.7764706, 0.6627451, 0, 1)
-position = Vector2(1294, 153)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(786, 206)
 scale = Vector2(0.9083341, 0.9083341)
 texture = ExtResource("25_v5aq7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=1498874718]
+[node name="SparkleAnim" type="AnimationPlayer" parent="Sparkle" unique_id=1498874718]
 libraries/ = SubResource("AnimationLibrary_onfnw")
-autoplay = &"new_animation"
 
 [connection signal="pressed" from="PanelItemShop/ItemShop" to="." method="_on_item_shop_pressed"]
 [connection signal="pressed" from="ArrowSelectLeft" to="." method="Item_shop_anterior"]
